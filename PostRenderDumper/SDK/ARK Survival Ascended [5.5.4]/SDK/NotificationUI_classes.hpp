@@ -16,12 +16,12 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass NotificationUI.NotificationUI_C
-// 0x0010 (0x0828 - 0x0818)
+// 0x0010 (0x0858 - 0x0848)
 class UNotificationUI_C final : public UUI_Notification
 {
 public:
-	class UImage*                                 Image_2;                                           // 0x0818(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UButton*                                OkButton;                                          // 0x0820(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Image_2;                                           // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                OkButton;                                          // 0x0850(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

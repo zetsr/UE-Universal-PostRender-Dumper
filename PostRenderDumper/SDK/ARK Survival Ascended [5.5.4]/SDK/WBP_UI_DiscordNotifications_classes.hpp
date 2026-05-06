@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_UI_DiscordNotifications.WBP_UI_DiscordNotifications_C
-// 0x0000 (0x08B8 - 0x08B8)
+// 0x0000 (0x08E8 - 0x08E8)
 class UWBP_UI_DiscordNotifications_C final : public UUI_DiscordNotifications
 {
 public:

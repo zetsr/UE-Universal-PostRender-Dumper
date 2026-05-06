@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="PostRenderDumper.vcxproj" />
+  <Project Path="PostRenderDumper.vcxproj" Id="7697419f-ad20-4d62-827c-3d2725ec50c9" />
 </Solution>

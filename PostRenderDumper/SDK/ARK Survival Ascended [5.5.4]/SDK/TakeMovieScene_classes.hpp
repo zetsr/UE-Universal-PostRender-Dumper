@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "MovieScene_structs.hpp"
-#include "MovieScene_classes.hpp"
 #include "CoreUObject_classes.hpp"
 #include "MovieSceneTracks_structs.hpp"
+#include "MovieScene_structs.hpp"
+#include "MovieScene_classes.hpp"
 
 
 SDK_NAMESPACE_START

@@ -37,15 +37,6 @@ enum class EThreadAsyncExecTag : uint8
 	EThreadAsyncExecTag_MAX                  = 3,
 };
 
-// ScriptStruct ThreadExecutionBlueprintNode.TickFunctionByGroup
-// 0x0008 (0x0038 - 0x0030)
-struct FTickFunctionByGroup final : public FTickFunction
-{
-public:
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FTickFunctionByGroup;
-
 // ScriptStruct ThreadExecutionBlueprintNode.ThreadTickExecBehavior
 // 0x0010 (0x0010 - 0x0000)
 struct FThreadTickExecBehavior final
@@ -59,6 +50,15 @@ public:
 	float                                         PredictedTimeCostFactor;                           // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FThreadTickExecBehavior;
+
+// ScriptStruct ThreadExecutionBlueprintNode.TickFunctionByGroup
+// 0x0008 (0x0038 - 0x0030)
+struct FTickFunctionByGroup final : public FTickFunction
+{
+public:
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FTickFunctionByGroup;
 
 // ScriptStruct ThreadExecutionBlueprintNode.ThreadExecTimingPair
 // 0x0002 (0x0002 - 0x0000)

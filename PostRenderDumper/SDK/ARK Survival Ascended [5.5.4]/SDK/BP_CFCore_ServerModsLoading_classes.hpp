@@ -11,45 +11,45 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "cfcore_ui_structs.hpp"
 #include "cfcore_structs.hpp"
+#include "cfcore_ui_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass BP_CFCore_ServerModsLoading.BP_CFCore_ServerModsLoading_C
-// 0x01C8 (0x09F8 - 0x0830)
+// 0x01C8 (0x0A28 - 0x0860)
 class UBP_CFCore_ServerModsLoading_C final : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CFCore_ServerModsLoading_C;      // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWidgetAnimation*                       FadeIn;                                            // 0x0838(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UTextBlock*                             DOUNLOADING_PROGGRESS;                             // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             DOWNLOAD_MODS_COUNT;                               // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 Image_177;                                         // 0x0850(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_BackGround;                                    // 0x0858(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UOverlay*                               Overlay_0;                                         // 0x0860(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UProgressBar*                           ProgressBar_102;                                   // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             TEXT_MODS_DOWNLOAD_COUNT;                          // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             TEXT_PERCENT;                                      // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             TEXT_ServerName;                                   // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_Button_CFCore_Global_Back_C*        UI_Button_Ark_Global_Back;                         // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Overlay_C*                   UI_Overlay;                                        // 0x0890(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	TArray<struct FInstallProgressMod>            Mods_to_Download;                                  // 0x0898(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	int32                                         ModIndex;                                          // 0x08A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8AC[0x4];                                      // 0x08AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              BackEvent;                                         // 0x08B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              CompetedEvent;                                     // 0x08C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              ErrorEvent;                                        // 0x08D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMap<int64, struct FInstallProgressMod>       ModsById;                                          // 0x08E0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	TMap<int64, struct FFile>                     FileById;                                          // 0x0930(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class FText                                   InstallingDots;                                    // 0x0980(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int64                                         TotalModsSize;                                     // 0x0990(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<int64, int64>                            TempCurrentModsSize;                               // 0x0998(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int64                                         CurrentModsSize;                                   // 0x09E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Errors;                                            // 0x09F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         success;                                           // 0x09F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CFCore_ServerModsLoading_C;      // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UWidgetAnimation*                       FadeIn;                                            // 0x0868(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UTextBlock*                             DOUNLOADING_PROGGRESS;                             // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             DOWNLOAD_MODS_COUNT;                               // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Image_177;                                         // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_BackGround;                                    // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UOverlay*                               Overlay_0;                                         // 0x0890(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UProgressBar*                           ProgressBar_102;                                   // 0x0898(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TEXT_MODS_DOWNLOAD_COUNT;                          // 0x08A0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TEXT_PERCENT;                                      // 0x08A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TEXT_ServerName;                                   // 0x08B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_Button_CFCore_Global_Back_C*        UI_Button_Ark_Global_Back;                         // 0x08B8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Overlay_C*                   UI_Overlay;                                        // 0x08C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	TArray<struct FInstallProgressMod>            Mods_to_Download;                                  // 0x08C8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	int32                                         ModIndex;                                          // 0x08D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8DC[0x4];                                      // 0x08DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              BackEvent;                                         // 0x08E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              CompetedEvent;                                     // 0x08F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              ErrorEvent;                                        // 0x0900(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMap<int64, struct FInstallProgressMod>       ModsById;                                          // 0x0910(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TMap<int64, struct FFile>                     FileById;                                          // 0x0960(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class FText                                   InstallingDots;                                    // 0x09B0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int64                                         TotalModsSize;                                     // 0x09C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<int64, int64>                            TempCurrentModsSize;                               // 0x09C8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int64                                         CurrentModsSize;                                   // 0x0A18(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Errors;                                            // 0x0A20(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         success;                                           // 0x0A24(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AddToProgressSize(const int64& Key, const int64& Value);

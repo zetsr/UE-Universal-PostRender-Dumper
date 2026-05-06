@@ -10,16 +10,87 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "CoreUObject_classes.hpp"
 #include "TargetingSystem_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "GameplayAbilities_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 SDK_NAMESPACE_START
+
+// Class TargetingSystem.TargetingTask
+// 0x0000 (0x0028 - 0x0028)
+class UTargetingTask : public UObject
+{
+public:
+	class UTargetingSubsystem* GetTargetingSubsystem(const struct FTargetingRequestHandle& TargetingHandle) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TargetingTask")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TargetingTask")
+	}
+	static class UTargetingTask* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UTargetingTask>();
+	}
+};
+DUMPER7_ASSERTS_UTargetingTask;
+
+// Class TargetingSystem.TargetingSortTask_Base
+// 0x0008 (0x0030 - 0x0028)
+class UTargetingSortTask_Base : public UTargetingTask
+{
+public:
+	uint8                                         bAscending : 1;                                    // 0x0028(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         bStableSort : 1;                                   // 0x0028(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TargetingSortTask_Base")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TargetingSortTask_Base")
+	}
+	static class UTargetingSortTask_Base* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UTargetingSortTask_Base>();
+	}
+};
+DUMPER7_ASSERTS_UTargetingSortTask_Base;
+
+// Class TargetingSystem.SimpleTargetingSortTask
+// 0x0000 (0x0030 - 0x0030)
+class USimpleTargetingSortTask final : public UTargetingSortTask_Base
+{
+public:
+	float BP_GetScoreForTarget(const struct FTargetingRequestHandle& TargetingHandle, const struct FTargetingDefaultResultData& TargetData) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SimpleTargetingSortTask")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SimpleTargetingSortTask")
+	}
+	static class USimpleTargetingSortTask* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USimpleTargetingSortTask>();
+	}
+};
+DUMPER7_ASSERTS_USimpleTargetingSortTask;
 
 // Class TargetingSystem.AbilityTask_PerformTargeting
 // 0x0030 (0x00B0 - 0x0080)
@@ -83,29 +154,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAsyncAction_PerformTargeting;
-
-// Class TargetingSystem.TargetingTask
-// 0x0000 (0x0028 - 0x0028)
-class UTargetingTask : public UObject
-{
-public:
-	class UTargetingSubsystem* GetTargetingSubsystem(const struct FTargetingRequestHandle& TargetingHandle) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("TargetingTask")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"TargetingTask")
-	}
-	static class UTargetingTask* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UTargetingTask>();
-	}
-};
-DUMPER7_ASSERTS_UTargetingTask;
 
 // Class TargetingSystem.TargetingFilterTask_BasicFilterTemplate
 // 0x0000 (0x0028 - 0x0028)
@@ -174,54 +222,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USimpleTargetingSelectionTask;
-
-// Class TargetingSystem.TargetingSortTask_Base
-// 0x0008 (0x0030 - 0x0028)
-class UTargetingSortTask_Base : public UTargetingTask
-{
-public:
-	uint8                                         bAscending : 1;                                    // 0x0028(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         bStableSort : 1;                                   // 0x0028(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("TargetingSortTask_Base")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"TargetingSortTask_Base")
-	}
-	static class UTargetingSortTask_Base* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UTargetingSortTask_Base>();
-	}
-};
-DUMPER7_ASSERTS_UTargetingSortTask_Base;
-
-// Class TargetingSystem.SimpleTargetingSortTask
-// 0x0000 (0x0030 - 0x0030)
-class USimpleTargetingSortTask final : public UTargetingSortTask_Base
-{
-public:
-	float BP_GetScoreForTarget(const struct FTargetingRequestHandle& TargetingHandle, const struct FTargetingDefaultResultData& TargetData) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SimpleTargetingSortTask")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SimpleTargetingSortTask")
-	}
-	static class USimpleTargetingSortTask* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USimpleTargetingSortTask>();
-	}
-};
-DUMPER7_ASSERTS_USimpleTargetingSortTask;
 
 // Class TargetingSystem.TargetingFilterTask_ActorClass
 // 0x0020 (0x0048 - 0x0028)

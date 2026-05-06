@@ -17,16 +17,16 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_Option_ModPageCategory.UI_Option_ModPageCategory_C
-// 0x0038 (0x0868 - 0x0830)
+// 0x0038 (0x0898 - 0x0860)
 class UUI_Option_ModPageCategory_C final : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_Option_ModPageCategory_C;        // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UHorizontalBox*                         HorizontalBox_31;                                  // 0x0838(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_Icon;                                          // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             TEXT_Block;                                        // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class FString                                 iconUrl;                                           // 0x0850(0x0010)(Edit, BlueprintVisible, ZeroConstructor, ExposeOnSpawn, HasGetValueTypeHash)
-	class UUI_CFCore_StoreMenu_C*                 StoreMenu_Ref;                                     // 0x0860(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_Option_ModPageCategory_C;        // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UHorizontalBox*                         HorizontalBox_31;                                  // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_Icon;                                          // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TEXT_Block;                                        // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class FString                                 iconUrl;                                           // 0x0880(0x0010)(Edit, BlueprintVisible, ZeroConstructor, ExposeOnSpawn, HasGetValueTypeHash)
+	class UUI_CFCore_StoreMenu_C*                 StoreMenu_Ref;                                     // 0x0890(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void Construct();

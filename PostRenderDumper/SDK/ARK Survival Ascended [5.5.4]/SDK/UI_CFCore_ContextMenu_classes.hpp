@@ -18,27 +18,27 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_ContextMenu.UI_CFCore_ContextMenu_C
-// 0x0078 (0x08A8 - 0x0830)
+// 0x0078 (0x08D8 - 0x0860)
 class UUI_CFCore_ContextMenu_C final : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_ContextMenu_C;            // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWidgetAnimation*                       FadeIn;                                            // 0x0838(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class USizeBox*                               SizeBox_Outer;                                     // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Cancel;                                  // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Install;                                 // 0x0850(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Like;                                    // 0x0858(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Purchase;                                // 0x0860(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Report;                                  // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Uninstall;                               // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Update;                                  // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Button_Dropdown_C*           UI_Button_View;                                    // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_GameSlot_C*                  UI_GameSlot;                                       // 0x0888(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	class UUI_CFCore_StoreMenu_C*                 UI_StoreMenu;                                      // 0x0890(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	bool                                          ShouldViewBeVisible;                               // 0x0898(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	bool                                          SepareteReportWithLine;                            // 0x0899(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_89A[0x6];                                      // 0x089A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        WidgetWidth;                                       // 0x08A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_ContextMenu_C;            // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UWidgetAnimation*                       FadeIn;                                            // 0x0868(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class USizeBox*                               SizeBox_Outer;                                     // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Cancel;                                  // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Install;                                 // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Like;                                    // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Purchase;                                // 0x0890(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Report;                                  // 0x0898(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Uninstall;                               // 0x08A0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Button_Dropdown_C*           UI_Button_Update;                                  // 0x08A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Button_Dropdown_C*           UI_Button_View;                                    // 0x08B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_GameSlot_C*                  UI_GameSlot;                                       // 0x08B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	class UUI_CFCore_StoreMenu_C*                 UI_StoreMenu;                                      // 0x08C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	bool                                          ShouldViewBeVisible;                               // 0x08C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	bool                                          SepareteReportWithLine;                            // 0x08C9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_8CA[0x6];                                      // 0x08CA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        WidgetWidth;                                       // 0x08D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void BndEvt__UI_DropdownMenu_UI_Button_Install_K2Node_ComponentBoundEvent_13_Dispatcher_OnClick__DelegateSignature();

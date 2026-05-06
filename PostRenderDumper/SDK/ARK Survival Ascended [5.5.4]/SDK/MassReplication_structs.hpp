@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "MassCommon_structs.hpp"
+#include "MassSpawner_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "AIModule_structs.hpp"
 #include "NetCore_structs.hpp"
 #include "MassEntity_structs.hpp"
-#include "MassSpawner_structs.hpp"
+#include "AIModule_structs.hpp"
+#include "MassCommon_structs.hpp"
 
 
 SDK_NAMESPACE_START

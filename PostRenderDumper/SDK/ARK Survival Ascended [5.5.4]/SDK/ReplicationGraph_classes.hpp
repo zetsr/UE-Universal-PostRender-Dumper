@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "CoreUObject_classes.hpp"
 #include "ReplicationGraph_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -103,11 +103,11 @@ public:
 DUMPER7_ASSERTS_UReplicationGraphNode;
 
 // Class ReplicationGraph.ReplicationGraphNode_ActorList
-// 0x01B0 (0x0200 - 0x0050)
+// 0x0480 (0x04D0 - 0x0050)
 class UReplicationGraphNode_ActorList : public UReplicationGraphNode
 {
 public:
-	uint8                                         Pad_50[0x1B0];                                     // 0x0050(0x01B0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x480];                                     // 0x0050(0x0480)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -126,11 +126,11 @@ public:
 DUMPER7_ASSERTS_UReplicationGraphNode_ActorList;
 
 // Class ReplicationGraph.ReplicationGraphNode_ActorListFrequencyBuckets
-// 0x01F8 (0x0248 - 0x0050)
+// 0x0518 (0x0568 - 0x0050)
 class UReplicationGraphNode_ActorListFrequencyBuckets final : public UReplicationGraphNode
 {
 public:
-	uint8                                         Pad_50[0x1F8];                                     // 0x0050(0x01F8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x518];                                     // 0x0050(0x0518)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -149,11 +149,11 @@ public:
 DUMPER7_ASSERTS_UReplicationGraphNode_ActorListFrequencyBuckets;
 
 // Class ReplicationGraph.ReplicationGraphNode_DynamicSpatialFrequency
-// 0x0030 (0x0230 - 0x0200)
+// 0x0030 (0x0500 - 0x04D0)
 class UReplicationGraphNode_DynamicSpatialFrequency final : public UReplicationGraphNode_ActorList
 {
 public:
-	uint8                                         Pad_200[0x30];                                     // 0x0200(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4D0[0x30];                                     // 0x04D0(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -172,11 +172,11 @@ public:
 DUMPER7_ASSERTS_UReplicationGraphNode_DynamicSpatialFrequency;
 
 // Class ReplicationGraph.ReplicationGraphNode_ConnectionDormancyNode
-// 0x0250 (0x0450 - 0x0200)
+// 0x0520 (0x09F0 - 0x04D0)
 class UReplicationGraphNode_ConnectionDormancyNode final : public UReplicationGraphNode_ActorList
 {
 public:
-	uint8                                         Pad_200[0x250];                                    // 0x0200(0x0250)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4D0[0x520];                                    // 0x04D0(0x0520)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -195,11 +195,11 @@ public:
 DUMPER7_ASSERTS_UReplicationGraphNode_ConnectionDormancyNode;
 
 // Class ReplicationGraph.ReplicationGraphNode_DormancyNode
-// 0x0010 (0x0210 - 0x0200)
+// 0x0010 (0x04E0 - 0x04D0)
 class UReplicationGraphNode_DormancyNode final : public UReplicationGraphNode_ActorList
 {
 public:
-	uint8                                         Pad_200[0x10];                                     // 0x0200(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4D0[0x10];                                     // 0x04D0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -218,13 +218,13 @@ public:
 DUMPER7_ASSERTS_UReplicationGraphNode_DormancyNode;
 
 // Class ReplicationGraph.ReplicationGraphNode_GridCell
-// 0x0050 (0x0250 - 0x0200)
+// 0x0050 (0x0520 - 0x04D0)
 class alignas(0x10) UReplicationGraphNode_GridCell : public UReplicationGraphNode_ActorList
 {
 public:
-	uint8                                         Pad_200[0x40];                                     // 0x0200(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
-	class UReplicationGraphNode*                  DynamicNode;                                       // 0x0240(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, ExperimentalNeverOverriden)
-	class UReplicationGraphNode_DormancyNode*     DormancyNode;                                      // 0x0248(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, ExperimentalNeverOverriden)
+	uint8                                         Pad_4D0[0x40];                                     // 0x04D0(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
+	class UReplicationGraphNode*                  DynamicNode;                                       // 0x0510(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, ExperimentalNeverOverriden)
+	class UReplicationGraphNode_DormancyNode*     DormancyNode;                                      // 0x0518(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, ExperimentalNeverOverriden)
 
 public:
 	static class UClass* StaticClass()
@@ -243,11 +243,11 @@ public:
 DUMPER7_ASSERTS_UReplicationGraphNode_GridCell;
 
 // Class ReplicationGraph.ReplicationGraphNode_GridSpatialization2D
-// 0x0240 (0x0290 - 0x0050)
+// 0x0290 (0x02E0 - 0x0050)
 class UReplicationGraphNode_GridSpatialization2D : public UReplicationGraphNode
 {
 public:
-	uint8                                         Pad_50[0x240];                                     // 0x0050(0x0240)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x290];                                     // 0x0050(0x0290)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -290,13 +290,13 @@ public:
 DUMPER7_ASSERTS_UReplicationGraphNode_AlwaysRelevant;
 
 // Class ReplicationGraph.ReplicationGraphNode_AlwaysRelevant_ForConnection
-// 0x0080 (0x0280 - 0x0200)
+// 0x00D0 (0x05A0 - 0x04D0)
 class UReplicationGraphNode_AlwaysRelevant_ForConnection final : public UReplicationGraphNode_ActorList
 {
 public:
-	uint8                                         Pad_200[0x20];                                     // 0x0200(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FAlwaysRelevantActorInfo>       PastRelevantActors;                                // 0x0220(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_230[0x50];                                     // 0x0230(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4D0[0x70];                                     // 0x04D0(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FAlwaysRelevantActorInfo>       PastRelevantActors;                                // 0x0540(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_550[0x50];                                     // 0x0550(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -315,12 +315,12 @@ public:
 DUMPER7_ASSERTS_UReplicationGraphNode_AlwaysRelevant_ForConnection;
 
 // Class ReplicationGraph.ReplicationGraphNode_TearOff_ForConnection
-// 0x0030 (0x0080 - 0x0050)
+// 0x0080 (0x00D0 - 0x0050)
 class UReplicationGraphNode_TearOff_ForConnection final : public UReplicationGraphNode
 {
 public:
 	TArray<struct FTearOffActorInfo>              TearOffActors;                                     // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_60[0x20];                                      // 0x0060(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60[0x70];                                      // 0x0060(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

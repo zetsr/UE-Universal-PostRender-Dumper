@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "cfcore_structs.hpp"
-#include "InputCore_structs.hpp"
-#include "UMG_structs.hpp"
 #include "cfcore_ui_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "cfcore_structs.hpp"
+#include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
 
 
@@ -28,6 +28,7 @@ public:
 	struct FKey                                   theKey;                                            // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_KeyKey_ReturnValue;            // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_KeyKey_ReturnValue_1;          // 0x001A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_UI_CFCore_Discovery_C_BPGamepadReleased;
 

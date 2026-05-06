@@ -10,17 +10,256 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "CoreUObject_classes.hpp"
 #include "AIModule_structs.hpp"
 #include "NavigationSystem_classes.hpp"
-#include "GameplayTasks_classes.hpp"
+#include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "GameplayTasks_classes.hpp"
 #include "GameplayTags_structs.hpp"
 
 
 SDK_NAMESPACE_START
+
+// Class AIModule.AISenseConfig
+// 0x0020 (0x0048 - 0x0028)
+class UAISenseConfig : public UObject
+{
+public:
+	struct FColor                                 DebugColor;                                        // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MaxAge;                                            // 0x002C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         bStartsEnabled : 1;                                // 0x0030(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_31[0x17];                                      // 0x0031(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AISenseConfig")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AISenseConfig")
+	}
+	static class UAISenseConfig* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAISenseConfig>();
+	}
+};
+DUMPER7_ASSERTS_UAISenseConfig;
+
+// Class AIModule.AISenseConfig_Sight
+// 0x0028 (0x0070 - 0x0048)
+class UAISenseConfig_Sight final : public UAISenseConfig
+{
+public:
+	TSubclassOf<class UAISense_Sight>             Implementation;                                    // 0x0048(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, NoClear, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SightRadius;                                       // 0x0050(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LoseSightRadius;                                   // 0x0054(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PeripheralVisionAngleDegrees;                      // 0x0058(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAISenseAffiliationFilter              DetectionByAffiliation;                            // 0x005C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         AutoSuccessRangeFromLastSeenLocation;              // 0x0060(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PointOfViewBackwardOffset;                         // 0x0064(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NearClippingRadius;                                // 0x0068(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AISenseConfig_Sight")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AISenseConfig_Sight")
+	}
+	static class UAISenseConfig_Sight* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAISenseConfig_Sight>();
+	}
+};
+DUMPER7_ASSERTS_UAISenseConfig_Sight;
+
+// Class AIModule.BTNode
+// 0x0030 (0x0058 - 0x0028)
+class UBTNode : public UObject
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 NodeName;                                          // 0x0030(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBehaviorTree*                          TreeAsset;                                         // 0x0040(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, ExperimentalNeverOverriden)
+	class UBTCompositeNode*                       ParentNode;                                        // 0x0048(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, ExperimentalNeverOverriden)
+	uint8                                         Pad_50[0x8];                                       // 0x0050(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTNode")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTNode")
+	}
+	static class UBTNode* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTNode>();
+	}
+};
+DUMPER7_ASSERTS_UBTNode;
+
+// Class AIModule.BTAuxiliaryNode
+// 0x0008 (0x0060 - 0x0058)
+class UBTAuxiliaryNode : public UBTNode
+{
+public:
+	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTAuxiliaryNode")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTAuxiliaryNode")
+	}
+	static class UBTAuxiliaryNode* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTAuxiliaryNode>();
+	}
+};
+DUMPER7_ASSERTS_UBTAuxiliaryNode;
+
+// Class AIModule.BTDecorator
+// 0x0008 (0x0068 - 0x0060)
+class UBTDecorator : public UBTAuxiliaryNode
+{
+public:
+	uint8                                         BitPad_60_0 : 7;                                   // 0x0060(0x0001)(Fixing Bit-Field Size Between Bits [ Dumper-7 ])
+	uint8                                         bInverseCondition : 1;                             // 0x0060(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate))
+	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	EBTFlowAbortMode                              FlowAbortMode;                                     // 0x0064(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_65[0x3];                                       // 0x0065(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTDecorator")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTDecorator")
+	}
+	static class UBTDecorator* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTDecorator>();
+	}
+};
+DUMPER7_ASSERTS_UBTDecorator;
+
+// Class AIModule.BTDecorator_BlackboardBase
+// 0x0028 (0x0090 - 0x0068)
+class UBTDecorator_BlackboardBase : public UBTDecorator
+{
+public:
+	struct FBlackboardKeySelector                 BlackboardKey;                                     // 0x0068(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTDecorator_BlackboardBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTDecorator_BlackboardBase")
+	}
+	static class UBTDecorator_BlackboardBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTDecorator_BlackboardBase>();
+	}
+};
+DUMPER7_ASSERTS_UBTDecorator_BlackboardBase;
+
+// Class AIModule.BTDecorator_Blackboard
+// 0x0030 (0x00C0 - 0x0090)
+class UBTDecorator_Blackboard : public UBTDecorator_BlackboardBase
+{
+public:
+	int32                                         IntValue;                                          // 0x0090(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         FloatValue;                                        // 0x0094(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                 StringValue;                                       // 0x0098(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                 CachedDescription;                                 // 0x00A8(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         OperationType;                                     // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EBTBlackboardRestart                          NotifyObserver;                                    // 0x00B9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_BA[0x6];                                       // 0x00BA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTDecorator_Blackboard")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTDecorator_Blackboard")
+	}
+	static class UBTDecorator_Blackboard* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTDecorator_Blackboard>();
+	}
+};
+DUMPER7_ASSERTS_UBTDecorator_Blackboard;
+
+// Class AIModule.AIAsyncTaskBlueprintProxy
+// 0x0040 (0x0068 - 0x0028)
+class UAIAsyncTaskBlueprintProxy final : public UObject
+{
+public:
+	TMulticastInlineDelegate<void(EPathFollowingResult MovementResult)> OnSuccess;                   // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EPathFollowingResult MovementResult)> OnFail;                      // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_48[0x20];                                      // 0x0048(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnMoveCompleted(const struct FAIRequestID& RequestID, EPathFollowingResult MovementResult);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AIAsyncTaskBlueprintProxy")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AIAsyncTaskBlueprintProxy")
+	}
+	static class UAIAsyncTaskBlueprintProxy* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAIAsyncTaskBlueprintProxy>();
+	}
+};
+DUMPER7_ASSERTS_UAIAsyncTaskBlueprintProxy;
+
+// Class AIModule.BTTaskNode
+// 0x0018 (0x0070 - 0x0058)
+class UBTTaskNode : public UBTNode
+{
+public:
+	TArray<class UBTService*>                     Services;                                          // 0x0058(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
+	uint8                                         bIgnoreRestartSelf : 1;                            // 0x0068(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTTaskNode")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTTaskNode")
+	}
+	static class UBTTaskNode* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTTaskNode>();
+	}
+};
+DUMPER7_ASSERTS_UBTTaskNode;
 
 // Class AIModule.EnvQueryNode
 // 0x0008 (0x0030 - 0x0028)
@@ -73,81 +312,38 @@ public:
 };
 DUMPER7_ASSERTS_UEnvQueryGenerator;
 
-// Class AIModule.EnvQueryGenerator_ProjectedPoints
-// 0x0040 (0x0090 - 0x0050)
-class UEnvQueryGenerator_ProjectedPoints : public UEnvQueryGenerator
+// Class AIModule.EnvQueryGenerator_BlueprintBase
+// 0x0030 (0x0080 - 0x0050)
+class UEnvQueryGenerator_BlueprintBase final : public UEnvQueryGenerator
 {
 public:
-	struct FEnvTraceData                          ProjectionData;                                    // 0x0050(0x0040)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+	class FText                                   GeneratorsActionDescription;                       // 0x0050(0x0010)(Edit, NativeAccessSpecifierPublic)
+	TSubclassOf<class UEnvQueryContext>           Context;                                           // 0x0060(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UEnvQueryItemType>          GeneratedItemType;                                 // 0x0068(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_70[0x10];                                      // 0x0070(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AddGeneratedActor(class AActor* GeneratedActor) const;
+	void AddGeneratedVector(const struct FVector& GeneratedVector) const;
+	void DoItemGeneration(const TArray<struct FVector>& ContextLocations) const;
+	void DoItemGenerationFromActors(const TArray<class AActor*>& ContextActors) const;
+	class UObject* GetQuerier() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("EnvQueryGenerator_ProjectedPoints")
+		STATIC_CLASS_IMPL("EnvQueryGenerator_BlueprintBase")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"EnvQueryGenerator_ProjectedPoints")
+		STATIC_NAME_IMPL(L"EnvQueryGenerator_BlueprintBase")
 	}
-	static class UEnvQueryGenerator_ProjectedPoints* GetDefaultObj()
+	static class UEnvQueryGenerator_BlueprintBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UEnvQueryGenerator_ProjectedPoints>();
+		return GetDefaultObjImpl<UEnvQueryGenerator_BlueprintBase>();
 	}
 };
-DUMPER7_ASSERTS_UEnvQueryGenerator_ProjectedPoints;
-
-// Class AIModule.EnvQueryGenerator_SimpleGrid
-// 0x0078 (0x0108 - 0x0090)
-class UEnvQueryGenerator_SimpleGrid : public UEnvQueryGenerator_ProjectedPoints
-{
-public:
-	struct FAIDataProviderFloatValue              GridSize;                                          // 0x0090(0x0038)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FAIDataProviderFloatValue              SpaceBetween;                                      // 0x00C8(0x0038)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TSubclassOf<class UEnvQueryContext>           GenerateAround;                                    // 0x0100(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("EnvQueryGenerator_SimpleGrid")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"EnvQueryGenerator_SimpleGrid")
-	}
-	static class UEnvQueryGenerator_SimpleGrid* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryGenerator_SimpleGrid>();
-	}
-};
-DUMPER7_ASSERTS_UEnvQueryGenerator_SimpleGrid;
-
-// Class AIModule.AIAsyncTaskBlueprintProxy
-// 0x0040 (0x0068 - 0x0028)
-class UAIAsyncTaskBlueprintProxy final : public UObject
-{
-public:
-	TMulticastInlineDelegate<void(EPathFollowingResult MovementResult)> OnSuccess;                   // 0x0028(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(EPathFollowingResult MovementResult)> OnFail;                      // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_48[0x20];                                      // 0x0048(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnMoveCompleted(const struct FAIRequestID& RequestID, EPathFollowingResult MovementResult);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AIAsyncTaskBlueprintProxy")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AIAsyncTaskBlueprintProxy")
-	}
-	static class UAIAsyncTaskBlueprintProxy* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAIAsyncTaskBlueprintProxy>();
-	}
-};
-DUMPER7_ASSERTS_UAIAsyncTaskBlueprintProxy;
+DUMPER7_ASSERTS_UEnvQueryGenerator_BlueprintBase;
 
 // Class AIModule.AIResourceInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -178,105 +374,29 @@ public:
 };
 DUMPER7_ASSERTS_IAIResourceInterface;
 
-// Class AIModule.BTNode
-// 0x0030 (0x0058 - 0x0028)
-class UBTNode : public UObject
+// Class AIModule.AISenseConfig_Touch
+// 0x0008 (0x0050 - 0x0048)
+class UAISenseConfig_Touch final : public UAISenseConfig
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 NodeName;                                          // 0x0030(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UBehaviorTree*                          TreeAsset;                                         // 0x0040(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, ExperimentalNeverOverriden)
-	class UBTCompositeNode*                       ParentNode;                                        // 0x0048(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, ExperimentalNeverOverriden)
-	uint8                                         Pad_50[0x8];                                       // 0x0050(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FAISenseAffiliationFilter              DetectionByAffiliation;                            // 0x0048(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("BTNode")
+		STATIC_CLASS_IMPL("AISenseConfig_Touch")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"BTNode")
+		STATIC_NAME_IMPL(L"AISenseConfig_Touch")
 	}
-	static class UBTNode* GetDefaultObj()
+	static class UAISenseConfig_Touch* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTNode>();
+		return GetDefaultObjImpl<UAISenseConfig_Touch>();
 	}
 };
-DUMPER7_ASSERTS_UBTNode;
-
-// Class AIModule.BTCompositeNode
-// 0x0028 (0x0080 - 0x0058)
-class UBTCompositeNode : public UBTNode
-{
-public:
-	TArray<struct FBTCompositeChild>              Children;                                          // 0x0058(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class UBTService*>                     Services;                                          // 0x0068(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
-	uint8                                         bApplyDecoratorScope : 1;                          // 0x0078(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTCompositeNode")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTCompositeNode")
-	}
-	static class UBTCompositeNode* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTCompositeNode>();
-	}
-};
-DUMPER7_ASSERTS_UBTCompositeNode;
-
-// Class AIModule.BTComposite_Selector
-// 0x0000 (0x0080 - 0x0080)
-class UBTComposite_Selector final : public UBTCompositeNode
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTComposite_Selector")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTComposite_Selector")
-	}
-	static class UBTComposite_Selector* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTComposite_Selector>();
-	}
-};
-DUMPER7_ASSERTS_UBTComposite_Selector;
-
-// Class AIModule.EnvQueryGenerator_Composite
-// 0x0020 (0x0070 - 0x0050)
-class UEnvQueryGenerator_Composite final : public UEnvQueryGenerator
-{
-public:
-	TArray<class UEnvQueryGenerator*>             Generators;                                        // 0x0050(0x0010)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
-	uint8                                         bAllowDifferentItemTypes : 1;                      // 0x0060(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bHasMatchingItemType : 1;                          // 0x0060(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UEnvQueryItemType>          ForcedItemType;                                    // 0x0068(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("EnvQueryGenerator_Composite")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"EnvQueryGenerator_Composite")
-	}
-	static class UEnvQueryGenerator_Composite* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryGenerator_Composite>();
-	}
-};
-DUMPER7_ASSERTS_UEnvQueryGenerator_Composite;
+DUMPER7_ASSERTS_UAISenseConfig_Touch;
 
 // Class AIModule.AISenseBlueprintListener
 // 0x0000 (0x0108 - 0x0108)
@@ -298,51 +418,90 @@ public:
 };
 DUMPER7_ASSERTS_UAISenseBlueprintListener;
 
-// Class AIModule.AISenseEvent
-// 0x0000 (0x0028 - 0x0028)
-class UAISenseEvent : public UObject
+// Class AIModule.AISenseConfig_Blueprint
+// 0x0008 (0x0050 - 0x0048)
+class UAISenseConfig_Blueprint final : public UAISenseConfig
 {
 public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AISenseEvent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AISenseEvent")
-	}
-	static class UAISenseEvent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAISenseEvent>();
-	}
-};
-DUMPER7_ASSERTS_UAISenseEvent;
-
-// Class AIModule.AISenseConfig
-// 0x0020 (0x0048 - 0x0028)
-class UAISenseConfig : public UObject
-{
-public:
-	struct FColor                                 DebugColor;                                        // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MaxAge;                                            // 0x002C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         bStartsEnabled : 1;                                // 0x0030(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         Pad_31[0x17];                                      // 0x0031(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UAISense_Blueprint>         Implementation;                                    // 0x0048(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, NoClear, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("AISenseConfig")
+		STATIC_CLASS_IMPL("AISenseConfig_Blueprint")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"AISenseConfig")
+		STATIC_NAME_IMPL(L"AISenseConfig_Blueprint")
 	}
-	static class UAISenseConfig* GetDefaultObj()
+	static class UAISenseConfig_Blueprint* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UAISenseConfig>();
+		return GetDefaultObjImpl<UAISenseConfig_Blueprint>();
 	}
 };
-DUMPER7_ASSERTS_UAISenseConfig;
+DUMPER7_ASSERTS_UAISenseConfig_Blueprint;
+
+// Class AIModule.AISubsystem
+// 0x0010 (0x0038 - 0x0028)
+class UAISubsystem : public UObject
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAISystem*                              AISystem;                                          // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, ExperimentalNeverOverriden)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AISubsystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AISubsystem")
+	}
+	static class UAISubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAISubsystem>();
+	}
+};
+DUMPER7_ASSERTS_UAISubsystem;
+
+// Class AIModule.EnvQueryManager
+// 0x0120 (0x0158 - 0x0038)
+class UEnvQueryManager final : public UAISubsystem
+{
+public:
+	uint8                                         Pad_38[0x70];                                      // 0x0038(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FEnvQueryInstanceCache>         InstanceCache;                                     // 0x00A8(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	TArray<class UEnvQueryContext*>               LocalContexts;                                     // 0x00B8(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, ExperimentalNeverOverriden)
+	TArray<class UEnvQueryInstanceBlueprintWrapper*> GCShieldedWrappers;                             // 0x00C8(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, ExperimentalNeverOverriden)
+	uint8                                         Pad_D8[0x54];                                      // 0x00D8(0x0054)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MaxAllowedTestingTime;                             // 0x012C(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bTestQueriesUsingBreadth;                          // 0x0130(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_131[0x3];                                      // 0x0131(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         QueryCountWarningThreshold;                        // 0x0134(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	double                                        QueryCountWarningInterval;                         // 0x0138(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	double                                        ExecutionTimeWarningSeconds;                       // 0x0140(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	double                                        HandlingResultTimeWarningSeconds;                  // 0x0148(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	double                                        GenerationTimeWarningSeconds;                      // 0x0150(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UEnvQueryInstanceBlueprintWrapper* RunEQSQuery(class UObject* WorldContextObject, class UEnvQuery* QueryTemplate, class UObject* Querier, EEnvQueryRunMode RunMode, TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("EnvQueryManager")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"EnvQueryManager")
+	}
+	static class UEnvQueryManager* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryManager>();
+	}
+};
+DUMPER7_ASSERTS_UEnvQueryManager;
 
 // Class AIModule.AISenseConfig_Hearing
 // 0x0018 (0x0060 - 0x0048)
@@ -372,76 +531,6 @@ public:
 };
 DUMPER7_ASSERTS_UAISenseConfig_Hearing;
 
-// Class AIModule.BTAuxiliaryNode
-// 0x0008 (0x0060 - 0x0058)
-class UBTAuxiliaryNode : public UBTNode
-{
-public:
-	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTAuxiliaryNode")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTAuxiliaryNode")
-	}
-	static class UBTAuxiliaryNode* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTAuxiliaryNode>();
-	}
-};
-DUMPER7_ASSERTS_UBTAuxiliaryNode;
-
-// Class AIModule.EnvQueryOption
-// 0x0018 (0x0040 - 0x0028)
-class UEnvQueryOption final : public UObject
-{
-public:
-	class UEnvQueryGenerator*                     Generator;                                         // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
-	TArray<class UEnvQueryTest*>                  Tests;                                             // 0x0030(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("EnvQueryOption")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"EnvQueryOption")
-	}
-	static class UEnvQueryOption* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryOption>();
-	}
-};
-DUMPER7_ASSERTS_UEnvQueryOption;
-
-// Class AIModule.AISenseConfig_Blueprint
-// 0x0008 (0x0050 - 0x0048)
-class UAISenseConfig_Blueprint final : public UAISenseConfig
-{
-public:
-	TSubclassOf<class UAISense_Blueprint>         Implementation;                                    // 0x0048(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, NoClear, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AISenseConfig_Blueprint")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AISenseConfig_Blueprint")
-	}
-	static class UAISenseConfig_Blueprint* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAISenseConfig_Blueprint>();
-	}
-};
-DUMPER7_ASSERTS_UAISenseConfig_Blueprint;
-
 // Class AIModule.AISenseConfig_Prediction
 // 0x0000 (0x0048 - 0x0048)
 class UAISenseConfig_Prediction final : public UAISenseConfig
@@ -461,37 +550,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAISenseConfig_Prediction;
-
-// Class AIModule.AISenseConfig_Sight
-// 0x0028 (0x0070 - 0x0048)
-class UAISenseConfig_Sight final : public UAISenseConfig
-{
-public:
-	TSubclassOf<class UAISense_Sight>             Implementation;                                    // 0x0048(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, NoClear, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SightRadius;                                       // 0x0050(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LoseSightRadius;                                   // 0x0054(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PeripheralVisionAngleDegrees;                      // 0x0058(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAISenseAffiliationFilter              DetectionByAffiliation;                            // 0x005C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         AutoSuccessRangeFromLastSeenLocation;              // 0x0060(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PointOfViewBackwardOffset;                         // 0x0064(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NearClippingRadius;                                // 0x0068(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AISenseConfig_Sight")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AISenseConfig_Sight")
-	}
-	static class UAISenseConfig_Sight* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAISenseConfig_Sight>();
-	}
-};
-DUMPER7_ASSERTS_UAISenseConfig_Sight;
 
 // Class AIModule.AISenseConfig_Team
 // 0x0000 (0x0048 - 0x0048)
@@ -513,29 +571,25 @@ public:
 };
 DUMPER7_ASSERTS_UAISenseConfig_Team;
 
-// Class AIModule.AISenseConfig_Touch
-// 0x0008 (0x0050 - 0x0048)
-class UAISenseConfig_Touch final : public UAISenseConfig
+// Class AIModule.AISenseEvent
+// 0x0000 (0x0028 - 0x0028)
+class UAISenseEvent : public UObject
 {
-public:
-	struct FAISenseAffiliationFilter              DetectionByAffiliation;                            // 0x0048(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("AISenseConfig_Touch")
+		STATIC_CLASS_IMPL("AISenseEvent")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"AISenseConfig_Touch")
+		STATIC_NAME_IMPL(L"AISenseEvent")
 	}
-	static class UAISenseConfig_Touch* GetDefaultObj()
+	static class UAISenseEvent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UAISenseConfig_Touch>();
+		return GetDefaultObjImpl<UAISenseEvent>();
 	}
 };
-DUMPER7_ASSERTS_UAISenseConfig_Touch;
+DUMPER7_ASSERTS_UAISenseEvent;
 
 // Class AIModule.AISenseEvent_Damage
 // 0x0050 (0x0078 - 0x0028)
@@ -1115,30 +1169,6 @@ public:
 };
 DUMPER7_ASSERTS_UAIResource_Logic;
 
-// Class AIModule.AISubsystem
-// 0x0010 (0x0038 - 0x0028)
-class UAISubsystem : public UObject
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAISystem*                              AISystem;                                          // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, ExperimentalNeverOverriden)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AISubsystem")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AISubsystem")
-	}
-	static class UAISubsystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAISubsystem>();
-	}
-};
-DUMPER7_ASSERTS_UAISubsystem;
-
 // Class AIModule.AISystem
 // 0x0140 (0x01A0 - 0x0060)
 class UAISystem final : public UAISystemBase
@@ -1717,32 +1747,31 @@ public:
 };
 DUMPER7_ASSERTS_UBlackboardKeyType_Vector;
 
-// Class AIModule.BTDecorator
-// 0x0008 (0x0068 - 0x0060)
-class UBTDecorator : public UBTAuxiliaryNode
+// Class AIModule.BTCompositeNode
+// 0x0028 (0x0080 - 0x0058)
+class UBTCompositeNode : public UBTNode
 {
 public:
-	uint8                                         BitPad_60_0 : 7;                                   // 0x0060(0x0001)(Fixing Bit-Field Size Between Bits [ Dumper-7 ])
-	uint8                                         bInverseCondition : 1;                             // 0x0060(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate))
-	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	EBTFlowAbortMode                              FlowAbortMode;                                     // 0x0064(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_65[0x3];                                       // 0x0065(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<struct FBTCompositeChild>              Children;                                          // 0x0058(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UBTService*>                     Services;                                          // 0x0068(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
+	uint8                                         bApplyDecoratorScope : 1;                          // 0x0078(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("BTDecorator")
+		STATIC_CLASS_IMPL("BTCompositeNode")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"BTDecorator")
+		STATIC_NAME_IMPL(L"BTCompositeNode")
 	}
-	static class UBTDecorator* GetDefaultObj()
+	static class UBTCompositeNode* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTDecorator>();
+		return GetDefaultObjImpl<UBTCompositeNode>();
 	}
 };
-DUMPER7_ASSERTS_UBTDecorator;
+DUMPER7_ASSERTS_UBTCompositeNode;
 
 // Class AIModule.BTFunctionLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -1820,30 +1849,25 @@ public:
 };
 DUMPER7_ASSERTS_UBTService;
 
-// Class AIModule.BTTaskNode
-// 0x0018 (0x0070 - 0x0058)
-class UBTTaskNode : public UBTNode
+// Class AIModule.BTComposite_Selector
+// 0x0000 (0x0080 - 0x0080)
+class UBTComposite_Selector final : public UBTCompositeNode
 {
-public:
-	TArray<class UBTService*>                     Services;                                          // 0x0058(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
-	uint8                                         bIgnoreRestartSelf : 1;                            // 0x0068(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("BTTaskNode")
+		STATIC_CLASS_IMPL("BTComposite_Selector")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"BTTaskNode")
+		STATIC_NAME_IMPL(L"BTComposite_Selector")
 	}
-	static class UBTTaskNode* GetDefaultObj()
+	static class UBTComposite_Selector* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTTaskNode>();
+		return GetDefaultObjImpl<UBTComposite_Selector>();
 	}
 };
-DUMPER7_ASSERTS_UBTTaskNode;
+DUMPER7_ASSERTS_UBTComposite_Selector;
 
 // Class AIModule.BTComposite_Sequence
 // 0x0000 (0x0080 - 0x0080)
@@ -1888,58 +1912,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBTComposite_SimpleParallel;
-
-// Class AIModule.BTDecorator_BlackboardBase
-// 0x0028 (0x0090 - 0x0068)
-class UBTDecorator_BlackboardBase : public UBTDecorator
-{
-public:
-	struct FBlackboardKeySelector                 BlackboardKey;                                     // 0x0068(0x0028)(Edit, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTDecorator_BlackboardBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTDecorator_BlackboardBase")
-	}
-	static class UBTDecorator_BlackboardBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTDecorator_BlackboardBase>();
-	}
-};
-DUMPER7_ASSERTS_UBTDecorator_BlackboardBase;
-
-// Class AIModule.BTDecorator_Blackboard
-// 0x0030 (0x00C0 - 0x0090)
-class UBTDecorator_Blackboard : public UBTDecorator_BlackboardBase
-{
-public:
-	int32                                         IntValue;                                          // 0x0090(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         FloatValue;                                        // 0x0094(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                 StringValue;                                       // 0x0098(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                 CachedDescription;                                 // 0x00A8(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         OperationType;                                     // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EBTBlackboardRestart                          NotifyObserver;                                    // 0x00B9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_BA[0x6];                                       // 0x00BA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BTDecorator_Blackboard")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BTDecorator_Blackboard")
-	}
-	static class UBTDecorator_Blackboard* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTDecorator_Blackboard>();
-	}
-};
-DUMPER7_ASSERTS_UBTDecorator_Blackboard;
 
 // Class AIModule.BTDecorator_BlueprintBase
 // 0x0038 (0x00A0 - 0x0068)
@@ -3255,43 +3227,29 @@ public:
 };
 DUMPER7_ASSERTS_UEnvQueryInstanceBlueprintWrapper;
 
-// Class AIModule.EnvQueryManager
-// 0x0120 (0x0158 - 0x0038)
-class UEnvQueryManager final : public UAISubsystem
+// Class AIModule.EnvQueryOption
+// 0x0018 (0x0040 - 0x0028)
+class UEnvQueryOption final : public UObject
 {
 public:
-	uint8                                         Pad_38[0x70];                                      // 0x0038(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FEnvQueryInstanceCache>         InstanceCache;                                     // 0x00A8(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
-	TArray<class UEnvQueryContext*>               LocalContexts;                                     // 0x00B8(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, ExperimentalNeverOverriden)
-	TArray<class UEnvQueryInstanceBlueprintWrapper*> GCShieldedWrappers;                             // 0x00C8(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, ExperimentalNeverOverriden)
-	uint8                                         Pad_D8[0x54];                                      // 0x00D8(0x0054)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MaxAllowedTestingTime;                             // 0x012C(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bTestQueriesUsingBreadth;                          // 0x0130(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_131[0x3];                                      // 0x0131(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         QueryCountWarningThreshold;                        // 0x0134(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	double                                        QueryCountWarningInterval;                         // 0x0138(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	double                                        ExecutionTimeWarningSeconds;                       // 0x0140(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	double                                        HandlingResultTimeWarningSeconds;                  // 0x0148(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	double                                        GenerationTimeWarningSeconds;                      // 0x0150(0x0008)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	static class UEnvQueryInstanceBlueprintWrapper* RunEQSQuery(class UObject* WorldContextObject, class UEnvQuery* QueryTemplate, class UObject* Querier, EEnvQueryRunMode RunMode, TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass);
+	class UEnvQueryGenerator*                     Generator;                                         // 0x0028(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
+	TArray<class UEnvQueryTest*>                  Tests;                                             // 0x0030(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("EnvQueryManager")
+		STATIC_CLASS_IMPL("EnvQueryOption")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"EnvQueryManager")
+		STATIC_NAME_IMPL(L"EnvQueryOption")
 	}
-	static class UEnvQueryManager* GetDefaultObj()
+	static class UEnvQueryOption* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UEnvQueryManager>();
+		return GetDefaultObjImpl<UEnvQueryOption>();
 	}
 };
-DUMPER7_ASSERTS_UEnvQueryManager;
+DUMPER7_ASSERTS_UEnvQueryOption;
 
 // Class AIModule.EnvQueryTest
 // 0x01C8 (0x01F8 - 0x0030)
@@ -3428,38 +3386,55 @@ public:
 };
 DUMPER7_ASSERTS_UEnvQueryGenerator_ActorsOfClass;
 
-// Class AIModule.EnvQueryGenerator_BlueprintBase
-// 0x0030 (0x0080 - 0x0050)
-class UEnvQueryGenerator_BlueprintBase final : public UEnvQueryGenerator
+// Class AIModule.EnvQueryGenerator_Composite
+// 0x0020 (0x0070 - 0x0050)
+class UEnvQueryGenerator_Composite final : public UEnvQueryGenerator
 {
 public:
-	class FText                                   GeneratorsActionDescription;                       // 0x0050(0x0010)(Edit, NativeAccessSpecifierPublic)
-	TSubclassOf<class UEnvQueryContext>           Context;                                           // 0x0060(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UEnvQueryItemType>          GeneratedItemType;                                 // 0x0068(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_70[0x10];                                      // 0x0070(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void AddGeneratedActor(class AActor* GeneratedActor) const;
-	void AddGeneratedVector(const struct FVector& GeneratedVector) const;
-	void DoItemGeneration(const TArray<struct FVector>& ContextLocations) const;
-	void DoItemGenerationFromActors(const TArray<class AActor*>& ContextActors) const;
-	class UObject* GetQuerier() const;
+	TArray<class UEnvQueryGenerator*>             Generators;                                        // 0x0050(0x0010)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
+	uint8                                         bAllowDifferentItemTypes : 1;                      // 0x0060(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bHasMatchingItemType : 1;                          // 0x0060(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UEnvQueryItemType>          ForcedItemType;                                    // 0x0068(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("EnvQueryGenerator_BlueprintBase")
+		STATIC_CLASS_IMPL("EnvQueryGenerator_Composite")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"EnvQueryGenerator_BlueprintBase")
+		STATIC_NAME_IMPL(L"EnvQueryGenerator_Composite")
 	}
-	static class UEnvQueryGenerator_BlueprintBase* GetDefaultObj()
+	static class UEnvQueryGenerator_Composite* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UEnvQueryGenerator_BlueprintBase>();
+		return GetDefaultObjImpl<UEnvQueryGenerator_Composite>();
 	}
 };
-DUMPER7_ASSERTS_UEnvQueryGenerator_BlueprintBase;
+DUMPER7_ASSERTS_UEnvQueryGenerator_Composite;
+
+// Class AIModule.EnvQueryGenerator_ProjectedPoints
+// 0x0040 (0x0090 - 0x0050)
+class UEnvQueryGenerator_ProjectedPoints : public UEnvQueryGenerator
+{
+public:
+	struct FEnvTraceData                          ProjectionData;                                    // 0x0050(0x0040)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("EnvQueryGenerator_ProjectedPoints")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"EnvQueryGenerator_ProjectedPoints")
+	}
+	static class UEnvQueryGenerator_ProjectedPoints* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryGenerator_ProjectedPoints>();
+	}
+};
+DUMPER7_ASSERTS_UEnvQueryGenerator_ProjectedPoints;
 
 // Class AIModule.EnvQueryGenerator_Cone
 // 0x00F0 (0x0180 - 0x0090)
@@ -3583,6 +3558,31 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UEnvQueryGenerator_OnCircle;
+
+// Class AIModule.EnvQueryGenerator_SimpleGrid
+// 0x0078 (0x0108 - 0x0090)
+class UEnvQueryGenerator_SimpleGrid : public UEnvQueryGenerator_ProjectedPoints
+{
+public:
+	struct FAIDataProviderFloatValue              GridSize;                                          // 0x0090(0x0038)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FAIDataProviderFloatValue              SpaceBetween;                                      // 0x00C8(0x0038)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TSubclassOf<class UEnvQueryContext>           GenerateAround;                                    // 0x0100(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("EnvQueryGenerator_SimpleGrid")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"EnvQueryGenerator_SimpleGrid")
+	}
+	static class UEnvQueryGenerator_SimpleGrid* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryGenerator_SimpleGrid>();
+	}
+};
+DUMPER7_ASSERTS_UEnvQueryGenerator_SimpleGrid;
 
 // Class AIModule.EnvQueryGenerator_PathingGrid
 // 0x0078 (0x0180 - 0x0108)

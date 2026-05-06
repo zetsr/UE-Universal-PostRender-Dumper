@@ -10,23 +10,23 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 #include "UMG_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DyeRegionButton.DyeRegionButton_C
-// 0x0028 (0x0828 - 0x0800)
+// 0x0028 (0x0858 - 0x0830)
 class UDyeRegionButton_C final : public UDyeRegionButtonWidget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0800(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBorder*                                Border_184;                                        // 0x0808(0x0008)(ExportObject, ZeroConstructor, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UCustomButtonWidget*                    Button;                                            // 0x0810(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UButton*                                Button_25;                                         // 0x0818(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UBorder*                                PaintColorPreview;                                 // 0x0820(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBorder*                                Border_184;                                        // 0x0838(0x0008)(ExportObject, ZeroConstructor, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCustomButtonWidget*                    Button;                                            // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                Button_25;                                         // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBorder*                                PaintColorPreview;                                 // 0x0850(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void BndEvt__DyeRegionButton_Button_25_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();

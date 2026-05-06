@@ -715,14 +715,28 @@ public:
 };
 DUMPER7_ASSERTS_FMovieSceneDoubleChannel;
 
-// ScriptStruct MovieScene.MovieSceneSubSectionOriginOverrideMask
-// 0x0004 (0x0004 - 0x0000)
-struct FMovieSceneSubSectionOriginOverrideMask final
+// ScriptStruct MovieScene.MovieSceneTrackEvaluationFieldEntry
+// 0x0020 (0x0020 - 0x0000)
+struct FMovieSceneTrackEvaluationFieldEntry final
 {
 public:
-	uint32                                        Mask;                                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMovieSceneSection*                     Section;                                           // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
+	struct FFrameNumberRange                      Range;                                             // 0x0008(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FFrameNumber                           ForcedTime;                                        // 0x0018(0x0004)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESectionEvaluationFlags                       Flags;                                             // 0x001C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x1];                                       // 0x001D(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int16                                         LegacySortOrder;                                   // 0x001E(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMovieSceneSubSectionOriginOverrideMask;
+DUMPER7_ASSERTS_FMovieSceneTrackEvaluationFieldEntry;
+
+// ScriptStruct MovieScene.MovieSceneTrackEvaluationField
+// 0x0010 (0x0010 - 0x0000)
+struct FMovieSceneTrackEvaluationField final
+{
+public:
+	TArray<struct FMovieSceneTrackEvaluationFieldEntry> Entries;                                     // 0x0000(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMovieSceneTrackEvaluationField;
 
 // ScriptStruct MovieScene.MovieSceneTimeWarpChannel
 // 0x0010 (0x0128 - 0x0118)
@@ -788,6 +802,15 @@ public:
 };
 DUMPER7_ASSERTS_FMovieSceneTimeWarpLoopFloat;
 
+// ScriptStruct MovieScene.MovieSceneTrackRowMetadata
+// 0x0008 (0x0008 - 0x0000)
+struct FMovieSceneTrackRowMetadata final
+{
+public:
+	struct FMovieSceneConditionContainer          ConditionContainer;                                // 0x0000(0x0008)(Edit, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMovieSceneTrackRowMetadata;
+
 // ScriptStruct MovieScene.MovieSceneTimeWarpClampFloat
 // 0x0004 (0x0004 - 0x0000)
 struct FMovieSceneTimeWarpClampFloat final
@@ -796,20 +819,6 @@ public:
 	float                                         max_0;                                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMovieSceneTimeWarpClampFloat;
-
-// ScriptStruct MovieScene.MovieSceneTrackEvaluationFieldEntry
-// 0x0020 (0x0020 - 0x0000)
-struct FMovieSceneTrackEvaluationFieldEntry final
-{
-public:
-	class UMovieSceneSection*                     Section;                                           // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
-	struct FFrameNumberRange                      Range;                                             // 0x0008(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FFrameNumber                           ForcedTime;                                        // 0x0018(0x0004)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESectionEvaluationFlags                       Flags;                                             // 0x001C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x1];                                       // 0x001D(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int16                                         LegacySortOrder;                                   // 0x001E(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMovieSceneTrackEvaluationFieldEntry;
 
 // ScriptStruct MovieScene.MovieSceneTimeWarpFrameRate
 // 0x0006 (0x0006 - 0x0000)
@@ -1855,23 +1864,14 @@ public:
 };
 DUMPER7_ASSERTS_FMovieSceneTrackDisplayOptions;
 
-// ScriptStruct MovieScene.MovieSceneTrackRowMetadata
-// 0x0008 (0x0008 - 0x0000)
-struct FMovieSceneTrackRowMetadata final
+// ScriptStruct MovieScene.MovieSceneSubSectionOriginOverrideMask
+// 0x0004 (0x0004 - 0x0000)
+struct FMovieSceneSubSectionOriginOverrideMask final
 {
 public:
-	struct FMovieSceneConditionContainer          ConditionContainer;                                // 0x0000(0x0008)(Edit, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	uint32                                        Mask;                                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
-DUMPER7_ASSERTS_FMovieSceneTrackRowMetadata;
-
-// ScriptStruct MovieScene.MovieSceneTrackEvaluationField
-// 0x0010 (0x0010 - 0x0000)
-struct FMovieSceneTrackEvaluationField final
-{
-public:
-	TArray<struct FMovieSceneTrackEvaluationFieldEntry> Entries;                                     // 0x0000(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMovieSceneTrackEvaluationField;
+DUMPER7_ASSERTS_FMovieSceneSubSectionOriginOverrideMask;
 
 // ScriptStruct MovieScene.TestMovieSceneEvalTemplate
 // 0x0000 (0x0020 - 0x0020)

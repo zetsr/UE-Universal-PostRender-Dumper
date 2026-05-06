@@ -17,17 +17,17 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_Button_SignIn.UI_CFCore_Button_SignIn_C
-// 0x0038 (0x0868 - 0x0830)
+// 0x0038 (0x0898 - 0x0860)
 class UUI_CFCore_Button_SignIn_C final : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_Button_SignIn_C;          // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UButton*                                Button_SingIn;                                     // 0x0838(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 Image_138;                                         // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Overlay_C*                   UI_Overlay;                                        // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	bool                                          IsLogedin;                                         // 0x0850(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_851[0x7];                                      // 0x0851(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnSignInClicked;                                   // 0x0858(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_Button_SignIn_C;          // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UButton*                                Button_SingIn;                                     // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Image_138;                                         // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Overlay_C*                   UI_Overlay;                                        // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	bool                                          IsLogedin;                                         // 0x0880(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_881[0x7];                                      // 0x0881(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnSignInClicked;                                   // 0x0888(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	void BndEvt__SignIn_Button_20_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();

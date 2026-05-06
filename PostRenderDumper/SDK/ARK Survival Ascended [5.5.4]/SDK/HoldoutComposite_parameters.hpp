@@ -14,6 +14,24 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function HoldoutComposite.HoldoutCompositeComponent.SetEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct HoldoutCompositeComponent_SetEnabled final
+{
+public:
+	bool                                          bInEnabled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_HoldoutCompositeComponent_SetEnabled;
+
+// Function HoldoutComposite.HoldoutCompositeComponent.IsEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct HoldoutCompositeComponent_IsEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_HoldoutCompositeComponent_IsEnabled;
+
 // Function HoldoutComposite.HoldoutCompositeSubsystem.RegisterPrimitive
 // 0x0030 (0x0030 - 0x0000)
 struct HoldoutCompositeSubsystem_RegisterPrimitive final
@@ -35,24 +53,6 @@ public:
 	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_HoldoutCompositeSubsystem_UnregisterPrimitive;
-
-// Function HoldoutComposite.HoldoutCompositeComponent.SetEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct HoldoutCompositeComponent_SetEnabled final
-{
-public:
-	bool                                          bInEnabled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_HoldoutCompositeComponent_SetEnabled;
-
-// Function HoldoutComposite.HoldoutCompositeComponent.IsEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct HoldoutCompositeComponent_IsEnabled final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_HoldoutCompositeComponent_IsEnabled;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

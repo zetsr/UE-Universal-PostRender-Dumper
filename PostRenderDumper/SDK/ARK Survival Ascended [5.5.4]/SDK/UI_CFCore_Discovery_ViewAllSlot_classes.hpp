@@ -17,15 +17,15 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_Discovery_ViewAllSlot.UI_CFCore_Discovery_ViewAllSlot_C
-// 0x0030 (0x0860 - 0x0830)
+// 0x0030 (0x0890 - 0x0860)
 class UUI_CFCore_Discovery_ViewAllSlot_C final : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_Discovery_ViewAllSlot_C;  // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UButton*                                Button_GoToModPage;                                // 0x0838(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class USizeBox*                               SizeBox_2;                                         // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Overlay_C*                   UI_Overlay;                                        // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void()>              OnPressedViewAll;                                  // 0x0850(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_Discovery_ViewAllSlot_C;  // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UButton*                                Button_GoToModPage;                                // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class USizeBox*                               SizeBox_2;                                         // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Overlay_C*                   UI_Overlay;                                        // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void()>              OnPressedViewAll;                                  // 0x0880(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	void BndEvt__UI_ShowcaseSlot_Button_GoToModPage_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();

@@ -16,11 +16,11 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ASAUI_NewsCarousel_Nav_Select.ASAUI_NewsCarousel_Nav_Select_C
-// 0x0008 (0x07D0 - 0x07C8)
+// 0x0008 (0x0800 - 0x07F8)
 class UASAUI_NewsCarousel_Nav_Select_C final : public UUI_MenuCarouselButtonWidget
 {
 public:
-	class UCustomButtonWidget*                    NavButton;                                         // 0x07C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCustomButtonWidget*                    NavButton;                                         // 0x07F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

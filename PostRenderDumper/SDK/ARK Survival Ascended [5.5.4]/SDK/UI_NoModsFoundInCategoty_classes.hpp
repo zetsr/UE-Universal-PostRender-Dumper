@@ -17,14 +17,14 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_NoModsFoundInCategoty.UI_NoModsFoundInCategoty_C
-// 0x0020 (0x0850 - 0x0830)
+// 0x0020 (0x0880 - 0x0860)
 class UUI_NoModsFoundInCategoty_C final : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_NoModsFoundInCategoty_C;         // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCanvasPanel*                           CanvasPanel_0;                                     // 0x0838(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_NoModsBackground;                              // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UVerticalBox*                           VerBox_NoInstalledMods;                            // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_NoModsFoundInCategoty_C;         // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCanvasPanel*                           CanvasPanel_0;                                     // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_NoModsBackground;                              // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UVerticalBox*                           VerBox_NoInstalledMods;                            // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_UI_NoModsFoundInCategoty(int32 EntryPoint);

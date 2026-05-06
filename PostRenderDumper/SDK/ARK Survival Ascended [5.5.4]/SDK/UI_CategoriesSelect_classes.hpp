@@ -17,18 +17,18 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CategoriesSelect.UI_CategoriesSelect_C
-// 0x0050 (0x1500 - 0x14B0)
+// 0x0050 (0x1530 - 0x14E0)
 class UUI_CategoriesSelect_C final : public UUI_CFCore_CustomComboBox_C
 {
 public:
-	uint8                                         Pad_14A1[0x7];                                     // 0x14A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CategoriesSelect_C;              // 0x14A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	TMulticastInlineDelegate<void()>              OnGenerated;                                       // 0x14B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	int64                                         CurrentClassCategoryID;                            // 0x14C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class FString>                         Temp;                                              // 0x14C8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int64                                         SelectedCategoryID;                                // 0x14D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UUI_CFCore_ParentBrowser_C*             UI_ParentPage;                                     // 0x14E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void()>              OnOptionChangedIGuess;                             // 0x14E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	uint8                                         Pad_14D1[0x7];                                     // 0x14D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CategoriesSelect_C;              // 0x14D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	TMulticastInlineDelegate<void()>              OnGenerated;                                       // 0x14E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	int64                                         CurrentClassCategoryID;                            // 0x14F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class FString>                         Temp;                                              // 0x14F8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int64                                         SelectedCategoryID;                                // 0x1508(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UUI_CFCore_ParentBrowser_C*             UI_ParentPage;                                     // 0x1510(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void()>              OnOptionChangedIGuess;                             // 0x1518(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	void CreateAllCategoriesCategory();

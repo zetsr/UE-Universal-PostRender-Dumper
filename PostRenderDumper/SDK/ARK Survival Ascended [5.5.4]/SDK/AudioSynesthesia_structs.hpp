@@ -73,6 +73,17 @@ enum class EMeterPeakType : uint8
 	EMeterPeakType_MAX                       = 4,
 };
 
+// ScriptStruct AudioSynesthesia.SynesthesiaSpectrumResults
+// 0x0018 (0x0018 - 0x0000)
+struct FSynesthesiaSpectrumResults final
+{
+public:
+	float                                         TimeSeconds;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<float>                                 SpectrumValues;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSynesthesiaSpectrumResults;
+
 // ScriptStruct AudioSynesthesia.ConstantQResults
 // 0x0018 (0x0018 - 0x0000)
 struct FConstantQResults final
@@ -108,16 +119,5 @@ public:
 	float                                         ClippingValue;                                     // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMeterResults;
-
-// ScriptStruct AudioSynesthesia.SynesthesiaSpectrumResults
-// 0x0018 (0x0018 - 0x0000)
-struct FSynesthesiaSpectrumResults final
-{
-public:
-	float                                         TimeSeconds;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<float>                                 SpectrumValues;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSynesthesiaSpectrumResults;
 
 SDK_NAMESPACE_END

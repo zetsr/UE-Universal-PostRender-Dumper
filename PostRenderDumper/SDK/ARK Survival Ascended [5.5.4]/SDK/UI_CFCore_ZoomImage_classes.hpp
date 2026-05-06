@@ -11,39 +11,39 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "cfcore_ui_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
+#include "cfcore_ui_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_ZoomImage.UI_CFCore_ZoomImage_C
-// 0x0340 (0x0B70 - 0x0830)
+// 0x0340 (0x0BA0 - 0x0860)
 class UUI_CFCore_ZoomImage_C final : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_ZoomImage_C;              // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWidgetAnimation*                       SwitchingImagesEnd;                                // 0x0838(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UWidgetAnimation*                       FadeInOnBeginPlay;                                 // 0x0840(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UWidgetAnimation*                       SwitchingImages;                                   // 0x0848(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UButton*                                Buttom_Next;                                       // 0x0850(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UButton*                                Button_Prev;                                       // 0x0858(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_Next;                                          // 0x0860(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_Prev;                                          // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_ScreenshotImg;                                 // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             TEXT_Description;                                  // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             TEXT_PageCounter;                                  // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_Button_CFCore_Global_Back_C*        UI_Button_Ark_Global_Back_C_0;                     // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UVerticalBox*                           VerticalBox_0;                                     // 0x0890(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	int32                                         CurrentImageIndex;                                 // 0x0898(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_89C[0x4];                                      // 0x089C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUI_CFCore_ModPage_C*                   UI_ModPage;                                        // 0x08A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_8A8[0x8];                                      // 0x08A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            CantMoveRightImage;                                // 0x08B0(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateBrush                            CantMoveLeftImage;                                 // 0x0960(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateBrush                            NextArrowImage;                                    // 0x0A10(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateBrush                            PrevArrowImage;                                    // 0x0AC0(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_ZoomImage_C;              // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UWidgetAnimation*                       SwitchingImagesEnd;                                // 0x0868(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       FadeInOnBeginPlay;                                 // 0x0870(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       SwitchingImages;                                   // 0x0878(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UButton*                                Buttom_Next;                                       // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                Button_Prev;                                       // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_Next;                                          // 0x0890(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_Prev;                                          // 0x0898(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_ScreenshotImg;                                 // 0x08A0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TEXT_Description;                                  // 0x08A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TEXT_PageCounter;                                  // 0x08B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_Button_CFCore_Global_Back_C*        UI_Button_Ark_Global_Back_C_0;                     // 0x08B8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UVerticalBox*                           VerticalBox_0;                                     // 0x08C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	int32                                         CurrentImageIndex;                                 // 0x08C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_8CC[0x4];                                      // 0x08CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUI_CFCore_ModPage_C*                   UI_ModPage;                                        // 0x08D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_8D8[0x8];                                      // 0x08D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            CantMoveRightImage;                                // 0x08E0(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateBrush                            CantMoveLeftImage;                                 // 0x0990(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateBrush                            NextArrowImage;                                    // 0x0A40(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateBrush                            PrevArrowImage;                                    // 0x0AF0(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void BindControllerAction();

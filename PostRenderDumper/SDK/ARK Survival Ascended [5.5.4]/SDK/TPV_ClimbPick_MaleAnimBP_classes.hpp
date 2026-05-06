@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass TPV_ClimbPick_MaleAnimBP.TPV_ClimbPick_MaleAnimBP_C
-// 0x0000 (0x1E0A0 - 0x1E0A0)
+// 0x0000 (0x1DE10 - 0x1DE10)
 class UTPV_ClimbPick_MaleAnimBP_C final : public UBaseHumanAnimBP_C
 {
 public:

@@ -16,55 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function GameplayAbilities.AbilityAsync.EndAction
-// (Native, Public, BlueprintCallable)
-
-void UAbilityAsync::EndAction()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityAsync", "EndAction");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilityAsync_WaitGameplayTagCountChanged.WaitGameplayTagCountChangedOnActor
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityAsync_WaitGameplayTagCountChanged*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAbilityAsync_WaitGameplayTagCountChanged* UAbilityAsync_WaitGameplayTagCountChanged::WaitGameplayTagCountChangedOnActor(class AActor* TargetActor, const struct FGameplayTag& Tag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityAsync_WaitGameplayTagCountChanged", "WaitGameplayTagCountChangedOnActor");
-
-	Params::AbilityAsync_WaitGameplayTagCountChanged_WaitGameplayTagCountChangedOnActor Parms{};
-
-	Parms.TargetActor = TargetActor;
-	Parms.Tag = std::move(Tag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function GameplayAbilities.AbilitySystemCheatManagerExtension.AbilityActivate
 // (Final, Exec, Native, Public, Const)
 // Parameters:
@@ -227,6 +178,55 @@ void UAbilitySystemCheatManagerExtension::EffectRemove(const class FString& Name
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilityAsync.EndAction
+// (Native, Public, BlueprintCallable)
+
+void UAbilityAsync::EndAction()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityAsync", "EndAction");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilityAsync_WaitGameplayTagCountChanged.WaitGameplayTagCountChangedOnActor
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityAsync_WaitGameplayTagCountChanged*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAbilityAsync_WaitGameplayTagCountChanged* UAbilityAsync_WaitGameplayTagCountChanged::WaitGameplayTagCountChangedOnActor(class AActor* TargetActor, const struct FGameplayTag& Tag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AbilityAsync_WaitGameplayTagCountChanged", "WaitGameplayTagCountChangedOnActor");
+
+	Params::AbilityAsync_WaitGameplayTagCountChanged_WaitGameplayTagCountChangedOnActor Parms{};
+
+	Parms.TargetActor = TargetActor;
+	Parms.Tag = std::move(Tag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

@@ -10,60 +10,60 @@
 
 #include "Basic.hpp"
 
-#include "CFCoreWidget_classes.hpp"
-#include "STRUCT_CustomComboBoxOption_structs.hpp"
-#include "STRUCT_SubOptions_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "STRUCT_SubOptions_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "STRUCT_CustomComboBoxOption_structs.hpp"
+#include "CFCoreWidget_classes.hpp"
 #include "UMG_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CustomComboBoxOption.UI_CustomComboBoxOption_C
-// 0x0C10 (0x1440 - 0x0830)
+// 0x0C10 (0x1470 - 0x0860)
 class UUI_CustomComboBoxOption_C : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CustomComboBoxOption_C;          // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UButton*                                Button_Option;                                     // 0x0838(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UBorder*                                ImageBorder;                                       // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_Border;                                        // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_ChevronRight;                                  // 0x0850(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UOverlay*                               Overlay_2;                                         // 0x0858(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UBorder*                                SizeBorder;                                        // 0x0860(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class USpacer*                                Spacer_1;                                          // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class USpacer*                                Spacer_2;                                          // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class USpacer*                                Spacer_Text;                                       // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             TEXT_Option;                                       // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_CustomComboBox_C*            UI_CustomComboBoxWidget;                           // 0x0888(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	struct FSTRUCT_CustomComboBoxOption           CategoryInfo;                                      // 0x0890(0x0038)(Edit, BlueprintVisible, ExposeOnSpawn, HasGetValueTypeHash)
-	class FString                                 Text;                                              // 0x08C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	class UUI_CFCore_CustomComboBox_C*            Owner;                                             // 0x08D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	struct FVector2D                              Size;                                              // 0x08E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	double                                        TextSpacing;                                       // 0x08F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	struct FVector2D                              ImageSize;                                         // 0x08F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	bool                                          HasImage;                                          // 0x0908(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_909[0x7];                                      // 0x0909(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             Image;                                             // 0x0910(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	struct FLinearColor                           ImageBackgroundTint;                               // 0x0918(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	struct FVector2D                              ImageBackgroundSize;                               // 0x0928(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	TArray<class FString>                         SubOptionsDEP;                                     // 0x0938(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int32                                         FontSize;                                          // 0x0948(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_94C[0x4];                                      // 0x094C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUI_Sub_Categories_Scroll_C*            SubCategoriesScroll;                               // 0x0950(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_958[0x8];                                      // 0x0958(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FButtonStyle                           ButtonSelectedStyle;                               // 0x0960(0x0370)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FButtonStyle                           ButtonUnselectedStyle;                             // 0x0CD0(0x0370)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSTRUCT_SubOptions                     Settings_Sub_Options;                              // 0x1040(0x0028)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	TArray<struct FSTRUCT_SubOptions>             SubOptions;                                        // 0x1068(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            HoveredText;                                       // 0x1078(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            BaseText;                                          // 0x108C(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            FocusedText;                                       // 0x10A0(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            ActiveText;                                        // 0x10B4(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance)
-	uint8                                         Pad_10C8[0x8];                                     // 0x10C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FButtonStyle                           BaseButtonStyle;                                   // 0x10D0(0x0370)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CustomComboBoxOption_C;          // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UButton*                                Button_Option;                                     // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBorder*                                ImageBorder;                                       // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_Border;                                        // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_ChevronRight;                                  // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UOverlay*                               Overlay_2;                                         // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBorder*                                SizeBorder;                                        // 0x0890(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class USpacer*                                Spacer_1;                                          // 0x0898(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class USpacer*                                Spacer_2;                                          // 0x08A0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class USpacer*                                Spacer_Text;                                       // 0x08A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TEXT_Option;                                       // 0x08B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_CustomComboBox_C*            UI_CustomComboBoxWidget;                           // 0x08B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FSTRUCT_CustomComboBoxOption           CategoryInfo;                                      // 0x08C0(0x0038)(Edit, BlueprintVisible, ExposeOnSpawn, HasGetValueTypeHash)
+	class FString                                 Text;                                              // 0x08F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class UUI_CFCore_CustomComboBox_C*            Owner;                                             // 0x0908(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FVector2D                              Size;                                              // 0x0910(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	double                                        TextSpacing;                                       // 0x0920(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FVector2D                              ImageSize;                                         // 0x0928(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	bool                                          HasImage;                                          // 0x0938(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_939[0x7];                                      // 0x0939(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             Image;                                             // 0x0940(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FLinearColor                           ImageBackgroundTint;                               // 0x0948(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FVector2D                              ImageBackgroundSize;                               // 0x0958(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	TArray<class FString>                         SubOptionsDEP;                                     // 0x0968(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int32                                         FontSize;                                          // 0x0978(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_97C[0x4];                                      // 0x097C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUI_Sub_Categories_Scroll_C*            SubCategoriesScroll;                               // 0x0980(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_988[0x8];                                      // 0x0988(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FButtonStyle                           ButtonSelectedStyle;                               // 0x0990(0x0370)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FButtonStyle                           ButtonUnselectedStyle;                             // 0x0D00(0x0370)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSTRUCT_SubOptions                     Settings_Sub_Options;                              // 0x1070(0x0028)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	TArray<struct FSTRUCT_SubOptions>             SubOptions;                                        // 0x1098(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            HoveredText;                                       // 0x10A8(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            BaseText;                                          // 0x10BC(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            FocusedText;                                       // 0x10D0(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            ActiveText;                                        // 0x10E4(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance)
+	uint8                                         Pad_10F8[0x8];                                     // 0x10F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FButtonStyle                           BaseButtonStyle;                                   // 0x1100(0x0370)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void BndEvt__CustomComboBoxOption_OptionButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();

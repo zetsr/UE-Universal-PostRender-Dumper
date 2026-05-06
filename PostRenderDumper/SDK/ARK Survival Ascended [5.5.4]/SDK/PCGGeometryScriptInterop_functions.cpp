@@ -16,6 +16,58 @@
 
 SDK_NAMESPACE_START
 
+// Function PCGGeometryScriptInterop.PCGGeometryBlueprintElement.ProcessDynamicMesh
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UDynamicMesh*                     InDynMesh                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  OutTags                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UPCGGeometryBlueprintElement::ProcessDynamicMesh(class UDynamicMesh* InDynMesh, TArray<class FString>* OutTags)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGGeometryBlueprintElement", "ProcessDynamicMesh");
+
+	Params::PCGGeometryBlueprintElement_ProcessDynamicMesh Parms{};
+
+	Parms.InDynMesh = InDynMesh;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (OutTags != nullptr)
+		*OutTags = std::move(Parms.OutTags);
+}
+
+
+// Function PCGGeometryScriptInterop.PCGGeometryBlueprintElement.CopyOrStealInputData
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FPCGTaggedData&            InTaggedData                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class UPCGDynamicMeshData*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UPCGDynamicMeshData* UPCGGeometryBlueprintElement::CopyOrStealInputData(const struct FPCGTaggedData& InTaggedData) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PCGGeometryBlueprintElement", "CopyOrStealInputData");
+
+	Params::PCGGeometryBlueprintElement_CopyOrStealInputData Parms{};
+
+	Parms.InTaggedData = std::move(InTaggedData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function PCGGeometryScriptInterop.PCGDynamicMeshData.K2_Initialize
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -67,58 +119,6 @@ void UPCGDynamicMeshData::SetMaterials(const TArray<class UMaterialInterface*>& 
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PCGGeometryScriptInterop.PCGGeometryBlueprintElement.ProcessDynamicMesh
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UDynamicMesh*                     InDynMesh                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FString>*                  OutTags                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UPCGGeometryBlueprintElement::ProcessDynamicMesh(class UDynamicMesh* InDynMesh, TArray<class FString>* OutTags)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGGeometryBlueprintElement", "ProcessDynamicMesh");
-
-	Params::PCGGeometryBlueprintElement_ProcessDynamicMesh Parms{};
-
-	Parms.InDynMesh = InDynMesh;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (OutTags != nullptr)
-		*OutTags = std::move(Parms.OutTags);
-}
-
-
-// Function PCGGeometryScriptInterop.PCGGeometryBlueprintElement.CopyOrStealInputData
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FPCGTaggedData&            InTaggedData                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class UPCGDynamicMeshData*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UPCGDynamicMeshData* UPCGGeometryBlueprintElement::CopyOrStealInputData(const struct FPCGTaggedData& InTaggedData) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGGeometryBlueprintElement", "CopyOrStealInputData");
-
-	Params::PCGGeometryBlueprintElement_CopyOrStealInputData Parms{};
-
-	Parms.InTaggedData = std::move(InTaggedData);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 

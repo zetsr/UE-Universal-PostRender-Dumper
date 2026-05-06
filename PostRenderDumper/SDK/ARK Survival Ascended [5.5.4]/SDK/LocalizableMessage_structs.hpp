@@ -15,15 +15,6 @@
 
 SDK_NAMESPACE_START
 
-// ScriptStruct LocalizableMessage.LocalizableMessageParameterFloat
-// 0x0008 (0x0008 - 0x0000)
-struct FLocalizableMessageParameterFloat final
-{
-public:
-	double                                        Value;                                             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLocalizableMessageParameterFloat;
-
 // ScriptStruct LocalizableMessage.LocalizableMessageParameterEntry
 // 0x0020 (0x0020 - 0x0000)
 struct FLocalizableMessageParameterEntry final
@@ -53,6 +44,15 @@ public:
 	int64                                         Value;                                             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLocalizableMessageParameterInt;
+
+// ScriptStruct LocalizableMessage.LocalizableMessageParameterFloat
+// 0x0008 (0x0008 - 0x0000)
+struct FLocalizableMessageParameterFloat final
+{
+public:
+	double                                        Value;                                             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLocalizableMessageParameterFloat;
 
 // ScriptStruct LocalizableMessage.LocalizableMessageParameterString
 // 0x0010 (0x0010 - 0x0000)

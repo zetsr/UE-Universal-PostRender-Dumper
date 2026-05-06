@@ -10,26 +10,26 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
+#include "ShooterGame_classes.hpp"
 #include "UMG_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass OptionsEntryNew.OptionsEntryNew_C
-// 0x0038 (0x07F0 - 0x07B8)
+// 0x0038 (0x0820 - 0x07E8)
 class UOptionsEntryNew_C final : public UNewOptionsButtonWidget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x07B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCustomButtonWidget*                    Button;                                            // 0x07C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UHorizontalBox*                         CheckBoxHorizBox;                                  // 0x07C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UHorizontalBox*                         SliderHorizBox;                                    // 0x07D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UButton*                                theButton;                                         // 0x07D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UCheckBox*                              TheCheckBox;                                       // 0x07E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class USlider*                                TheSlider;                                         // 0x07E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x07E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCustomButtonWidget*                    Button;                                            // 0x07F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UHorizontalBox*                         CheckBoxHorizBox;                                  // 0x07F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UHorizontalBox*                         SliderHorizBox;                                    // 0x0800(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                theButton;                                         // 0x0808(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCheckBox*                              TheCheckBox;                                       // 0x0810(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class USlider*                                TheSlider;                                         // 0x0818(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void BndEvt__OptionsEntryNew_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();

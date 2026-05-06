@@ -12,9 +12,9 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Engine_classes.hpp"
 #include "Niagara_structs.hpp"
 #include "Niagara_classes.hpp"
-#include "Engine_classes.hpp"
 #include "GeometryCache_structs.hpp"
 
 

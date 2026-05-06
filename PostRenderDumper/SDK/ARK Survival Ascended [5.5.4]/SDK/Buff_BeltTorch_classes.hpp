@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_structs.hpp"
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ShooterGame_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
 SDK_NAMESPACE_START

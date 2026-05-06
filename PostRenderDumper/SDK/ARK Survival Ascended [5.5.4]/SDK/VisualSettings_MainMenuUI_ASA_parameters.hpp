@@ -94,7 +94,8 @@ struct VisualSettings_MainMenuUI_ASA_C_ExecuteUbergraph_VisualSettings_MainMenuU
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          CallFunc_IsXSX_ReturnValue;                        // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   K2Node_ComponentBoundEvent_ReturnValue_3;          // 0x0008(0x0010)()
 	int32                                         K2Node_ComponentBoundEvent_Index_3;                // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
@@ -185,8 +186,8 @@ public:
 	double                                        CallFunc_SetupGettHdrValue_MinValue_ImplicitCast_4; // 0x0260(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         K2Node_VariableSet_HDRDisplayMidLuminance_ImplicitCast_1; // 0x0268(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         K2Node_VariableSet_HDRDisplayMinLuminance_ImplicitCast_1; // 0x026C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_SetupGettHdrValue_MinValue_ImplicitCast_5; // 0x0270(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_SetupGettHdrValue_MaxValue_ImplicitCast_5; // 0x0278(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_SetupGettHdrValue_MaxValue_ImplicitCast_5; // 0x0270(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_SetupGettHdrValue_MinValue_ImplicitCast_5; // 0x0278(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         K2Node_VariableSet_HDRDisplayMaxLuminance_ImplicitCast_1; // 0x0280(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_VisualSettings_MainMenuUI_ASA_C_ExecuteUbergraph_VisualSettings_MainMenuUI_ASA;

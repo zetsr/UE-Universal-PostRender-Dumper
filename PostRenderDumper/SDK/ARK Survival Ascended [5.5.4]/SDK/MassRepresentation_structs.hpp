@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "MassEntity_structs.hpp"
 #include "MassLOD_structs.hpp"
-#include "CoreUObject_structs.hpp"
+#include "MassEntity_structs.hpp"
 #include "MassActors_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 
 

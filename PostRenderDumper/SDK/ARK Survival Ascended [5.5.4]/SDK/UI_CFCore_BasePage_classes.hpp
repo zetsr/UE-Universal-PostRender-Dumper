@@ -17,16 +17,16 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_BasePage.UI_CFCore_BasePage_C
-// 0x0030 (0x0860 - 0x0830)
+// 0x0030 (0x0890 - 0x0860)
 class UUI_CFCore_BasePage_C : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_BasePage_C;               // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UUI_CFCore_StoreMenu_C*                 UI_StoreMenu;                                      // 0x0838(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          FirstLoadDone;                                     // 0x0840(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_841[0x7];                                      // 0x0841(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 MainMenuLevelName;                                 // 0x0848(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, TObjectPtr)
-	double                                        ControlBoxShrinkToSizeDuringGameplay;              // 0x0858(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_BasePage_C;               // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UUI_CFCore_StoreMenu_C*                 UI_StoreMenu;                                      // 0x0868(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          FirstLoadDone;                                     // 0x0870(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_871[0x7];                                      // 0x0871(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 MainMenuLevelName;                                 // 0x0878(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, TObjectPtr)
+	double                                        ControlBoxShrinkToSizeDuringGameplay;              // 0x0888(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ReloadPage();

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "UI_CFCore_ParentBrowser_classes.hpp"
+#include "Engine_structs.hpp"
 #include "cfcore_ui_structs.hpp"
 #include "ENUM_CFCore_SideTabs_structs.hpp"
 
@@ -19,12 +19,12 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_MyMods.UI_CFCore_MyMods_C
-// 0x0018 (0x09E0 - 0x09C8)
+// 0x0018 (0x0A10 - 0x09F8)
 class UUI_CFCore_MyMods_C final : public UUI_CFCore_ParentBrowser_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_MyMods_C;                 // 0x09C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class FString                                 SortOption;                                        // 0x09D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_MyMods_C;                 // 0x09F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class FString                                 SortOption;                                        // 0x0A00(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void Construct();

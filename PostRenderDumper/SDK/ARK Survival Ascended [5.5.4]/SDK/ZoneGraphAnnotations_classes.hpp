@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ZoneGraphAnnotations_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ZoneGraph_structs.hpp"
+#include "ZoneGraphAnnotations_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ZoneGraph_structs.hpp"
 
 
 SDK_NAMESPACE_START

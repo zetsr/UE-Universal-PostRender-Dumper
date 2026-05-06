@@ -16,11 +16,11 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListButton_MainMenu.DataListButton_MainMenu_C
-// 0x0008 (0x0830 - 0x0828)
+// 0x0008 (0x0860 - 0x0858)
 class UDataListButton_MainMenu_C final : public UDataListEntryButton_MainMenu
 {
 public:
-	class UCustomButtonWidget*                    Button;                                            // 0x0828(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCustomButtonWidget*                    Button;                                            // 0x0858(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

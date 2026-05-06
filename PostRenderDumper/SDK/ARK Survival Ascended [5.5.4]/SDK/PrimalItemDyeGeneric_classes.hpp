@@ -20,6 +20,9 @@ SDK_NAMESPACE_START
 class UPrimalItemDyeGeneric_C : public UPrimalItem_Dye
 {
 public:
+	bool BPShouldAlwaysShowInFolder(const int32 FolderDepth, const bool bShowFolders);
+
+public:
 	static class UClass* StaticClass()
 	{
 		BP_STATIC_CLASS_IMPL("PrimalItemDyeGeneric_C")

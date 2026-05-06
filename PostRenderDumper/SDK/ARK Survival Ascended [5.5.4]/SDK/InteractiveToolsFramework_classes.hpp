@@ -10,13 +10,36 @@
 
 #include "Basic.hpp"
 
-#include "InteractiveToolsFramework_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
+#include "InteractiveToolsFramework_structs.hpp"
 
 
 SDK_NAMESPACE_START
+
+// Class InteractiveToolsFramework.InteractiveCommandArguments
+// 0x0008 (0x0030 - 0x0028)
+class UInteractiveCommandArguments : public UObject
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("InteractiveCommandArguments")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"InteractiveCommandArguments")
+	}
+	static class UInteractiveCommandArguments* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInteractiveCommandArguments>();
+	}
+};
+DUMPER7_ASSERTS_UInteractiveCommandArguments;
 
 // Class InteractiveToolsFramework.InputBehavior
 // 0x0008 (0x0030 - 0x0028)
@@ -41,51 +64,28 @@ public:
 };
 DUMPER7_ASSERTS_UInputBehavior;
 
-// Class InteractiveToolsFramework.MouseHoverBehavior
-// 0x00B0 (0x00E0 - 0x0030)
-class UMouseHoverBehavior : public UInputBehavior
+// Class InteractiveToolsFramework.KeyInputBehavior
+// 0x00E0 (0x0110 - 0x0030)
+class UKeyInputBehavior final : public UInputBehavior
 {
 public:
-	uint8                                         Pad_30[0xB0];                                      // 0x0030(0x00B0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0xE0];                                      // 0x0030(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MouseHoverBehavior")
+		STATIC_CLASS_IMPL("KeyInputBehavior")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MouseHoverBehavior")
+		STATIC_NAME_IMPL(L"KeyInputBehavior")
 	}
-	static class UMouseHoverBehavior* GetDefaultObj()
+	static class UKeyInputBehavior* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMouseHoverBehavior>();
+		return GetDefaultObjImpl<UKeyInputBehavior>();
 	}
 };
-DUMPER7_ASSERTS_UMouseHoverBehavior;
-
-// Class InteractiveToolsFramework.LocalMouseHoverBehavior
-// 0x0140 (0x0220 - 0x00E0)
-class ULocalMouseHoverBehavior final : public UMouseHoverBehavior
-{
-public:
-	uint8                                         Pad_E0[0x140];                                     // 0x00E0(0x0140)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LocalMouseHoverBehavior")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LocalMouseHoverBehavior")
-	}
-	static class ULocalMouseHoverBehavior* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULocalMouseHoverBehavior>();
-	}
-};
-DUMPER7_ASSERTS_ULocalMouseHoverBehavior;
+DUMPER7_ASSERTS_UKeyInputBehavior;
 
 // Class InteractiveToolsFramework.AssetBackedTarget
 // 0x0000 (0x0000 - 0x0000)
@@ -271,29 +271,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USimpleLambdaInteractiveGizmoBuilder;
-
-// Class InteractiveToolsFramework.InteractiveCommandArguments
-// 0x0008 (0x0030 - 0x0028)
-class UInteractiveCommandArguments : public UObject
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("InteractiveCommandArguments")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"InteractiveCommandArguments")
-	}
-	static class UInteractiveCommandArguments* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInteractiveCommandArguments>();
-	}
-};
-DUMPER7_ASSERTS_UInteractiveCommandArguments;
 
 // Class InteractiveToolsFramework.InteractiveCommandResult
 // 0x0000 (0x0028 - 0x0028)
@@ -1326,28 +1303,51 @@ public:
 };
 DUMPER7_ASSERTS_UKeyAsModifierInputBehavior;
 
-// Class InteractiveToolsFramework.KeyInputBehavior
-// 0x00E0 (0x0110 - 0x0030)
-class UKeyInputBehavior final : public UInputBehavior
+// Class InteractiveToolsFramework.MouseHoverBehavior
+// 0x00B0 (0x00E0 - 0x0030)
+class UMouseHoverBehavior : public UInputBehavior
 {
 public:
-	uint8                                         Pad_30[0xE0];                                      // 0x0030(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0xB0];                                      // 0x0030(0x00B0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KeyInputBehavior")
+		STATIC_CLASS_IMPL("MouseHoverBehavior")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KeyInputBehavior")
+		STATIC_NAME_IMPL(L"MouseHoverBehavior")
 	}
-	static class UKeyInputBehavior* GetDefaultObj()
+	static class UMouseHoverBehavior* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKeyInputBehavior>();
+		return GetDefaultObjImpl<UMouseHoverBehavior>();
 	}
 };
-DUMPER7_ASSERTS_UKeyInputBehavior;
+DUMPER7_ASSERTS_UMouseHoverBehavior;
+
+// Class InteractiveToolsFramework.LocalMouseHoverBehavior
+// 0x0140 (0x0220 - 0x00E0)
+class ULocalMouseHoverBehavior final : public UMouseHoverBehavior
+{
+public:
+	uint8                                         Pad_E0[0x140];                                     // 0x00E0(0x0140)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LocalMouseHoverBehavior")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LocalMouseHoverBehavior")
+	}
+	static class ULocalMouseHoverBehavior* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULocalMouseHoverBehavior>();
+	}
+};
+DUMPER7_ASSERTS_ULocalMouseHoverBehavior;
 
 // Class InteractiveToolsFramework.MouseWheelInputBehavior
 // 0x00B0 (0x0130 - 0x0080)

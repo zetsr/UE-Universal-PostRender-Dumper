@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "AIModule_structs.hpp"
-#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "GameplayTasks_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -30,6 +30,66 @@ public:
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_AIAsyncTaskBlueprintProxy_OnMoveCompleted;
+
+// Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedActor
+// 0x0008 (0x0008 - 0x0000)
+struct EnvQueryGenerator_BlueprintBase_AddGeneratedActor final
+{
+public:
+	class AActor*                                 GeneratedActor;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_EnvQueryGenerator_BlueprintBase_AddGeneratedActor;
+
+// Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedVector
+// 0x0018 (0x0018 - 0x0000)
+struct EnvQueryGenerator_BlueprintBase_AddGeneratedVector final
+{
+public:
+	struct FVector                                GeneratedVector;                                   // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_EnvQueryGenerator_BlueprintBase_AddGeneratedVector;
+
+// Function AIModule.EnvQueryGenerator_BlueprintBase.DoItemGeneration
+// 0x0010 (0x0010 - 0x0000)
+struct EnvQueryGenerator_BlueprintBase_DoItemGeneration final
+{
+public:
+	TArray<struct FVector>                        ContextLocations;                                  // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_EnvQueryGenerator_BlueprintBase_DoItemGeneration;
+
+// Function AIModule.EnvQueryGenerator_BlueprintBase.DoItemGenerationFromActors
+// 0x0010 (0x0010 - 0x0000)
+struct EnvQueryGenerator_BlueprintBase_DoItemGenerationFromActors final
+{
+public:
+	TArray<class AActor*>                         ContextActors;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_EnvQueryGenerator_BlueprintBase_DoItemGenerationFromActors;
+
+// Function AIModule.EnvQueryGenerator_BlueprintBase.GetQuerier
+// 0x0008 (0x0008 - 0x0000)
+struct EnvQueryGenerator_BlueprintBase_GetQuerier final
+{
+public:
+	class UObject*                                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_EnvQueryGenerator_BlueprintBase_GetQuerier;
+
+// Function AIModule.EnvQueryManager.RunEQSQuery
+// 0x0030 (0x0030 - 0x0000)
+struct EnvQueryManager_RunEQSQuery final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEnvQuery*                              QueryTemplate;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                Querier;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEnvQueryRunMode                              RunMode;                                           // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass;                               // 0x0020(0x0008)(Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEnvQueryInstanceBlueprintWrapper*      ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_EnvQueryManager_RunEQSQuery;
 
 // Function AIModule.GeneratedNavLinksProxy.ReceiveSmartLinkReached
 // 0x0020 (0x0020 - 0x0000)
@@ -1807,66 +1867,6 @@ public:
 	TArray<struct FVector>                        ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_EnvQueryInstanceBlueprintWrapper_GetResultsAsLocations;
-
-// Function AIModule.EnvQueryManager.RunEQSQuery
-// 0x0030 (0x0030 - 0x0000)
-struct EnvQueryManager_RunEQSQuery final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UEnvQuery*                              QueryTemplate;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                Querier;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEnvQueryRunMode                              RunMode;                                           // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass;                               // 0x0020(0x0008)(Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UEnvQueryInstanceBlueprintWrapper*      ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_EnvQueryManager_RunEQSQuery;
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedActor
-// 0x0008 (0x0008 - 0x0000)
-struct EnvQueryGenerator_BlueprintBase_AddGeneratedActor final
-{
-public:
-	class AActor*                                 GeneratedActor;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_EnvQueryGenerator_BlueprintBase_AddGeneratedActor;
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedVector
-// 0x0018 (0x0018 - 0x0000)
-struct EnvQueryGenerator_BlueprintBase_AddGeneratedVector final
-{
-public:
-	struct FVector                                GeneratedVector;                                   // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_EnvQueryGenerator_BlueprintBase_AddGeneratedVector;
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.DoItemGeneration
-// 0x0010 (0x0010 - 0x0000)
-struct EnvQueryGenerator_BlueprintBase_DoItemGeneration final
-{
-public:
-	TArray<struct FVector>                        ContextLocations;                                  // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_EnvQueryGenerator_BlueprintBase_DoItemGeneration;
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.DoItemGenerationFromActors
-// 0x0010 (0x0010 - 0x0000)
-struct EnvQueryGenerator_BlueprintBase_DoItemGenerationFromActors final
-{
-public:
-	TArray<class AActor*>                         ContextActors;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_EnvQueryGenerator_BlueprintBase_DoItemGenerationFromActors;
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.GetQuerier
-// 0x0008 (0x0008 - 0x0000)
-struct EnvQueryGenerator_BlueprintBase_GetQuerier final
-{
-public:
-	class UObject*                                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_EnvQueryGenerator_BlueprintBase_GetQuerier;
 
 // Function AIModule.PathFollowingComponent.OnActorBump
 // 0x0130 (0x0130 - 0x0000)

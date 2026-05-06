@@ -16,12 +16,12 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListEntryWidgetGeneric_DyeResources.DataListEntryWidgetGeneric_DyeResources_C
-// 0x0010 (0x07D8 - 0x07C8)
+// 0x0010 (0x0808 - 0x07F8)
 class UDataListEntryWidgetGeneric_DyeResources_C final : public UDataListEntryButton_DyeResources
 {
 public:
-	class UDataListButton_Widget_ASA_C*           DataListButton_Widget_ASA;                         // 0x07C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 ItemIcon;                                          // 0x07D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UDataListButton_Widget_ASA_C*           DataListButton_Widget_ASA;                         // 0x07F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 ItemIcon;                                          // 0x0800(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

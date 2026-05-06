@@ -472,13 +472,13 @@ public:
 DUMPER7_ASSERTS_UInAppPurchaseRestoreCallbackProxy2;
 
 // Class OnlineSubsystemUtils.IpConnection
-// 0x00D0 (0x1FE0 - 0x1F10)
+// 0x00D0 (0x1FE8 - 0x1F18)
 class UIpConnection : public UNetConnection
 {
 public:
-	uint8                                         Pad_1F10[0xB4];                                    // 0x1F10(0x00B4)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SocketErrorDisconnectDelay;                        // 0x1FC4(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1FC8[0x18];                                    // 0x1FC8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1F18[0xB4];                                    // 0x1F18(0x00B4)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SocketErrorDisconnectDelay;                        // 0x1FCC(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1FD0[0x18];                                    // 0x1FD0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1268,7 +1268,7 @@ public:
 DUMPER7_ASSERTS_AOnlineBeaconUnitTestHostObject;
 
 // Class OnlineSubsystemUtils.OnlineBeaconUnitTestNetConnection
-// 0x0000 (0x1FE0 - 0x1FE0)
+// 0x0000 (0x1FE8 - 0x1FE8)
 class UOnlineBeaconUnitTestNetConnection final : public UIpConnection
 {
 public:

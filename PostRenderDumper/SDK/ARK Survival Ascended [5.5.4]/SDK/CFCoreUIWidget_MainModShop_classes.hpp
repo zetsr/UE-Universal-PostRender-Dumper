@@ -10,28 +10,28 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "STRUCT_CFCore_UITheme_structs.hpp"
 #include "cfcore_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass CFCoreUIWidget_MainModShop.CFCoreUIWidget_MainModShop_C
-// 0x00D0 (0x0898 - 0x07C8)
+// 0x00D0 (0x08C8 - 0x07F8)
 class UCFCoreUIWidget_MainModShop_C : public UUIMainModShop
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x07C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FSTRUCT_CFCore_UITheme                 CFcoreUITheme;                                     // 0x07D0(0x0070)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	int64                                         WaitingToOpen;                                     // 0x0840(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FTimerHandle                           SpotlightDeeplinkTimerHandle;                      // 0x0848(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class FText                                   StillInstallingDialogMessage;                      // 0x0850(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class FText                                   StillInstallingDialogTitle;                        // 0x0860(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<struct FInstalledMod>                  CachedExitMods;                                    // 0x0870(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class UClass*                                 MainWidgetClass;                                   // 0x0880(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class FString                                 ManMenuMapName;                                    // 0x0888(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, TObjectPtr)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x07F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FSTRUCT_CFCore_UITheme                 CFcoreUITheme;                                     // 0x0800(0x0070)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	int64                                         WaitingToOpen;                                     // 0x0870(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTimerHandle                           SpotlightDeeplinkTimerHandle;                      // 0x0878(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class FText                                   StillInstallingDialogMessage;                      // 0x0880(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class FText                                   StillInstallingDialogTitle;                        // 0x0890(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FInstalledMod>                  CachedExitMods;                                    // 0x08A0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UClass*                                 MainWidgetClass;                                   // 0x08B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class FString                                 ManMenuMapName;                                    // 0x08B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, TObjectPtr)
 
 public:
 	void ApplyThemeSettingsToAll();

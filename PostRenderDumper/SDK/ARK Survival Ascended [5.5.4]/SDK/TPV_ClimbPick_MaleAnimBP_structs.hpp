@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // ScriptStruct TPV_ClimbPick_MaleAnimBP.TPV_ClimbPick_MaleAnimBP_C.AnimBlueprintGeneratedConstantData
-// 0x0000 (0xC570 - 0xC570)
+// 0x0000 (0xC3B0 - 0xC3B0)
 struct TPV_ClimbPick_MaleAnimBP::FAnimBlueprintGeneratedConstantData final : public BaseHumanAnimBP::FAnimBlueprintGeneratedConstantData
 {
 };

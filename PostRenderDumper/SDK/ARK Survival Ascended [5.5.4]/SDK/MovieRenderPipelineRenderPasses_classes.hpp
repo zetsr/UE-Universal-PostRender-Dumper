@@ -14,8 +14,8 @@
 #include "MovieRenderPipelineCore_classes.hpp"
 #include "Engine_structs.hpp"
 #include "MovieRenderPipelineRenderPasses_structs.hpp"
-#include "OpenColorIO_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "OpenColorIO_structs.hpp"
 
 
 SDK_NAMESPACE_START

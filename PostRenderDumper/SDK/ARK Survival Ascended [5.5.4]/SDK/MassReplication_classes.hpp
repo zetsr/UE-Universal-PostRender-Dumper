@@ -12,9 +12,9 @@
 
 #include "Engine_classes.hpp"
 #include "MassEntity_classes.hpp"
-#include "CoreUObject_classes.hpp"
 #include "MassSpawner_classes.hpp"
 #include "MassReplication_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 SDK_NAMESPACE_START

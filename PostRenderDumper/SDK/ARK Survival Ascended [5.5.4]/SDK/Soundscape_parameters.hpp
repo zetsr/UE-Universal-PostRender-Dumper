@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Soundscape_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "Soundscape_structs.hpp"
 
 
 SDK_NAMESPACE_START

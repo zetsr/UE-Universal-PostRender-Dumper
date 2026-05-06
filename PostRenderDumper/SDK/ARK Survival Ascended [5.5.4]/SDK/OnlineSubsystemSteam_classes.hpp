@@ -37,12 +37,12 @@ public:
 DUMPER7_ASSERTS_USteamAuthComponentModuleInterface;
 
 // Class OnlineSubsystemSteam.SteamNetConnection
-// 0x0008 (0x1FE8 - 0x1FE0)
+// 0x0008 (0x1FF0 - 0x1FE8)
 class USteamNetConnection final : public UIpConnection
 {
 public:
-	bool                                          bIsPassthrough;                                    // 0x1FE0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1FE1[0x7];                                     // 0x1FE1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bIsPassthrough;                                    // 0x1FE8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1FE9[0x7];                                     // 0x1FE9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

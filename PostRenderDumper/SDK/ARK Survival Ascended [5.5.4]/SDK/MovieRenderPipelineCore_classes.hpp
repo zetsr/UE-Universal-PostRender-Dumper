@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "OpenColorIO_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "MovieRenderPipelineCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "UMG_classes.hpp"
-#include "OpenColorIO_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 
 

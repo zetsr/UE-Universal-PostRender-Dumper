@@ -17,18 +17,18 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_FailedToLoad.UI_CFCore_FailedToLoad_C
-// 0x0050 (0x0880 - 0x0830)
+// 0x0050 (0x08B0 - 0x0860)
 class UUI_CFCore_FailedToLoad_C final : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_FailedToLoad_C;           // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWidgetAnimation*                       FadeOutPage;                                       // 0x0838(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class USizeBox*                               SizeBox_FailedToLoad;                              // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             TEXT_RT_4;                                         // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_Button_CFCore_Global_Back_C*        UI_Button_CFCore_Global_BackFailed;                // 0x0850(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_Button_CFCore_Global_Back_C*        UI_Button_CFCore_Global_TryAgain;                  // 0x0858(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void()>              OnClickedReturn;                                   // 0x0860(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              OnClickedTryAgain;                                 // 0x0870(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_FailedToLoad_C;           // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UWidgetAnimation*                       FadeOutPage;                                       // 0x0868(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class USizeBox*                               SizeBox_FailedToLoad;                              // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TEXT_RT_4;                                         // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_Button_CFCore_Global_Back_C*        UI_Button_CFCore_Global_BackFailed;                // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_Button_CFCore_Global_Back_C*        UI_Button_CFCore_Global_TryAgain;                  // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void()>              OnClickedReturn;                                   // 0x0890(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              OnClickedTryAgain;                                 // 0x08A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	void BndEvt__UI_CFCore_FailedToLoad_UI_Button_CFCore_Global_BackFailed_K2Node_ComponentBoundEvent_1_OnClick__DelegateSignature();

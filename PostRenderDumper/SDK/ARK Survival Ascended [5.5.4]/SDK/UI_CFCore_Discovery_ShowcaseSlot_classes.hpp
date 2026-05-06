@@ -10,33 +10,33 @@
 
 #include "Basic.hpp"
 
-#include "cfcore_structs.hpp"
 #include "Engine_structs.hpp"
+#include "cfcore_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_Discovery_ShowcaseSlot.UI_CFCore_Discovery_ShowcaseSlot_C
-// 0x00E8 (0x0918 - 0x0830)
+// 0x00E8 (0x0948 - 0x0860)
 class UUI_CFCore_Discovery_ShowcaseSlot_C final : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_Discovery_ShowcaseSlot_C; // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWidgetAnimation*                       FadeProgressBar;                                   // 0x0838(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UButton*                                Button_GoToModPage;                                // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_Showcase;                                      // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UOverlay*                               Overlay_TagHolder;                                 // 0x0850(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UProgressBar*                           ProgressBar_Highlight;                             // 0x0858(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Overlay_C*                   UI_Overlay;                                        // 0x0860(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Tag_WhiteCategory_C*         UI_WhiteCategoryPreview;                           // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	bool                                          IsCurrent;                                         // 0x0870(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_871[0x7];                                      // 0x0871(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUI_CFCore_Discovery_C*                 Discovery;                                         // 0x0878(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void()>              ReadyToStart;                                      // 0x0880(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	struct FCarouselItem                          CarouselItem;                                      // 0x0890(0x0078)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class UTexture2DDynamic*                      IMG_MainImage;                                     // 0x0908(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class UTexture2DDynamic*                      IMG_Thumbnail;                                     // 0x0910(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_Discovery_ShowcaseSlot_C; // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UWidgetAnimation*                       FadeProgressBar;                                   // 0x0868(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UButton*                                Button_GoToModPage;                                // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_Showcase;                                      // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UOverlay*                               Overlay_TagHolder;                                 // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UProgressBar*                           ProgressBar_Highlight;                             // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Overlay_C*                   UI_Overlay;                                        // 0x0890(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Tag_WhiteCategory_C*         UI_WhiteCategoryPreview;                           // 0x0898(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	bool                                          IsCurrent;                                         // 0x08A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8A1[0x7];                                      // 0x08A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUI_CFCore_Discovery_C*                 Discovery;                                         // 0x08A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void()>              ReadyToStart;                                      // 0x08B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	struct FCarouselItem                          CarouselItem;                                      // 0x08C0(0x0078)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UTexture2DDynamic*                      IMG_MainImage;                                     // 0x0938(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UTexture2DDynamic*                      IMG_Thumbnail;                                     // 0x0940(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BndEvt__UI_ShowcaseSlot_Button_GoToModPage_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature();

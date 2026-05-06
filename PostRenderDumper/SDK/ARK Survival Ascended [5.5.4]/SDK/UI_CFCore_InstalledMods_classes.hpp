@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
+#include "UI_CFCore_ParentBrowser_classes.hpp"
 #include "Engine_structs.hpp"
 #include "cfcore_ui_structs.hpp"
-#include "UI_CFCore_ParentBrowser_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_InstalledMods.UI_CFCore_InstalledMods_C
-// 0x0018 (0x09E0 - 0x09C8)
+// 0x0018 (0x0A10 - 0x09F8)
 class UUI_CFCore_InstalledMods_C final : public UUI_CFCore_ParentBrowser_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_InstalledMods_C;          // 0x09C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	TArray<struct FInstallProgressMod>            NonInstallingMods;                                 // 0x09D0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_InstalledMods_C;          // 0x09F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	TArray<struct FInstallProgressMod>            NonInstallingMods;                                 // 0x0A00(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
 	void Construct();

@@ -6,11 +6,11 @@
 #include "SDK/SDK_Headers.hpp"
 
 // CFG
-#define TARGET_WIDTH  1920           // 窗口分辨率 W
-#define TARGET_HEIGHT 1080           // 窗口分辨率 H
-#define SIZE_X_OFFSET 0x40           // UCanvas->SizeX
-#define SCAN_RANGE    500            // 硬编码
-#define STABLE_FRAME_THRESHOLD 120   //硬编码
+#define TARGET_WIDTH  1920           // 窗口分辨率 W     // Windows Screen Size W
+#define TARGET_HEIGHT 1080           // 窗口分辨率 H     // Windows Screen Size H
+#define SIZE_X_OFFSET 0x40           // UCanvas->SizeX   // 0x40 是大部分 UE 版本 的 UCanvas 结构体中 SizeX 的偏移，具体以 Dumper-7 生成的 SDK 为准
+#define SCAN_RANGE    500            // 硬编码           // 扫描前 500 个函数（从 vtable[1] 开始）以寻找候选函数
+#define STABLE_FRAME_THRESHOLD 120   // 硬编码           // 稳定性阈值：连续 120 帧（约 2 秒）满足条件才认定为候选函数
 
 struct MatchInfo {
     int count = 0;

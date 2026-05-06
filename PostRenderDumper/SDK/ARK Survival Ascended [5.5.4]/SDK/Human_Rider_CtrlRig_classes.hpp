@@ -17,7 +17,7 @@
 SDK_NAMESPACE_START
 
 // RigVMBlueprintGeneratedClass Human_Rider_CtrlRig.Human_Rider_CtrlRig_C
-// 0x0460 (0x0F30 - 0x0AD0)
+// 0x04B0 (0x0F80 - 0x0AD0)
 class UHuman_Rider_CtrlRig_C final : public UControlRig
 {
 public:
@@ -50,6 +50,12 @@ public:
 	struct FVector                                PelvisVel;                                         // 0x0EF0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        DampingModifier;                                   // 0x0F08(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                BonespaceAccelMultiplier;                          // 0x0F10(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          JockeyCrouching;                                   // 0x0F28(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_F29[0x7];                                      // 0x0F29(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                PelvisCurrent;                                     // 0x0F30(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                DinoLocation;                                      // 0x0F48(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                SpringInterp_Result_0;                             // 0x0F60(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        LegLengthPercentage;                               // 0x0F78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

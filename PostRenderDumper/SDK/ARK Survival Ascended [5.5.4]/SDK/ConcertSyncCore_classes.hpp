@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ConcertSyncCore_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ConcertSyncCore_structs.hpp"
 
 
 SDK_NAMESPACE_START

@@ -43,6 +43,157 @@ void UAIAsyncTaskBlueprintProxy::OnMoveCompleted(const struct FAIRequestID& Requ
 }
 
 
+// Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedActor
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, Const)
+// Parameters:
+// class AActor*                           GeneratedActor                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UEnvQueryGenerator_BlueprintBase::AddGeneratedActor(class AActor* GeneratedActor) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EnvQueryGenerator_BlueprintBase", "AddGeneratedActor");
+
+	Params::EnvQueryGenerator_BlueprintBase_AddGeneratedActor Parms{};
+
+	Parms.GeneratedActor = GeneratedActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedVector
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, Const)
+// Parameters:
+// const struct FVector&                   GeneratedVector                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UEnvQueryGenerator_BlueprintBase::AddGeneratedVector(const struct FVector& GeneratedVector) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EnvQueryGenerator_BlueprintBase", "AddGeneratedVector");
+
+	Params::EnvQueryGenerator_BlueprintBase_AddGeneratedVector Parms{};
+
+	Parms.GeneratedVector = std::move(GeneratedVector);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.EnvQueryGenerator_BlueprintBase.DoItemGeneration
+// (RequiredAPI, Event, Public, HasOutParams, BlueprintEvent, Const)
+// Parameters:
+// const TArray<struct FVector>&           ContextLocations                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UEnvQueryGenerator_BlueprintBase::DoItemGeneration(const TArray<struct FVector>& ContextLocations) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EnvQueryGenerator_BlueprintBase", "DoItemGeneration");
+
+	Params::EnvQueryGenerator_BlueprintBase_DoItemGeneration Parms{};
+
+	Parms.ContextLocations = std::move(ContextLocations);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIModule.EnvQueryGenerator_BlueprintBase.DoItemGenerationFromActors
+// (RequiredAPI, Event, Public, HasOutParams, BlueprintEvent, Const)
+// Parameters:
+// const TArray<class AActor*>&            ContextActors                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UEnvQueryGenerator_BlueprintBase::DoItemGenerationFromActors(const TArray<class AActor*>& ContextActors) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EnvQueryGenerator_BlueprintBase", "DoItemGenerationFromActors");
+
+	Params::EnvQueryGenerator_BlueprintBase_DoItemGenerationFromActors Parms{};
+
+	Parms.ContextActors = std::move(ContextActors);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIModule.EnvQueryGenerator_BlueprintBase.GetQuerier
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UObject*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UObject* UEnvQueryGenerator_BlueprintBase::GetQuerier() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EnvQueryGenerator_BlueprintBase", "GetQuerier");
+
+	Params::EnvQueryGenerator_BlueprintBase_GetQuerier Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.EnvQueryManager.RunEQSQuery
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UEnvQuery*                        QueryTemplate                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Querier                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEnvQueryRunMode                        RunMode                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UEnvQueryInstanceBlueprintWrapper>WrapperClass                                           (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UEnvQueryInstanceBlueprintWrapper*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UEnvQueryInstanceBlueprintWrapper* UEnvQueryManager::RunEQSQuery(class UObject* WorldContextObject, class UEnvQuery* QueryTemplate, class UObject* Querier, EEnvQueryRunMode RunMode, TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EnvQueryManager", "RunEQSQuery");
+
+	Params::EnvQueryManager_RunEQSQuery Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.QueryTemplate = QueryTemplate;
+	Parms.Querier = Querier;
+	Parms.RunMode = RunMode;
+	Parms.WrapperClass = WrapperClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function AIModule.GeneratedNavLinksProxy.ReceiveSmartLinkReached
 // (RequiredAPI, Event, Public, HasDefaults, BlueprintEvent)
 // Parameters:
@@ -4663,157 +4814,6 @@ TArray<struct FVector> UEnvQueryInstanceBlueprintWrapper::GetResultsAsLocations(
 		Func = Class->GetFunction("EnvQueryInstanceBlueprintWrapper", "GetResultsAsLocations");
 
 	Params::EnvQueryInstanceBlueprintWrapper_GetResultsAsLocations Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.EnvQueryManager.RunEQSQuery
-// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UEnvQuery*                        QueryTemplate                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UObject*                          Querier                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEnvQueryRunMode                        RunMode                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UEnvQueryInstanceBlueprintWrapper>WrapperClass                                           (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UEnvQueryInstanceBlueprintWrapper*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UEnvQueryInstanceBlueprintWrapper* UEnvQueryManager::RunEQSQuery(class UObject* WorldContextObject, class UEnvQuery* QueryTemplate, class UObject* Querier, EEnvQueryRunMode RunMode, TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EnvQueryManager", "RunEQSQuery");
-
-	Params::EnvQueryManager_RunEQSQuery Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.QueryTemplate = QueryTemplate;
-	Parms.Querier = Querier;
-	Parms.RunMode = RunMode;
-	Parms.WrapperClass = WrapperClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedActor
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, Const)
-// Parameters:
-// class AActor*                           GeneratedActor                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UEnvQueryGenerator_BlueprintBase::AddGeneratedActor(class AActor* GeneratedActor) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnvQueryGenerator_BlueprintBase", "AddGeneratedActor");
-
-	Params::EnvQueryGenerator_BlueprintBase_AddGeneratedActor Parms{};
-
-	Parms.GeneratedActor = GeneratedActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedVector
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, Const)
-// Parameters:
-// const struct FVector&                   GeneratedVector                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UEnvQueryGenerator_BlueprintBase::AddGeneratedVector(const struct FVector& GeneratedVector) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnvQueryGenerator_BlueprintBase", "AddGeneratedVector");
-
-	Params::EnvQueryGenerator_BlueprintBase_AddGeneratedVector Parms{};
-
-	Parms.GeneratedVector = std::move(GeneratedVector);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.DoItemGeneration
-// (RequiredAPI, Event, Public, HasOutParams, BlueprintEvent, Const)
-// Parameters:
-// const TArray<struct FVector>&           ContextLocations                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UEnvQueryGenerator_BlueprintBase::DoItemGeneration(const TArray<struct FVector>& ContextLocations) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnvQueryGenerator_BlueprintBase", "DoItemGeneration");
-
-	Params::EnvQueryGenerator_BlueprintBase_DoItemGeneration Parms{};
-
-	Parms.ContextLocations = std::move(ContextLocations);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.DoItemGenerationFromActors
-// (RequiredAPI, Event, Public, HasOutParams, BlueprintEvent, Const)
-// Parameters:
-// const TArray<class AActor*>&            ContextActors                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UEnvQueryGenerator_BlueprintBase::DoItemGenerationFromActors(const TArray<class AActor*>& ContextActors) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnvQueryGenerator_BlueprintBase", "DoItemGenerationFromActors");
-
-	Params::EnvQueryGenerator_BlueprintBase_DoItemGenerationFromActors Parms{};
-
-	Parms.ContextActors = std::move(ContextActors);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIModule.EnvQueryGenerator_BlueprintBase.GetQuerier
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UObject*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UObject* UEnvQueryGenerator_BlueprintBase::GetQuerier() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnvQueryGenerator_BlueprintBase", "GetQuerier");
-
-	Params::EnvQueryGenerator_BlueprintBase_GetQuerier Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

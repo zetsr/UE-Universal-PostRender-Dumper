@@ -10,37 +10,37 @@
 
 #include "Basic.hpp"
 
-#include "ENUM_CFCore_OverlayProfiles_structs.hpp"
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "UMG_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "ENUM_CFCore_OverlayProfiles_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_Overlay.UI_CFCore_Overlay_C
-// 0x0090 (0x08C0 - 0x0830)
+// 0x0090 (0x08F0 - 0x0860)
 class UUI_CFCore_Overlay_C final : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_Overlay_C;                // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWidgetAnimation*                       Hover;                                             // 0x0838(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
-	class UBorder*                                Border_Down;                                       // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UBorder*                                Border_Left;                                       // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UBorder*                                Border_Right;                                      // 0x0850(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UBorder*                                Border_Top;                                        // 0x0858(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	ENUM_CFCore_OverlayProfiles                   Overlay_Profile;                                   // 0x0860(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_861[0x3];                                      // 0x0861(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           DefaultColor;                                      // 0x0864(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	struct FLinearColor                           DarkerColor;                                       // 0x0874(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	EUMGSequencePlayMode                          Direction;                                         // 0x0884(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_885[0x3];                                      // 0x0885(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           Experiment;                                        // 0x0888(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           ExperimentColor2;                                  // 0x0898(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          AlwaysSameColor;                                   // 0x08A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_8A9[0x3];                                      // 0x08A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           ForcedColor;                                       // 0x08AC(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_Overlay_C;                // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UWidgetAnimation*                       Hover;                                             // 0x0868(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
+	class UBorder*                                Border_Down;                                       // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBorder*                                Border_Left;                                       // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBorder*                                Border_Right;                                      // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBorder*                                Border_Top;                                        // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	ENUM_CFCore_OverlayProfiles                   Overlay_Profile;                                   // 0x0890(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_891[0x3];                                      // 0x0891(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           DefaultColor;                                      // 0x0894(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FLinearColor                           DarkerColor;                                       // 0x08A4(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	EUMGSequencePlayMode                          Direction;                                         // 0x08B4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8B5[0x3];                                      // 0x08B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           Experiment;                                        // 0x08B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           ExperimentColor2;                                  // 0x08C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          AlwaysSameColor;                                   // 0x08D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_8D9[0x3];                                      // 0x08D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           ForcedColor;                                       // 0x08DC(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void Construct();

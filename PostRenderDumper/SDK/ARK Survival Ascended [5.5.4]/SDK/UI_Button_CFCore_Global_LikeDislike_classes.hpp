@@ -11,29 +11,29 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "UI_Button_CFCore_Global_Master_classes.hpp"
-#include "CoreUObject_structs.hpp"
 #include "cfcore_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "UI_Button_CFCore_Global_Master_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_Button_CFCore_Global_LikeDislike.UI_Button_CFCore_Global_LikeDislike_C
-// 0x0090 (0x0B50 - 0x0AC0)
+// 0x0090 (0x0B80 - 0x0AF0)
 class UUI_Button_CFCore_Global_LikeDislike_C final : public UUI_Button_CFCore_Global_Master_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_Button_CFCore_Global_LikeDislike_C; // 0x0AC0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	ECFCoreRatingVoteDirection                    Vote_Action;                                       // 0x0AC8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_AC9[0x7];                                      // 0x0AC9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	int64                                         modId;                                             // 0x0AD0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMyRatings                             MyRatings;                                         // 0x0AD8(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance)
-	ECFCoreRatingVoteDirection                    ButtonTrueState;                                   // 0x0AF8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_Button_CFCore_Global_LikeDislike_C; // 0x0AF0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	ECFCoreRatingVoteDirection                    Vote_Action;                                       // 0x0AF8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_AF9[0x7];                                      // 0x0AF9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnFinishedLikeAction;                              // 0x0B00(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	struct FLinearColor                           DefaultFillColor;                                  // 0x0B10(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CurrentFillColor;                                  // 0x0B20(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRatingDetails                         ratings;                                           // 0x0B30(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
+	int64                                         modId;                                             // 0x0B00(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMyRatings                             MyRatings;                                         // 0x0B08(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance)
+	ECFCoreRatingVoteDirection                    ButtonTrueState;                                   // 0x0B28(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B29[0x7];                                      // 0x0B29(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnFinishedLikeAction;                              // 0x0B30(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	struct FLinearColor                           DefaultFillColor;                                  // 0x0B40(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CurrentFillColor;                                  // 0x0B50(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRatingDetails                         ratings;                                           // 0x0B60(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
 
 public:
 	void Construct();

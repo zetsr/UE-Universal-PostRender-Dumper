@@ -10,27 +10,27 @@
 
 #include "Basic.hpp"
 
-#include "cfcore_structs.hpp"
 #include "Engine_structs.hpp"
+#include "cfcore_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_Discovery_RectangleCategory.UI_CFCore_Discovery_RectangleCategory_C
-// 0x00B8 (0x08E8 - 0x0830)
+// 0x00B8 (0x0918 - 0x0860)
 class UUI_CFCore_Discovery_RectangleCategory_C final : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_Discovery_RectangleCategory_C; // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UButton*                                Button_GoToModPage;                                // 0x0838(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_BackGround;                                    // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_Showcase;                                      // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class USizeBox*                               SizeBox_WindowSize;                                // 0x0850(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             TEXT_CategoryName;                                 // 0x0858(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Overlay_C*                   UI_Overlay;                                        // 0x0860(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	struct FCategory                              CategoryInfo;                                      // 0x0868(0x0078)(Edit, BlueprintVisible, ExposeOnSpawn)
-	class UUI_CFCore_Discovery_C*                 UI__DiscoveryRef;                                  // 0x08E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_CFCore_Discovery_RectangleCategory_C; // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UButton*                                Button_GoToModPage;                                // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_BackGround;                                    // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_Showcase;                                      // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class USizeBox*                               SizeBox_WindowSize;                                // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             TEXT_CategoryName;                                 // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Overlay_C*                   UI_Overlay;                                        // 0x0890(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FCategory                              CategoryInfo;                                      // 0x0898(0x0078)(Edit, BlueprintVisible, ExposeOnSpawn)
+	class UUI_CFCore_Discovery_C*                 UI__DiscoveryRef;                                  // 0x0910(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void BndEvt__UI_CFCore_RectangleCategorieShowcase_Button_GoToModPage_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature();

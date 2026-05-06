@@ -10,55 +10,55 @@
 
 #include "Basic.hpp"
 
-#include "CFCoreWidget_classes.hpp"
-#include "ENUM_CFCore_ButtonType_structs.hpp"
 #include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "STRUCT_FullButtonDesign_structs.hpp"
 #include "ENUM_CFCore_ButtonStates_structs.hpp"
+#include "ENUM_CFCore_ButtonType_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "CFCoreWidget_classes.hpp"
+#include "STRUCT_FullButtonDesign_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C
-// 0x0290 (0x0AC0 - 0x0830)
+// 0x0290 (0x0AF0 - 0x0860)
 class UUI_Button_CFCore_Global_Master_C : public UCFCoreWidget_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_Button_CFCore_Global_Master_C;   // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBorder*                                Border_CentralFill;                                // 0x0838(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UButton*                                Button_Main;                                       // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UHorizontalBox*                         HorizontalBox_1;                                   // 0x0848(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 Image_LeftBorder;                                  // 0x0850(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 Image_LeftFill;                                    // 0x0858(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 Image_RightBorder;                                 // 0x0860(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 Image_RightFill;                                   // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_ButtonIcon;                                    // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class USizeBox*                               SizeBox;                                           // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class USpacer*                                Spacer_164;                                        // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             Text_ButtonMessage;                                // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void()>              OnClick;                                           // 0x0890(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	ENUM_CFCore_ButtonType                        Button_Type;                                       // 0x08A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8A1[0x7];                                      // 0x08A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        In_Width_Override;                                 // 0x08A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        In_Height_Override;                                // 0x08B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          UseIcon;                                           // 0x08B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_8B9[0x7];                                      // 0x08B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             Image;                                             // 0x08C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	struct FVector2D                              ImageSize;                                         // 0x08C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FText                                   Text;                                              // 0x08D8(0x0010)(Edit, BlueprintVisible, ExposeOnSpawn)
-	struct FSlateFontInfo                         ButtonFont;                                        // 0x08E8(0x0060)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	double                                        SpaceBetweenIconAndText;                           // 0x0948(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void()>              OnReleased;                                        // 0x0950(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              OnUnhovered;                                       // 0x0960(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              OnHovered;                                         // 0x0970(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              OnPressed;                                         // 0x0980(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	struct FSTRUCT_FullButtonDesign               ButtonDesign;                                      // 0x0990(0x012C)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	bool                                          ForceDebug;                                        // 0x0ABC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ENUM_CFCore_ButtonStates                      DebugState;                                        // 0x0ABD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Selected;                                          // 0x0ABE(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ENUM_CFCore_ButtonStates                      CurrentButtonState;                                // 0x0ABF(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_Button_CFCore_Global_Master_C;   // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBorder*                                Border_CentralFill;                                // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                Button_Main;                                       // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UHorizontalBox*                         HorizontalBox_1;                                   // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Image_LeftBorder;                                  // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Image_LeftFill;                                    // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Image_RightBorder;                                 // 0x0890(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Image_RightFill;                                   // 0x0898(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_ButtonIcon;                                    // 0x08A0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class USizeBox*                               SizeBox;                                           // 0x08A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class USpacer*                                Spacer_164;                                        // 0x08B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             Text_ButtonMessage;                                // 0x08B8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void()>              OnClick;                                           // 0x08C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	ENUM_CFCore_ButtonType                        Button_Type;                                       // 0x08D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8D1[0x7];                                      // 0x08D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        In_Width_Override;                                 // 0x08D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        In_Height_Override;                                // 0x08E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          UseIcon;                                           // 0x08E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_8E9[0x7];                                      // 0x08E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             Image;                                             // 0x08F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FVector2D                              ImageSize;                                         // 0x08F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   Text;                                              // 0x0908(0x0010)(Edit, BlueprintVisible, ExposeOnSpawn)
+	struct FSlateFontInfo                         ButtonFont;                                        // 0x0918(0x0060)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	double                                        SpaceBetweenIconAndText;                           // 0x0978(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void()>              OnReleased;                                        // 0x0980(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              OnUnhovered;                                       // 0x0990(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              OnHovered;                                         // 0x09A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              OnPressed;                                         // 0x09B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	struct FSTRUCT_FullButtonDesign               ButtonDesign;                                      // 0x09C0(0x012C)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	bool                                          ForceDebug;                                        // 0x0AEC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ENUM_CFCore_ButtonStates                      DebugState;                                        // 0x0AED(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Selected;                                          // 0x0AEE(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ENUM_CFCore_ButtonStates                      CurrentButtonState;                                // 0x0AEF(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BndEvt__UI_Button_Ark_Blue_Button_BrowseMods_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();

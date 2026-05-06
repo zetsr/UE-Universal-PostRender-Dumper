@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass CustomOverlayUI.CustomOverlayUI_C
-// 0x0018 (0x0818 - 0x0800)
+// 0x0018 (0x0848 - 0x0830)
 class UCustomOverlayUI_C final : public UUI_CustomOverlay
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0800(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCanvasPanel*                           MainCanvas;                                        // 0x0808(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	bool                                          FirstTick;                                         // 0x0810(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCanvasPanel*                           MainCanvas;                                        // 0x0838(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	bool                                          FirstTick;                                         // 0x0840(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AddChildToCanvas(class UUserWidget* Child, const struct FVector2D& Size, int32 ZOrder);

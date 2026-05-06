@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "STRUCT_CFCore_UITheme_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass CFCoreWidget.CFCoreWidget_C
-// 0x0078 (0x0830 - 0x07B8)
+// 0x0078 (0x0860 - 0x07E8)
 class UCFCoreWidget_C : public UPrimalUI
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x07B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FSTRUCT_CFCore_UITheme                 CFcoreUITheme;                                     // 0x07C0(0x0070)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x07E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FSTRUCT_CFCore_UITheme                 CFcoreUITheme;                                     // 0x07F0(0x0070)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void ApplyThemeSettingsToAll();

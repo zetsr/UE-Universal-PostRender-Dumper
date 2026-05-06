@@ -49,15 +49,6 @@ enum class EMetaSoundBuilderResult : uint8
 	EMetaSoundBuilderResult_MAX              = 2,
 };
 
-// ScriptStruct MetasoundEngine.MetaSoundAssetDirectory
-// 0x0010 (0x0010 - 0x0000)
-struct FMetaSoundAssetDirectory final
-{
-public:
-	struct FDirectoryPath                         Directory;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMetaSoundAssetDirectory;
-
 // ScriptStruct MetasoundEngine.MetaSoundOutput
 // 0x0008 (0x0010 - 0x0008)
 struct alignas(0x08) FMetaSoundOutput final : public FSoundGeneratorOutput
@@ -97,6 +88,15 @@ public:
 	struct FPerPlatformFloat                      BlockRate;                                         // 0x001C(0x0004)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMetaSoundQualitySettings;
+
+// ScriptStruct MetasoundEngine.MetaSoundAssetDirectory
+// 0x0010 (0x0010 - 0x0000)
+struct FMetaSoundAssetDirectory final
+{
+public:
+	struct FDirectoryPath                         Directory;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMetaSoundAssetDirectory;
 
 // ScriptStruct MetasoundEngine.MetaSoundAsyncAssetDependencies
 // 0x0030 (0x0030 - 0x0000)

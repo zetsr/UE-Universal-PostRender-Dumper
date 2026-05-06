@@ -44,6 +44,20 @@ void UUI_CFCore_Discovery_C::BndEvt__UI_CFCore_Discovery_UI_Button_CFCore_Global
 }
 
 
+// Function UI_CFCore_Discovery.UI_CFCore_Discovery_C.BndEvt__UI_CFCore_Discovery_UI_Button_CFCore_ViewMod_K2Node_ComponentBoundEvent_3_OnClick__DelegateSignature
+// (BlueprintEvent)
+
+void UUI_CFCore_Discovery_C::BndEvt__UI_CFCore_Discovery_UI_Button_CFCore_ViewMod_K2Node_ComponentBoundEvent_3_OnClick__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_CFCore_Discovery_C", "BndEvt__UI_CFCore_Discovery_UI_Button_CFCore_ViewMod_K2Node_ComponentBoundEvent_3_OnClick__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function UI_CFCore_Discovery.UI_CFCore_Discovery_C.BndEvt__UI_CFCore_Discovery_UI_Button_CFCore_ViewMod_K2Node_ComponentBoundEvent_3_OnPressed__DelegateSignature
 // (BlueprintEvent)
 

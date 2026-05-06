@@ -16,6 +16,59 @@
 
 SDK_NAMESPACE_START
 
+// Function TargetingSystem.TargetingTask.GetTargetingSubsystem
+// (Final, Native, Protected, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FTargetingRequestHandle&   TargetingHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class UTargetingSubsystem*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTargetingSubsystem* UTargetingTask::GetTargetingSubsystem(const struct FTargetingRequestHandle& TargetingHandle) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetingTask", "GetTargetingSubsystem");
+
+	Params::TargetingTask_GetTargetingSubsystem Parms{};
+
+	Parms.TargetingHandle = std::move(TargetingHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TargetingSystem.SimpleTargetingSortTask.BP_GetScoreForTarget
+// (Event, Protected, HasOutParams, BlueprintEvent, Const)
+// Parameters:
+// const struct FTargetingRequestHandle&   TargetingHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTargetingDefaultResultData&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USimpleTargetingSortTask::BP_GetScoreForTarget(const struct FTargetingRequestHandle& TargetingHandle, const struct FTargetingDefaultResultData& TargetData) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleTargetingSortTask", "BP_GetScoreForTarget");
+
+	Params::SimpleTargetingSortTask_BP_GetScoreForTarget Parms{};
+
+	Parms.TargetingHandle = std::move(TargetingHandle);
+	Parms.TargetData = std::move(TargetData);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function TargetingSystem.AbilityTask_PerformTargeting.PerformFilteringRequest
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -173,34 +226,6 @@ struct FTargetingRequestHandle UAsyncAction_PerformTargeting::GetTargetingHandle
 }
 
 
-// Function TargetingSystem.TargetingTask.GetTargetingSubsystem
-// (Final, Native, Protected, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FTargetingRequestHandle&   TargetingHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// class UTargetingSubsystem*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UTargetingSubsystem* UTargetingTask::GetTargetingSubsystem(const struct FTargetingRequestHandle& TargetingHandle) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetingTask", "GetTargetingSubsystem");
-
-	Params::TargetingTask_GetTargetingSubsystem Parms{};
-
-	Parms.TargetingHandle = std::move(TargetingHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function TargetingSystem.SimpleTargetingFilterTask.BP_ShouldFilterTarget
 // (Event, Public, HasOutParams, BlueprintEvent, Const)
 // Parameters:
@@ -310,31 +335,6 @@ void USimpleTargetingSelectionTask::SelectTargets(const struct FTargetingRequest
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TargetingSystem.SimpleTargetingSortTask.BP_GetScoreForTarget
-// (Event, Protected, HasOutParams, BlueprintEvent, Const)
-// Parameters:
-// const struct FTargetingRequestHandle&   TargetingHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// const struct FTargetingDefaultResultData&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USimpleTargetingSortTask::BP_GetScoreForTarget(const struct FTargetingRequestHandle& TargetingHandle, const struct FTargetingDefaultResultData& TargetData) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleTargetingSortTask", "BP_GetScoreForTarget");
-
-	Params::SimpleTargetingSortTask_BP_GetScoreForTarget Parms{};
-
-	Parms.TargetingHandle = std::move(TargetingHandle);
-	Parms.TargetData = std::move(TargetData);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 

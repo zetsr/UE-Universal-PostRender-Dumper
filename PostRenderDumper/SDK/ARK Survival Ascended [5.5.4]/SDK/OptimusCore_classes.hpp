@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "OptimusCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "ComputeFramework_structs.hpp"
 #include "ComputeFramework_classes.hpp"
 #include "Engine_classes.hpp"
+#include "OptimusCore_structs.hpp"
 
 
 SDK_NAMESPACE_START
