@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Enum_TimeOfDay_structs.hpp"
-#include "Struct_ByteDateTime_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "EnumQuest__QuestLineTracker_structs.hpp"
+#include "Enum_TimeOfDay_structs.hpp"
 #include "Struct_ChatQueue_structs.hpp"
 #include "Enum_ServerType_structs.hpp"
+#include "Struct_ByteDateTime_structs.hpp"
+#include "EnumQuest__QuestLineTracker_structs.hpp"
 #include "Enum_ChatChannel_structs.hpp"
 
 

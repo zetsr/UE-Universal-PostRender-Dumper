@@ -717,8 +717,9 @@ void AChar_Wyvern_InfernoRavager_C::GetInfernoDamage(double* Damage)
 // uint8*                                  Birthright                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8*                                  InfusedCrimson                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8*                                  Albino                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// uint8*                                  Brindle                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AChar_Wyvern_InfernoRavager_C::GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino)
+void AChar_Wyvern_InfernoRavager_C::GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino, uint8* Brindle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -737,6 +738,9 @@ void AChar_Wyvern_InfernoRavager_C::GetSpecialSkinIndexes(uint8* Birthright, uin
 
 	if (Albino != nullptr)
 		*Albino = Parms.Albino;
+
+	if (Brindle != nullptr)
+		*Brindle = Parms.Brindle;
 }
 
 
@@ -857,20 +861,6 @@ void AChar_Wyvern_InfernoRavager_C::K2_OnMovementModeChanged(EMovementMode PrevM
 	Parms.NewCustomMode = NewCustomMode;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Char_Wyvern_InfernoRavager.Char_Wyvern_InfernoRavager_C.LocalPossessed
-// (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
-
-void AChar_Wyvern_InfernoRavager_C::LocalPossessed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Wyvern_InfernoRavager_C", "LocalPossessed");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -1033,6 +1023,20 @@ void AChar_Wyvern_InfernoRavager_C::NotifyServerFireball(const struct FVector& T
 	Parms.HomingBone = HomingBone;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Wyvern_InfernoRavager.Char_Wyvern_InfernoRavager_C.NotifyServerNotBreathing
+// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
+
+void AChar_Wyvern_InfernoRavager_C::NotifyServerNotBreathing()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Wyvern_InfernoRavager_C", "NotifyServerNotBreathing");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -2157,6 +2161,48 @@ void AChar_Wyvern_InfernoRavager_C::QuenchFlame()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("Char_Wyvern_InfernoRavager_C", "QuenchFlame");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Char_Wyvern_InfernoRavager.Char_Wyvern_InfernoRavager_C.QueueInfernoBurnTargets
+// (BlueprintCallable, BlueprintEvent)
+
+void AChar_Wyvern_InfernoRavager_C::QueueInfernoBurnTargets()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Wyvern_InfernoRavager_C", "QueueInfernoBurnTargets");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Char_Wyvern_InfernoRavager.Char_Wyvern_InfernoRavager_C.RemoteBeginPlay
+// (BlueprintCallable, BlueprintEvent)
+
+void AChar_Wyvern_InfernoRavager_C::RemoteBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Wyvern_InfernoRavager_C", "RemoteBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Char_Wyvern_InfernoRavager.Char_Wyvern_InfernoRavager_C.RemoteEndPlay
+// (BlueprintCallable, BlueprintEvent)
+
+void AChar_Wyvern_InfernoRavager_C::RemoteEndPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Wyvern_InfernoRavager_C", "RemoteEndPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

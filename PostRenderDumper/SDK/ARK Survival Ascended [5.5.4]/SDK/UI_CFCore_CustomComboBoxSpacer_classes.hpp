@@ -26,9 +26,9 @@ public:
 	double                                        Size;                                              // 0x0870(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_UI_CFCore_CustomComboBoxSpacer(int32 EntryPoint);
-	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
 	void PreConstruct(bool IsDesignTime);
+	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void ExecuteUbergraph_UI_CFCore_CustomComboBoxSpacer(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

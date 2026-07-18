@@ -1096,9 +1096,9 @@ void AChar_Parent_Player_C::DoDrinkMontage()
 // Function Char_Parent_Player.Char_Parent_Player_C.DoEatMontage
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    UseAltEatMontage                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// uint8                                   SwitchMontage                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AChar_Parent_Player_C::DoEatMontage(bool UseAltEatMontage)
+void AChar_Parent_Player_C::DoEatMontage(uint8 SwitchMontage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1107,7 +1107,7 @@ void AChar_Parent_Player_C::DoEatMontage(bool UseAltEatMontage)
 
 	Params::Char_Parent_Player_C_DoEatMontage Parms{};
 
-	Parms.UseAltEatMontage = UseAltEatMontage;
+	Parms.SwitchMontage = SwitchMontage;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1393,6 +1393,146 @@ void AChar_Parent_Player_C::GetBonfireTemperature(double* BonfireTemp)
 
 	if (BonfireTemp != nullptr)
 		*BonfireTemp = Parms.BonfireTemp;
+}
+
+
+// Function Char_Parent_Player.Char_Parent_Player_C.GetBonusCritDefensePercent
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 BonusCritEvade                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusCritReduction                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Player_C::GetBonusCritDefensePercent(double* BonusCritEvade, double* BonusCritReduction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Player_C", "GetBonusCritDefensePercent");
+
+	Params::Char_Parent_Player_C_GetBonusCritDefensePercent Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (BonusCritEvade != nullptr)
+		*BonusCritEvade = Parms.BonusCritEvade;
+
+	if (BonusCritReduction != nullptr)
+		*BonusCritReduction = Parms.BonusCritReduction;
+}
+
+
+// Function Char_Parent_Player.Char_Parent_Player_C.GetBonusCritOffensePercent
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 BonusCritChance                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusCritDamage                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Player_C::GetBonusCritOffensePercent(double* BonusCritChance, double* BonusCritDamage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Player_C", "GetBonusCritOffensePercent");
+
+	Params::Char_Parent_Player_C_GetBonusCritOffensePercent Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (BonusCritChance != nullptr)
+		*BonusCritChance = Parms.BonusCritChance;
+
+	if (BonusCritDamage != nullptr)
+		*BonusCritDamage = Parms.BonusCritDamage;
+}
+
+
+// Function Char_Parent_Player.Char_Parent_Player_C.GetBonusDamagePercent
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 BonusFire                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusFrost                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusPlasma                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusLightning                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusAcid                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusVenom                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Player_C::GetBonusDamagePercent(double* BonusFire, double* BonusFrost, double* BonusPlasma, double* BonusLightning, double* BonusAcid, double* BonusVenom)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Player_C", "GetBonusDamagePercent");
+
+	Params::Char_Parent_Player_C_GetBonusDamagePercent Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (BonusFire != nullptr)
+		*BonusFire = Parms.BonusFire;
+
+	if (BonusFrost != nullptr)
+		*BonusFrost = Parms.BonusFrost;
+
+	if (BonusPlasma != nullptr)
+		*BonusPlasma = Parms.BonusPlasma;
+
+	if (BonusLightning != nullptr)
+		*BonusLightning = Parms.BonusLightning;
+
+	if (BonusAcid != nullptr)
+		*BonusAcid = Parms.BonusAcid;
+
+	if (BonusVenom != nullptr)
+		*BonusVenom = Parms.BonusVenom;
+}
+
+
+// Function Char_Parent_Player.Char_Parent_Player_C.GetBonusMitigationsPercent
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 BonusFireMitigation                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusFrostMitigation                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusPlasmaMitigation                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusLightningMitigation                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusAcidMitigation                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusVenomMitigation                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusPierceMitigation                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusBluntMitigation                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Player_C::GetBonusMitigationsPercent(double* BonusFireMitigation, double* BonusFrostMitigation, double* BonusPlasmaMitigation, double* BonusLightningMitigation, double* BonusAcidMitigation, double* BonusVenomMitigation, double* BonusPierceMitigation, double* BonusBluntMitigation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Player_C", "GetBonusMitigationsPercent");
+
+	Params::Char_Parent_Player_C_GetBonusMitigationsPercent Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (BonusFireMitigation != nullptr)
+		*BonusFireMitigation = Parms.BonusFireMitigation;
+
+	if (BonusFrostMitigation != nullptr)
+		*BonusFrostMitigation = Parms.BonusFrostMitigation;
+
+	if (BonusPlasmaMitigation != nullptr)
+		*BonusPlasmaMitigation = Parms.BonusPlasmaMitigation;
+
+	if (BonusLightningMitigation != nullptr)
+		*BonusLightningMitigation = Parms.BonusLightningMitigation;
+
+	if (BonusAcidMitigation != nullptr)
+		*BonusAcidMitigation = Parms.BonusAcidMitigation;
+
+	if (BonusVenomMitigation != nullptr)
+		*BonusVenomMitigation = Parms.BonusVenomMitigation;
+
+	if (BonusPierceMitigation != nullptr)
+		*BonusPierceMitigation = Parms.BonusPierceMitigation;
+
+	if (BonusBluntMitigation != nullptr)
+		*BonusBluntMitigation = Parms.BonusBluntMitigation;
 }
 
 
@@ -1791,26 +1931,6 @@ void AChar_Parent_Player_C::HandleWalkingBackward()
 }
 
 
-// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_Aim_K2Node_InputActionEvent_10
-// (BlueprintEvent)
-// Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-
-void AChar_Parent_Player_C::InpActEvt_Aim_K2Node_InputActionEvent_10(const struct FKey& Key)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_Aim_K2Node_InputActionEvent_10");
-
-	Params::Char_Parent_Player_C_InpActEvt_Aim_K2Node_InputActionEvent_10 Parms{};
-
-	Parms.Key = std::move(Key);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_Aim_K2Node_InputActionEvent_11
 // (BlueprintEvent)
 // Parameters:
@@ -1831,19 +1951,19 @@ void AChar_Parent_Player_C::InpActEvt_Aim_K2Node_InputActionEvent_11(const struc
 }
 
 
-// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_CameraZoomIn_K2Node_InputActionEvent_14
+// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_Aim_K2Node_InputActionEvent_12
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void AChar_Parent_Player_C::InpActEvt_CameraZoomIn_K2Node_InputActionEvent_14(const struct FKey& Key)
+void AChar_Parent_Player_C::InpActEvt_Aim_K2Node_InputActionEvent_12(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_CameraZoomIn_K2Node_InputActionEvent_14");
+		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_Aim_K2Node_InputActionEvent_12");
 
-	Params::Char_Parent_Player_C_InpActEvt_CameraZoomIn_K2Node_InputActionEvent_14 Parms{};
+	Params::Char_Parent_Player_C_InpActEvt_Aim_K2Node_InputActionEvent_12 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -1851,19 +1971,19 @@ void AChar_Parent_Player_C::InpActEvt_CameraZoomIn_K2Node_InputActionEvent_14(co
 }
 
 
-// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_CameraZoomOut_K2Node_InputActionEvent_13
+// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_CameraZoomIn_K2Node_InputActionEvent_15
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void AChar_Parent_Player_C::InpActEvt_CameraZoomOut_K2Node_InputActionEvent_13(const struct FKey& Key)
+void AChar_Parent_Player_C::InpActEvt_CameraZoomIn_K2Node_InputActionEvent_15(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_CameraZoomOut_K2Node_InputActionEvent_13");
+		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_CameraZoomIn_K2Node_InputActionEvent_15");
 
-	Params::Char_Parent_Player_C_InpActEvt_CameraZoomOut_K2Node_InputActionEvent_13 Parms{};
+	Params::Char_Parent_Player_C_InpActEvt_CameraZoomIn_K2Node_InputActionEvent_15 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -1871,19 +1991,19 @@ void AChar_Parent_Player_C::InpActEvt_CameraZoomOut_K2Node_InputActionEvent_13(c
 }
 
 
-// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_CameraZoomReset_K2Node_InputActionEvent_12
+// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_CameraZoomOut_K2Node_InputActionEvent_14
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void AChar_Parent_Player_C::InpActEvt_CameraZoomReset_K2Node_InputActionEvent_12(const struct FKey& Key)
+void AChar_Parent_Player_C::InpActEvt_CameraZoomOut_K2Node_InputActionEvent_14(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_CameraZoomReset_K2Node_InputActionEvent_12");
+		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_CameraZoomOut_K2Node_InputActionEvent_14");
 
-	Params::Char_Parent_Player_C_InpActEvt_CameraZoomReset_K2Node_InputActionEvent_12 Parms{};
+	Params::Char_Parent_Player_C_InpActEvt_CameraZoomOut_K2Node_InputActionEvent_14 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -1891,19 +2011,19 @@ void AChar_Parent_Player_C::InpActEvt_CameraZoomReset_K2Node_InputActionEvent_12
 }
 
 
-// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_ClearWaypoint_K2Node_InputActionEvent_7
+// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_CameraZoomReset_K2Node_InputActionEvent_13
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void AChar_Parent_Player_C::InpActEvt_ClearWaypoint_K2Node_InputActionEvent_7(const struct FKey& Key)
+void AChar_Parent_Player_C::InpActEvt_CameraZoomReset_K2Node_InputActionEvent_13(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_ClearWaypoint_K2Node_InputActionEvent_7");
+		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_CameraZoomReset_K2Node_InputActionEvent_13");
 
-	Params::Char_Parent_Player_C_InpActEvt_ClearWaypoint_K2Node_InputActionEvent_7 Parms{};
+	Params::Char_Parent_Player_C_InpActEvt_CameraZoomReset_K2Node_InputActionEvent_13 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -1911,19 +2031,19 @@ void AChar_Parent_Player_C::InpActEvt_ClearWaypoint_K2Node_InputActionEvent_7(co
 }
 
 
-// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_EmoteWheel_K2Node_InputActionEvent_0
+// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_ClearWaypoint_K2Node_InputActionEvent_8
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void AChar_Parent_Player_C::InpActEvt_EmoteWheel_K2Node_InputActionEvent_0(const struct FKey& Key)
+void AChar_Parent_Player_C::InpActEvt_ClearWaypoint_K2Node_InputActionEvent_8(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_EmoteWheel_K2Node_InputActionEvent_0");
+		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_ClearWaypoint_K2Node_InputActionEvent_8");
 
-	Params::Char_Parent_Player_C_InpActEvt_EmoteWheel_K2Node_InputActionEvent_0 Parms{};
+	Params::Char_Parent_Player_C_InpActEvt_ClearWaypoint_K2Node_InputActionEvent_8 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -1951,6 +2071,26 @@ void AChar_Parent_Player_C::InpActEvt_EmoteWheel_K2Node_InputActionEvent_1(const
 }
 
 
+// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_EmoteWheel_K2Node_InputActionEvent_2
+// (BlueprintEvent)
+// Parameters:
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+
+void AChar_Parent_Player_C::InpActEvt_EmoteWheel_K2Node_InputActionEvent_2(const struct FKey& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_EmoteWheel_K2Node_InputActionEvent_2");
+
+	Params::Char_Parent_Player_C_InpActEvt_EmoteWheel_K2Node_InputActionEvent_2 Parms{};
+
+	Parms.Key = std::move(Key);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_F10_K2Node_InputKeyEvent_0
 // (BlueprintEvent)
 // Parameters:
@@ -1971,39 +2111,19 @@ void AChar_Parent_Player_C::InpActEvt_F10_K2Node_InputKeyEvent_0(const struct FK
 }
 
 
-// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_Info_K2Node_InputActionEvent_9
+// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_Info_K2Node_InputActionEvent_10
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void AChar_Parent_Player_C::InpActEvt_Info_K2Node_InputActionEvent_9(const struct FKey& Key)
+void AChar_Parent_Player_C::InpActEvt_Info_K2Node_InputActionEvent_10(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_Info_K2Node_InputActionEvent_9");
+		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_Info_K2Node_InputActionEvent_10");
 
-	Params::Char_Parent_Player_C_InpActEvt_Info_K2Node_InputActionEvent_9 Parms{};
-
-	Parms.Key = std::move(Key);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_Interact_K2Node_InputActionEvent_5
-// (BlueprintEvent)
-// Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-
-void AChar_Parent_Player_C::InpActEvt_Interact_K2Node_InputActionEvent_5(const struct FKey& Key)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_Interact_K2Node_InputActionEvent_5");
-
-	Params::Char_Parent_Player_C_InpActEvt_Interact_K2Node_InputActionEvent_5 Parms{};
+	Params::Char_Parent_Player_C_InpActEvt_Info_K2Node_InputActionEvent_10 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -2031,19 +2151,19 @@ void AChar_Parent_Player_C::InpActEvt_Interact_K2Node_InputActionEvent_6(const s
 }
 
 
-// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_Nightvision_K2Node_InputActionEvent_4
+// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_Interact_K2Node_InputActionEvent_7
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void AChar_Parent_Player_C::InpActEvt_Nightvision_K2Node_InputActionEvent_4(const struct FKey& Key)
+void AChar_Parent_Player_C::InpActEvt_Interact_K2Node_InputActionEvent_7(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_Nightvision_K2Node_InputActionEvent_4");
+		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_Interact_K2Node_InputActionEvent_7");
 
-	Params::Char_Parent_Player_C_InpActEvt_Nightvision_K2Node_InputActionEvent_4 Parms{};
+	Params::Char_Parent_Player_C_InpActEvt_Interact_K2Node_InputActionEvent_7 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -2051,19 +2171,19 @@ void AChar_Parent_Player_C::InpActEvt_Nightvision_K2Node_InputActionEvent_4(cons
 }
 
 
-// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_SetWaypoint_K2Node_InputActionEvent_8
+// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_Map_K2Node_InputActionEvent_0
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void AChar_Parent_Player_C::InpActEvt_SetWaypoint_K2Node_InputActionEvent_8(const struct FKey& Key)
+void AChar_Parent_Player_C::InpActEvt_Map_K2Node_InputActionEvent_0(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_SetWaypoint_K2Node_InputActionEvent_8");
+		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_Map_K2Node_InputActionEvent_0");
 
-	Params::Char_Parent_Player_C_InpActEvt_SetWaypoint_K2Node_InputActionEvent_8 Parms{};
+	Params::Char_Parent_Player_C_InpActEvt_Map_K2Node_InputActionEvent_0 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -2071,19 +2191,39 @@ void AChar_Parent_Player_C::InpActEvt_SetWaypoint_K2Node_InputActionEvent_8(cons
 }
 
 
-// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_TurnInPlace_K2Node_InputActionEvent_2
+// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_Nightvision_K2Node_InputActionEvent_5
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void AChar_Parent_Player_C::InpActEvt_TurnInPlace_K2Node_InputActionEvent_2(const struct FKey& Key)
+void AChar_Parent_Player_C::InpActEvt_Nightvision_K2Node_InputActionEvent_5(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_TurnInPlace_K2Node_InputActionEvent_2");
+		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_Nightvision_K2Node_InputActionEvent_5");
 
-	Params::Char_Parent_Player_C_InpActEvt_TurnInPlace_K2Node_InputActionEvent_2 Parms{};
+	Params::Char_Parent_Player_C_InpActEvt_Nightvision_K2Node_InputActionEvent_5 Parms{};
+
+	Parms.Key = std::move(Key);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_SetWaypoint_K2Node_InputActionEvent_9
+// (BlueprintEvent)
+// Parameters:
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+
+void AChar_Parent_Player_C::InpActEvt_SetWaypoint_K2Node_InputActionEvent_9(const struct FKey& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_SetWaypoint_K2Node_InputActionEvent_9");
+
+	Params::Char_Parent_Player_C_InpActEvt_SetWaypoint_K2Node_InputActionEvent_9 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -2104,6 +2244,26 @@ void AChar_Parent_Player_C::InpActEvt_TurnInPlace_K2Node_InputActionEvent_3(cons
 		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_TurnInPlace_K2Node_InputActionEvent_3");
 
 	Params::Char_Parent_Player_C_InpActEvt_TurnInPlace_K2Node_InputActionEvent_3 Parms{};
+
+	Parms.Key = std::move(Key);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Parent_Player.Char_Parent_Player_C.InpActEvt_TurnInPlace_K2Node_InputActionEvent_4
+// (BlueprintEvent)
+// Parameters:
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+
+void AChar_Parent_Player_C::InpActEvt_TurnInPlace_K2Node_InputActionEvent_4(const struct FKey& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Player_C", "InpActEvt_TurnInPlace_K2Node_InputActionEvent_4");
+
+	Params::Char_Parent_Player_C_InpActEvt_TurnInPlace_K2Node_InputActionEvent_4 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -4264,9 +4424,9 @@ void AChar_Parent_Player_C::StopDrinkMontage()
 // Function Char_Parent_Player.Char_Parent_Player_C.StopEatMontage
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    WasUsingAltEatMontage                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// uint8                                   SwitchMontage                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AChar_Parent_Player_C::StopEatMontage(bool WasUsingAltEatMontage)
+void AChar_Parent_Player_C::StopEatMontage(uint8 SwitchMontage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4275,7 +4435,7 @@ void AChar_Parent_Player_C::StopEatMontage(bool WasUsingAltEatMontage)
 
 	Params::Char_Parent_Player_C_StopEatMontage Parms{};
 
-	Parms.WasUsingAltEatMontage = WasUsingAltEatMontage;
+	Parms.SwitchMontage = SwitchMontage;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -4426,6 +4586,30 @@ void AChar_Parent_Player_C::TriggerAutoSave(int32 FrameIndex)
 	Params::Char_Parent_Player_C_TriggerAutoSave Parms{};
 
 	Parms.FrameIndex = FrameIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Parent_Player.Char_Parent_Player_C.TryApplyStatusEffect
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// Enum_StatusEffects                      EffectToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Enum_StatMutations                      StacksToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AChar_Parent_Player_C*            AttackingPlayer                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Player_C::TryApplyStatusEffect(Enum_StatusEffects EffectToApply, Enum_StatMutations StacksToApply, class AChar_Parent_Player_C* AttackingPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Player_C", "TryApplyStatusEffect");
+
+	Params::Char_Parent_Player_C_TryApplyStatusEffect Parms{};
+
+	Parms.EffectToApply = EffectToApply;
+	Parms.StacksToApply = StacksToApply;
+	Parms.AttackingPlayer = AttackingPlayer;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

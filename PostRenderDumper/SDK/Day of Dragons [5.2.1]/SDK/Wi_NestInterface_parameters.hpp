@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "Enum_EggWidgetStatus_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "Struct_StatRecessives_structs.hpp"
 
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "Enum_EggGender_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 SDK_NAMESPACE_START

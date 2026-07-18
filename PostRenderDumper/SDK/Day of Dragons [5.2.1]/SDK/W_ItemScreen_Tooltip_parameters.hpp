@@ -10,11 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Enum_ItemRarity_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
+#include "SlateCore_structs.hpp"
+#include "Enum_ItemRarity_structs.hpp"
 #include "UMG_structs.hpp"
-#include "Enum_ItemGrantType_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -106,23 +105,12 @@ public:
 DUMPER7_ASSERTS_W_ItemScreen_Tooltip_C_Get_Description_Text;
 
 // Function W_ItemScreen_Tooltip.W_ItemScreen_Tooltip_C.Get_Icon_Brush
-// 0x0370 (0x0370 - 0x0000)
+// 0x01A0 (0x01A0 - 0x0000)
 struct W_ItemScreen_Tooltip_C_Get_Icon_Brush final
 {
 public:
 	struct FSlateBrush                            ReturnValue;                                       // 0x0000(0x00D0)(Parm, OutParm, ReturnParm)
-	Enum_ItemGrantType                            Temp_byte_Variable;                                // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             Temp_object_Variable;                              // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UTexture2D*                             Temp_object_Variable_1;                            // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UTexture2D*                             Temp_object_Variable_2;                            // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Variable;                                // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Get_CanReadIt_ReturnValue;                // 0x00F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F2[0x6];                                       // 0x00F2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             K2Node_Select_Default;                             // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FSlateBrush                            CallFunc_MakeBrushFromTexture_ReturnValue;         // 0x0100(0x00D0)()
-	struct FSlateBrush                            CallFunc_MakeBrushFromTexture_ReturnValue_1;       // 0x01D0(0x00D0)()
-	struct FSlateBrush                            K2Node_Select_Default_1;                           // 0x02A0(0x00D0)()
+	struct FSlateBrush                            CallFunc_MakeBrushFromTexture_ReturnValue;         // 0x00D0(0x00D0)()
 };
 DUMPER7_ASSERTS_W_ItemScreen_Tooltip_C_Get_Icon_Brush;
 

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Struct_ClanRegister_structs.hpp"
-#include "Struct_ClanMemberList_structs.hpp"
 #include "AdvancedSessions_structs.hpp"
 #include "UMG_structs.hpp"
+#include "Struct_ClanMemberList_structs.hpp"
+#include "Struct_ClanRegister_structs.hpp"
 
 
 SDK_NAMESPACE_START

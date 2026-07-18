@@ -11,11 +11,12 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "Enum_StatMutations_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Char_Parent_AI_classes.hpp"
-#include "Enum_GrowthStage_structs.hpp"
-#include "Enum_StatMutations_structs.hpp"
 #include "Enum_AiGrowth_structs.hpp"
+#include "Enum_Species_structs.hpp"
+#include "Enum_GrowthStage_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -49,6 +50,7 @@ public:
 	void ClearAllTimers();
 	void ExecuteUbergraph_Char_Parent_AI_Dynamic(int32 EntryPoint);
 	void Get_MaxProjectileRange(double* RangeCM);
+	const class FName GetBossTag();
 	void GetStunDurations(double* StunSeconds, double* StunImmuneSeconds);
 	void Multi_SpawnBloodPool();
 	void OnBlendOut_A92BC3AB4AAF1E60E3BCC8A4F5A879DC(class FName NotifyName);
@@ -66,6 +68,7 @@ public:
 	void StopStunnedMontage();
 	void TrackSelfForDespawn();
 	void TryLaunchCharacter(const struct FVector& LaunchVelocity, bool XY_Override, bool Z_Override);
+	void TweakBossLoot();
 
 public:
 	static class UClass* StaticClass()

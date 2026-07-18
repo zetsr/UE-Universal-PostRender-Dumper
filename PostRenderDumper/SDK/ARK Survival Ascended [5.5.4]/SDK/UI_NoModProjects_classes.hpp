@@ -27,9 +27,9 @@ public:
 	class UOverlay*                               Overlay_0;                                         // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_UI_NoModProjects(int32 EntryPoint);
-	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
 	void PreConstruct(bool IsDesignTime);
+	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void ExecuteUbergraph_UI_NoModProjects(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -222,6 +222,50 @@ void AAct_MeatRegurgitated_C::StopFlight()
 }
 
 
+// Function Act_MeatRegurgitated.Act_MeatRegurgitated_C.TryApplyStatusEffect
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// Enum_StatusEffects                      EffectToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Enum_StatMutations                      StacksToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AChar_Parent_Player_C*            AttackingPlayer                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void AAct_MeatRegurgitated_C::TryApplyStatusEffect(Enum_StatusEffects EffectToApply, Enum_StatMutations StacksToApply, class AChar_Parent_Player_C* AttackingPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Act_MeatRegurgitated_C", "TryApplyStatusEffect");
+
+	Params::Act_MeatRegurgitated_C_TryApplyStatusEffect Parms{};
+
+	Parms.EffectToApply = EffectToApply;
+	Parms.StacksToApply = StacksToApply;
+	Parms.AttackingPlayer = AttackingPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Act_MeatRegurgitated.Act_MeatRegurgitated_C.TryDestroyComponent
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UActorComponent*                  Component                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void AAct_MeatRegurgitated_C::TryDestroyComponent(class UActorComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Act_MeatRegurgitated_C", "TryDestroyComponent");
+
+	Params::Act_MeatRegurgitated_C_TryDestroyComponent Parms{};
+
+	Parms.Component = Component;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Act_MeatRegurgitated.Act_MeatRegurgitated_C.TryDestroyCorpse
 // (Public, BlueprintCallable, BlueprintEvent)
 

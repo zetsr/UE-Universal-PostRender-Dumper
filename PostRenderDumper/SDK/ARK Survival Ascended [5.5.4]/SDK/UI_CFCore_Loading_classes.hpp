@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "ENUM_CFCore_LoadingProgress_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
+#include "ENUM_CFCore_LoadingProgress_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -36,17 +36,17 @@ public:
 	TMulticastInlineDelegate<void()>              OnClickedReturn;                                   // 0x08A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
-	void BndEvt__UI_CFCore_Loading_UI_Button_CFCore_Global_BackLoading_K2Node_ComponentBoundEvent_2_OnClick__DelegateSignature();
-	void Construct();
-	void ExecuteUbergraph_UI_CFCore_Loading(int32 EntryPoint);
-	void FadeOutLoading();
-	ENUM_CFCore_LoadingProgress GetNextSafePhase();
-	double GetPhaseValues(ENUM_CFCore_LoadingProgress Index_0);
-	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
-	void ResetLoading();
-	void RestartLoading();
-	void SetLoadingStage(ENUM_CFCore_LoadingProgress Loading_Stage);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void SetLoadingStage(ENUM_CFCore_LoadingProgress Loading_Stage);
+	void RestartLoading();
+	void ResetLoading();
+	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	double GetPhaseValues(ENUM_CFCore_LoadingProgress Index_0);
+	ENUM_CFCore_LoadingProgress GetNextSafePhase();
+	void FadeOutLoading();
+	void ExecuteUbergraph_UI_CFCore_Loading(int32 EntryPoint);
+	void Construct();
+	void BndEvt__UI_CFCore_Loading_UI_Button_CFCore_Global_BackLoading_K2Node_ComponentBoundEvent_2_OnClick__DelegateSignature();
 
 public:
 	static class UClass* StaticClass()

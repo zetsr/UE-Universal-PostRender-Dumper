@@ -16,35 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function UI_CFCore_Background.UI_CFCore_Background_C.ApplyThemeSettingsToAll
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UUI_CFCore_Background_C::ApplyThemeSettingsToAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Background_C", "ApplyThemeSettingsToAll");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function UI_CFCore_Background.UI_CFCore_Background_C.ExecuteUbergraph_UI_CFCore_Background
-// (Final, UbergraphFunction)
+// Function UI_CFCore_Background.UI_CFCore_Background_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_CFCore_Background_C::ExecuteUbergraph_UI_CFCore_Background(int32 EntryPoint)
+void UUI_CFCore_Background_C::PreConstruct(bool IsDesignTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Background_C", "ExecuteUbergraph_UI_CFCore_Background");
+		Func = Class->GetFunction("UI_CFCore_Background_C", "PreConstruct");
 
-	Params::UI_CFCore_Background_C_ExecuteUbergraph_UI_CFCore_Background Parms{};
+	Params::UI_CFCore_Background_C_PreConstruct Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -72,23 +58,37 @@ void UUI_CFCore_Background_C::FadeTowards(EUMGSequencePlayMode PlayMode, double 
 }
 
 
-// Function UI_CFCore_Background.UI_CFCore_Background_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function UI_CFCore_Background.UI_CFCore_Background_C.ExecuteUbergraph_UI_CFCore_Background
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_CFCore_Background_C::PreConstruct(bool IsDesignTime)
+void UUI_CFCore_Background_C::ExecuteUbergraph_UI_CFCore_Background(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Background_C", "PreConstruct");
+		Func = Class->GetFunction("UI_CFCore_Background_C", "ExecuteUbergraph_UI_CFCore_Background");
 
-	Params::UI_CFCore_Background_C_PreConstruct Parms{};
+	Params::UI_CFCore_Background_C_ExecuteUbergraph_UI_CFCore_Background Parms{};
 
-	Parms.IsDesignTime = IsDesignTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function UI_CFCore_Background.UI_CFCore_Background_C.ApplyThemeSettingsToAll
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UUI_CFCore_Background_C::ApplyThemeSettingsToAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_CFCore_Background_C", "ApplyThemeSettingsToAll");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -17,16 +17,25 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function UI_CFCore_Background.UI_CFCore_Background_C.ApplyThemeSettingsToAll
-// 0x00C0 (0x00C0 - 0x0000)
-struct UI_CFCore_Background_C_ApplyThemeSettingsToAll final
+// Function UI_CFCore_Background.UI_CFCore_Background_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct UI_CFCore_Background_C_PreConstruct final
 {
 public:
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0xF];                                        // 0x0001(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush;                      // 0x0010(0x00B0)()
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_UI_CFCore_Background_C_ApplyThemeSettingsToAll;
+DUMPER7_ASSERTS_UI_CFCore_Background_C_PreConstruct;
+
+// Function UI_CFCore_Background.UI_CFCore_Background_C.FadeTowards
+// 0x0010 (0x0010 - 0x0000)
+struct UI_CFCore_Background_C_FadeTowards final
+{
+public:
+	EUMGSequencePlayMode                          PlayMode;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        PlaybackSpeed;                                     // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_UI_CFCore_Background_C_FadeTowards;
 
 // Function UI_CFCore_Background.UI_CFCore_Background_C.ExecuteUbergraph_UI_CFCore_Background
 // 0x0028 (0x0028 - 0x0000)
@@ -48,25 +57,16 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_Background_C_ExecuteUbergraph_UI_CFCore_Background;
 
-// Function UI_CFCore_Background.UI_CFCore_Background_C.FadeTowards
-// 0x0010 (0x0010 - 0x0000)
-struct UI_CFCore_Background_C_FadeTowards final
+// Function UI_CFCore_Background.UI_CFCore_Background_C.ApplyThemeSettingsToAll
+// 0x00C0 (0x00C0 - 0x0000)
+struct UI_CFCore_Background_C_ApplyThemeSettingsToAll final
 {
 public:
-	EUMGSequencePlayMode                          PlayMode;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        PlaybackSpeed;                                     // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0xF];                                        // 0x0001(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush;                      // 0x0010(0x00B0)()
 };
-DUMPER7_ASSERTS_UI_CFCore_Background_C_FadeTowards;
-
-// Function UI_CFCore_Background.UI_CFCore_Background_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct UI_CFCore_Background_C_PreConstruct final
-{
-public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_UI_CFCore_Background_C_PreConstruct;
+DUMPER7_ASSERTS_UI_CFCore_Background_C_ApplyThemeSettingsToAll;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

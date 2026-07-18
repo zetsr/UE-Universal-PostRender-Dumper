@@ -26,12 +26,12 @@ public:
 	struct FSTRUCT_CFCore_UITheme                 CFcoreUITheme;                                     // 0x07F0(0x0070)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
-	void ApplyThemeSettingsToAll();
-	void ExecuteUbergraph_CFCoreWidget(int32 EntryPoint);
-	void Get_All_Text_Blocks(class UPanelWidget* Root_Widget, TArray<class UTextBlock*>* Text_Blocks, bool* HasItems);
-	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
-	void PreConstruct(bool IsDesignTime);
 	void Recursive_ApplyFontToAllWidgets();
+	void PreConstruct(bool IsDesignTime);
+	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void Get_All_Text_Blocks(class UPanelWidget* Root_Widget, TArray<class UTextBlock*>* Text_Blocks, bool* HasItems);
+	void ExecuteUbergraph_CFCoreWidget(int32 EntryPoint);
+	void ApplyThemeSettingsToAll();
 
 public:
 	static class UClass* StaticClass()

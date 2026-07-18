@@ -10,144 +10,179 @@
 
 #include "Basic.hpp"
 
-#include "Enum_MapRegion_structs.hpp"
+#include "Struct_DropDragonPearlCache_structs.hpp"
 #include "Engine_structs.hpp"
-#include "Enum_EmotesDragon_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "Enum_ServerType_structs.hpp"
 #include "Struct_StatRecessives_structs.hpp"
 #include "InputCore_structs.hpp"
-#include "Enum_StatMutations_structs.hpp"
 #include "Enum_Cosmetic_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Enum_StatMutations_structs.hpp"
+#include "Enum_EmotesDragon_structs.hpp"
+#include "Enum_AnimMotionStates_structs.hpp"
+#include "Enum_MapRegion_structs.hpp"
 #include "Struct_Lineage_structs.hpp"
+#include "PhysicsCore_structs.hpp"
 #include "Enum_SkinOverlays_structs.hpp"
+#include "Struct_DragonPearl_structs.hpp"
 #include "Char_Parent_Player_classes.hpp"
 #include "Enum_GrowthStage_structs.hpp"
-#include "Enum_AnimMotionStates_structs.hpp"
 #include "Enum_Species_structs.hpp"
 #include "Enum_Elements_structs.hpp"
+#include "Enum_ItemRarity_structs.hpp"
 #include "Enum_CrystalColor_structs.hpp"
-#include "PhysicsCore_structs.hpp"
+#include "Enum_CreatureLevels_structs.hpp"
+#include "Enum_ServerType_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Char_Parent_Dragonkind.Char_Parent_Dragonkind_C
-// 0x0420 (0x1200 - 0x0DE0)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) AChar_Parent_Dragonkind_C : public AChar_Parent_Player_C
+// 0x0540 (0x1330 - 0x0DF0)
+class AChar_Parent_Dragonkind_C : public AChar_Parent_Player_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Parent_Dragonkind_C;           // 0x0DE0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UQuestTracker_C*                        QuestTracker;                                      // 0x0DE8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UPlayerInventory_C*                     PlayerInventory;                                   // 0x0DF0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UFMODAudioComponent*                    FlyByLoop;                                         // 0x0DF8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UFMODAudioComponent*                    DiveBombLoop;                                      // 0x0E00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UParticleSystemComponent*               CosmeticEffect;                                    // 0x0E08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UFMODAudioComponent*                    AudioFlightLoop;                                   // 0x0E10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UFMODAudioComponent*                    AudioSwimLoop;                                     // 0x0E18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class FName                                   SireSID;                                           // 0x0E20(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	class FName                                   DamSID;                                            // 0x0E28(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	bool                                          IsAnimationPlaying;                                // 0x0E30(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsInputRestPressed;                                // 0x0E31(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         WaterBuoyancy;                                     // 0x0E32(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_E33[0x5];                                      // 0x0E33(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                NestWaypoint;                                      // 0x0E38(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          HasNest;                                           // 0x0E50(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_E51[0x7];                                      // 0x0E51(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                TempNestWP;                                        // 0x0E58(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CanDropNest;                                       // 0x0E70(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_E71[0x3];                                      // 0x0E71(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ServerNestID;                                      // 0x0E74(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FTimerHandle                           HealthRegenTimer;                                  // 0x0E78(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsHealthRegenerating;                              // 0x0E80(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_E81[0x7];                                      // 0x0E81(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AChar_Parent_Dragonkind_C*              Mate;                                              // 0x0E88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class ASpawn_DragonNest_C*                    FemaleNest;                                        // 0x0E90(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	TArray<class ASpawn_DragonNest_C*>            MaleNests;                                         // 0x0E98(0x0010)(Edit, BlueprintVisible, Net, DisableEditOnTemplate, DisableEditOnInstance)
-	bool                                          IsBeingCourted;                                    // 0x0EA8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_EA9[0x7];                                      // 0x0EA9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UClass*                                 DragonNestClass;                                   // 0x0EB0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsBeingCarried;                                    // 0x0EB8(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_EB9[0x7];                                      // 0x0EB9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AChar_Parent_Dragonkind_C*              CarrierActor;                                      // 0x0EC0(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class AChar_Parent_Dragonkind_C*              CarriedActor;                                      // 0x0EC8(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsStruggling;                                      // 0x0ED0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_ED1[0x7];                                      // 0x0ED1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              DispatchStruggleMontage;                           // 0x0ED8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, AdvancedDisplay, BlueprintCallable)
-	struct FTimerHandle                           ArmorRegenTimer;                                   // 0x0EE8(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsArmorRegenerating;                               // 0x0EF0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          HasBileExhaustion;                                 // 0x0EF1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          HasStaminaExhaustion;                              // 0x0EF2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          HasTorpor;                                         // 0x0EF3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_EF4[0x4];                                      // 0x0EF4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTimerHandle                           PoisonTimer;                                       // 0x0EF8(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	double                                        CurePoisonTimeCounter;                             // 0x0F00(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          BileFull;                                          // 0x0F08(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F09[0x7];                                      // 0x0F09(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CureBleedTimeCounter;                              // 0x0F10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CureDecayTimeCounter;                              // 0x0F18(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CureBurnTimeCounter;                               // 0x0F20(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_StatMutations                            BleedStacks;                                       // 0x0F28(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	Enum_StatMutations                            DecayStacks;                                       // 0x0F29(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F2A[0x6];                                      // 0x0F2A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              DispatchYelp;                                      // 0x0F30(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, AdvancedDisplay, BlueprintCallable)
-	bool                                          IsAttackOnCooldown;                                // 0x0F40(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsBiting;                                          // 0x0F41(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F42[0x6];                                      // 0x0F42(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 ProjectileTarget;                                  // 0x0F48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class FString                                 TargetData;                                        // 0x0F50(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	struct FVector                                LastBleedLoc;                                      // 0x0F60(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FDateTime                              LastBleedTime;                                     // 0x0F78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          MuteFlyBy;                                         // 0x0F80(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F81[0x7];                                      // 0x0F81(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   Key_Rest;                                          // 0x0F88(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	struct FKey                                   Key_SwimBladderUp;                                 // 0x0FA0(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	struct FKey                                   Key_SwimBladderDown;                               // 0x0FB8(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	struct FKey                                   Key_AirBoost;                                      // 0x0FD0(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	struct FKey                                   Key_AirBrake;                                      // 0x0FE8(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	bool                                          IsDeathFoodValueOne;                               // 0x1000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_Cosmetic                                 CosmeticFX;                                        // 0x1001(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	struct FStruct_StatRecessives                 RecessiveGenes;                                    // 0x1002(0x0012)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	Enum_StatMutations                            BurnStacks;                                        // 0x1014(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1015[0x3];                                     // 0x1015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDateTime                              LastGrowthTime;                                    // 0x1018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	struct FTimerHandle                           DailyGrowthTimer;                                  // 0x1020(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FKey                                   KeyJump;                                           // 0x1028(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void(bool ShouldFly)> ToggleFlight;                                     // 0x1040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, AdvancedDisplay, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              BreakMomentum;                                     // 0x1050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, AdvancedDisplay, BlueprintCallable)
-	bool                                          IsBoostFlying;                                     // 0x1060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1061[0x7];                                     // 0x1061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CarriedFromLoc;                                    // 0x1068(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ShouldPauseStaminaRegen;                           // 0x1080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1081[0x7];                                     // 0x1081(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        HoverYaw;                                          // 0x1088(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          GlideRegenCounter;                                 // 0x1090(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1091[0x3];                                     // 0x1091(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SecondWindStamina;                                 // 0x1094(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void(Enum_EmotesDragon Emote)> OnEmoteFired;                            // 0x1098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, AdvancedDisplay, BlueprintCallable)
-	Enum_MapRegion                                NestLocationBiome;                                 // 0x10A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         SecondWindRep;                                     // 0x10A9(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_10AA[0x2];                                     // 0x10AA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FStruct_Lineage                        Lineage;                                           // 0x10AC(0x0114)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         PlayerStaminaExhaustion;                           // 0x11C0(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	Enum_SkinOverlays                             SkinOverride;                                      // 0x11C1(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         RecessiveSkin;                                     // 0x11C2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         RecessiveEyes;                                     // 0x11C3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         EyesIndex;                                         // 0x11C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         ShimmerValue;                                      // 0x11C5(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_11C6[0x2];                                     // 0x11C6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        SpecialBarCurrentValue;                            // 0x11C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        SpecialBarMaxValue;                                // 0x11D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_StatMutations                            StunLevels;                                        // 0x11D8(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	bool                                          WasRecentlyStunned;                                // 0x11D9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11DA[0x6];                                     // 0x11DA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(const struct FVector& NormalImpulse)> WantsFlightHit;              // 0x11E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	bool                                          RecentlyRegurgitated;                              // 0x11F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         StaticSkinEmissiveValue;                           // 0x11F1(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         SkinPattern;                                       // 0x11F2(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         StaticEmissiveHueValue;                            // 0x11F3(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         BaseEmissiveHueValue;                              // 0x11F4(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_DE3[0x5];                                      // 0x0DE3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Parent_Dragonkind_C;           // 0x0DE8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UQuestTracker_C*                        QuestTracker;                                      // 0x0DF0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPlayerInventory_C*                     PlayerInventory;                                   // 0x0DF8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UFMODAudioComponent*                    FlyByLoop;                                         // 0x0E00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UFMODAudioComponent*                    DiveBombLoop;                                      // 0x0E08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UParticleSystemComponent*               CosmeticEffect;                                    // 0x0E10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UFMODAudioComponent*                    AudioFlightLoop;                                   // 0x0E18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UFMODAudioComponent*                    AudioSwimLoop;                                     // 0x0E20(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class FName                                   SireSID;                                           // 0x0E28(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	class FName                                   DamSID;                                            // 0x0E30(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	bool                                          IsAnimationPlaying;                                // 0x0E38(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsInputRestPressed;                                // 0x0E39(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         WaterBuoyancy;                                     // 0x0E3A(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E3B[0x5];                                      // 0x0E3B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                NestWaypoint;                                      // 0x0E40(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HasNest;                                           // 0x0E58(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E59[0x7];                                      // 0x0E59(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                TempNestWP;                                        // 0x0E60(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CanDropNest;                                       // 0x0E78(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E79[0x3];                                      // 0x0E79(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ServerNestID;                                      // 0x0E7C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTimerHandle                           HealthRegenTimer;                                  // 0x0E80(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsHealthRegenerating;                              // 0x0E88(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E89[0x7];                                      // 0x0E89(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AChar_Parent_Dragonkind_C*              Mate;                                              // 0x0E90(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class ASpawn_DragonNest_C*                    FemaleNest;                                        // 0x0E98(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	TArray<class ASpawn_DragonNest_C*>            MaleNests;                                         // 0x0EA0(0x0010)(Edit, BlueprintVisible, Net, DisableEditOnTemplate, DisableEditOnInstance)
+	bool                                          IsBeingCourted;                                    // 0x0EB0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_EB1[0x7];                                      // 0x0EB1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UClass*                                 DragonNestClass;                                   // 0x0EB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsBeingCarried;                                    // 0x0EC0(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_EC1[0x7];                                      // 0x0EC1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AChar_Parent_Dragonkind_C*              CarrierActor;                                      // 0x0EC8(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class AChar_Parent_Dragonkind_C*              CarriedActor;                                      // 0x0ED0(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsStruggling;                                      // 0x0ED8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_ED9[0x7];                                      // 0x0ED9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              DispatchStruggleMontage;                           // 0x0EE0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, AdvancedDisplay, BlueprintCallable)
+	struct FTimerHandle                           ArmorRegenTimer;                                   // 0x0EF0(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsArmorRegenerating;                               // 0x0EF8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HasBileExhaustion;                                 // 0x0EF9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HasStaminaExhaustion;                              // 0x0EFA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HasTorpor;                                         // 0x0EFB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_EFC[0x4];                                      // 0x0EFC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimerHandle                           PoisonTimer;                                       // 0x0F00(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	double                                        CurePoisonTimeCounter;                             // 0x0F08(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          BileFull;                                          // 0x0F10(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_F11[0x7];                                      // 0x0F11(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CureBleedTimeCounter;                              // 0x0F18(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CureDecayTimeCounter;                              // 0x0F20(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CureBurnTimeCounter;                               // 0x0F28(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_StatMutations                            BleedStacks;                                       // 0x0F30(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	Enum_StatMutations                            DecayStacks;                                       // 0x0F31(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_F32[0x6];                                      // 0x0F32(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              DispatchYelp;                                      // 0x0F38(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, AdvancedDisplay, BlueprintCallable)
+	bool                                          IsAttackOnCooldown;                                // 0x0F48(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsBiting;                                          // 0x0F49(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_F4A[0x6];                                      // 0x0F4A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 ProjectileTarget;                                  // 0x0F50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class FString                                 TargetData;                                        // 0x0F58(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FVector                                LastBleedLoc;                                      // 0x0F68(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FDateTime                              LastBleedTime;                                     // 0x0F80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          MuteFlyBy;                                         // 0x0F88(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_F89[0x7];                                      // 0x0F89(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKey                                   Key_Rest;                                          // 0x0F90(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FKey                                   Key_SwimBladderUp;                                 // 0x0FA8(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FKey                                   Key_SwimBladderDown;                               // 0x0FC0(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FKey                                   Key_AirBoost;                                      // 0x0FD8(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FKey                                   Key_AirBrake;                                      // 0x0FF0(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          IsDeathFoodValueOne;                               // 0x1008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_Cosmetic                                 CosmeticFX;                                        // 0x1009(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	struct FStruct_StatRecessives                 RecessiveGenes;                                    // 0x100A(0x0012)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	Enum_StatMutations                            BurnStacks;                                        // 0x101C(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_101D[0x3];                                     // 0x101D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDateTime                              LastGrowthTime;                                    // 0x1020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FTimerHandle                           DailyGrowthTimer;                                  // 0x1028(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FKey                                   KeyJump;                                           // 0x1030(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void(bool ShouldFly)> ToggleFlight;                                     // 0x1048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, AdvancedDisplay, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              BreakMomentum;                                     // 0x1058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, AdvancedDisplay, BlueprintCallable)
+	bool                                          IsBoostFlying;                                     // 0x1068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1069[0x7];                                     // 0x1069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CarriedFromLoc;                                    // 0x1070(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ShouldPauseStaminaRegen;                           // 0x1088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1089[0x7];                                     // 0x1089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        HoverYaw;                                          // 0x1090(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          GlideRegenCounter;                                 // 0x1098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1099[0x3];                                     // 0x1099(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SecondWindStamina;                                 // 0x109C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void(Enum_EmotesDragon Emote)> OnEmoteFired;                            // 0x10A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, AdvancedDisplay, BlueprintCallable)
+	Enum_MapRegion                                NestLocationBiome;                                 // 0x10B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         SecondWindRep;                                     // 0x10B1(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_10B2[0x2];                                     // 0x10B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FStruct_Lineage                        Lineage;                                           // 0x10B4(0x0114)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         PlayerStaminaExhaustion;                           // 0x11C8(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	Enum_SkinOverlays                             SkinOverride;                                      // 0x11C9(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	uint8                                         RecessiveSkin;                                     // 0x11CA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         RecessiveEyes;                                     // 0x11CB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         EyesIndex;                                         // 0x11CC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         ShimmerValue;                                      // 0x11CD(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_11CE[0x2];                                     // 0x11CE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        SpecialBarCurrentValue;                            // 0x11D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        SpecialBarMaxValue;                                // 0x11D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_StatMutations                            StunLevels;                                        // 0x11E0(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	bool                                          WasRecentlyStunned;                                // 0x11E1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11E2[0x6];                                     // 0x11E2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const struct FVector& NormalImpulse)> WantsFlightHit;              // 0x11E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	bool                                          RecentlyRegurgitated;                              // 0x11F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         StaticSkinEmissiveValue;                           // 0x11F9(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         SkinPattern;                                       // 0x11FA(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         StaticEmissiveHueValue;                            // 0x11FB(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         BaseEmissiveHueValue;                              // 0x11FC(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_11FD[0x3];                                     // 0x11FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FStruct_DragonPearl                    DragonPearl;                                       // 0x1200(0x0020)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void(bool Unequipped)> OnDragonPearlUpdated;                            // 0x1220(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	double                                        PearlPoisonResist;                                 // 0x1230(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlBurnResist;                                   // 0x1238(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlDecayResist;                                  // 0x1240(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlBleedResist;                                  // 0x1248(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlStunResist;                                   // 0x1250(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlSlowResist;                                   // 0x1258(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlFreezeResist;                                 // 0x1260(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlElderGrowth;                                  // 0x1268(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlCritChance;                                   // 0x1270(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlCritDamage;                                   // 0x1278(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlCritEvade;                                    // 0x1280(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlCritDefense;                                  // 0x1288(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlFireMitigation;                               // 0x1290(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlFrostMitigation;                              // 0x1298(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlPlasmaMitigation;                             // 0x12A0(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlLightningMitigation;                          // 0x12A8(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlAcidMitigation;                               // 0x12B0(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlVenomMitigation;                              // 0x12B8(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlPierceMitigation;                             // 0x12C0(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlBluntMitigation;                              // 0x12C8(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlFireDmg;                                      // 0x12D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlFrostDmg;                                     // 0x12D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlPlasmaDmg;                                    // 0x12E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlLightningDmg;                                 // 0x12E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlAcidDmg;                                      // 0x12F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PearlVenomDmg;                                     // 0x12F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FStruct_DropDragonPearlCache           DropDragonPearlCache;                              // 0x1300(0x0028)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          IsBrakeFlying;                                     // 0x1328(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void All_Scent(bool Stop);
@@ -157,10 +192,12 @@ public:
 	void ApplyBurnStack(Enum_StatMutations StacksToApply);
 	void ApplyDecay(Enum_StatMutations Stacks);
 	void ApplyDecayStack(Enum_StatMutations StacksToApply);
+	void ApplyDragonPearlBuff(bool ShouldUnequip);
 	void ApplySkinPattern();
 	void ApplyStun();
 	void ApplyStunStatus();
 	void ApplyTorpor(bool UsePercentage, double AddPercent, int32 AddValue);
+	void AudioSwimExitKeyOff();
 	void BileRegenLoop();
 	void BlastSoundwave(Enum_CrystalColor Attunement);
 	void BndEvt__Char_Parent_Dragonkind_TemperatureWeatherStatus_K2Node_ComponentBoundEvent_0_Exposed_to_Rain__DelegateSignature();
@@ -215,6 +252,7 @@ public:
 	void DoDragonkindScreenFX();
 	void DoForAllEmotes();
 	void DropActor();
+	void DropDragonPearl(const struct FStruct_InventoryItemsReplicated& PearlItem, Enum_ItemRarity ItemRarity, bool IsGeneratorSpawned);
 	void EmoteCourtship();
 	void EmoteDistress();
 	void EmoteFear();
@@ -239,6 +277,10 @@ public:
 	void GetBilePercent(double* BilePercent);
 	void GetBloodDecal(class UMaterialInstance** DecalMat, struct FVector* Size);
 	void GetBoneTargetLocation(double DistanceM, bool* UseBoneTarget, class ACharacter** HitCharacter, class FName* HitBone);
+	void GetBonusCritDefensePercent(double* BonusCritEvade, double* BonusCritReduction);
+	void GetBonusCritOffensePercent(double* BonusCritChance, double* BonusCritDamage);
+	void GetBonusDamagePercent(double* BonusFire, double* BonusFrost, double* BonusPlasma, double* BonusLightning, double* BonusAcid, double* BonusVenom);
+	void GetBonusMitigationsPercent(double* BonusFireMitigation, double* BonusFrostMitigation, double* BonusPlasmaMitigation, double* BonusLightningMitigation, double* BonusAcidMitigation, double* BonusVenomMitigation, double* BonusPierceMitigation, double* BonusBluntMitigation);
 	void GetBreathLookAtPoint(double RangeCM, bool TargetCreatureOnly, bool RotateBreathToHead, class FName HeadJointName, class FName ElementSocketName, struct FVector* LookAtPoint);
 	void GetCarryOffset(double* RotOffset);
 	void GetElementBileCost(uint8* BileCost);
@@ -246,7 +288,7 @@ public:
 	void GetHasEnoughStamForJump(bool* CanJumpWithStam);
 	void GetHasEnoughStamina(uint8 StamCost, bool* HasEnoughStamina);
 	void GetProjectileTransform(class FName SocketStart, const struct FVector& Target, struct FTransform* SpawnTransform);
-	void GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino);
+	void GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino, uint8* Brindle);
 	void GetStamDrainMultipliers(int32* DrainMultiplier);
 	void GetStamRegenMultipliers(int32* RegenMultiplier);
 	void HatchlingGrowthBonus(double* GrowthBonus);
@@ -288,6 +330,7 @@ public:
 	void LocalPossessed();
 	void LocalTick(double DeltaSeconds);
 	void MaleSenseNest();
+	void Multi_DropDragonPearl();
 	void Multi_SpawnBloodPool();
 	void MulticastYelp();
 	void NotifyServerNestElemented(class ASpawn_DragonNest_C* DragonNest, Enum_Elements DamageType);
@@ -297,6 +340,7 @@ public:
 	void OnBleedUpdated();
 	void OnBlendOut_2C1013404CCAC5155AA832AD921CDE1E(class FName NotifyName);
 	void OnBlendOut_8A8B854E4A7D922BC055A2806C98FDE6(class FName NotifyName);
+	void OnBlendOut_A208E9CC4C598A332F98EA8664310F55(class FName NotifyName);
 	void OnBlendOut_D701171F4E44DA8722DCA78B527B4DE2(class FName NotifyName);
 	void OnBlendOut_DD680BA34EF87A0CC91286BDFAA84160(class FName NotifyName);
 	void OnBurnUpdated();
@@ -306,9 +350,11 @@ public:
 	void OnCharacterDeath_Server_();
 	void OnCompleted_2C1013404CCAC5155AA832AD921CDE1E(class FName NotifyName);
 	void OnCompleted_8A8B854E4A7D922BC055A2806C98FDE6(class FName NotifyName);
+	void OnCompleted_A208E9CC4C598A332F98EA8664310F55(class FName NotifyName);
 	void OnCompleted_D701171F4E44DA8722DCA78B527B4DE2(class FName NotifyName);
 	void OnCompleted_DD680BA34EF87A0CC91286BDFAA84160(class FName NotifyName);
 	void OnDecayUpdated();
+	void OnDragonPearlUpdated_Event(bool Unequipped);
 	void OnEnvenomation(uint8 VenomTorpor);
 	void OnFlightHit(const struct FVector& NormalImpulse);
 	void OnGrowthChanged();
@@ -316,6 +362,7 @@ public:
 	void OnHungerUpdated();
 	void OnInterrupted_2C1013404CCAC5155AA832AD921CDE1E(class FName NotifyName);
 	void OnInterrupted_8A8B854E4A7D922BC055A2806C98FDE6(class FName NotifyName);
+	void OnInterrupted_A208E9CC4C598A332F98EA8664310F55(class FName NotifyName);
 	void OnInterrupted_D701171F4E44DA8722DCA78B527B4DE2(class FName NotifyName);
 	void OnInterrupted_DD680BA34EF87A0CC91286BDFAA84160(class FName NotifyName);
 	void OnJump();
@@ -326,10 +373,12 @@ public:
 	void OnMulticastedEmote(Enum_EmotesDragon Emote);
 	void OnNotifyBegin_2C1013404CCAC5155AA832AD921CDE1E(class FName NotifyName);
 	void OnNotifyBegin_8A8B854E4A7D922BC055A2806C98FDE6(class FName NotifyName);
+	void OnNotifyBegin_A208E9CC4C598A332F98EA8664310F55(class FName NotifyName);
 	void OnNotifyBegin_D701171F4E44DA8722DCA78B527B4DE2(class FName NotifyName);
 	void OnNotifyBegin_DD680BA34EF87A0CC91286BDFAA84160(class FName NotifyName);
 	void OnNotifyEnd_2C1013404CCAC5155AA832AD921CDE1E(class FName NotifyName);
 	void OnNotifyEnd_8A8B854E4A7D922BC055A2806C98FDE6(class FName NotifyName);
+	void OnNotifyEnd_A208E9CC4C598A332F98EA8664310F55(class FName NotifyName);
 	void OnNotifyEnd_D701171F4E44DA8722DCA78B527B4DE2(class FName NotifyName);
 	void OnNotifyEnd_DD680BA34EF87A0CC91286BDFAA84160(class FName NotifyName);
 	void OnPoisonedEvent();
@@ -352,6 +401,7 @@ public:
 	void OnSwimStart();
 	void OnThirstUpdated();
 	void PAI_SetBuoyancy(double Buoyancy);
+	void PearlElderGrowthBonusMultiplier(double* Multiplier);
 	void PickupHatchling();
 	void PlayStruggleMontageAll();
 	void PlayStunnedMontage(class FName StartingSection);
@@ -429,7 +479,6 @@ public:
 		return GetDefaultObjImpl<AChar_Parent_Dragonkind_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_AChar_Parent_Dragonkind_C;
 
 SDK_NAMESPACE_END

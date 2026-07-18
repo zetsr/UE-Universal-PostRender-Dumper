@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DmgType_Melee_Torpidity_None_MetalWeapon.DmgType_Melee_Torpidity_None_MetalWeapon_C
 // 0x0000 (0x0180 - 0x0180)
-class UDmgType_Melee_Torpidity_None_MetalWeapon_C : public UDmgType_Melee_Torpidity_None_C
+class UDmgType_Melee_Torpidity_None_MetalWeapon_C final : public UDmgType_Melee_Torpidity_None_C
 {
 public:
 	static class UClass* StaticClass()

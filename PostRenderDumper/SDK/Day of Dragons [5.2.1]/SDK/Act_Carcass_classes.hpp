@@ -12,8 +12,9 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Enum_StatMutations_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
+#include "Enum_StatusEffects_structs.hpp"
+#include "Enum_StatMutations_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -48,6 +49,8 @@ public:
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ResetDefaultRotation();
 	void StopFlight();
+	void TryApplyStatusEffect(Enum_StatusEffects EffectToApply, Enum_StatMutations StacksToApply, class AChar_Parent_Player_C* AttackingPlayer);
+	void TryDestroyComponent(class UActorComponent* Component);
 	void TryDestroyCorpse();
 	void TryDrop();
 	void TryLaunchCharacter(const struct FVector& LaunchVelocity, bool XY_Override, bool Z_Override);

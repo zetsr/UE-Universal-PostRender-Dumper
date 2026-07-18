@@ -11,7 +11,6 @@
 #include "Basic.hpp"
 
 #include "Dmg_Basic_classes.hpp"
-#include "Enum_GeneticGrades_structs.hpp"
 #include "Enum_DmgTypes_structs.hpp"
 
 
@@ -22,7 +21,6 @@ SDK_NAMESPACE_START
 class UDmg_Fire_C final : public UDmg_Basic_C
 {
 public:
-	void CalculateDamage(double InMitigation, double InMultiplier, double InDamage, double InArmor, double InHealth, const struct FStruct_StatMutations& Mutations, Enum_GeneticGrades GeneticQuality, double* OutArmor, double* OutHealth) const;
 	void GetSelfDamageType(Enum_DmgTypes* DamageType) const;
 
 public:

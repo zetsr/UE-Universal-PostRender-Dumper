@@ -24,5 +24,17 @@ public:
 };
 DUMPER7_ASSERTS_Wi_Menu_Settings_Audio_C_GetbIsEnabled_0;
 
+// Function Wi_Menu_Settings_Audio.Wi_Menu_Settings_Audio_C.GetIsSFX_Enabled
+// 0x0018 (0x0018 - 0x0000)
+struct Wi_Menu_Settings_Audio_C_GetIsSFX_Enabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDragonsGI_C*                           CallFunc_Get_Dragons_Game_Instance_Pure_DragonsGameInstance; // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Wi_Menu_Settings_Audio_C_GetIsSFX_Enabled;
+
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalPlayerDataBP_Base.PrimalPlayerDataBP_Base_C
 // 0x0058 (0x07E8 - 0x0790)
-class UPrimalPlayerDataBP_Base_C : public UPrimalPlayerData
+class UPrimalPlayerDataBP_Base_C final : public UPrimalPlayerData
 {
 public:
 	int32                                         NumAscensions;                                     // 0x0790(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

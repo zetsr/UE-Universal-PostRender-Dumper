@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Char_Egg_AcidSpitter.Char_Egg_AcidSpitter_C
-// 0x0000 (0x1220 - 0x1220)
+// 0x0000 (0x1360 - 0x1360)
 class AChar_Egg_AcidSpitter_C final : public AChar_Parent_Egg_C
 {
 public:

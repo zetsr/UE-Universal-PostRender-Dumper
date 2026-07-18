@@ -18,7 +18,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BoneModifiersContainer.BoneModifiersContainer_C
 // 0x0018 (0x0040 - 0x0028)
-class UBoneModifiersContainer_C : public UObject
+class UBoneModifiersContainer_C final : public UObject
 {
 public:
 	TArray<struct FBoneModifierNamed>             BoneModifiers;                                     // 0x0028(0x0010)(Edit, BlueprintVisible)

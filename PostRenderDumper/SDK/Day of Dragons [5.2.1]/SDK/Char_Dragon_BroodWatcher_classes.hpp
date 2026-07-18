@@ -10,65 +10,65 @@
 
 #include "Basic.hpp"
 
-#include "Enum_EmotesDragon_structs.hpp"
-#include "Engine_structs.hpp"
-#include "Char_Parent_Dragon_classes.hpp"
-#include "Struct_BroodWatcherEggTracker_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "Struct_PlayerEggInfo_structs.hpp"
-#include "Enum_AppliedDamage_structs.hpp"
-#include "Struct_StatModifiers_structs.hpp"
-#include "InputCore_structs.hpp"
 #include "Enum_YawDirection_structs.hpp"
-#include "Enum_GeneticGrades_structs.hpp"
+#include "Struct_BroodWatcherEggTracker_structs.hpp"
+#include "Struct_PlayerEggInfo_structs.hpp"
+#include "Struct_StatModifiers_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Enum_StatMutations_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "Char_Parent_Dragon_classes.hpp"
+#include "Enum_GeneticGrades_structs.hpp"
+#include "Enum_AppliedDamage_structs.hpp"
 #include "Enum_AnimMotionStates_structs.hpp"
-#include "Enum_GrowthStage_structs.hpp"
+#include "Enum_EmotesDragon_structs.hpp"
 #include "PhysicsCore_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Char_Dragon_BroodWatcher.Char_Dragon_BroodWatcher_C
-// 0x0110 (0x1310 - 0x1200)
+// 0x0120 (0x1450 - 0x1330)
 class AChar_Dragon_BroodWatcher_C final : public AChar_Parent_Dragon_C
 {
 public:
-	uint8                                         Pad_11F5[0x3];                                     // 0x11F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Dragon_BroodWatcher_C;         // 0x11F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBoxComponent*                          WeaponSwipe;                                       // 0x1200(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBoxComponent*                          WeaponBite;                                        // 0x1208(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UPhysicsFlight_C*                       PhysicsFlight;                                     // 0x1210(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         Timeline_0_Fade_1E8EA34442592876D71BD29474E4A6D2;  // 0x1218(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Timeline_0__Direction_1E8EA34442592876D71BD29474E4A6D2; // 0x121C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_121D[0x3];                                     // 0x121D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Timeline_0;                                        // 0x1220(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	double                                        NV_FadeFloat;                                      // 0x1228(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         NumCarriedEggs;                                    // 0x1230(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1231[0x7];                                     // 0x1231(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   AttackKey;                                         // 0x1238(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	TArray<class AActor*>                         BiteActors;                                        // 0x1250(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	TSet<class AActor*>                           SwipedActors;                                      // 0x1260(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	bool                                          IsSwiping;                                         // 0x12B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_YawDirection                             SwipeDirection;                                    // 0x12B1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsTailAttackOnCooldown;                            // 0x12B2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12B3[0x5];                                     // 0x12B3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FStruct_PlayerEggInfo>          BroodingPouchEggs;                                 // 0x12B8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FStruct_BroodWatcherEggTracker         BroodPouchEggTracker;                              // 0x12C8(0x0002)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FStruct_BroodWatcherEggTracker         BroodPouchInviteTracker;                           // 0x12CA(0x0002)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         EggIncubationPercentL1;                            // 0x12CC(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         EggIncubationPercentR2;                            // 0x12CD(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         TotalCritAttempts1;                                // 0x12CE(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CritSuccesses1;                                    // 0x12CF(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         TotalCritAttempts2;                                // 0x12D0(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CritSuccesses2;                                    // 0x12D1(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12D2[0x6];                                     // 0x12D2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(uint8 Event, const struct FStruct_StatModifiers& Stats)> OnBroodCraftAttempt; // 0x12D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void(const struct FVector& EggLocation, class AChar_Dragon_BroodWatcher_C* BroodWatcher)> OnBroodDiscardEgg; // 0x12E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	uint8                                         PouchEmission;                                     // 0x12F8(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12F9[0x7];                                     // 0x12F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        SavedPouchEmission;                                // 0x1300(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class USave_BroodPouch_C*                     BroodPouchSave;                                    // 0x1308(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Dragon_BroodWatcher_C;         // 0x1330(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBoxComponent*                          WeaponSwipe;                                       // 0x1338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          WeaponBite;                                        // 0x1340(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPhysicsFlight_C*                       PhysicsFlight;                                     // 0x1348(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         Timeline_0_Fade_1E8EA34442592876D71BD29474E4A6D2;  // 0x1350(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Timeline_0__Direction_1E8EA34442592876D71BD29474E4A6D2; // 0x1354(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1355[0x3];                                     // 0x1355(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Timeline_0;                                        // 0x1358(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	double                                        NV_FadeFloat;                                      // 0x1360(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         NumCarriedEggs;                                    // 0x1368(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1369[0x7];                                     // 0x1369(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKey                                   AttackKey;                                         // 0x1370(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TArray<class AActor*>                         BiteActors;                                        // 0x1388(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	TSet<class AActor*>                           SwipedActors;                                      // 0x1398(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	bool                                          IsSwiping;                                         // 0x13E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_YawDirection                             SwipeDirection;                                    // 0x13E9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsTailAttackOnCooldown;                            // 0x13EA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_13EB[0x5];                                     // 0x13EB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FStruct_PlayerEggInfo>          BroodingPouchEggs;                                 // 0x13F0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FStruct_BroodWatcherEggTracker         BroodPouchEggTracker;                              // 0x1400(0x0002)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FStruct_BroodWatcherEggTracker         BroodPouchInviteTracker;                           // 0x1402(0x0002)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         EggIncubationPercentL1;                            // 0x1404(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         EggIncubationPercentR2;                            // 0x1405(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         TotalCritAttempts1;                                // 0x1406(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CritSuccesses1;                                    // 0x1407(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         TotalCritAttempts2;                                // 0x1408(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CritSuccesses2;                                    // 0x1409(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_140A[0x6];                                     // 0x140A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(uint8 Event, const struct FStruct_StatModifiers& Stats)> OnBroodCraftAttempt; // 0x1410(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(const struct FVector& EggLocation, class AChar_Dragon_BroodWatcher_C* BroodWatcher)> OnBroodDiscardEgg; // 0x1420(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	uint8                                         PouchEmission;                                     // 0x1430(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1431[0x7];                                     // 0x1431(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        SavedPouchEmission;                                // 0x1438(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USave_BroodPouch_C*                     BroodPouchSave;                                    // 0x1440(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsGrazing;                                         // 0x1448(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         BroodingPearlCritChance;                           // 0x1449(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AddEgg(const struct FStruct_PlayerEggInfo& Egg, uint8 EggIncubationPercent);
@@ -80,6 +80,7 @@ public:
 	void BndEvt__Char_Dragon_FlameStalker_WeaponSwipe_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
 	void CalculateAllBroodingCrits(uint8 CritAttempts, uint8 CritSuccesses, double* CritChance, double* SuperCritChance, double* FailChance, double* CritFailChance);
 	void CalculateBroodCritChance(uint8 CritAttempts, uint8 CritSuccesses, uint8* CritChance);
+	void CheckHunger();
 	void CheckValidEmotePerSpecies(Enum_EmotesDragon Emote, bool HasEmotePack, bool* IsValidEmote);
 	void ClientDispatchCraftTxtEvent(uint8 EventID, const struct FStruct_StatModifiers& EggStats);
 	void ClientSaveEgg(const struct FStruct_PlayerEggInfo& EggInfo, const struct FDateTime& ExpirationDate, const class FString& Key);
@@ -100,7 +101,7 @@ public:
 	void GetElementBileCost(uint8* BileCost);
 	void GetNewGeneValue(uint8 CritAttempts, uint8 CritSuccesses, int32* CritValue, uint8* EventID);
 	void GetPouchSaveDirectory(class FString* PouchSave);
-	void GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino);
+	void GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino, uint8* Brindle);
 	void GetStamDrainMultipliers(int32* DrainMultiplier);
 	void GetStamRegenMultipliers(int32* RegenMultiplier);
 	void GetTotalCarriedEggs(uint8* Eggs);
@@ -137,6 +138,7 @@ public:
 	void OnCompleted_CB3373E142304A0AC5DE22960B19387D(class FName NotifyName);
 	void OnCompleted_D102FEBE4FD5CAD9A5E97E884CE486C5(class FName NotifyName);
 	void OnCompleted_DB2FD6C5454834C97C8757830A80F316(class FName NotifyName);
+	void OnDragonPearlUpdated_Event(bool Unequipped);
 	void OnInterrupted_0D0C28034CC69F3F8D003E9DB005B091(class FName NotifyName);
 	void OnInterrupted_3872EC4A43B4343191551883D031C95F(class FName NotifyName);
 	void OnInterrupted_45BA59314E10CB3E47E6A19C6BBA884E(class FName NotifyName);

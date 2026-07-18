@@ -16,21 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function UI_NoModProjects.UI_NoModProjects_C.ExecuteUbergraph_UI_NoModProjects
-// (Final, UbergraphFunction, HasDefaults)
+// Function UI_NoModProjects.UI_NoModProjects_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_NoModProjects_C::ExecuteUbergraph_UI_NoModProjects(int32 EntryPoint)
+void UUI_NoModProjects_C::PreConstruct(bool IsDesignTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_NoModProjects_C", "ExecuteUbergraph_UI_NoModProjects");
+		Func = Class->GetFunction("UI_NoModProjects_C", "PreConstruct");
 
-	Params::UI_NoModProjects_C_ExecuteUbergraph_UI_NoModProjects Parms{};
+	Params::UI_NoModProjects_C_PreConstruct Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,21 +57,21 @@ void UUI_NoModProjects_C::GetRootCFWidget(class UPanelWidget** RootPanelWidget)
 }
 
 
-// Function UI_NoModProjects.UI_NoModProjects_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function UI_NoModProjects.UI_NoModProjects_C.ExecuteUbergraph_UI_NoModProjects
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_NoModProjects_C::PreConstruct(bool IsDesignTime)
+void UUI_NoModProjects_C::ExecuteUbergraph_UI_NoModProjects(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_NoModProjects_C", "PreConstruct");
+		Func = Class->GetFunction("UI_NoModProjects_C", "ExecuteUbergraph_UI_NoModProjects");
 
-	Params::UI_NoModProjects_C_PreConstruct Parms{};
+	Params::UI_NoModProjects_C_ExecuteUbergraph_UI_NoModProjects Parms{};
 
-	Parms.IsDesignTime = IsDesignTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

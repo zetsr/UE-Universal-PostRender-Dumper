@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Enum_GeneticGrades_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Enum_DmgTypes_structs.hpp"
 #include "Enum_AiGrowth_structs.hpp"
-#include "Enum_GeneticGrades_structs.hpp"
+#include "Enum_DmgTypes_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -24,13 +24,14 @@ SDK_NAMESPACE_START
 class UDmg_Basic_C : public UDamageType
 {
 public:
-	void ProcessDamage_AI_Creatures(double RawDamage, double HealthCurrent, double ArmorCurrent, class AActor* DamageCauser, class UPDA_AIData_C* AiData, Enum_AiGrowth AiSize, EMovementMode MovementMode, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsStunned, double* OutHealth, double* OutArmor, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldYelp, bool* ShouldBleed, bool* ShouldDecay, bool* ShouldBurn, bool* CriticalHit, bool* StillWet, bool* ShouldStun);
-	void ProcessDamage_DragonCreatures(double RawDamage, double ArmorCurrent, double HealthCurrent, class AActor* DamageCauser, double GrowthScale, class UPDA_DragonData_C* CreatureData, const struct FStruct_StatModifiers& StatModifiers, bool IsAlpha, const struct FStruct_StatMutations& Mutations, EMovementMode MovementMode, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsStunned, double* NewArmor, double* NewHealth, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldYelp, bool* ShouldBleed, bool* ShouldDecay, bool* ShouldBurn, bool* CriticalHit, bool* StillWet, bool* ShouldStun);
+	void ProcessDamage_AI_Creatures(double RawDamage, double HealthCurrent, double ArmorCurrent, class AActor* DamageCauser, class UPDA_AIData_C* AiData, Enum_AiGrowth AiSize, EMovementMode MovementMode, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsStunned, bool IsPoisoned, double* OutHealth, double* OutArmor, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldYelp, bool* ShouldBleed, bool* ShouldDecay, bool* ShouldBurn, bool* CriticalHit, bool* StillWet, bool* ShouldStun);
+	void ProcessDamage_DragonCreatures(double RawDamage, double ArmorCurrent, double HealthCurrent, class AActor* DamageCauser, double GrowthScale, class UPDA_DragonData_C* CreatureData, const struct FStruct_StatModifiers& StatModifiers, bool IsAlpha, const struct FStruct_StatMutations& Mutations, EMovementMode MovementMode, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsStunned, class AChar_Parent_Player_C* PlayerBeingDamaged, bool IsPoisoned, double* NewArmor, double* NewHealth, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldYelp, bool* ShouldBleed, bool* ShouldDecay, bool* ShouldBurn, bool* CriticalHit, bool* StillWet, bool* ShouldStun);
 	void ProcessDamage_ElementalCreatures(double RawDamage, double ArmorCurrent, double HealthCurrent, class AActor* DamageCauser, class UPDA_ElementalData_C* ElementalData, const struct FStruct_StatModifiers& StatModifiers, const struct FStruct_StatMutations& Mutations, EMovementMode MovementMode, bool IsDecaying, bool IsWet, double* NewArmor, double* NewHealth, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldGrunt, bool* ShouldDecay, bool* CriticalHit, bool* StillWet);
 
-	void AddModfiersAI(class UPDA_AIData_C* AiData, double* MitigationPercent) const;
-	void AddModfiersDragon(class UPDA_DragonData_C* CreatureData, const struct FStruct_StatModifiers& Modifiers, double* MitigationPercent, Enum_GeneticGrades* GeneticQuality) const;
-	void AddModfiersElemental(class UPDA_ElementalData_C* ElementalData, const struct FStruct_StatModifiers& Modifiers, double* MitigationPercent) const;
+	void AddModfiersAI(class UPDA_AIData_C* AiData, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsPoisoned, double* MitigationPercent) const;
+	void AddModfiersDragon(class UPDA_DragonData_C* CreatureData, const struct FStruct_StatModifiers& Modifiers, class AChar_Parent_Player_C* DamagedPlayer, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsPoisoned, double* MitigationPercent, Enum_GeneticGrades* GeneticQuality) const;
+	void AddModfiersElemental(class UPDA_ElementalData_C* ElementalData, const struct FStruct_StatModifiers& Modifiers, bool IsDecaying, bool IsWet, double* MitigationPercent) const;
+	void CalcMitigatedDamage(double Damage, double Mitigation, double* NewDamage) const;
 	void CalculateCritDamage(double RawDamage, double AttackerCritChance, double AttackerCritDmg, const struct FStruct_StatMutations& VictimMutations, const struct FStruct_StatModifiers& VictimGeneticModifiers, double VictimBaseEvade, double VictimBaseProtect, double* CritDamage, bool* CriticalHit) const;
 	void CalculateDamage(double InMitigation, double InMultiplier, double InDamage, double InArmor, double InHealth, const struct FStruct_StatMutations& Mutations, Enum_GeneticGrades GeneticQuality, double* OutArmor, double* OutHealth) const;
 	void CheckIfStillWet(Enum_DmgTypes DamageType, bool ShouldDecay, bool ShouldBurn, bool IsWet, bool* SetDecay, bool* SetBurn, bool* SetWet) const;
@@ -38,16 +39,17 @@ public:
 	void CheckShouldBurn(bool ImmuneBurn, Enum_DmgTypes DamageType, double TotalDmg, Enum_GeneticGrades GeneticQuality, bool IsBurning, bool* ShouldBurn) const;
 	void CheckShouldDecay(bool ImmuneDecay, Enum_DmgTypes DamageType, double TotalDmg, Enum_GeneticGrades GeneticQuality, bool IsDecaying, bool* ShouldDecay) const;
 	void CheckShouldStun(Enum_DmgTypes DamageType, double TotalDamage, bool WasCrit, bool IsStunned, bool ImmuneStun, bool* ShouldStun) const;
-	void ClampOuts(double InArmor, double InHealth, double Growth, class UPDA_DragonData_C* InData, const struct FStruct_StatModifiers& Modifiers, const struct FStruct_StatMutations& Mutations, double* OutArmor, double* OutHealth, bool* IsDead) const;
+	void ClampOuts(double InArmor, double InHealth, double Growth, class UPDA_DragonData_C* InData, const struct FStruct_StatModifiers& Modifiers, const struct FStruct_StatMutations& Mutations, double OrigArmor, double* OutArmor, double* OutHealth, bool* IsDead) const;
 	void ClampOutsAI(double InArmor, double InHealth, Enum_AiGrowth Growth, class UPDA_AIData_C* InData, double* OutHealth, double* OutArmor, bool* IsDead) const;
 	void ClampOutsElemental(double InArmor, double InHealth, class UPDA_ElementalData_C* InData, double* OutArmor, double* OutHealth, bool* IsDead) const;
 	void GetCreatureLevelMultiplier(double* Multiplier) const;
 	void GetCritDefense(double BaseCritEvade, double BaseCritProtect, const struct FStruct_StatMutations& Mutations, const struct FStruct_StatModifiers& GeneticModifiers, double* CriticalEvasion, double* CriticalProtection) const;
 	void GetCritOffense(double BaseCritChance, double BaseCritDamage, const struct FStruct_StatMutations& Mutations, const struct FStruct_StatModifiers& GeneticModifiers, double* CriticalChance, double* CriticalDamage) const;
-	void GetMultipliersAI(class AActor* DamageCauser, class UPDA_AIData_C* AI_Data, bool IsBoss, double* DamageScaleMultiplier, double* AttackerCritChance, double* AttackerCritDmg) const;
-	void GetMultipliersDragon(class AActor* DamageCauser, class UPDA_DragonData_C* CreatureData, bool IsAlpha, double VictimGrowth, double* DamageScaleMultiplier, double* AttackerCritChance, double* AttackerCritDamage) const;
-	void GetMultipliersElemental(class AActor* DamageCauser, class UPDA_ElementalData_C* ElementalData, double* DamageScaleMultiplier, double* AttackerCritChance, double* AttackerCritDmg) const;
+	void GetMultipliersAI(class AActor* DamageCauser, class UPDA_AIData_C* AI_Data, bool IsBoss, double RawDamage, double* DamageScaleMultiplier, double* AttackerCritChance, double* AttackerCritDmg, double* ModifiedDmg) const;
+	void GetMultipliersDragon(class AActor* DamageCauser, class UPDA_DragonData_C* CreatureData, bool IsAlpha, double VictimGrowth, double RawDamage, double* DamageScaleMultiplier, double* AttackerCritChance, double* AttackerCritDamage, double* ModifiedDamage) const;
+	void GetMultipliersElemental(class AActor* DamageCauser, class UPDA_ElementalData_C* ElementalData, double RawDamage, double* DamageScaleMultiplier, double* AttackerCritChance, double* AttackerCritDmg, double* ModifiedDamage) const;
 	void GetSelfDamageType(Enum_DmgTypes* DamageType) const;
+	void MinZero(double In, double* Out) const;
 
 public:
 	static class UClass* StaticClass()

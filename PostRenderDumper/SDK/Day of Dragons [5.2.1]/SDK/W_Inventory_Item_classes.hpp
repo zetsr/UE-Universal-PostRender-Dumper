@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "UMG_classes.hpp"
 #include "Struct_InventoryItemsReplicated_structs.hpp"
 #include "Engine_structs.hpp"
 #include "SCUE5_structs.hpp"
-#include "UMG_classes.hpp"
 #include "Enum_ItemGrantType_structs.hpp"
 #include "Enum_ItemRarity_structs.hpp"
 
@@ -40,7 +40,7 @@ public:
 	void Construct();
 	void Destruct();
 	void ExecuteUbergraph_W_Inventory_Item(int32 EntryPoint);
-	void Get_Item_Image_Quality(class UTexture2D* DefaultImage, Enum_ItemGrantType Type, Enum_ItemRarity Rarity, uint8 LesserByte, uint8 GreaterByte, class UTexture2D** DisplayImage);
+	void Get_Item_Image_Quality(class UTexture2D* DefaultImage, Enum_ItemGrantType Type, Enum_ItemRarity Rarity, uint8 LesserByte, uint8 GreaterByte, bool IsLegendary, class UTexture2D** DisplayImage);
 	class UWidget* Get_Button_Img_ToolTipWidget();
 	struct FSlateBrush GetBackground();
 	void OnInventoryUpdated_Event();

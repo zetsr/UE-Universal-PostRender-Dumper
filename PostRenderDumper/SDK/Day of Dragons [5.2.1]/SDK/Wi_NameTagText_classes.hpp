@@ -12,9 +12,9 @@
 
 #include "Engine_structs.hpp"
 #include "AdvancedSessions_structs.hpp"
+#include "Enum_PlayerTitles_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "Enum_PlayerTitles_structs.hpp"
 
 
 SDK_NAMESPACE_START

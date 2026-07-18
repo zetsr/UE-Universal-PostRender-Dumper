@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "Enum_HUD_Style_structs.hpp"
+#include "UMG_structs.hpp"
 #include "Enum_StatusEffects_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 SDK_NAMESPACE_START

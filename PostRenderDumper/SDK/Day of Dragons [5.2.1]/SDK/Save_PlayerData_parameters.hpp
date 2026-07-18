@@ -12,8 +12,8 @@
 
 #include "Enum_Unlockables_structs.hpp"
 #include "SCUE5_structs.hpp"
-#include "Enum_PlayerCharacter_structs.hpp"
 #include "Struct_SavePlayerData_structs.hpp"
+#include "Enum_PlayerCharacter_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -160,6 +160,18 @@ public:
 	bool                                          K2Node_Select_Default;                             // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Save_PlayerData_C_GetIsUnlocked;
+
+// Function Save_PlayerData.Save_PlayerData_C.GetIsUnlocked_Pure
+// 0x0004 (0x0004 - 0x0000)
+struct Save_PlayerData_C_GetIsUnlocked_Pure final
+{
+public:
+	Enum_Unlockables                              Unlockable;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsUnlocked;                                        // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_Unlockables                              Temp_byte_Variable;                                // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Select_Default;                             // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Save_PlayerData_C_GetIsUnlocked_Pure;
 
 // Function Save_PlayerData.Save_PlayerData_C.GetRequiredProgress
 // 0x0008 (0x0008 - 0x0000)

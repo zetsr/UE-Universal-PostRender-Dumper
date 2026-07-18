@@ -17,18 +17,47 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function CFCoreWidget.CFCoreWidget_C.ExecuteUbergraph_CFCoreWidget
-// 0x0080 (0x0080 - 0x0000)
-struct CFCoreWidget_C_ExecuteUbergraph_CFCoreWidget final
+// Function CFCoreWidget.CFCoreWidget_C.Recursive_ApplyFontToAllWidgets
+// 0x00A8 (0x00A8 - 0x0000)
+struct CFCoreWidget_C_Recursive_ApplyFontToAllWidgets final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSTRUCT_CFCore_UITheme                 CallFunc_GetDataTableRowFromName_OutRow;           // 0x0008(0x0070)(HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_IsDesignTime;                         // 0x0079(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPanelWidget*                           CallFunc_GetRootCFWidget_RootPanelWidget;          // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UTextBlock*>                     CallFunc_Get_All_Text_Blocks_Text_Blocks;          // 0x0020(0x0010)(ReferenceParm, ContainsInstancedReference)
+	bool                                          CallFunc_Get_All_Text_Blocks_HasItems;             // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTextBlock*                             CallFunc_Array_Get_Item;                           // 0x0038(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0045(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_46[0x2];                                       // 0x0046(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo;                   // 0x0048(0x0060)(HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_CFCoreWidget_C_ExecuteUbergraph_CFCoreWidget;
+DUMPER7_ASSERTS_CFCoreWidget_C_Recursive_ApplyFontToAllWidgets;
+
+// Function CFCoreWidget.CFCoreWidget_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct CFCoreWidget_C_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CFCoreWidget_C_PreConstruct;
+
+// Function CFCoreWidget.CFCoreWidget_C.GetRootCFWidget
+// 0x0008 (0x0008 - 0x0000)
+struct CFCoreWidget_C_GetRootCFWidget final
+{
+public:
+	class UPanelWidget*                           RootPanelWidget;                                   // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CFCoreWidget_C_GetRootCFWidget;
 
 // Function CFCoreWidget.CFCoreWidget_C.Get All Text Blocks
 // 0x0098 (0x0098 - 0x0000)
@@ -63,47 +92,18 @@ public:
 };
 DUMPER7_ASSERTS_CFCoreWidget_C_Get_All_Text_Blocks;
 
-// Function CFCoreWidget.CFCoreWidget_C.GetRootCFWidget
-// 0x0008 (0x0008 - 0x0000)
-struct CFCoreWidget_C_GetRootCFWidget final
+// Function CFCoreWidget.CFCoreWidget_C.ExecuteUbergraph_CFCoreWidget
+// 0x0080 (0x0080 - 0x0000)
+struct CFCoreWidget_C_ExecuteUbergraph_CFCoreWidget final
 {
 public:
-	class UPanelWidget*                           RootPanelWidget;                                   // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSTRUCT_CFCore_UITheme                 CallFunc_GetDataTableRowFromName_OutRow;           // 0x0008(0x0070)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_IsDesignTime;                         // 0x0079(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_CFCoreWidget_C_GetRootCFWidget;
-
-// Function CFCoreWidget.CFCoreWidget_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct CFCoreWidget_C_PreConstruct final
-{
-public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_CFCoreWidget_C_PreConstruct;
-
-// Function CFCoreWidget.CFCoreWidget_C.Recursive_ApplyFontToAllWidgets
-// 0x00A8 (0x00A8 - 0x0000)
-struct CFCoreWidget_C_Recursive_ApplyFontToAllWidgets final
-{
-public:
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPanelWidget*                           CallFunc_GetRootCFWidget_RootPanelWidget;          // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UTextBlock*>                     CallFunc_Get_All_Text_Blocks_Text_Blocks;          // 0x0020(0x0010)(ReferenceParm, ContainsInstancedReference)
-	bool                                          CallFunc_Get_All_Text_Blocks_HasItems;             // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTextBlock*                             CallFunc_Array_Get_Item;                           // 0x0038(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0045(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_46[0x2];                                       // 0x0046(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo;                   // 0x0048(0x0060)(HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_CFCoreWidget_C_Recursive_ApplyFontToAllWidgets;
+DUMPER7_ASSERTS_CFCoreWidget_C_ExecuteUbergraph_CFCoreWidget;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

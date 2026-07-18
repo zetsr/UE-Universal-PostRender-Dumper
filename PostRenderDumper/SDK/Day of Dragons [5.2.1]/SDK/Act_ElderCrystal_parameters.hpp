@@ -12,8 +12,8 @@
 
 #include "Struct_GeodeCompass_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Enum_EmotesDragon_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Enum_EmotesDragon_structs.hpp"
 #include "Enum_CrystalColor_structs.hpp"
 
 

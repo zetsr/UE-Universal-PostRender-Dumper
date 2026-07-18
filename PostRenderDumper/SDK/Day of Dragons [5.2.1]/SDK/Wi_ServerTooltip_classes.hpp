@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Enum_ServerType_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "Enum_ServerType_structs.hpp"
 
 
 SDK_NAMESPACE_START

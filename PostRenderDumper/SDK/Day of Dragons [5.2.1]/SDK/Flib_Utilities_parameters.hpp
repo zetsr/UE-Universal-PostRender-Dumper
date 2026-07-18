@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "InputCore_structs.hpp"
 #include "Enum_TimeOfDay_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "PhysicsCore_structs.hpp"
+#include "InputCore_structs.hpp"
 #include "Enum_ClockRotation_structs.hpp"
 
 

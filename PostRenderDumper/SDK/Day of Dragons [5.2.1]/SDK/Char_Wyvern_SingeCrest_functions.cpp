@@ -16,34 +16,15 @@
 
 SDK_NAMESPACE_START
 
-// Function Char_Wyvern_SingeCrest.Char_Wyvern_SingeCrest_C.ExecuteUbergraph_Char_Wyvern_SingeCrest
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AChar_Wyvern_SingeCrest_C::ExecuteUbergraph_Char_Wyvern_SingeCrest(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Char_Wyvern_SingeCrest_C", "ExecuteUbergraph_Char_Wyvern_SingeCrest");
-
-	Params::Char_Wyvern_SingeCrest_C_ExecuteUbergraph_Char_Wyvern_SingeCrest Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function Char_Wyvern_SingeCrest.Char_Wyvern_SingeCrest_C.GetSpecialSkinIndexes
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // uint8*                                  Birthright                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8*                                  InfusedCrimson                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8*                                  Albino                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// uint8*                                  Brindle                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AChar_Wyvern_SingeCrest_C::GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino)
+void AChar_Wyvern_SingeCrest_C::GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino, uint8* Brindle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -62,6 +43,9 @@ void AChar_Wyvern_SingeCrest_C::GetSpecialSkinIndexes(uint8* Birthright, uint8* 
 
 	if (Albino != nullptr)
 		*Albino = Parms.Albino;
+
+	if (Brindle != nullptr)
+		*Brindle = Parms.Brindle;
 }
 
 

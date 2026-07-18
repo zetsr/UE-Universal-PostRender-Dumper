@@ -132,9 +132,9 @@ void UFLib_StaticData_C::Get_VRAM_Info(class UObject* __WorldContext, int32* Tot
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<EnumQuest__QuestLineTracker>*    AvailableQuestLines                                    (Parm, OutParm)
+// TArray<EnumQuest__QuestLineTracker>*    AvailableQuestlines                                    (Parm, OutParm)
 
-void UFLib_StaticData_C::GetAvailableQuestLines(class UObject* __WorldContext, TArray<EnumQuest__QuestLineTracker>* AvailableQuestLines)
+void UFLib_StaticData_C::GetAvailableQuestLines(class UObject* __WorldContext, TArray<EnumQuest__QuestLineTracker>* AvailableQuestlines)
 {
 	static class UFunction* Func = nullptr;
 
@@ -147,8 +147,8 @@ void UFLib_StaticData_C::GetAvailableQuestLines(class UObject* __WorldContext, T
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
-	if (AvailableQuestLines != nullptr)
-		*AvailableQuestLines = std::move(Parms.AvailableQuestLines);
+	if (AvailableQuestlines != nullptr)
+		*AvailableQuestlines = std::move(Parms.AvailableQuestlines);
 }
 
 

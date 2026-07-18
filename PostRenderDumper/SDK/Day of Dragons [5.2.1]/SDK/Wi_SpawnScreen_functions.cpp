@@ -142,6 +142,20 @@ void UWi_SpawnScreen_C::BndEvt__Wi_SpawnScreen_Respawn_K2Node_ComponentBoundEven
 }
 
 
+// Function Wi_SpawnScreen.Wi_SpawnScreen_C.BndEvt__Wi_SpawnScreen_SC_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UWi_SpawnScreen_C::BndEvt__Wi_SpawnScreen_SC_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Wi_SpawnScreen_C", "BndEvt__Wi_SpawnScreen_SC_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Wi_SpawnScreen.Wi_SpawnScreen_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 

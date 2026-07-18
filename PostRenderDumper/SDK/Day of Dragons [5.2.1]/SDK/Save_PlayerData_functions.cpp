@@ -221,6 +221,30 @@ void USave_PlayerData_C::GetIsUnlocked(Enum_Unlockables Unlockable, bool* IsUnlo
 }
 
 
+// Function Save_PlayerData.Save_PlayerData_C.GetIsUnlocked_Pure
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// Enum_Unlockables                        Unlockable                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   IsUnlocked                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void USave_PlayerData_C::GetIsUnlocked_Pure(Enum_Unlockables Unlockable, bool* IsUnlocked)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Save_PlayerData_C", "GetIsUnlocked_Pure");
+
+	Params::Save_PlayerData_C_GetIsUnlocked_Pure Parms{};
+
+	Parms.Unlockable = Unlockable;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (IsUnlocked != nullptr)
+		*IsUnlocked = Parms.IsUnlocked;
+}
+
+
 // Function Save_PlayerData.Save_PlayerData_C.GetRequiredProgress
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:

@@ -86,9 +86,10 @@ void UW_Inventory_Item_C::ExecuteUbergraph_W_Inventory_Item(int32 EntryPoint)
 // Enum_ItemRarity                         Rarity                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8                                   LesserByte                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8                                   GreaterByte                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsLegendary                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UTexture2D**                      DisplayImage                                           (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UW_Inventory_Item_C::Get_Item_Image_Quality(class UTexture2D* DefaultImage, Enum_ItemGrantType Type, Enum_ItemRarity Rarity, uint8 LesserByte, uint8 GreaterByte, class UTexture2D** DisplayImage)
+void UW_Inventory_Item_C::Get_Item_Image_Quality(class UTexture2D* DefaultImage, Enum_ItemGrantType Type, Enum_ItemRarity Rarity, uint8 LesserByte, uint8 GreaterByte, bool IsLegendary, class UTexture2D** DisplayImage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -102,6 +103,7 @@ void UW_Inventory_Item_C::Get_Item_Image_Quality(class UTexture2D* DefaultImage,
 	Parms.Rarity = Rarity;
 	Parms.LesserByte = LesserByte;
 	Parms.GreaterByte = GreaterByte;
+	Parms.IsLegendary = IsLegendary;
 
 	UObject::ProcessEvent(Func, &Parms);
 

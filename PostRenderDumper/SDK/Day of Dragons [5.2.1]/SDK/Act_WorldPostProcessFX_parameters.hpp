@@ -12,8 +12,8 @@
 
 #include "LOOKCGStruct_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "AdvancedEffectFeaturesNoCustomDepth_structs.hpp"
 #include "AdvancedEffectFeatures_structs.hpp"
+#include "AdvancedEffectFeaturesNoCustomDepth_structs.hpp"
 
 
 SDK_NAMESPACE_START

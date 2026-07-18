@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "colorChannels_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "AdvancedEffectFeaturesNoCustomDepth_structs.hpp"
 #include "AdvancedEffectFeatures_structs.hpp"
 #include "LOOKPresetsEnum_structs.hpp"
-#include "colorChannels_structs.hpp"
-#include "AdvancedEffectFeaturesNoCustomDepth_structs.hpp"
 
 
 SDK_NAMESPACE_START

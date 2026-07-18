@@ -10,21 +10,21 @@
 
 #include "Basic.hpp"
 
-#include "Enum_MapRegion_structs.hpp"
-#include "Enum_PlayerCharacter_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "OnlineSubsystemEIK_structs.hpp"
+#include "Enum_MapRegion_structs.hpp"
 #include "Struct_GroupMemberList_structs.hpp"
 #include "Enum_Unlockables_structs.hpp"
 #include "Enum_PlayerTitles_structs.hpp"
+#include "Enum_PlayerCharacter_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DragonsGM.DragonsGM_C
-// 0x0408 (0x0780 - 0x0378)
+// 0x0418 (0x0790 - 0x0378)
 class ADragonsGM_C final : public AGameMode
 {
 public:
@@ -77,6 +77,7 @@ public:
 	bool                                          CanStormCall;                                      // 0x0769(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_76A[0x6];                                      // 0x076A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class AAct_ElderCrystal_C*>            ElderCrystals;                                     // 0x0770(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	TArray<class FString>                         Debug_FoundPaths;                                  // 0x0780(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ActivateStormCallTimer();
@@ -108,7 +109,7 @@ public:
 	void EAC_ReceiveMessageFromClient(class APlayerController* Controller, const TArray<uint8>& Message);
 	void ExecuteUbergraph_DragonsGM(int32 EntryPoint);
 	void FindOpenPlayerStart(Enum_MapRegion SpawnRegion, class APlayerStart** PlayerStart);
-	void Game_CheckIfDeveloper(class FName SteamID, bool* IsDev);
+	void Game_CheckIfDeveloper(class FName SteamID, bool* IsDev, bool* SuperDev);
 	void Get_AllPlayerCharacters(TArray<class AChar_Parent_Player_C*>* PlayerCharacters);
 	void Get_CorpseArray(TArray<class AChar_Parent_All_C*>* CorpseArray);
 	void Get_ServerInfo(class FString* MOTD, class FString* DiscordLink);

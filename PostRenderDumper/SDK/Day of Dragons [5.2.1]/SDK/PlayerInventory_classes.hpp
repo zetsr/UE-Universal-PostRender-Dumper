@@ -10,14 +10,16 @@
 
 #include "Basic.hpp"
 
+#include "Enum_ItemRarity_structs.hpp"
 #include "Struct_InventoryItemsReplicated_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Enum_ItemRarity_structs.hpp"
 #include "Enum_Buffs_structs.hpp"
 #include "Enum_ItemGrantType_structs.hpp"
+#include "Enum_AnimMotionStates_structs.hpp"
 #include "Enum_CreatureLevels_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
+#include "Enum_ServerType_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -57,26 +59,28 @@ public:
 public:
 	void Activate_Unique_Replicated_Item(const struct FStruct_InventoryItemsReplicated& EquippedItem);
 	void Check_Account_For_DLC_Items(TArray<class FName>* AllDLCs);
-	void Check_If_Can_Add_Item(const struct FStruct_InventoryItemsReplicated& Item, bool* CanAdd, bool* ShouldBind, uint8* Weight);
+	void Check_If_Can_Add_Item(const struct FStruct_InventoryItemsReplicated& Item, bool* CanAdd, bool* ShouldBind, uint8* Weight, bool* IsDupedItem);
 	void Check_If_Can_Drop_Item(const struct FStruct_InventoryItemsReplicated& Item, bool* ShouldDrop);
 	void Check_If_Can_Trade_Item(const struct FStruct_InventoryItemsReplicated& Item, bool* CanTrade);
+	void Check_Inventory_For_Duping(const class FString& UniqueId, bool* DuplicateFound);
 	void Check_Inventory_For_Duplicates(class FName ItemId, bool* DuplicateFound);
 	void Check_Is_Slot_Equipped(const Enum_ItemGrantType& Slot, bool* IsAnyItemEquipped);
 	void Check_Item_Exists(class FName ItemId, bool* ItemExists);
 	void CheckClientPearlDLCs();
+	void CheckRemoveDupedItems(TArray<struct FStruct_InventoryItemsReplicated>& InventoryItems_0, TArray<struct FStruct_InventoryItemsReplicated>* ParsedInventoryItems);
 	void Completed_39067AFA4C19CE444C93479CED172974(class USaveGame* SaveGame, bool bSuccess);
 	void Completed_4DE4AB8D4C9185123CF21382D400DB79(class USaveGame* SaveGame, bool bSuccess);
 	void DeleteInventory();
 	void DevGrantAll();
 	void Drop_All_Inventory_Items();
-	void Drop_Inventory_Item(const struct FStruct_InventoryItemsReplicated& Struct_InventoryItems);
+	void Drop_Inventory_Item(const struct FStruct_InventoryItemsReplicated& Struct_InventoryItems, bool* WasDropped);
 	void Equip_Inventory_Item(const struct FStruct_InventoryItemsReplicated& Item, Enum_ItemGrantType* Slot, bool* Success);
 	void EquipItem(const class FString& UniqueItemID);
 	void ExecuteUbergraph_PlayerInventory(int32 EntryPoint);
 	void ForceClientCheckDLCs(const class FString& Key);
 	void Get_Equipped_Item_IDs(class FString* EquippedBuff_0, class FString* EquippedSkin_0, class FString* EquippedCosmetic_0);
 	void Get_Inventory_Items(TArray<struct FStruct_InventoryItemsReplicated>* InventoryItems_0);
-	void Get_Item_By_Unique_ID(TArray<struct FStruct_InventoryItemsReplicated>& ArrayOfInventoryItems, const class FString& UniqueId, bool* ItemFound, int32* ItemIndex);
+	void Get_Item_By_Unique_ID(TArray<struct FStruct_InventoryItemsReplicated>& ArrayOfInventoryItems, const class FString& UniqueId, bool* ItemFound, int32* ItemIndex, class FName* InvItemID);
 	void Get_Item_Index_By_Unique_ID(TArray<struct FStruct_InventoryItemsReplicated>& ArrayOfInventoryItems, const class FString& UniqueId, bool* ContainsItem, int32* InventoryIndex);
 	void Get_Item_Tooltip_Info(const struct FStruct_InventoryItemsReplicated& Item, class FText* ItemName, class FText* ItemDescription, class UTexture2D** ItemThumbnail, Enum_ItemGrantType* ItemType, Enum_ItemRarity* ItemRarity, bool* IsBindOnAquire, bool* IsBindOnEquip, bool* IsBound, class FText* Weight, class FText* Buff);
 	void Get_Weights(uint8* MaxWeight_0, uint8* CurrentWeight_0, uint8* AvailableWeight);
@@ -91,11 +95,12 @@ public:
 	void SaveInventory();
 	void Set_Item_Bound(const struct FStruct_InventoryItemsReplicated& Item, struct FStruct_InventoryItemsReplicated* BoundItem);
 	void Set_Max_Weight(class AChar_Parent_Dragonkind_C* Dragon);
-	void Spawn_Item_Actor(const struct FStruct_InventoryItemsReplicated& ItemData, Enum_ItemRarity Item_Rarity, bool IsGeneratorSpawned);
+	void Spawn_Item_Actor(const struct FStruct_InventoryItemsReplicated& ItemData, Enum_ItemRarity Item_Rarity, bool IsGeneratorSpawned, bool* WasDropped);
 	void TradeItem(const class FString& ItemId);
 	void Try_Add_Pearl_To_Inventory(TArray<class FName>& ItemIDs);
-	void Try_Add_To_Inventory(const struct FStruct_InventoryItemsReplicated& Item, bool* Success);
+	void Try_Add_To_Inventory(const struct FStruct_InventoryItemsReplicated& Item, bool* Success, bool* IsDupedItem);
 	void UnequipItem(Enum_ItemGrantType Slot);
+	void Update_Loaded_Weights();
 	void UpdateInventorySaveEquippedItem(Enum_ItemGrantType EquippedSlot);
 
 public:

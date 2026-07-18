@@ -11,15 +11,15 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "Buff_OverrideVelocity_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Buff_OverrideVelocity_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Buff_TekArmor.Buff_TekArmor_C
 // 0x0120 (0x0D10 - 0x0BF0)
-class ABuff_TekArmor_C : public ABuff_OverrideVelocity_C
+class ABuff_TekArmor_C final : public ABuff_OverrideVelocity_C
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0BF0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

@@ -27,9 +27,9 @@ public:
 	class UVerticalBox*                           VerBox_NoInstalledMods;                            // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_UI_NoModsFoundInCategoty(int32 EntryPoint);
-	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void ExecuteUbergraph_UI_NoModsFoundInCategoty(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

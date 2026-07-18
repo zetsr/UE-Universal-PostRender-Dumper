@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "Enum_PlayerCharacter_structs.hpp"
-#include "Enum_Family_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "Enum_Diet_structs.hpp"
+#include "Enum_Family_structs.hpp"
 #include "Enum_Elements_structs.hpp"
 
 

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Enum_ItemGrantType_structs.hpp"
-#include "Enum_Buffs_structs.hpp"
 #include "Enum_ItemRarity_structs.hpp"
+#include "Enum_Buffs_structs.hpp"
+#include "Enum_ItemGrantType_structs.hpp"
 #include "Enum_Cosmetic_structs.hpp"
 #include "Enum_SkinOverlays_structs.hpp"
 
@@ -29,15 +29,16 @@ public:
 	class FText                                   ItemDescription_110_8ADE9299465C1B6DA169399E7E11BD3B; // 0x0020(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class UTexture2D*                             ItemThumbnail_109_1A2F8F7A4E00E4217CB06EBF06901B29; // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	Enum_ItemRarity                               ItemRarity_5_462AD881403A4ABEF7BA589757BE9DEE;     // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_ItemGrantType                            ItemGrants_57_90B6D9C84F020F7F1DB95C9CF267D59F;    // 0x0041(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_Cosmetic                                 GrantsCosmetic_66_05BEB5C1455FD5742A4A7EBB8FF25A14; // 0x0042(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SkinOverlays                             GrantsSkin_67_86166B5C449C56F689ED33B6CF699506;    // 0x0043(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_Buffs                                    GrantsBuffSolo_113_C71E04F94329037EFCD47EA35AF39EA8; // 0x0044(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_Buffs                                    GrantsBuffPair_114_88AA7D9F4AF66009C4974A8554382580; // 0x0045(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsBindOnAquire_82_3ACA570945779C45ACA34B95164C905C; // 0x0046(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsBindOnEquip_100_C87569AA4F4B1546F12DB6A9BB8353D6; // 0x0047(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsDLC_92_BD4ABA314102BEFE19C78EBF5AC98CED;         // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          IsLegendaryItem_137_61DDCDD1425A347844ABC4BB24CB779A; // 0x0041(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_ItemGrantType                            ItemGrants_57_90B6D9C84F020F7F1DB95C9CF267D59F;    // 0x0042(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_Cosmetic                                 GrantsCosmetic_66_05BEB5C1455FD5742A4A7EBB8FF25A14; // 0x0043(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SkinOverlays                             GrantsSkin_67_86166B5C449C56F689ED33B6CF699506;    // 0x0044(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_Buffs                                    GrantsBuffSolo_113_C71E04F94329037EFCD47EA35AF39EA8; // 0x0045(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_Buffs                                    GrantsBuffPair_114_88AA7D9F4AF66009C4974A8554382580; // 0x0046(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsBindOnAquire_82_3ACA570945779C45ACA34B95164C905C; // 0x0047(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsBindOnEquip_100_C87569AA4F4B1546F12DB6A9BB8353D6; // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsDLC_92_BD4ABA314102BEFE19C78EBF5AC98CED;         // 0x0049(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4A[0x2];                                       // 0x004A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   DLCID_125_8DCC9F464E1BAA03EB44A9A99CB845A0;        // 0x004C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FName>                           DropsFromTagsFantasy_129_E6B08FE54012B73585A09C833ACA8C43; // 0x0058(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)

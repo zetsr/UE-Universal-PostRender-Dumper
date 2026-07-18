@@ -77,7 +77,7 @@ struct FLib_StaticData_C_GetAvailableQuestLines final
 {
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TArray<EnumQuest__QuestLineTracker>           AvailableQuestLines;                               // 0x0008(0x0010)(Parm, OutParm)
+	TArray<EnumQuest__QuestLineTracker>           AvailableQuestlines;                               // 0x0008(0x0010)(Parm, OutParm)
 	TArray<EnumQuest__QuestLineTracker>           K2Node_MakeArray_Array;                            // 0x0018(0x0010)(ReferenceParm)
 };
 DUMPER7_ASSERTS_FLib_StaticData_C_GetAvailableQuestLines;

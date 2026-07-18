@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "EnumQuest_WintersGift_structs.hpp"
-#include "EnumQuest_BroodWatcher_structs.hpp"
 #include "EnumQuest_MythOfTheMimikor_structs.hpp"
 #include "EnumQuest__QuestLineTracker_structs.hpp"
+#include "EnumQuest_BroodWatcher_structs.hpp"
+#include "EnumQuest_WintersGift_structs.hpp"
 #include "StructQuest_Progress_structs.hpp"
 
 
@@ -352,7 +352,7 @@ DUMPER7_ASSERTS_QuestTracker_C_Get_Current_Quest_Name;
 struct QuestTracker_C_GetAllAvailableQuestLines final
 {
 public:
-	TArray<EnumQuest__QuestLineTracker>           AvailableQuestLines_0;                             // 0x0000(0x0010)(Parm, OutParm)
+	TArray<EnumQuest__QuestLineTracker>           AvailableQuestlines_0;                             // 0x0000(0x0010)(Parm, OutParm)
 };
 DUMPER7_ASSERTS_QuestTracker_C_GetAllAvailableQuestLines;
 

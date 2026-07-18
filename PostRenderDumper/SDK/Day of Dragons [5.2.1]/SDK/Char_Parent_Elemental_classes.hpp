@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "Enum_TempTolerance_structs.hpp"
-#include "Enum_EmotesDragon_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Enum_StatusEffects_structs.hpp"
 #include "Char_Parent_Player_classes.hpp"
+#include "Enum_EmotesDragon_structs.hpp"
 #include "Enum_Temperature_structs.hpp"
 #include "Enum_CreatureLevels_structs.hpp"
 #include "Enum_AppliedDamage_structs.hpp"
@@ -24,13 +24,14 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Char_Parent_Elemental.Char_Parent_Elemental_C
-// 0x0020 (0x0E00 - 0x0DE0)
+// 0x0010 (0x0E00 - 0x0DF0)
 class AChar_Parent_Elemental_C : public AChar_Parent_Player_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Parent_Elemental_C;            // 0x0DE0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UPDA_ElementalData_C*                   ElementalData;                                     // 0x0DE8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class ADragonsPS_C*                           As_Dragons_PS;                                     // 0x0DF0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_DE3[0x5];                                      // 0x0DE3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Parent_Elemental_C;            // 0x0DE8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UPDA_ElementalData_C*                   ElementalData;                                     // 0x0DF0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class ADragonsPS_C*                           As_Dragons_PS;                                     // 0x0DF8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ApplyBioluminescence();

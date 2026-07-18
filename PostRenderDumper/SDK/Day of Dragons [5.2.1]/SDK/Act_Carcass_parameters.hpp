@@ -10,10 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Enum_StatMutations_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
+#include "Enum_StatMutations_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Enum_StatusEffects_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -29,7 +30,7 @@ public:
 DUMPER7_ASSERTS_Act_Carcass_C_DigMound;
 
 // Function Act_Carcass.Act_Carcass_C.ExecuteUbergraph_Act_Carcass
-// 0x0180 (0x0180 - 0x0000)
+// 0x0190 (0x0190 - 0x0000)
 struct Act_Carcass_C_ExecuteUbergraph_Act_Carcass final
 {
 public:
@@ -56,42 +57,47 @@ public:
 	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class AChar_Parent_Player_C*                  K2Node_Event_Player;                               // 0x0038(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class AAct_EggMound_C*                        K2Node_Event_EggMound;                             // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0048(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_HasAuthority_ReturnValue_2;               // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_61[0xF];                                       // 0x0061(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             CallFunc_Conv_VectorToTransform_ReturnValue;       // 0x0070(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue; // 0x00D0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	EEndPlayReason                                K2Node_Event_EndPlayReason;                        // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AAct_BloodBeacon_C*                     CallFunc_FinishSpawningActor_ReturnValue;          // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 K2Node_Event_InteractingActor;                     // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AChar_Parent_Dragonkind_C*              K2Node_DynamicCast_AsChar_Parent_Dragonkind;       // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPDA_DragonData_C*                      CallFunc_GetDataAsset_CreatureData;                // 0x0100(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_GetUnmodifiedMaxStatVitalByGrowth_MaxValue; // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0110(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GreaterEqual_ByteByte_ReturnValue;        // 0x0118(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_119[0x3];                                      // 0x0119(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_FFloor_ReturnValue;                       // 0x011C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Conv_ByteToInt_ReturnValue;               // 0x0120(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         K2Node_Select_Default_1;                           // 0x0124(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_Add_ByteByte_ReturnValue;                 // 0x0125(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_126[0x2];                                      // 0x0126(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Conv_ByteToInt_ReturnValue_1;             // 0x0128(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x012C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x0130(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Clamp_ReturnValue;                        // 0x0134(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_Conv_IntToByte_ReturnValue;               // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_139[0x7];                                      // 0x0139(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDragonsGI_C*                           CallFunc_Get_Dragons_Game_Instance_Pure_DragonsGameInstance; // 0x0140(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Get_CorpseDespawnTime_DespawnTimeSeconds; // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_GetCarcassSize_Scale;                     // 0x0150(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Conv_DoubleToVector_ReturnValue;          // 0x0158(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_ActorHasTag_ReturnValue;                  // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0171(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_172[0x2];                                      // 0x0172(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_RetriggerableDelay_Duration_ImplicitCast; // 0x0174(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UActorComponent*                        K2Node_Event_Component;                            // 0x0048(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	Enum_StatusEffects                            K2Node_Event_EffectToApply;                        // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_StatMutations                            K2Node_Event_StacksToApply;                        // 0x0051(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_52[0x6];                                       // 0x0052(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class AChar_Parent_Player_C*                  K2Node_Event_AttackingPlayer;                      // 0x0058(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0060(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_HasAuthority_ReturnValue_2;               // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             CallFunc_Conv_VectorToTransform_ReturnValue;       // 0x0080(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue; // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                K2Node_Event_EndPlayReason;                        // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AAct_BloodBeacon_C*                     CallFunc_FinishSpawningActor_ReturnValue;          // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_Event_InteractingActor;                     // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AChar_Parent_Dragonkind_C*              K2Node_DynamicCast_AsChar_Parent_Dragonkind;       // 0x0100(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0108(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPDA_DragonData_C*                      CallFunc_GetDataAsset_CreatureData;                // 0x0110(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetUnmodifiedMaxStatVitalByGrowth_MaxValue; // 0x0118(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0120(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GreaterEqual_ByteByte_ReturnValue;        // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_129[0x3];                                      // 0x0129(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_FFloor_ReturnValue;                       // 0x012C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Conv_ByteToInt_ReturnValue;               // 0x0130(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         K2Node_Select_Default_1;                           // 0x0134(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_Add_ByteByte_ReturnValue;                 // 0x0135(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_136[0x2];                                      // 0x0136(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Conv_ByteToInt_ReturnValue_1;             // 0x0138(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x013C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x0140(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Clamp_ReturnValue;                        // 0x0144(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_Conv_IntToByte_ReturnValue;               // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_149[0x7];                                      // 0x0149(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDragonsGI_C*                           CallFunc_Get_Dragons_Game_Instance_Pure_DragonsGameInstance; // 0x0150(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Get_CorpseDespawnTime_DespawnTimeSeconds; // 0x0158(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetCarcassSize_Scale;                     // 0x0160(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Conv_DoubleToVector_ReturnValue;          // 0x0168(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_ActorHasTag_ReturnValue;                  // 0x0180(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0181(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_182[0x2];                                      // 0x0182(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_RetriggerableDelay_Duration_ImplicitCast; // 0x0184(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Act_Carcass_C_ExecuteUbergraph_Act_Carcass;
 
@@ -178,6 +184,27 @@ public:
 	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Act_Carcass_C_ReceiveEndPlay;
+
+// Function Act_Carcass.Act_Carcass_C.TryApplyStatusEffect
+// 0x0010 (0x0010 - 0x0000)
+struct Act_Carcass_C_TryApplyStatusEffect final
+{
+public:
+	Enum_StatusEffects                            EffectToApply;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_StatMutations                            StacksToApply;                                     // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class AChar_Parent_Player_C*                  AttackingPlayer;                                   // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Act_Carcass_C_TryApplyStatusEffect;
+
+// Function Act_Carcass.Act_Carcass_C.TryDestroyComponent
+// 0x0008 (0x0008 - 0x0000)
+struct Act_Carcass_C_TryDestroyComponent final
+{
+public:
+	class UActorComponent*                        Component;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Act_Carcass_C_TryDestroyComponent;
 
 // Function Act_Carcass.Act_Carcass_C.TryLaunchCharacter
 // 0x0020 (0x0020 - 0x0000)

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "STRUCT_SubOptions_structs.hpp"
 #include "Engine_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
-#include "STRUCT_SubOptions_structs.hpp"
 
 
 SDK_NAMESPACE_START

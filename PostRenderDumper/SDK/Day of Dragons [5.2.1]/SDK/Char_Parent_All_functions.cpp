@@ -2467,6 +2467,27 @@ void AChar_Parent_All_C::OnWetUpdated()
 }
 
 
+// Function Char_Parent_All.Char_Parent_All_C.PearlElderGrowthBonusMultiplier
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 Multiplier                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_All_C::PearlElderGrowthBonusMultiplier(double* Multiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_All_C", "PearlElderGrowthBonusMultiplier");
+
+	Params::Char_Parent_All_C_PearlElderGrowthBonusMultiplier Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Multiplier != nullptr)
+		*Multiplier = Parms.Multiplier;
+}
+
+
 // Function Char_Parent_All.Char_Parent_All_C.ReceiveAnyDamage
 // (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
 // Parameters:
@@ -3448,6 +3469,50 @@ void AChar_Parent_All_C::ToggleCCD(bool InUseCCD)
 	Params::Char_Parent_All_C_ToggleCCD Parms{};
 
 	Parms.InUseCCD = InUseCCD;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Parent_All.Char_Parent_All_C.TryApplyStatusEffect
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// Enum_StatusEffects                      EffectToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Enum_StatMutations                      StacksToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AChar_Parent_Player_C*            AttackingPlayer                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_All_C::TryApplyStatusEffect(Enum_StatusEffects EffectToApply, Enum_StatMutations StacksToApply, class AChar_Parent_Player_C* AttackingPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_All_C", "TryApplyStatusEffect");
+
+	Params::Char_Parent_All_C_TryApplyStatusEffect Parms{};
+
+	Parms.EffectToApply = EffectToApply;
+	Parms.StacksToApply = StacksToApply;
+	Parms.AttackingPlayer = AttackingPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Parent_All.Char_Parent_All_C.TryDestroyComponent
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UActorComponent*                  Component                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_All_C::TryDestroyComponent(class UActorComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_All_C", "TryDestroyComponent");
+
+	Params::Char_Parent_All_C_TryDestroyComponent Parms{};
+
+	Parms.Component = Component;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

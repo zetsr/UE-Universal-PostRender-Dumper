@@ -10,22 +10,22 @@
 
 #include "Basic.hpp"
 
-#include "Enum_PlayerCharacter_structs.hpp"
-#include "Engine_structs.hpp"
 #include "Enum_TemperatureOverride_structs.hpp"
-#include "Enum_StatusEffects_structs.hpp"
+#include "Enum_ServerType_structs.hpp"
+#include "Enum_TempTolerance_structs.hpp"
 #include "Struct_StatMutations_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Enum_StatMutations_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Enum_Species_structs.hpp"
+#include "Enum_PlayerCharacter_structs.hpp"
+#include "Enum_StatusEffects_structs.hpp"
+#include "Enum_AnimMotionStates_structs.hpp"
+#include "Enum_MapRegion_structs.hpp"
 #include "Enum_Temperature_structs.hpp"
 #include "SCUE5_structs.hpp"
-#include "Enum_StatMutations_structs.hpp"
-#include "Enum_MapRegion_structs.hpp"
 #include "Char_Parent_All_classes.hpp"
-#include "Enum_TempTolerance_structs.hpp"
 #include "Enum_AppliedDamage_structs.hpp"
-#include "Enum_ServerType_structs.hpp"
-#include "Enum_AnimMotionStates_structs.hpp"
+#include "Enum_Species_structs.hpp"
 #include "Enum_ClockRotation_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
 
@@ -33,8 +33,9 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Char_Parent_Player.Char_Parent_Player_C
-// 0x0490 (0x0DE0 - 0x0950)
-class AChar_Parent_Player_C : public AChar_Parent_All_C
+// 0x04A0 (0x0DF0 - 0x0950)
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) AChar_Parent_Player_C : public AChar_Parent_All_C
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Parent_Player_C;               // 0x0950(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -181,6 +182,9 @@ public:
 	uint8                                         Pad_D51[0x7];                                      // 0x0D51(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class AActor*, double>                   BonfireActorTempOffsets;                           // 0x0D58(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	struct FSafeBool                              IsUsingElementAltColorPearl;                       // 0x0DA8(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          IsEatingUnderwater;                                // 0x0DE0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         PearlElderGrowthReplicated;                        // 0x0DE1(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          WantsMap;                                          // 0x0DE2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void Activate1stPersonCam();
@@ -241,7 +245,7 @@ public:
 	void DispatchLocalChat(const class FString& User, bool IsAdmin, bool IsDev, const class FString& Message, bool IsJrakhonic);
 	void DoAimTrace();
 	void DoDrinkMontage();
-	void DoEatMontage(bool UseAltEatMontage);
+	void DoEatMontage(uint8 SwitchMontage);
 	void DoFlyingEatMontage();
 	void DoJitterFix();
 	void DrinkingWater(bool IsDrinking_0);
@@ -257,6 +261,10 @@ public:
 	void ForceToggleIcon(Enum_StatusEffects StatusIcon, bool ShouldShowIcon);
 	void Get_Altitude_World_Z(int32* WorldAlitudeZ);
 	void GetBonfireTemperature(double* BonfireTemp);
+	void GetBonusCritDefensePercent(double* BonusCritEvade, double* BonusCritReduction);
+	void GetBonusCritOffensePercent(double* BonusCritChance, double* BonusCritDamage);
+	void GetBonusDamagePercent(double* BonusFire, double* BonusFrost, double* BonusPlasma, double* BonusLightning, double* BonusAcid, double* BonusVenom);
+	void GetBonusMitigationsPercent(double* BonusFireMitigation, double* BonusFrostMitigation, double* BonusPlasmaMitigation, double* BonusLightningMitigation, double* BonusAcidMitigation, double* BonusVenomMitigation, double* BonusPierceMitigation, double* BonusBluntMitigation);
 	void GetCameraSettings(float* MaxZoom, float* MinZoom, float* ZoomTick, double* ZoomSmooth, double* RotationSmooth);
 	void GetCorrectedTargetLocation(double TraceDistanceCM, struct FVector* CorrectedTargetLoc, struct FVector* LocalCameraLoc);
 	void GetCreatureHealth(double* MaxHealth, double* CurrentHealth, double* HealthPercent_0);
@@ -274,22 +282,23 @@ public:
 	void GrabPhysicsHandle(class AChar_Parent_All_C* CorpseCharacter_0);
 	void HandleMovement(const struct FVector& WorldDirection, double ScaleValue);
 	void HandleWalkingBackward();
-	void InpActEvt_Aim_K2Node_InputActionEvent_10(const struct FKey& Key);
 	void InpActEvt_Aim_K2Node_InputActionEvent_11(const struct FKey& Key);
-	void InpActEvt_CameraZoomIn_K2Node_InputActionEvent_14(const struct FKey& Key);
-	void InpActEvt_CameraZoomOut_K2Node_InputActionEvent_13(const struct FKey& Key);
-	void InpActEvt_CameraZoomReset_K2Node_InputActionEvent_12(const struct FKey& Key);
-	void InpActEvt_ClearWaypoint_K2Node_InputActionEvent_7(const struct FKey& Key);
-	void InpActEvt_EmoteWheel_K2Node_InputActionEvent_0(const struct FKey& Key);
+	void InpActEvt_Aim_K2Node_InputActionEvent_12(const struct FKey& Key);
+	void InpActEvt_CameraZoomIn_K2Node_InputActionEvent_15(const struct FKey& Key);
+	void InpActEvt_CameraZoomOut_K2Node_InputActionEvent_14(const struct FKey& Key);
+	void InpActEvt_CameraZoomReset_K2Node_InputActionEvent_13(const struct FKey& Key);
+	void InpActEvt_ClearWaypoint_K2Node_InputActionEvent_8(const struct FKey& Key);
 	void InpActEvt_EmoteWheel_K2Node_InputActionEvent_1(const struct FKey& Key);
+	void InpActEvt_EmoteWheel_K2Node_InputActionEvent_2(const struct FKey& Key);
 	void InpActEvt_F10_K2Node_InputKeyEvent_0(const struct FKey& Key);
-	void InpActEvt_Info_K2Node_InputActionEvent_9(const struct FKey& Key);
-	void InpActEvt_Interact_K2Node_InputActionEvent_5(const struct FKey& Key);
+	void InpActEvt_Info_K2Node_InputActionEvent_10(const struct FKey& Key);
 	void InpActEvt_Interact_K2Node_InputActionEvent_6(const struct FKey& Key);
-	void InpActEvt_Nightvision_K2Node_InputActionEvent_4(const struct FKey& Key);
-	void InpActEvt_SetWaypoint_K2Node_InputActionEvent_8(const struct FKey& Key);
-	void InpActEvt_TurnInPlace_K2Node_InputActionEvent_2(const struct FKey& Key);
+	void InpActEvt_Interact_K2Node_InputActionEvent_7(const struct FKey& Key);
+	void InpActEvt_Map_K2Node_InputActionEvent_0(const struct FKey& Key);
+	void InpActEvt_Nightvision_K2Node_InputActionEvent_5(const struct FKey& Key);
+	void InpActEvt_SetWaypoint_K2Node_InputActionEvent_9(const struct FKey& Key);
 	void InpActEvt_TurnInPlace_K2Node_InputActionEvent_3(const struct FKey& Key);
+	void InpActEvt_TurnInPlace_K2Node_InputActionEvent_4(const struct FKey& Key);
 	void InpAxisEvt_MoveForward_K2Node_InputAxisEvent_1(float AxisValue);
 	void InpAxisEvt_Pitch_K2Node_InputAxisEvent_0(float AxisValue);
 	void InpAxisEvt_TurnRight_K2Node_InputAxisEvent_4(float AxisValue);
@@ -411,7 +420,7 @@ public:
 	void SpawnCorpseTag();
 	void StopAnimSFX_Event_0();
 	void StopDrinkMontage();
-	void StopEatMontage(bool WasUsingAltEatMontage);
+	void StopEatMontage(uint8 SwitchMontage);
 	void StopFlyEatMontage();
 	void StopJitterFix();
 	void StopStunnedMontage();
@@ -421,6 +430,7 @@ public:
 	void TickRotateCamera();
 	void TickZoomCamera();
 	void TriggerAutoSave(int32 FrameIndex);
+	void TryApplyStatusEffect(Enum_StatusEffects EffectToApply, Enum_StatMutations StacksToApply, class AChar_Parent_Player_C* AttackingPlayer);
 	void TryLaunchCharacter(const struct FVector& LaunchVelocity, bool XY_Override, bool Z_Override);
 	void TryOverrideTemperature(Enum_TemperatureOverride TempOverride);
 	void TryPlayEmote(class FName FunctionName);
@@ -445,6 +455,7 @@ public:
 		return GetDefaultObjImpl<AChar_Parent_Player_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_AChar_Parent_Player_C;
 
 SDK_NAMESPACE_END

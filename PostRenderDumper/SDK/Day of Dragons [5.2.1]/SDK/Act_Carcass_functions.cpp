@@ -235,6 +235,50 @@ void AAct_Carcass_C::StopFlight()
 }
 
 
+// Function Act_Carcass.Act_Carcass_C.TryApplyStatusEffect
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// Enum_StatusEffects                      EffectToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Enum_StatMutations                      StacksToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AChar_Parent_Player_C*            AttackingPlayer                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void AAct_Carcass_C::TryApplyStatusEffect(Enum_StatusEffects EffectToApply, Enum_StatMutations StacksToApply, class AChar_Parent_Player_C* AttackingPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Act_Carcass_C", "TryApplyStatusEffect");
+
+	Params::Act_Carcass_C_TryApplyStatusEffect Parms{};
+
+	Parms.EffectToApply = EffectToApply;
+	Parms.StacksToApply = StacksToApply;
+	Parms.AttackingPlayer = AttackingPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Act_Carcass.Act_Carcass_C.TryDestroyComponent
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UActorComponent*                  Component                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void AAct_Carcass_C::TryDestroyComponent(class UActorComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Act_Carcass_C", "TryDestroyComponent");
+
+	Params::Act_Carcass_C_TryDestroyComponent Parms{};
+
+	Parms.Component = Component;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Act_Carcass.Act_Carcass_C.TryDestroyCorpse
 // (Public, BlueprintCallable, BlueprintEvent)
 

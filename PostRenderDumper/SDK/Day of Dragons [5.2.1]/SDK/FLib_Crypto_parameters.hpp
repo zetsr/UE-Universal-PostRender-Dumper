@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "Struct_InventoryItemsReplicated_structs.hpp"
 #include "SCUE5_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Enum_ServerType_structs.hpp"
@@ -195,6 +196,56 @@ public:
 };
 DUMPER7_ASSERTS_FLib_Crypto_C_Decode_GroupChat;
 
+// Function FLib_Crypto.FLib_Crypto_C.Decode_ItemChat
+// 0x0188 (0x0188 - 0x0000)
+struct FLib_Crypto_C_Decode_ItemChat final
+{
+public:
+	class FString                                 EncodedString;                                     // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FStruct_InventoryItemsReplicated       Item;                                              // 0x0018(0x0020)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 String_2;                                          // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 String_1;                                          // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 String_0;                                          // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 String;                                            // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Split_LeftS;                              // 0x0078(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Split_RightS;                             // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Split_ReturnValue;                        // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Split_LeftS_1;                            // 0x00A0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Split_RightS_1;                           // 0x00B0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Split_ReturnValue_1;                      // 0x00C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C1[0x3];                                       // 0x00C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Conv_StringToInt_ReturnValue;             // 0x00C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Clamp_ReturnValue;                        // 0x00D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Conv_IntToBool_ReturnValue;               // 0x00D4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_D5[0x3];                                       // 0x00D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Split_LeftS_2;                            // 0x00D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Split_RightS_2;                           // 0x00E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Split_ReturnValue_2;                      // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Split_LeftS_3;                            // 0x0100(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Split_RightS_3;                           // 0x0110(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Split_ReturnValue_3;                      // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_121[0x3];                                      // 0x0121(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Conv_StringToInt_ReturnValue_1;           // 0x0124(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Conv_StringToInt_ReturnValue_2;           // 0x0128(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Clamp_ReturnValue_1;                      // 0x012C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_Conv_IntToByte_ReturnValue;               // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Conv_IntToBool_ReturnValue_1;             // 0x0131(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_132[0x6];                                      // 0x0132(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Split_LeftS_4;                            // 0x0138(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Split_RightS_4;                           // 0x0148(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Split_ReturnValue_4;                      // 0x0158(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_159[0x3];                                      // 0x0159(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Conv_StringToInt_ReturnValue_3;           // 0x015C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_Conv_IntToByte_ReturnValue_1;             // 0x0160(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_161[0x7];                                      // 0x0161(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FStruct_InventoryItemsReplicated       K2Node_MakeStruct_Struct_InventoryItemsReplicated; // 0x0168(0x0020)(ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_FLib_Crypto_C_Decode_ItemChat;
+
 // Function FLib_Crypto.FLib_Crypto_C.Decode_Map
 // 0x0098 (0x0098 - 0x0000)
 struct FLib_Crypto_C_Decode_Map final
@@ -242,7 +293,7 @@ struct FLib_Crypto_C_Decode_Session final
 public:
 	class FString                                 SessionString;                                     // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsDOGs;                                            // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsDogs;                                            // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsRoleplay;                                        // 0x0019(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UsesFriendlist;                                    // 0x001A(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          HasGroupDamage;                                    // 0x001B(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -505,6 +556,35 @@ public:
 };
 DUMPER7_ASSERTS_FLib_Crypto_C_Encode_GroupChat;
 
+// Function FLib_Crypto.FLib_Crypto_C.Encode_ItemChat
+// 0x0128 (0x0128 - 0x0000)
+struct FLib_Crypto_C_Encode_ItemChat final
+{
+public:
+	struct FStruct_InventoryItemsReplicated       Item;                                              // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FString                                 EncodedString;                                     // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_NameToString_ReturnValue;            // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Conv_BoolToInt_ReturnValue;               // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0050(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_ByteToString_ReturnValue;            // 0x0080(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_ByteToString_ReturnValue_1;          // 0x0090(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Conv_BoolToInt_ReturnValue_1;             // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_1;           // 0x00A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x00B8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x00C8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_4;              // 0x00D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_5;              // 0x00E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_6;              // 0x00F8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_7;              // 0x0108(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_8;              // 0x0118(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_FLib_Crypto_C_Encode_ItemChat;
+
 // Function FLib_Crypto.FLib_Crypto_C.Encode_Map
 // 0x0020 (0x0020 - 0x0000)
 struct FLib_Crypto_C_Encode_Map final
@@ -541,7 +621,7 @@ DUMPER7_ASSERTS_FLib_Crypto_C_Encode_ServerPvP;
 struct FLib_Crypto_C_Encode_Session final
 {
 public:
-	bool                                          IsDOGs;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsDogs;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsRoleplay;                                        // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UsesFriendlist;                                    // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          HasGroupDamage;                                    // 0x0003(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

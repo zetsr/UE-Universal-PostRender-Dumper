@@ -30368,15 +30368,15 @@ void ACharacter::Crouch(bool bClientSimulation)
 }
 
 
-// Function Engine.Character.jump
+// Function Engine.Character.Jump
 // (Native, Public, BlueprintCallable)
 
-void ACharacter::jump()
+void ACharacter::Jump()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Character", "jump");
+		Func = Class->GetFunction("Character", "Jump");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

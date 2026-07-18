@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "Enum_ServerType_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "SCUE5_structs.hpp"
-#include "Enum_KickReason_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Enum_ServerType_structs.hpp"
+#include "Enum_KickReason_structs.hpp"
 
 
 SDK_NAMESPACE_START

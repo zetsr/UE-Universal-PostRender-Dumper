@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Enum_Mitigations_structs.hpp"
-#include "Enum_GeneticGrades_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Enum_GeneticGrades_structs.hpp"
 
 
 SDK_NAMESPACE_START

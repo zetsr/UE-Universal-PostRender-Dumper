@@ -11,32 +11,32 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "ShooterGame_classes.hpp"
 #include "DinoContentData_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Dino_Character_BP.Dino_Character_BP_C
-// 0x00B0 (0x2AF0 - 0x2A40)
+// 0x00B0 (0x2B10 - 0x2A60)
 #pragma pack(push, 0x1)
 class SDK_ALIGN(0x10) ADino_Character_BP_C : public APrimalDinoCharacter
 {
 public:
-	uint8                                         Pad_2A38[0x8];                                     // 0x2A38(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2A40(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USphereComponent*                       StasisComponent;                                   // 0x2A48(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TArray<class UAnimSequence*>                  AlternateDeathAnims;                               // 0x2A50(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FDinoContentData                       ContentData;                                       // 0x2A60(0x0020)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          GeneratedBlendSpaces;                              // 0x2A80(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2A81[0x7];                                     // 0x2A81(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        PostDestructionFootstepLifespan;                   // 0x2A88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          SupportsConsumablesAutoTransfer;                   // 0x2A90(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, ExperimentalAlwaysOverriden)
-	uint8                                         Pad_2A91[0x7];                                     // 0x2A91(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftClassPtr<class UClass>                   HarnesSaddleItem;                                  // 0x2A98(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	double                                        CartBodyPitchOffset;                               // 0x2AC0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FText                                   DisableConsumablesTransferText;                    // 0x2AC8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class FText                                   EnableConsumablesTransferText;                     // 0x2AD8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	uint8                                         Pad_2A58[0x8];                                     // 0x2A58(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2A60(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USphereComponent*                       StasisComponent;                                   // 0x2A68(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	TArray<class UAnimSequence*>                  AlternateDeathAnims;                               // 0x2A70(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FDinoContentData                       ContentData;                                       // 0x2A80(0x0020)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          GeneratedBlendSpaces;                              // 0x2AA0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2AA1[0x7];                                     // 0x2AA1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        PostDestructionFootstepLifespan;                   // 0x2AA8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          SupportsConsumablesAutoTransfer;                   // 0x2AB0(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, ExperimentalAlwaysOverriden)
+	uint8                                         Pad_2AB1[0x7];                                     // 0x2AB1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftClassPtr<class UClass>                   HarnesSaddleItem;                                  // 0x2AB8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	double                                        CartBodyPitchOffset;                               // 0x2AE0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   DisableConsumablesTransferText;                    // 0x2AE8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class FText                                   EnableConsumablesTransferText;                     // 0x2AF8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ReceiveBeginPlay();

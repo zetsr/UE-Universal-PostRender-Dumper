@@ -14,7 +14,7 @@
 SDK_NAMESPACE_START
 
 // UserDefinedEnum Enum_SkinOverlays.Enum_SkinOverlays
-// NumValues: 0x000A
+// NumValues: 0x0012
 enum class Enum_SkinOverlays : uint8
 {
 	NewEnumerator0                           = 0,
@@ -26,7 +26,15 @@ enum class Enum_SkinOverlays : uint8
 	NewEnumerator6                           = 6,
 	NewEnumerator7                           = 7,
 	NewEnumerator8                           = 8,
-	Enum_MAX                                 = 9,
+	NewEnumerator9                           = 9,
+	NewEnumerator10                          = 10,
+	NewEnumerator11                          = 11,
+	NewEnumerator12                          = 12,
+	NewEnumerator13                          = 13,
+	NewEnumerator14                          = 14,
+	NewEnumerator15                          = 15,
+	NewEnumerator16                          = 16,
+	Enum_MAX                                 = 17,
 };
 
 SDK_NAMESPACE_END

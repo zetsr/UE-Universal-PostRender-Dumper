@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Enum_MapRegion_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Enum_CrystalColor_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "Enum_CrystalColor_structs.hpp"
+#include "Enum_MapRegion_structs.hpp"
 
 
 SDK_NAMESPACE_START

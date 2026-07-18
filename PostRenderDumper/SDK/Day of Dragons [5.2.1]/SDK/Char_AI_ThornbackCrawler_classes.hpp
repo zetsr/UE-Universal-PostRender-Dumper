@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Char_Parent_AI_Dynamic_classes.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START

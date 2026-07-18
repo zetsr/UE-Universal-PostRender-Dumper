@@ -119,7 +119,7 @@ public:
 DUMPER7_ASSERTS_FLib_Steam_C_Get_DLC_ID_Acid_Spitter_Drake;
 
 // Function FLib_Steam.FLib_Steam_C.Get DLC ID As Enum
-// 0x00E0 (0x00E0 - 0x0000)
+// 0x00F0 (0x00F0 - 0x0000)
 struct FLib_Steam_C_Get_DLC_ID_As_Enum final
 {
 public:
@@ -131,53 +131,57 @@ public:
 	TMap<int32, Enum_SteamDLCs>                   DLCMAP;                                            // 0x0018(0x0050)(Edit, BlueprintVisible)
 	Enum_SteamDLCs                                Temp_byte_Variable;                                // 0x0068(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Get_DLC_ID_Brindle_Skin_AppID;            // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_FZD_Emote_Pack_AppID;          // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_DHD_Emote_Pack_AppID;          // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_SCW_Emote_Pack_AppID;          // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_IBD_Emote_Pack_AppID;          // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_BWD_Emote_Pack_AppID;          // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Mimikor_Dragon_AppID;          // 0x0084(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_FFW_Emote_Pack_AppID;          // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_IRW_Emote_Pack_AppID;          // 0x008C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_FSD_Emote_Pack_AppID;          // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Creator_Skin_AppID;            // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Lifetime_Subscriber_Rewards_200_AppID; // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_SSD_Emote_Pack_AppID;          // 0x009C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Lifetime_Subscriber_Rewards_100_AppID; // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Red_Dragon_Skin_AppID;         // 0x00A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Fireclaw_Drake_AppID;          // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Blitz_Striker_Amphithere_AppID; // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Acid_Spitter_Drake_AppID;      // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Dark_Elemental_Skin_AppID;     // 0x00B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Grey_Dragon_Skin_AppID;        // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_White_Dragon_Skin_AppID;       // 0x00BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Biolumin_Dragon_AppID;         // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Original_Backer_Rewards_AppID; // 0x00C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_1;                              // 0x00C8(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_2;                              // 0x00C9(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_3;                              // 0x00CA(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_4;                              // 0x00CB(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_5;                              // 0x00CC(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_6;                              // 0x00CD(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_7;                              // 0x00CE(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_8;                              // 0x00CF(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_9;                              // 0x00D0(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_10;                             // 0x00D1(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_11;                             // 0x00D2(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_12;                             // 0x00D3(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_13;                             // 0x00D4(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_14;                             // 0x00D5(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_15;                             // 0x00D6(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_16;                             // 0x00D7(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_17;                             // 0x00D8(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_18;                             // 0x00D9(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_19;                             // 0x00DA(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_20;                             // 0x00DB(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_21;                             // 0x00DC(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                Temp_byte_Variable_22;                             // 0x00DD(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_SteamDLCs                                CallFunc_Map_Find_Value;                           // 0x00DE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x00DF(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_CallMePancake_Skin_AppID;      // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Lusewing_Skin_AppID;           // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Brindle_Skin_AppID;            // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_FZD_Emote_Pack_AppID;          // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_DHD_Emote_Pack_AppID;          // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_SCW_Emote_Pack_AppID;          // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_IBD_Emote_Pack_AppID;          // 0x0084(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_BWD_Emote_Pack_AppID;          // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Mimikor_Dragon_AppID;          // 0x008C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_FFW_Emote_Pack_AppID;          // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_IRW_Emote_Pack_AppID;          // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_FSD_Emote_Pack_AppID;          // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Creator_Skin_AppID;            // 0x009C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Lifetime_Subscriber_Rewards_200_AppID; // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_SSD_Emote_Pack_AppID;          // 0x00A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Lifetime_Subscriber_Rewards_100_AppID; // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Red_Dragon_Skin_AppID;         // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Fireclaw_Drake_AppID;          // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Blitz_Striker_Amphithere_AppID; // 0x00B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Acid_Spitter_Drake_AppID;      // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Dark_Elemental_Skin_AppID;     // 0x00BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Grey_Dragon_Skin_AppID;        // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_White_Dragon_Skin_AppID;       // 0x00C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Biolumin_Dragon_AppID;         // 0x00C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Original_Backer_Rewards_AppID; // 0x00CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_1;                              // 0x00D0(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_2;                              // 0x00D1(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_3;                              // 0x00D2(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_4;                              // 0x00D3(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_5;                              // 0x00D4(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_6;                              // 0x00D5(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_7;                              // 0x00D6(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_8;                              // 0x00D7(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_9;                              // 0x00D8(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_10;                             // 0x00D9(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_11;                             // 0x00DA(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_12;                             // 0x00DB(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_13;                             // 0x00DC(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_14;                             // 0x00DD(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_15;                             // 0x00DE(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_16;                             // 0x00DF(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_17;                             // 0x00E0(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_18;                             // 0x00E1(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_19;                             // 0x00E2(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_20;                             // 0x00E3(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_21;                             // 0x00E4(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_22;                             // 0x00E5(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_23;                             // 0x00E6(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                Temp_byte_Variable_24;                             // 0x00E7(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_SteamDLCs                                CallFunc_Map_Find_Value;                           // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x00E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FLib_Steam_C_Get_DLC_ID_As_Enum;
 
@@ -224,6 +228,17 @@ public:
 	int32                                         CallFunc_MakeLiteralInt_ReturnValue;               // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FLib_Steam_C_Get_DLC_ID_BWD_Emote_Pack;
+
+// Function FLib_Steam.FLib_Steam_C.Get DLC ID CallMePancake Skin
+// 0x0010 (0x0010 - 0x0000)
+struct FLib_Steam_C_Get_DLC_ID_CallMePancake_Skin final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         AppId;                                             // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_MakeLiteralInt_ReturnValue;               // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_FLib_Steam_C_Get_DLC_ID_CallMePancake_Skin;
 
 // Function FLib_Steam.FLib_Steam_C.Get DLC ID Creator Skin
 // 0x0010 (0x0010 - 0x0000)
@@ -281,7 +296,7 @@ public:
 DUMPER7_ASSERTS_FLib_Steam_C_Get_DLC_ID_Fireclaw_Drake;
 
 // Function FLib_Steam.FLib_Steam_C.Get DLC ID From DLC
-// 0x0078 (0x0078 - 0x0000)
+// 0x0080 (0x0080 - 0x0000)
 struct FLib_Steam_C_Get_DLC_ID_From_DLC final
 {
 public:
@@ -291,30 +306,32 @@ public:
 	int32                                         DLC_ID;                                            // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	Enum_SteamDLCs                                Temp_byte_Variable;                                // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Get_DLC_ID_Brindle_Skin_AppID;            // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_DHD_Emote_Pack_AppID;          // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_FZD_Emote_Pack_AppID;          // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_IBD_Emote_Pack_AppID;          // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_SCW_Emote_Pack_AppID;          // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_BWD_Emote_Pack_AppID;          // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Mimikor_Dragon_AppID;          // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Creator_Skin_AppID;            // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_FFW_Emote_Pack_AppID;          // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_IRW_Emote_Pack_AppID;          // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_FSD_Emote_Pack_AppID;          // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Lifetime_Subscriber_Rewards_200_AppID; // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_SSD_Emote_Pack_AppID;          // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Lifetime_Subscriber_Rewards_100_AppID; // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Red_Dragon_Skin_AppID;         // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Fireclaw_Drake_AppID;          // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Blitz_Striker_Amphithere_AppID; // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Acid_Spitter_Drake_AppID;      // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Dark_Elemental_Skin_AppID;     // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Grey_Dragon_Skin_AppID;        // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_White_Dragon_Skin_AppID;       // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Biolumin_Dragon_AppID;         // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Get_DLC_ID_Original_Backer_Rewards_AppID; // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_Select_Default;                             // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_CallMePancake_Skin_AppID;      // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Lusewing_Skin_AppID;           // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Brindle_Skin_AppID;            // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_DHD_Emote_Pack_AppID;          // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_FZD_Emote_Pack_AppID;          // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_IBD_Emote_Pack_AppID;          // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_SCW_Emote_Pack_AppID;          // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_BWD_Emote_Pack_AppID;          // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Mimikor_Dragon_AppID;          // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Creator_Skin_AppID;            // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_FFW_Emote_Pack_AppID;          // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_IRW_Emote_Pack_AppID;          // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_FSD_Emote_Pack_AppID;          // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Lifetime_Subscriber_Rewards_200_AppID; // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_SSD_Emote_Pack_AppID;          // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Lifetime_Subscriber_Rewards_100_AppID; // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Red_Dragon_Skin_AppID;         // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Fireclaw_Drake_AppID;          // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Blitz_Striker_Amphithere_AppID; // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Acid_Spitter_Drake_AppID;      // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Dark_Elemental_Skin_AppID;     // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Grey_Dragon_Skin_AppID;        // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_White_Dragon_Skin_AppID;       // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Biolumin_Dragon_AppID;         // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Get_DLC_ID_Original_Backer_Rewards_AppID; // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_Select_Default;                             // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FLib_Steam_C_Get_DLC_ID_From_DLC;
 
@@ -394,6 +411,17 @@ public:
 	int32                                         CallFunc_MakeLiteralInt_ReturnValue;               // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FLib_Steam_C_Get_DLC_ID_Lifetime_Subscriber_Rewards_200;
+
+// Function FLib_Steam.FLib_Steam_C.Get DLC ID Lusewing Skin
+// 0x0010 (0x0010 - 0x0000)
+struct FLib_Steam_C_Get_DLC_ID_Lusewing_Skin final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         AppId;                                             // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_MakeLiteralInt_ReturnValue;               // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_FLib_Steam_C_Get_DLC_ID_Lusewing_Skin;
 
 // Function FLib_Steam.FLib_Steam_C.Get DLC ID Mimikor Dragon
 // 0x0010 (0x0010 - 0x0000)
@@ -602,7 +630,7 @@ public:
 DUMPER7_ASSERTS_FLib_Steam_C_Is_Valid_Steam_ID;
 
 // Function FLib_Steam.FLib_Steam_C.Open Steam DLC Store URL
-// 0x01A8 (0x01A8 - 0x0000)
+// 0x01C8 (0x01C8 - 0x0000)
 struct FLib_Steam_C_Open_Steam_DLC_Store_URL final
 {
 public:
@@ -639,7 +667,9 @@ public:
 	class FString                                 Temp_string_Variable_20;                           // 0x0168(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 Temp_string_Variable_21;                           // 0x0178(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 Temp_string_Variable_22;                           // 0x0188(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 K2Node_Select_Default;                             // 0x0198(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable_23;                           // 0x0198(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable_24;                           // 0x01A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 K2Node_Select_Default;                             // 0x01B8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FLib_Steam_C_Open_Steam_DLC_Store_URL;
 

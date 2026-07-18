@@ -16,6 +16,40 @@
 
 SDK_NAMESPACE_START
 
+// Function Wi_ChatBox.Wi_ChatBox_C.AddItemWidgetToChannel
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// Enum_ChannelWidget                      Channel                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FText&                      Content                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// const class FString&                    ItemSyntax                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FText&                      ChannelTag                                             (BlueprintVisible, BlueprintReadOnly, Parm)
+// class UScrollBox**                      TextScrollBox                                          (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UWi_ChatPearlItemLink_C**         ItemLink                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UWi_ChatBox_C::AddItemWidgetToChannel(Enum_ChannelWidget Channel, const class FText& Content, const class FString& ItemSyntax, const class FText& ChannelTag, class UScrollBox** TextScrollBox, class UWi_ChatPearlItemLink_C** ItemLink)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Wi_ChatBox_C", "AddItemWidgetToChannel");
+
+	Params::Wi_ChatBox_C_AddItemWidgetToChannel Parms{};
+
+	Parms.Channel = Channel;
+	Parms.Content = std::move(Content);
+	Parms.ItemSyntax = std::move(ItemSyntax);
+	Parms.ChannelTag = std::move(ChannelTag);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (TextScrollBox != nullptr)
+		*TextScrollBox = Parms.TextScrollBox;
+
+	if (ItemLink != nullptr)
+		*ItemLink = Parms.ItemLink;
+}
+
+
 // Function Wi_ChatBox.Wi_ChatBox_C.AddTextWidgetToChannel
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -467,8 +501,9 @@ void UWi_ChatBox_C::FilterCussWords(const class FString& Message, class FString*
 // bool                                    IsJrakhonic                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FText*                            FormattedText                                          (Parm, OutParm)
 // class FText*                            AllCopyText                                            (Parm, OutParm)
+// class FString*                          ItemSyntax                                             (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
-void UWi_ChatBox_C::FormatText(const class FString& User, bool IsAdmin, bool IsDev, const class FString& Message, Enum_ChatChannel AllCopyChannel, bool IsJrakhonic, class FText* FormattedText, class FText* AllCopyText)
+void UWi_ChatBox_C::FormatText(const class FString& User, bool IsAdmin, bool IsDev, const class FString& Message, Enum_ChatChannel AllCopyChannel, bool IsJrakhonic, class FText* FormattedText, class FText* AllCopyText, class FString* ItemSyntax)
 {
 	static class UFunction* Func = nullptr;
 
@@ -491,6 +526,9 @@ void UWi_ChatBox_C::FormatText(const class FString& User, bool IsAdmin, bool IsD
 
 	if (AllCopyText != nullptr)
 		*AllCopyText = std::move(Parms.AllCopyText);
+
+	if (ItemSyntax != nullptr)
+		*ItemSyntax = std::move(Parms.ItemSyntax);
 }
 
 
@@ -585,6 +623,30 @@ void UWi_ChatBox_C::GroupClanCheck(Enum_ChannelWidget Channel, bool* Success)
 
 	if (Success != nullptr)
 		*Success = Parms.Success;
+}
+
+
+// Function Wi_ChatBox.Wi_ChatBox_C.MakeChannelTag
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// const class FString&                    Channel                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FText*                            Tag                                                    (Parm, OutParm)
+
+void UWi_ChatBox_C::MakeChannelTag(const class FString& Channel, class FText* Tag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Wi_ChatBox_C", "MakeChannelTag");
+
+	Params::Wi_ChatBox_C_MakeChannelTag Parms{};
+
+	Parms.Channel = std::move(Channel);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Tag != nullptr)
+		*Tag = std::move(Parms.Tag);
 }
 
 

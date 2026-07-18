@@ -11,18 +11,18 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "UDS_Weather_Display_Names_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "SCUE5_structs.hpp"
 #include "FMODStudio_structs.hpp"
-#include "UDS_Weather_Display_Names_structs.hpp"
 #include "Enum_SteamDLCs_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GameObj_ClientSA.GameObj_ClientSA_C
-// 0x01B0 (0x01D8 - 0x0028)
+// 0x0258 (0x0280 - 0x0028)
 class UGameObj_ClientSA_C final : public UObject
 {
 public:
@@ -39,6 +39,9 @@ public:
 	struct FSafeBool                              DLC_SkinCrimson;                                   // 0x0130(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	struct FSafeBool                              IsRaining;                                         // 0x0168(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	struct FSafeBool                              IsThunderstorming;                                 // 0x01A0(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FSafeBool                              DLC_CreatorSkin;                                   // 0x01D8(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FSafeBool                              DLC_LusewingSkin;                                  // 0x0210(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FSafeBool                              DLC_CallMePancakeSkin;                             // 0x0248(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void CheckForIllegalPlayerConfigOverrides(bool* DetectedIllegalOverrides);

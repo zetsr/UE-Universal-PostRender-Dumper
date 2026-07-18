@@ -205,6 +205,20 @@ void ASpawn_DragonNest_C::CheckIsProtected()
 }
 
 
+// Function Spawn_DragonNest.Spawn_DragonNest_C.CheckParentsForPearls
+// (BlueprintCallable, BlueprintEvent)
+
+void ASpawn_DragonNest_C::CheckParentsForPearls()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Spawn_DragonNest_C", "CheckParentsForPearls");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Spawn_DragonNest.Spawn_DragonNest_C.CheckSetNestTemperature
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -856,6 +870,38 @@ void ASpawn_DragonNest_C::GetNumHatchedEggsRemote(uint8* HatchedEggs)
 
 	if (HatchedEggs != nullptr)
 		*HatchedEggs = Parms.HatchedEggs;
+}
+
+
+// Function Spawn_DragonNest.Spawn_DragonNest_C.GetPearlStats
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AChar_Parent_Dragonkind_C*        Dragon                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// double*                                 CraftingCrit                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 NestingProwess                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 NestingCrit                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ASpawn_DragonNest_C::GetPearlStats(class AChar_Parent_Dragonkind_C* Dragon, double* CraftingCrit, double* NestingProwess, double* NestingCrit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Spawn_DragonNest_C", "GetPearlStats");
+
+	Params::Spawn_DragonNest_C_GetPearlStats Parms{};
+
+	Parms.Dragon = Dragon;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (CraftingCrit != nullptr)
+		*CraftingCrit = Parms.CraftingCrit;
+
+	if (NestingProwess != nullptr)
+		*NestingProwess = Parms.NestingProwess;
+
+	if (NestingCrit != nullptr)
+		*NestingCrit = Parms.NestingCrit;
 }
 
 
@@ -1646,6 +1692,50 @@ void ASpawn_DragonNest_C::Timer4Event()
 		Func = Class->GetFunction("Spawn_DragonNest_C", "Timer4Event");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Spawn_DragonNest.Spawn_DragonNest_C.TryApplyStatusEffect
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// Enum_StatusEffects                      EffectToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Enum_StatMutations                      StacksToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AChar_Parent_Player_C*            AttackingPlayer                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ASpawn_DragonNest_C::TryApplyStatusEffect(Enum_StatusEffects EffectToApply, Enum_StatMutations StacksToApply, class AChar_Parent_Player_C* AttackingPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Spawn_DragonNest_C", "TryApplyStatusEffect");
+
+	Params::Spawn_DragonNest_C_TryApplyStatusEffect Parms{};
+
+	Parms.EffectToApply = EffectToApply;
+	Parms.StacksToApply = StacksToApply;
+	Parms.AttackingPlayer = AttackingPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Spawn_DragonNest.Spawn_DragonNest_C.TryDestroyComponent
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UActorComponent*                  Component                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void ASpawn_DragonNest_C::TryDestroyComponent(class UActorComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Spawn_DragonNest_C", "TryDestroyComponent");
+
+	Params::Spawn_DragonNest_C_TryDestroyComponent Parms{};
+
+	Parms.Component = Component;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

@@ -16,23 +16,40 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_CFCore_ServerModsSubMenu.BP_CFCore_ServerModsSubMenu_C.CustomEvent_3
-// 0x0010 (0x0010 - 0x0000)
-struct BP_CFCore_ServerModsSubMenu_C_CustomEvent_3 final
+// Function BP_CFCore_ServerModsSubMenu.BP_CFCore_ServerModsSubMenu_C.ModListToCombinedString
+// 0x00A0 (0x00A0 - 0x0000)
+struct BP_CFCore_ServerModsSubMenu_C_ModListToCombinedString final
 {
 public:
-	class FString                                 temp_user_token;                                   // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	TArray<int64>                                 Array;                                             // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+	TArray<class FString>                         AllStrings;                                        // 0x0020(0x0010)(Edit, BlueprintVisible)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         CallFunc_Array_Get_Item;                           // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_Int64ToText_ReturnValue;             // 0x0048(0x0010)()
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_JoinStringArray_ReturnValue;              // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_CFCore_ServerModsSubMenu_C_CustomEvent_3;
+DUMPER7_ASSERTS_BP_CFCore_ServerModsSubMenu_C_ModListToCombinedString;
 
-// Function BP_CFCore_ServerModsSubMenu.BP_CFCore_ServerModsSubMenu_C.CustomEvent_4
-// 0x0038 (0x0038 - 0x0000)
-struct BP_CFCore_ServerModsSubMenu_C_CustomEvent_4 final
+// Function BP_CFCore_ServerModsSubMenu.BP_CFCore_ServerModsSubMenu_C.GetRootCFWidget
+// 0x0010 (0x0010 - 0x0000)
+struct BP_CFCore_ServerModsSubMenu_C_GetRootCFWidget final
 {
 public:
-	struct FCFCoreError                           Error;                                             // 0x0000(0x0038)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UPanelWidget*                           RootPanelWidget;                                   // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_CFCore_ServerModsSubMenu_C_CustomEvent_4;
+DUMPER7_ASSERTS_BP_CFCore_ServerModsSubMenu_C_GetRootCFWidget;
 
 // Function BP_CFCore_ServerModsSubMenu.BP_CFCore_ServerModsSubMenu_C.ExecuteUbergraph_BP_CFCore_ServerModsSubMenu
 // 0x0160 (0x0160 - 0x0000)
@@ -64,40 +81,23 @@ public:
 };
 DUMPER7_ASSERTS_BP_CFCore_ServerModsSubMenu_C_ExecuteUbergraph_BP_CFCore_ServerModsSubMenu;
 
-// Function BP_CFCore_ServerModsSubMenu.BP_CFCore_ServerModsSubMenu_C.GetRootCFWidget
-// 0x0010 (0x0010 - 0x0000)
-struct BP_CFCore_ServerModsSubMenu_C_GetRootCFWidget final
+// Function BP_CFCore_ServerModsSubMenu.BP_CFCore_ServerModsSubMenu_C.CustomEvent_4
+// 0x0038 (0x0038 - 0x0000)
+struct BP_CFCore_ServerModsSubMenu_C_CustomEvent_4 final
 {
 public:
-	class UPanelWidget*                           RootPanelWidget;                                   // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FCFCoreError                           Error;                                             // 0x0000(0x0038)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
-DUMPER7_ASSERTS_BP_CFCore_ServerModsSubMenu_C_GetRootCFWidget;
+DUMPER7_ASSERTS_BP_CFCore_ServerModsSubMenu_C_CustomEvent_4;
 
-// Function BP_CFCore_ServerModsSubMenu.BP_CFCore_ServerModsSubMenu_C.ModListToCombinedString
-// 0x00A0 (0x00A0 - 0x0000)
-struct BP_CFCore_ServerModsSubMenu_C_ModListToCombinedString final
+// Function BP_CFCore_ServerModsSubMenu.BP_CFCore_ServerModsSubMenu_C.CustomEvent_3
+// 0x0010 (0x0010 - 0x0000)
+struct BP_CFCore_ServerModsSubMenu_C_CustomEvent_3 final
 {
 public:
-	TArray<int64>                                 Array;                                             // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-	TArray<class FString>                         AllStrings;                                        // 0x0020(0x0010)(Edit, BlueprintVisible)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	int64                                         CallFunc_Array_Get_Item;                           // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FText                                   CallFunc_Conv_Int64ToText_ReturnValue;             // 0x0048(0x0010)()
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_JoinStringArray_ReturnValue;              // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 temp_user_token;                                   // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_CFCore_ServerModsSubMenu_C_ModListToCombinedString;
+DUMPER7_ASSERTS_BP_CFCore_ServerModsSubMenu_C_CustomEvent_3;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

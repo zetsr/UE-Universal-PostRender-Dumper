@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Enum_MapRegion_structs.hpp"
 #include "Engine_classes.hpp"
 #include "EnumQuest__QuestLineTracker_structs.hpp"
+#include "Enum_MapRegion_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -26,7 +26,7 @@ public:
 	static void Get_Inventory_Item_Data(class FName ItemRowID, class UObject* __WorldContext, struct FStruct_InventoryItemsStatic* ItemData, bool* Found);
 	static void Get_Player_Account_Save_Path(const class FString& SteamID, class UObject* __WorldContext, class FString* SavePath);
 	static void Get_VRAM_Info(class UObject* __WorldContext, int32* TotalVRAM, int32* UsedVRAM, int32* AvailableVRAM);
-	static void GetAvailableQuestLines(class UObject* __WorldContext, TArray<EnumQuest__QuestLineTracker>* AvailableQuestLines);
+	static void GetAvailableQuestLines(class UObject* __WorldContext, TArray<EnumQuest__QuestLineTracker>* AvailableQuestlines);
 	static void GetElderGeodeBiome(class UObject* __WorldContext, Enum_MapRegion* Region);
 	static void GetGameBuildVersion(class UObject* __WorldContext, class FString* CompatibilityVersion, class FString* FullGameVersion, class FString* BuildVersion);
 	static void GetGlobalBans(class UObject* __WorldContext, TArray<class FString>* SIDs);

@@ -11,14 +11,14 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "Enum_CreatureLevels_structs.hpp"
-#include "Enum_Diet_structs.hpp"
-#include "Enum_Elements_structs.hpp"
+#include "Enum_Species_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "Enum_GrowthStage_structs.hpp"
+#include "Enum_Diet_structs.hpp"
 #include "Enum_Family_structs.hpp"
-#include "Enum_Species_structs.hpp"
+#include "Enum_CreatureLevels_structs.hpp"
+#include "Enum_GrowthStage_structs.hpp"
+#include "Enum_Elements_structs.hpp"
 
 
 SDK_NAMESPACE_START

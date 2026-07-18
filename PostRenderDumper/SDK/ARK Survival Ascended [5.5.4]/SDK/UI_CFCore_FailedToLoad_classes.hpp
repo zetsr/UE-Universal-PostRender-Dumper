@@ -31,11 +31,11 @@ public:
 	TMulticastInlineDelegate<void()>              OnClickedTryAgain;                                 // 0x08A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
-	void BndEvt__UI_CFCore_FailedToLoad_UI_Button_CFCore_Global_BackFailed_K2Node_ComponentBoundEvent_1_OnClick__DelegateSignature();
-	void BndEvt__UI_CFCore_FailedToLoad_UI_Button_CFCore_Global_TryAgain_K2Node_ComponentBoundEvent_2_OnClick__DelegateSignature();
-	void ExecuteUbergraph_UI_CFCore_FailedToLoad(int32 EntryPoint);
-	void FadeOutLoading();
 	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void FadeOutLoading();
+	void ExecuteUbergraph_UI_CFCore_FailedToLoad(int32 EntryPoint);
+	void BndEvt__UI_CFCore_FailedToLoad_UI_Button_CFCore_Global_TryAgain_K2Node_ComponentBoundEvent_2_OnClick__DelegateSignature();
+	void BndEvt__UI_CFCore_FailedToLoad_UI_Button_CFCore_Global_BackFailed_K2Node_ComponentBoundEvent_1_OnClick__DelegateSignature();
 
 public:
 	static class UClass* StaticClass()

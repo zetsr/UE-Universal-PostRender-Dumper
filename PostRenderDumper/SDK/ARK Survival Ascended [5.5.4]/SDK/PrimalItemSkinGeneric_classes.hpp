@@ -17,8 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemSkinGeneric.PrimalItemSkinGeneric_C
 // 0x0010 (0x0BA0 - 0x0B90)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) UPrimalItemSkinGeneric_C : public UPrimalItem_Base_C
+class UPrimalItemSkinGeneric_C final : public UPrimalItem_Base_C
 {
 public:
 	uint8                                         Pad_B84[0x4];                                      // 0x0B84(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
@@ -39,7 +38,6 @@ public:
 		return GetDefaultObjImpl<UPrimalItemSkinGeneric_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_UPrimalItemSkinGeneric_C;
 
 SDK_NAMESPACE_END

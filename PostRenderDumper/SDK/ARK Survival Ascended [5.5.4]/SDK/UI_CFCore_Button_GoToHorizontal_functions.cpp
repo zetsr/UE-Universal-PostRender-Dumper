@@ -16,20 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function UI_CFCore_Button_GoToHorizontal.UI_CFCore_Button_GoToHorizontal_C.BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UUI_CFCore_Button_GoToHorizontal_C::BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Button_GoToHorizontal_C", "BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function UI_CFCore_Button_GoToHorizontal.UI_CFCore_Button_GoToHorizontal_C.ExecuteUbergraph_UI_CFCore_Button_GoToHorizontal
 // (Final, UbergraphFunction)
 // Parameters:
@@ -47,6 +33,20 @@ void UUI_CFCore_Button_GoToHorizontal_C::ExecuteUbergraph_UI_CFCore_Button_GoToH
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function UI_CFCore_Button_GoToHorizontal.UI_CFCore_Button_GoToHorizontal_C.BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UUI_CFCore_Button_GoToHorizontal_C::BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_CFCore_Button_GoToHorizontal_C", "BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

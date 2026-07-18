@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DmgType_Explosion_NoMetal.DmgType_Explosion_NoMetal_C
 // 0x0000 (0x0180 - 0x0180)
-class UDmgType_Explosion_NoMetal_C : public UDmgType_Explosion_C
+class UDmgType_Explosion_NoMetal_C final : public UDmgType_Explosion_C
 {
 public:
 	static class UClass* StaticClass()

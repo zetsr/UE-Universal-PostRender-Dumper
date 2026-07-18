@@ -12,9 +12,9 @@
 
 #include "Engine_structs.hpp"
 #include "UMG_classes.hpp"
+#include "Enum_AnimMotionStates_structs.hpp"
 #include "Enum_Vitals_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
-#include "Enum_AnimMotionStates_structs.hpp"
 
 
 SDK_NAMESPACE_START

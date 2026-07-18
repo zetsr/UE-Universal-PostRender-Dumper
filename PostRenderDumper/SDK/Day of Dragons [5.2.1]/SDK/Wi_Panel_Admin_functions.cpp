@@ -1444,15 +1444,15 @@ void UWi_Panel_Admin_C::PopulatePlayerList()
 }
 
 
-// Function Wi_Panel_Admin.Wi_Panel_Admin_C.refresh
+// Function Wi_Panel_Admin.Wi_Panel_Admin_C.Refresh
 // (BlueprintCallable, BlueprintEvent)
 
-void UWi_Panel_Admin_C::refresh()
+void UWi_Panel_Admin_C::Refresh()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Wi_Panel_Admin_C", "refresh");
+		Func = Class->GetFunction("Wi_Panel_Admin_C", "Refresh");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

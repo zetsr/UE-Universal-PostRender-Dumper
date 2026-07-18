@@ -10,7 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Enum_StatMutations_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Enum_StatusEffects_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -35,7 +37,7 @@ public:
 DUMPER7_ASSERTS_Spawn_Flora_C_DoInteraction;
 
 // Function Spawn_Flora.Spawn_Flora_C.ExecuteUbergraph_Spawn_Flora
-// 0x0048 (0x0048 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct Spawn_Flora_C_ExecuteUbergraph_Spawn_Flora final
 {
 public:
@@ -48,8 +50,13 @@ public:
 	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class AChar_Parent_Player_C*                  K2Node_Event_Player;                               // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class AAct_EggMound_C*                        K2Node_Event_EggMound;                             // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 K2Node_Event_InteractingActor;                     // 0x0038(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 K2Node_CustomEvent_InteractingActor;               // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UActorComponent*                        K2Node_Event_Component;                            // 0x0038(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	Enum_StatusEffects                            K2Node_Event_EffectToApply;                        // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_StatMutations                            K2Node_Event_StacksToApply;                        // 0x0041(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_42[0x6];                                       // 0x0042(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class AChar_Parent_Player_C*                  K2Node_Event_AttackingPlayer;                      // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_Event_InteractingActor;                     // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_CustomEvent_InteractingActor;               // 0x0058(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Spawn_Flora_C_ExecuteUbergraph_Spawn_Flora;
 
@@ -61,6 +68,27 @@ public:
 	class AActor*                                 InteractingActor;                                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Spawn_Flora_C_OnInteraction;
+
+// Function Spawn_Flora.Spawn_Flora_C.TryApplyStatusEffect
+// 0x0010 (0x0010 - 0x0000)
+struct Spawn_Flora_C_TryApplyStatusEffect final
+{
+public:
+	Enum_StatusEffects                            EffectToApply;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_StatMutations                            StacksToApply;                                     // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class AChar_Parent_Player_C*                  AttackingPlayer;                                   // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Spawn_Flora_C_TryApplyStatusEffect;
+
+// Function Spawn_Flora.Spawn_Flora_C.TryDestroyComponent
+// 0x0008 (0x0008 - 0x0000)
+struct Spawn_Flora_C_TryDestroyComponent final
+{
+public:
+	class UActorComponent*                        Component;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Spawn_Flora_C_TryDestroyComponent;
 
 // Function Spawn_Flora.Spawn_Flora_C.TryLaunchCharacter
 // 0x0020 (0x0020 - 0x0000)

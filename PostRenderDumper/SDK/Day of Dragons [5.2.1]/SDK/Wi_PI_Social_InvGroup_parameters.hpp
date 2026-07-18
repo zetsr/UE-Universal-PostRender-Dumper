@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "AdvancedSessions_structs.hpp"
 #include "Struct_InvitationSocial_structs.hpp"
+#include "AdvancedSessions_structs.hpp"
 
 
 SDK_NAMESPACE_START

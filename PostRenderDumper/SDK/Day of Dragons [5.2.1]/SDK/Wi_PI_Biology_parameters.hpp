@@ -11,13 +11,13 @@
 #include "Basic.hpp"
 
 #include "SlateCore_structs.hpp"
+#include "Enum_CreatureLevels_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
+#include "Enum_Elements_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Enum_Diet_structs.hpp"
 #include "Enum_Family_structs.hpp"
 #include "Enum_Species_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "Enum_CreatureLevels_structs.hpp"
-#include "Enum_Diet_structs.hpp"
-#include "Enum_Elements_structs.hpp"
 #include "UMG_structs.hpp"
 #include "Struct_SkinData_structs.hpp"
 

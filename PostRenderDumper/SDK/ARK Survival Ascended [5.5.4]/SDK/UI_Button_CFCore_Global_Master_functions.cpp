@@ -16,184 +16,61 @@
 
 SDK_NAMESPACE_START
 
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.BndEvt__UI_Button_Ark_Blue_Button_BrowseMods_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UUI_Button_CFCore_Global_Master_C::BndEvt__UI_Button_Ark_Blue_Button_BrowseMods_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "BndEvt__UI_Button_Ark_Blue_Button_BrowseMods_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UUI_Button_CFCore_Global_Master_C::BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UUI_Button_CFCore_Global_Master_C::BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UUI_Button_CFCore_Global_Master_C::BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.BndEvt__UI_Button_Ark_Global_Base_Button_Main_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UUI_Button_CFCore_Global_Master_C::BndEvt__UI_Button_Ark_Global_Base_Button_Main_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "BndEvt__UI_Button_Ark_Global_Base_Button_Main_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UUI_Button_CFCore_Global_Master_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.ExecuteUbergraph_UI_Button_CFCore_Global_Master
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UUI_Button_CFCore_Global_Master_C::ExecuteUbergraph_UI_Button_CFCore_Global_Master(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "ExecuteUbergraph_UI_Button_CFCore_Global_Master");
-
-	Params::UI_Button_CFCore_Global_Master_C_ExecuteUbergraph_UI_Button_CFCore_Global_Master Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.GetRootCFWidget
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class UPanelWidget**                    RootPanelWidget                                        (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-
-void UUI_Button_CFCore_Global_Master_C::GetRootCFWidget(class UPanelWidget** RootPanelWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "GetRootCFWidget");
-
-	Params::UI_Button_CFCore_Global_Master_C_GetRootCFWidget Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (RootPanelWidget != nullptr)
-		*RootPanelWidget = Parms.RootPanelWidget;
-}
-
-
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.PreConstruct
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_Button_CFCore_Global_Master_C::PreConstruct(bool IsDesignTime)
+void UUI_Button_CFCore_Global_Master_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "PreConstruct");
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "Tick");
 
-	Params::UI_Button_CFCore_Global_Master_C_PreConstruct Parms{};
+	Params::UI_Button_CFCore_Global_Master_C_Tick Parms{};
 
-	Parms.IsDesignTime = IsDesignTime;
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.InDeltaTime = InDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.Set Selected
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    Selected_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UUI_Button_CFCore_Global_Master_C::Set_Selected(bool Selected_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "Set Selected");
-
-	Params::UI_Button_CFCore_Global_Master_C_Set_Selected Parms{};
-
-	Parms.Selected_0 = Selected_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.SetBorderToColor
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.SetWidgetText
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FText&                      InText                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UUI_Button_CFCore_Global_Master_C::SetWidgetText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "SetWidgetText");
+
+	Params::UI_Button_CFCore_Global_Master_C_SetWidgetText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.SetFillToColor
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const struct FSlateColor&               TintColor                                              (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UUI_Button_CFCore_Global_Master_C::SetBorderToColor(const struct FSlateColor& TintColor)
+void UUI_Button_CFCore_Global_Master_C::SetFillToColor(const struct FSlateColor& TintColor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "SetBorderToColor");
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "SetFillToColor");
 
-	Params::UI_Button_CFCore_Global_Master_C_SetBorderToColor Parms{};
+	Params::UI_Button_CFCore_Global_Master_C_SetFillToColor Parms{};
 
 	Parms.TintColor = std::move(TintColor);
 
@@ -221,19 +98,19 @@ void UUI_Button_CFCore_Global_Master_C::SetButtonColorPreset(ENUM_CFCore_ButtonS
 }
 
 
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.SetFillToColor
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.SetBorderToColor
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const struct FSlateColor&               TintColor                                              (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UUI_Button_CFCore_Global_Master_C::SetFillToColor(const struct FSlateColor& TintColor)
+void UUI_Button_CFCore_Global_Master_C::SetBorderToColor(const struct FSlateColor& TintColor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "SetFillToColor");
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "SetBorderToColor");
 
-	Params::UI_Button_CFCore_Global_Master_C_SetFillToColor Parms{};
+	Params::UI_Button_CFCore_Global_Master_C_SetBorderToColor Parms{};
 
 	Parms.TintColor = std::move(TintColor);
 
@@ -241,45 +118,168 @@ void UUI_Button_CFCore_Global_Master_C::SetFillToColor(const struct FSlateColor&
 }
 
 
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.SetWidgetText
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.Set Selected
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const class FText&                      InText                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// bool                                    Selected_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_Button_CFCore_Global_Master_C::SetWidgetText(const class FText& InText)
+void UUI_Button_CFCore_Global_Master_C::Set_Selected(bool Selected_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "SetWidgetText");
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "Set Selected");
 
-	Params::UI_Button_CFCore_Global_Master_C_SetWidgetText Parms{};
+	Params::UI_Button_CFCore_Global_Master_C_Set_Selected Parms{};
 
-	Parms.InText = std::move(InText);
+	Parms.Selected_0 = Selected_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.Tick
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_Button_CFCore_Global_Master_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
+void UUI_Button_CFCore_Global_Master_C::PreConstruct(bool IsDesignTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "Tick");
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "PreConstruct");
 
-	Params::UI_Button_CFCore_Global_Master_C_Tick Parms{};
+	Params::UI_Button_CFCore_Global_Master_C_PreConstruct Parms{};
 
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.InDeltaTime = InDeltaTime;
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.GetRootCFWidget
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UPanelWidget**                    RootPanelWidget                                        (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UUI_Button_CFCore_Global_Master_C::GetRootCFWidget(class UPanelWidget** RootPanelWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "GetRootCFWidget");
+
+	Params::UI_Button_CFCore_Global_Master_C_GetRootCFWidget Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (RootPanelWidget != nullptr)
+		*RootPanelWidget = Parms.RootPanelWidget;
+}
+
+
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.ExecuteUbergraph_UI_Button_CFCore_Global_Master
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UUI_Button_CFCore_Global_Master_C::ExecuteUbergraph_UI_Button_CFCore_Global_Master(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "ExecuteUbergraph_UI_Button_CFCore_Global_Master");
+
+	Params::UI_Button_CFCore_Global_Master_C_ExecuteUbergraph_UI_Button_CFCore_Global_Master Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UUI_Button_CFCore_Global_Master_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.BndEvt__UI_Button_Ark_Global_Base_Button_Main_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UUI_Button_CFCore_Global_Master_C::BndEvt__UI_Button_Ark_Global_Base_Button_Main_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "BndEvt__UI_Button_Ark_Global_Base_Button_Main_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UUI_Button_CFCore_Global_Master_C::BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UUI_Button_CFCore_Global_Master_C::BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UUI_Button_CFCore_Global_Master_C::BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.BndEvt__UI_Button_Ark_Blue_Button_BrowseMods_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UUI_Button_CFCore_Global_Master_C::BndEvt__UI_Button_Ark_Blue_Button_BrowseMods_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Button_CFCore_Global_Master_C", "BndEvt__UI_Button_Ark_Blue_Button_BrowseMods_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

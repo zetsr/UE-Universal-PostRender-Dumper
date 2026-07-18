@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "STRUCT_FullButtonDesign_structs.hpp"
-#include "ENUM_CFCore_ButtonStates_structs.hpp"
 #include "Engine_structs.hpp"
-#include "ENUM_CFCore_ButtonType_structs.hpp"
+#include "ENUM_CFCore_ButtonStates_structs.hpp"
+#include "STRUCT_FullButtonDesign_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ENUM_CFCore_ButtonType_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
 
 
@@ -61,21 +61,21 @@ public:
 	ENUM_CFCore_ButtonStates                      CurrentButtonState;                                // 0x0AEF(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BndEvt__UI_Button_Ark_Blue_Button_BrowseMods_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
-	void BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature();
-	void BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
-	void BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature();
-	void BndEvt__UI_Button_Ark_Global_Base_Button_Main_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature();
-	void Construct();
-	void ExecuteUbergraph_UI_Button_CFCore_Global_Master(int32 EntryPoint);
-	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
-	void PreConstruct(bool IsDesignTime);
-	void Set_Selected(bool Selected_0);
-	void SetBorderToColor(const struct FSlateColor& TintColor);
-	void SetButtonColorPreset(ENUM_CFCore_ButtonStates State);
-	void SetFillToColor(const struct FSlateColor& TintColor);
-	void SetWidgetText(const class FText& InText);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void SetWidgetText(const class FText& InText);
+	void SetFillToColor(const struct FSlateColor& TintColor);
+	void SetButtonColorPreset(ENUM_CFCore_ButtonStates State);
+	void SetBorderToColor(const struct FSlateColor& TintColor);
+	void Set_Selected(bool Selected_0);
+	void PreConstruct(bool IsDesignTime);
+	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void ExecuteUbergraph_UI_Button_CFCore_Global_Master(int32 EntryPoint);
+	void Construct();
+	void BndEvt__UI_Button_Ark_Global_Base_Button_Main_K2Node_ComponentBoundEvent_4_OnButtonReleasedEvent__DelegateSignature();
+	void BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature();
+	void BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature();
+	void BndEvt__UI_Button_Ark_Blue_Button_Main_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature();
+	void BndEvt__UI_Button_Ark_Blue_Button_BrowseMods_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
 
 public:
 	static class UClass* StaticClass()

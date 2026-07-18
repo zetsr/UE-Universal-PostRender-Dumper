@@ -17,12 +17,12 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Char_Parent_Amphithere.Char_Parent_Amphithere_C
-// 0x0000 (0x1200 - 0x1200)
-class AChar_Parent_Amphithere_C : public AChar_Parent_Dragonkind_C
+// 0x0010 (0x1340 - 0x1330)
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) AChar_Parent_Amphithere_C : public AChar_Parent_Dragonkind_C
 {
 public:
-	uint8                                         Pad_11F5[0x3];                                     // 0x11F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPhysicsMovementGrabOffset_C*           PhysicsMovementGrabOffset;                         // 0x11F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPhysicsMovementGrabOffset_C*           PhysicsMovementGrabOffset;                         // 0x1330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void GetVenomPotency(uint8* Potency);
@@ -42,6 +42,7 @@ public:
 		return GetDefaultObjImpl<AChar_Parent_Amphithere_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_AChar_Parent_Amphithere_C;
 
 SDK_NAMESPACE_END

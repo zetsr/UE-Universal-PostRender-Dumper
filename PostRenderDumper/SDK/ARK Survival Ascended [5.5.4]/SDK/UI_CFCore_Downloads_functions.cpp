@@ -16,6 +16,26 @@
 
 SDK_NAMESPACE_START
 
+// Function UI_CFCore_Downloads.UI_CFCore_Downloads_C.SetNumberOfDownloadsText
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FText&                      InText                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UUI_CFCore_Downloads_C::SetNumberOfDownloadsText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_CFCore_Downloads_C", "SetNumberOfDownloadsText");
+
+	Params::UI_CFCore_Downloads_C_SetNumberOfDownloadsText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function UI_CFCore_Downloads.UI_CFCore_Downloads_C.GetRootCFWidget
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -34,26 +54,6 @@ void UUI_CFCore_Downloads_C::GetRootCFWidget(class UPanelWidget** RootPanelWidge
 
 	if (RootPanelWidget != nullptr)
 		*RootPanelWidget = Parms.RootPanelWidget;
-}
-
-
-// Function UI_CFCore_Downloads.UI_CFCore_Downloads_C.SetNumberOfDownloadsText
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class FText&                      InText                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UUI_CFCore_Downloads_C::SetNumberOfDownloadsText(const class FText& InText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Downloads_C", "SetNumberOfDownloadsText");
-
-	Params::UI_CFCore_Downloads_C_SetNumberOfDownloadsText Parms{};
-
-	Parms.InText = std::move(InText);
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

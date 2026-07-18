@@ -16,35 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function UI_CFCore_Overlay.UI_CFCore_Overlay_C.Construct
+// Function UI_CFCore_Overlay.UI_CFCore_Overlay_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UUI_CFCore_Overlay_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Overlay_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function UI_CFCore_Overlay.UI_CFCore_Overlay_C.ExecuteUbergraph_UI_CFCore_Overlay
-// (Final, UbergraphFunction)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_CFCore_Overlay_C::ExecuteUbergraph_UI_CFCore_Overlay(int32 EntryPoint)
+void UUI_CFCore_Overlay_C::PreConstruct(bool IsDesignTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Overlay_C", "ExecuteUbergraph_UI_CFCore_Overlay");
+		Func = Class->GetFunction("UI_CFCore_Overlay_C", "PreConstruct");
 
-	Params::UI_CFCore_Overlay_C_ExecuteUbergraph_UI_CFCore_Overlay Parms{};
+	Params::UI_CFCore_Overlay_C_PreConstruct Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -72,23 +58,37 @@ void UUI_CFCore_Overlay_C::PlayHover(EUMGSequencePlayMode PlayMode, double Playb
 }
 
 
-// Function UI_CFCore_Overlay.UI_CFCore_Overlay_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function UI_CFCore_Overlay.UI_CFCore_Overlay_C.ExecuteUbergraph_UI_CFCore_Overlay
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_CFCore_Overlay_C::PreConstruct(bool IsDesignTime)
+void UUI_CFCore_Overlay_C::ExecuteUbergraph_UI_CFCore_Overlay(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Overlay_C", "PreConstruct");
+		Func = Class->GetFunction("UI_CFCore_Overlay_C", "ExecuteUbergraph_UI_CFCore_Overlay");
 
-	Params::UI_CFCore_Overlay_C_PreConstruct Parms{};
+	Params::UI_CFCore_Overlay_C_ExecuteUbergraph_UI_CFCore_Overlay Parms{};
 
-	Parms.IsDesignTime = IsDesignTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function UI_CFCore_Overlay.UI_CFCore_Overlay_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UUI_CFCore_Overlay_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_CFCore_Overlay_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Enum_ServerType_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Enum_MontageBlendTypes_structs.hpp"
 #include "Enum_AnimMotionStates_structs.hpp"
-#include "Enum_ServerType_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -177,11 +177,12 @@ public:
 	double                                        CallFunc_GetMultiBlendDesiredAlphas_JuvenileAlpha; // 0x01A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_GetMultiBlendDesiredAlphas_AdultAlpha;    // 0x01A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Montage_IsActive_ReturnValue;             // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x01B1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsAnyMontagePlaying_ReturnValue;          // 0x01B1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Not_PreBool_ReturnValue_1;                // 0x01B2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_BooleanAND_ReturnValue_6;                 // 0x01B3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x01B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1B5[0x3];                                      // 0x01B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x01B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x01B5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1B6[0x2];                                      // 0x01B6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         K2Node_Event_DeltaTimeX;                           // 0x01B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1BC[0x4];                                      // 0x01BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class APawn*                                  CallFunc_TryGetPawnOwner_ReturnValue;              // 0x01C0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -314,7 +315,7 @@ public:
 	bool                                          Temp_bool_Variable_11;                             // 0x04A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsDedicatedServer_ReturnValue_3;          // 0x04A1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	Enum_MontageBlendTypes                        K2Node_Select_Default_9;                           // 0x04A2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsAnyMontagePlaying_ReturnValue;          // 0x04A3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsAnyMontagePlaying_ReturnValue_1;        // 0x04A3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4A4[0x4];                                      // 0x04A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CallFunc_Less_DoubleDouble_A_ImplicitCast;         // 0x04A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Greater_DoubleDouble_A_ImplicitCast;      // 0x04B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

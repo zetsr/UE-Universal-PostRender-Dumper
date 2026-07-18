@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "Struct_ClanMemberList_structs.hpp"
 #include "Struct_ClanRegister_structs.hpp"
+#include "Struct_ClanMemberList_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START

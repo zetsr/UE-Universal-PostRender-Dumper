@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
+#include "PrimalItemArmorGeneric_classes.hpp"
 #include "Engine_structs.hpp"
 #include "MapSpecificTekArmorBuffs_structs.hpp"
-#include "PrimalItemArmorGeneric_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemArmor_Base_Tek.PrimalItemArmor_Base_Tek_C
 // 0x0060 (0x0BF0 - 0x0B90)
-class UPrimalItemArmor_Base_Tek_C : public UPrimalItemArmorGeneric_C
+class UPrimalItemArmor_Base_Tek_C final : public UPrimalItemArmorGeneric_C
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0B90(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

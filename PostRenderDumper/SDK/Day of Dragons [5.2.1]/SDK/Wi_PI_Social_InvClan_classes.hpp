@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "Struct_InvitationSocial_structs.hpp"
 #include "Engine_structs.hpp"
 #include "AdvancedSessions_structs.hpp"
 #include "UMG_classes.hpp"
-#include "Struct_InvitationSocial_structs.hpp"
 
 
 SDK_NAMESPACE_START

@@ -11,17 +11,18 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "OnlineSubsystemUtils_structs.hpp"
-#include "Enum_InputModes_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Enum_TimeOfDay_structs.hpp"
+#include "AdvancedSessions_structs.hpp"
 #include "Enum_HUD_Style_structs.hpp"
+#include "OnlineSubsystemUtils_structs.hpp"
 #include "Enum_IconSize_structs.hpp"
+#include "Enum_InputModes_structs.hpp"
 #include "SCUE5_structs.hpp"
 #include "FMODStudio_structs.hpp"
-#include "Enum_TimeOfDay_structs.hpp"
+#include "Struct_InventoryItemsReplicated_structs.hpp"
 #include "Dragons_classes.hpp"
 #include "Enum_ServerType_structs.hpp"
-#include "AdvancedSessions_structs.hpp"
 #include "Enum_MapRegion_structs.hpp"
 #include "Enum_KickReason_structs.hpp"
 #include "NetCore_structs.hpp"
@@ -30,7 +31,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DragonsGI.DragonsGI_C
-// 0x0460 (0x0628 - 0x01C8)
+// 0x05B8 (0x0780 - 0x01C8)
 class UDragonsGI_C final : public UDragonsGameInstance
 {
 public:
@@ -74,7 +75,9 @@ public:
 	bool                                          bDisableEAC;                                       // 0x0257(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bDisableRespawns;                                  // 0x0258(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bDisableEggSaving;                                 // 0x0259(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_25A[0x6];                                      // 0x025A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bEnableMNTC;                                       // 0x025A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bMNTC_RemoveDupes;                                 // 0x025B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_25C[0x4];                                      // 0x025C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 sWorldMap;                                         // 0x0260(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, DisableEditOnInstance, HasGetValueTypeHash)
 	class FString                                 sServerMOTD;                                       // 0x0270(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, DisableEditOnInstance, HasGetValueTypeHash)
 	class FString                                 sServerDiscord;                                    // 0x0280(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, DisableEditOnInstance, HasGetValueTypeHash)
@@ -162,6 +165,23 @@ public:
 	struct FSafeString                            ProductUserId;                                     // 0x05E0(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	class USave_PUID_C*                           Login;                                             // 0x0618(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class UAudioComponent*                        ST_WhiteDragonRef;                                 // 0x0620(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         iDebugIterationsPerFrame;                          // 0x0628(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_62C[0x4];                                      // 0x062C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         Debug_FoundPaths;                                  // 0x0630(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<class FString>                         Debug_SavePaths;                                   // 0x0640(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<class FString>                         Debug_SavePathsChecked;                            // 0x0650(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TSet<class FString>                           Debug_SavePathsWithDupes;                          // 0x0660(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int32                                         Debug_SavePathsLength;                             // 0x06B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Debug_IterationsCounter;                           // 0x06B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TSet<class FString>                           Debug_AllUniqueIDs;                                // 0x06B8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class USave_PlayerInventory_C*                Debug_PlayerInventory;                             // 0x0708(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FStruct_InventoryItemsReplicated> Debug_CurrentParsedInventory;                    // 0x0710(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          Debug_RequiresSave;                                // 0x0720(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_721[0x3];                                      // 0x0721(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Debug_UniqueDupesCounter;                          // 0x0724(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsInCharacterMenu;                                 // 0x0728(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_729[0x7];                                      // 0x0729(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, int32>                    Debug_DupeTrackerSteamID;                          // 0x0730(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ActivateInputModeGame();
@@ -237,6 +257,7 @@ public:
 	void LaunchDedicatedServer();
 	void LoginEAC();
 	void LogoutEAC();
+	void Maintain_CleanDuplicatedItemSaves();
 	void OnEffectsQualityChanged(int32 NewValue);
 	void OnFail_6624D93D4A24B0336475FC9CD252A3E8(const struct FEIK_ProductUserId& ProductUserId_0, const class FString& Error);
 	void OnFail_E7AE7CA54F11784CD2AF6897A3E6F07B();
@@ -306,6 +327,7 @@ public:
 	void RegUseStreamingMode(int32 NewValue);
 	void ResetAmbiance();
 	void SaveSteamProfiles();
+	void Server_RunMaintenance();
 	void SetAutoEmissive();
 	void SetLevelAmbienceAltitude(double Altitude);
 	void SetLevelAmbienceTime(double TimeOfDay);

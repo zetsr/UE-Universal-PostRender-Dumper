@@ -17,6 +17,70 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.Tick
+// 0x003C (0x003C - 0x0000)
+struct UI_CFCore_Loading_C_Tick final
+{
+public:
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_UI_CFCore_Loading_C_Tick;
+
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.SetLoadingStage
+// 0x0001 (0x0001 - 0x0000)
+struct UI_CFCore_Loading_C_SetLoadingStage final
+{
+public:
+	ENUM_CFCore_LoadingProgress                   Loading_Stage;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_UI_CFCore_Loading_C_SetLoadingStage;
+
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.GetRootCFWidget
+// 0x0010 (0x0010 - 0x0000)
+struct UI_CFCore_Loading_C_GetRootCFWidget final
+{
+public:
+	class UPanelWidget*                           RootPanelWidget;                                   // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_UI_CFCore_Loading_C_GetRootCFWidget;
+
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.GetPhaseValues
+// 0x0048 (0x0048 - 0x0000)
+struct UI_CFCore_Loading_C_GetPhaseValues final
+{
+public:
+	ENUM_CFCore_LoadingProgress                   Index_0;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Temp_byte_Variable;                                // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        Temp_real_Variable;                                // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Temp_real_Variable_1;                              // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Temp_real_Variable_2;                              // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Temp_real_Variable_3;                              // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Temp_real_Variable_4;                              // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        K2Node_Select_Default;                             // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_UI_CFCore_Loading_C_GetPhaseValues;
+
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.GetNextSafePhase
+// 0x0008 (0x0008 - 0x0000)
+struct UI_CFCore_Loading_C_GetNextSafePhase final
+{
+public:
+	ENUM_CFCore_LoadingProgress                   ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ENUM_CFCore_LoadingProgress                   Temp_byte_Variable;                                // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ENUM_CFCore_LoadingProgress                   Temp_byte_Variable_1;                              // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ENUM_CFCore_LoadingProgress                   Temp_byte_Variable_2;                              // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ENUM_CFCore_LoadingProgress                   Temp_byte_Variable_3;                              // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ENUM_CFCore_LoadingProgress                   Temp_byte_Variable_4;                              // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ENUM_CFCore_LoadingProgress                   Temp_byte_Variable_5;                              // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ENUM_CFCore_LoadingProgress                   K2Node_Select_Default;                             // 0x0007(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_UI_CFCore_Loading_C_GetNextSafePhase;
+
 // Function UI_CFCore_Loading.UI_CFCore_Loading_C.ExecuteUbergraph_UI_CFCore_Loading
 // 0x00C0 (0x00C0 - 0x0000)
 struct UI_CFCore_Loading_C_ExecuteUbergraph_UI_CFCore_Loading final
@@ -49,70 +113,6 @@ public:
 	float                                         CallFunc_SetPercent_InPercent_ImplicitCast;        // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_UI_CFCore_Loading_C_ExecuteUbergraph_UI_CFCore_Loading;
-
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.GetNextSafePhase
-// 0x0008 (0x0008 - 0x0000)
-struct UI_CFCore_Loading_C_GetNextSafePhase final
-{
-public:
-	ENUM_CFCore_LoadingProgress                   ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ENUM_CFCore_LoadingProgress                   Temp_byte_Variable;                                // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ENUM_CFCore_LoadingProgress                   Temp_byte_Variable_1;                              // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ENUM_CFCore_LoadingProgress                   Temp_byte_Variable_2;                              // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ENUM_CFCore_LoadingProgress                   Temp_byte_Variable_3;                              // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ENUM_CFCore_LoadingProgress                   Temp_byte_Variable_4;                              // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ENUM_CFCore_LoadingProgress                   Temp_byte_Variable_5;                              // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ENUM_CFCore_LoadingProgress                   K2Node_Select_Default;                             // 0x0007(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_UI_CFCore_Loading_C_GetNextSafePhase;
-
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.GetPhaseValues
-// 0x0048 (0x0048 - 0x0000)
-struct UI_CFCore_Loading_C_GetPhaseValues final
-{
-public:
-	ENUM_CFCore_LoadingProgress                   Index_0;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Temp_byte_Variable;                                // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Temp_real_Variable;                                // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Temp_real_Variable_1;                              // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Temp_real_Variable_2;                              // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Temp_real_Variable_3;                              // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Temp_real_Variable_4;                              // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        K2Node_Select_Default;                             // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_UI_CFCore_Loading_C_GetPhaseValues;
-
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.GetRootCFWidget
-// 0x0010 (0x0010 - 0x0000)
-struct UI_CFCore_Loading_C_GetRootCFWidget final
-{
-public:
-	class UPanelWidget*                           RootPanelWidget;                                   // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_UI_CFCore_Loading_C_GetRootCFWidget;
-
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.SetLoadingStage
-// 0x0001 (0x0001 - 0x0000)
-struct UI_CFCore_Loading_C_SetLoadingStage final
-{
-public:
-	ENUM_CFCore_LoadingProgress                   Loading_Stage;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_UI_CFCore_Loading_C_SetLoadingStage;
-
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.Tick
-// 0x003C (0x003C - 0x0000)
-struct UI_CFCore_Loading_C_Tick final
-{
-public:
-	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	float                                         InDeltaTime;                                       // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_UI_CFCore_Loading_C_Tick;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

@@ -10,27 +10,28 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Char_Parent_Dragonkind_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Char_Parent_Egg.Char_Parent_Egg_C
-// 0x0020 (0x1220 - 0x1200)
+// 0x0030 (0x1360 - 0x1330)
 #pragma pack(push, 0x1)
 class SDK_ALIGN(0x10) AChar_Parent_Egg_C : public AChar_Parent_Dragonkind_C
 {
 public:
-	uint8                                         Pad_11F5[0x3];                                     // 0x11F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Parent_Egg_C;                  // 0x11F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          IsHatched;                                         // 0x1200(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	bool                                          ShouldHatch;                                       // 0x1201(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ShouldSpawnGlowing;                                // 0x1202(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_1203[0x5];                                     // 0x1203(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 RPName;                                            // 0x1208(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Parent_Egg_C;                  // 0x1330(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          IsHatched;                                         // 0x1338(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	bool                                          ShouldHatch;                                       // 0x1339(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ShouldSpawnGlowing;                                // 0x133A(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	uint8                                         Pad_133B[0x5];                                     // 0x133B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 RPName;                                            // 0x1340(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FTimerHandle                           AFK_Timer;                                         // 0x1350(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void AFK_Check();
 	void AnimateHatch();
 	void AntiCheat_CheckRooted();
 	void ApplyBioluminescence();
@@ -45,6 +46,7 @@ public:
 	void InpActEvt_Interact_K2Node_InputActionEvent_0(const struct FKey& Key);
 	void K2_OnMovementModeChanged(EMovementMode PrevMovementMode, EMovementMode NewMovementMode_0, uint8 PrevCustomMode, uint8 NewCustomMode);
 	void LocalPossessed();
+	void LocalUnpossessed();
 	void LogoutSaveCharacter();
 	void OnActorInteraction(class AActor* Actor);
 	void OnMotionStateChanged();

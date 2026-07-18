@@ -16,31 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function UI_CFCore_Button_ScreenshotNavigation.UI_CFCore_Button_ScreenshotNavigation_C.BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
+// Function UI_CFCore_Button_ScreenshotNavigation.UI_CFCore_Button_ScreenshotNavigation_C.SimulateDisabled
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Disabled                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_CFCore_Button_ScreenshotNavigation_C::BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
+void UUI_CFCore_Button_ScreenshotNavigation_C::SimulateDisabled(bool Disabled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Button_ScreenshotNavigation_C", "BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+		Func = Class->GetFunction("UI_CFCore_Button_ScreenshotNavigation_C", "SimulateDisabled");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::UI_CFCore_Button_ScreenshotNavigation_C_SimulateDisabled Parms{};
 
+	Parms.Disabled = Disabled;
 
-// Function UI_CFCore_Button_ScreenshotNavigation.UI_CFCore_Button_ScreenshotNavigation_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UUI_CFCore_Button_ScreenshotNavigation_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Button_ScreenshotNavigation_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -64,23 +56,31 @@ void UUI_CFCore_Button_ScreenshotNavigation_C::ExecuteUbergraph_UI_CFCore_Button
 }
 
 
-// Function UI_CFCore_Button_ScreenshotNavigation.UI_CFCore_Button_ScreenshotNavigation_C.SimulateDisabled
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    Disabled                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function UI_CFCore_Button_ScreenshotNavigation.UI_CFCore_Button_ScreenshotNavigation_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UUI_CFCore_Button_ScreenshotNavigation_C::SimulateDisabled(bool Disabled)
+void UUI_CFCore_Button_ScreenshotNavigation_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Button_ScreenshotNavigation_C", "SimulateDisabled");
+		Func = Class->GetFunction("UI_CFCore_Button_ScreenshotNavigation_C", "Construct");
 
-	Params::UI_CFCore_Button_ScreenshotNavigation_C_SimulateDisabled Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.Disabled = Disabled;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function UI_CFCore_Button_ScreenshotNavigation.UI_CFCore_Button_ScreenshotNavigation_C.BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UUI_CFCore_Button_ScreenshotNavigation_C::BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_CFCore_Button_ScreenshotNavigation_C", "BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

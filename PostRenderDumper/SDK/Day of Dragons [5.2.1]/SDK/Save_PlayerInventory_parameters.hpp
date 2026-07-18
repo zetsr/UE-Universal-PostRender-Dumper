@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Enum_ItemGrantType_structs.hpp"
 #include "SCUE5_structs.hpp"
+#include "Enum_ItemGrantType_structs.hpp"
 #include "Struct_SaveInventory_structs.hpp"
 #include "Struct_InventoryItemsReplicated_structs.hpp"
 

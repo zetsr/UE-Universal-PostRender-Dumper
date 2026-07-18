@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Spawn_DragonNest_Biolumin.Spawn_DragonNest_Biolumin_C
-// 0x0000 (0x08A0 - 0x08A0)
+// 0x0000 (0x08B0 - 0x08B0)
 class ASpawn_DragonNest_Biolumin_C : public ASpawn_DragonNest_C
 {
 public:

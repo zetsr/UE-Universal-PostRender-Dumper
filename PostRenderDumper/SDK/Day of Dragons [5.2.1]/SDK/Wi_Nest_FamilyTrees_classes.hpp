@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Struct_Lineage_structs.hpp"
-#include "Engine_structs.hpp"
-#include "Enum_Species_structs.hpp"
 #include "UMG_classes.hpp"
+#include "Enum_Species_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Struct_Lineage_structs.hpp"
 #include "Enum_FamilyRelation_structs.hpp"
 
 

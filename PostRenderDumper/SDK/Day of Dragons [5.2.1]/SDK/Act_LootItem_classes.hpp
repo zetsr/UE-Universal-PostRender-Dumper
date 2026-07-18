@@ -10,18 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
+#include "Enum_StatusEffects_structs.hpp"
+#include "Enum_ItemRarity_structs.hpp"
 #include "Struct_InventoryItemsReplicated_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Enum_ItemRarity_structs.hpp"
+#include "Enum_StatMutations_structs.hpp"
 #include "Enum_ItemGrantType_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Act_LootItem.Act_LootItem_C
-// 0x0060 (0x02F0 - 0x0290)
+// 0x0058 (0x02E8 - 0x0290)
 class AAct_LootItem_C final : public AActor
 {
 public:
@@ -31,30 +33,36 @@ public:
 	struct FStruct_InventoryItemsReplicated       ItemData;                                          // 0x02A8(0x0020)(Edit, BlueprintVisible, Net, ZeroConstructor, ExposeOnSpawn, HasGetValueTypeHash)
 	struct FLinearColor                           PearlColor;                                        // 0x02C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	Enum_ItemRarity                               Item_Rarity;                                       // 0x02D8(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_2D9[0x7];                                      // 0x02D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_ItemScreen_Tooltip_C*                Tooltip;                                           // 0x02E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsGeneratorSpawned;                                // 0x02E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	uint8                                         Pad_2E9[0x3];                                      // 0x02E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         LifespanCounter;                                   // 0x02EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsGeneratorSpawned;                                // 0x02D9(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	bool                                          DisablePhysics;                                    // 0x02DA(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsClaimed;                                         // 0x02DB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ShouldPlayBreakApartFX;                            // 0x02DC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2DD[0x3];                                      // 0x02DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_ItemScreen_Tooltip_C*                ItemToolTip;                                       // 0x02E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void CountdownLifespawn();
+	void CleanUpPearl(class AChar_Parent_Dragonkind_C* Dragonkind);
 	void DigMound(class AAct_EggMound_C* EggMound);
 	void DisplayTooltip();
 	void ExecuteUbergraph_Act_LootItem(int32 EntryPoint);
-	void Get_Item_Image_Quality(class UTexture2D* DefaultImage, Enum_ItemGrantType Type, Enum_ItemRarity Rarity, uint8 LesserByte, uint8 GreaterByte, class UTexture2D** DisplayImage);
+	void Get_Item_Image_Quality(class UTexture2D* DefaultImage, Enum_ItemGrantType Type, Enum_ItemRarity Rarity, uint8 LesserByte, uint8 GreaterByte, bool IsLegendary, class UTexture2D** DisplayImage);
 	class UW_ItemScreen_Tooltip_C* Get_ToolTipWidget(const struct FStruct_InventoryItemsReplicated& Struct_InventoryItemsReplicated);
 	struct FLinearColor GetPearlColor();
 	void LaunchPearl(const struct FVector& Impulse);
 	void OnInteraction(class AActor* InteractingActor);
+	void OnRep_DisablePhysics();
 	void ReceiveBeginPlay();
 	void ReceiveDestroyed();
+	void ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, const struct FVector& HitLocation, const struct FVector& HitNormal, const struct FVector& NormalImpulse, const struct FHitResult& Hit);
 	void ResetDefaultRotation();
 	void StopFlight();
+	void TryApplyStatusEffect(Enum_StatusEffects EffectToApply, Enum_StatMutations StacksToApply, class AChar_Parent_Player_C* AttackingPlayer);
+	void TryDestroyComponent(class UActorComponent* Component);
 	void TryDestroyCorpse();
 	void TryDrop();
 	void TryLaunchCharacter(const struct FVector& LaunchVelocity, bool XY_Override, bool Z_Override);
 	void TryPickup(class AChar_Parent_Player_C* Player);
+	void UserConstructionScript();
 
 public:
 	static class UClass* StaticClass()

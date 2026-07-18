@@ -16,61 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly.ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C.BlueprintInit
-// (Event, Public, BlueprintEvent)
+// Function ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly.ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C.ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const class FString&                    RawExtraData                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C::BlueprintInit(const class FString& RawExtraData)
+void UASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C::ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C", "BlueprintInit");
+		Func = Class->GetFunction("ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C", "ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly");
 
-	Params::ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C_BlueprintInit Parms{};
+	Params::ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C_ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly Parms{};
 
-	Parms.RawExtraData = std::move(RawExtraData);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly.ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C.EntryFocusEnd
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bInstigatedByAutoRollover                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C::EntryFocusEnd(bool bInstigatedByAutoRollover)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C", "EntryFocusEnd");
-
-	Params::ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C_EntryFocusEnd Parms{};
-
-	Parms.bInstigatedByAutoRollover = bInstigatedByAutoRollover;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly.ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C.EntryFocusStart
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bInstigatedByAutoRollover                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C::EntryFocusStart(bool bInstigatedByAutoRollover)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C", "EntryFocusStart");
-
-	Params::ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C_EntryFocusStart Parms{};
-
-	Parms.bInstigatedByAutoRollover = bInstigatedByAutoRollover;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -98,21 +58,61 @@ void UASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C::EntryFocusTick(float Delt
 }
 
 
-// Function ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly.ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C.ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly
-// (Final, UbergraphFunction, HasDefaults)
+// Function ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly.ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C.EntryFocusStart
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bInstigatedByAutoRollover                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C::ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly(int32 EntryPoint)
+void UASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C::EntryFocusStart(bool bInstigatedByAutoRollover)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C", "ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly");
+		Func = Class->GetFunction("ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C", "EntryFocusStart");
 
-	Params::ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C_ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly Parms{};
+	Params::ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C_EntryFocusStart Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bInstigatedByAutoRollover = bInstigatedByAutoRollover;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly.ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C.EntryFocusEnd
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bInstigatedByAutoRollover                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C::EntryFocusEnd(bool bInstigatedByAutoRollover)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C", "EntryFocusEnd");
+
+	Params::ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C_EntryFocusEnd Parms{};
+
+	Parms.bInstigatedByAutoRollover = bInstigatedByAutoRollover;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly.ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C.BlueprintInit
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const class FString&                    RawExtraData                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C::BlueprintInit(const class FString& RawExtraData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C", "BlueprintInit");
+
+	Params::ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_C_BlueprintInit Parms{};
+
+	Parms.RawExtraData = std::move(RawExtraData);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

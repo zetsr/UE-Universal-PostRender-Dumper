@@ -26,8 +26,8 @@ public:
 	class UTextBlock*                             TEXT_InsideText;                                   // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
 	void UpdateText(const class FText& InText);
+	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
 
 public:
 	static class UClass* StaticClass()

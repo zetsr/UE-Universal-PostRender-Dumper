@@ -1088,6 +1088,26 @@ void UWi_CharacterSelect_C::KickMe()
 }
 
 
+// Function Wi_CharacterSelect.Wi_CharacterSelect_C.MuteSFX
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Unmute                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWi_CharacterSelect_C::MuteSFX(bool Unmute)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Wi_CharacterSelect_C", "MuteSFX");
+
+	Params::Wi_CharacterSelect_C_MuteSFX Parms{};
+
+	Parms.Unmute = Unmute;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Wi_CharacterSelect.Wi_CharacterSelect_C.ResetGender
 // (BlueprintCallable, BlueprintEvent)
 

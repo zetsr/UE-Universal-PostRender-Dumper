@@ -14,6 +14,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function UI_CFCore_DownloadSize.UI_CFCore_DownloadSize_C.SetSizeText
+// 0x0010 (0x0010 - 0x0000)
+struct UI_CFCore_DownloadSize_C_SetSizeText final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+DUMPER7_ASSERTS_UI_CFCore_DownloadSize_C_SetSizeText;
+
 // Function UI_CFCore_DownloadSize.UI_CFCore_DownloadSize_C.GetRootCFWidget
 // 0x0010 (0x0010 - 0x0000)
 struct UI_CFCore_DownloadSize_C_GetRootCFWidget final
@@ -23,15 +32,6 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_UI_CFCore_DownloadSize_C_GetRootCFWidget;
-
-// Function UI_CFCore_DownloadSize.UI_CFCore_DownloadSize_C.SetSizeText
-// 0x0010 (0x0010 - 0x0000)
-struct UI_CFCore_DownloadSize_C_SetSizeText final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-DUMPER7_ASSERTS_UI_CFCore_DownloadSize_C_SetSizeText;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

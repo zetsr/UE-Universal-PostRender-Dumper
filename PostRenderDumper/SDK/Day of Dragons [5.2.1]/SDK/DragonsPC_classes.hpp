@@ -10,35 +10,36 @@
 
 #include "Basic.hpp"
 
-#include "Enum_ChatChannel_structs.hpp"
-#include "Struct_SavePlayerData_structs.hpp"
-#include "Enum_PlayerCharacter_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Enum_PlayerCharacter_structs.hpp"
+#include "Struct_SavePlayerData_structs.hpp"
 #include "Struct_Destination_structs.hpp"
-#include "Struct_AdminPlayerArrayInfo_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Struct_EmitterTimeLoc_structs.hpp"
+#include "Enum_ChatChannel_structs.hpp"
+#include "Enum_KickReason_structs.hpp"
+#include "Struct_AdminPlayerArrayInfo_structs.hpp"
+#include "SCUE5_structs.hpp"
 #include "FMODStudio_structs.hpp"
 #include "Dragons_structs.hpp"
 #include "Dragons_classes.hpp"
 #include "Enum_MapRegion_structs.hpp"
 #include "Enum_GeneticGrades_structs.hpp"
-#include "Enum_CreatureLevels_structs.hpp"
 #include "UDS_Weather_Display_Names_structs.hpp"
 #include "Enum_PlayerTitles_structs.hpp"
-#include "Enum_KickReason_structs.hpp"
-#include "Enum_Species_structs.hpp"
+#include "Enum_CreatureLevels_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
+#include "Enum_Species_structs.hpp"
+#include "Enum_ItemRarity_structs.hpp"
 #include "Enum_Unlockables_structs.hpp"
 #include "CommonInput_structs.hpp"
 #include "Enum_ServerType_structs.hpp"
-#include "Enum_ItemRarity_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DragonsPC.DragonsPC_C
-// 0x0570 (0x0EF0 - 0x0980)
+// 0x05A8 (0x0F28 - 0x0980)
 class ADragonsPC_C final : public ADragonsPlayerController
 {
 public:
@@ -155,6 +156,8 @@ public:
 	class FString                                 EpicID;                                            // 0x0ED8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	int32                                         InviteToEggIndex;                                  // 0x0EE8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsBeingRebornFromPouch;                            // 0x0EEC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_EED[0x3];                                      // 0x0EED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSafeFloat                             SecondsWithoutInput;                               // 0x0EF0(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void AbortShutdownSequence();
@@ -206,7 +209,7 @@ public:
 	void CreateCrosshair();
 	void CreateDeathFade();
 	void CreateDialogue(class UDialogue* InDialogue, class AActor* QuestActor);
-	void CreateDragonkindInfoPanel();
+	void CreateDragonkindInfoPanel(bool DisplayMap);
 	void CreateElementalInfoPanel();
 	void CreateNestInterface(class ASpawn_DragonNest_C* DragonNest, const struct FStruct_StatModifiers& DameStats, bool DameDominance, const class FString& DameName, uint8 DameSkin, Enum_GrowthStage DameGrowth, const struct FStruct_StatModifiers& SireStats, bool SireDominance, const class FString& SireName, uint8 SireSkin, Enum_GrowthStage SireGrowth, Enum_CreatureLevels ClassLevel, const struct FStruct_Lineage& Sire_Lineage, const struct FStruct_Lineage& Dame_Lineage, Enum_Species Sire_Species, Enum_Species Dame_Species, const struct FStruct_StatRecessives& Sire_Recessive_Genes, const struct FStruct_StatRecessives& Dame_Recessive_Genes, uint8 SireSkinRecessive, uint8 DameSkinRecessive);
 	void CreatePlayerHUD(class AChar_Parent_Player_C* ClientCharacter);
@@ -264,15 +267,18 @@ public:
 	void HatchFromEgg(class AChar_Parent_Dragonkind_C* DragonkindEgg);
 	void HealPlayer(class ADragonsPS_C* PlayerState_0);
 	void IncrementGroundFireEmitters();
-	void InpActEvt_ChannelNext_K2Node_InputActionEvent_2(const struct FKey& Key);
-	void InpActEvt_ChannelPrev_K2Node_InputActionEvent_1(const struct FKey& Key);
+	void InpActEvt_AFK_Action_K2Node_InputActionEvent_0(const struct FKey& Key);
+	void InpActEvt_AFK_Action_K2Node_InputActionEvent_1(const struct FKey& Key);
+	void InpActEvt_ChannelNext_K2Node_InputActionEvent_4(const struct FKey& Key);
+	void InpActEvt_ChannelPrev_K2Node_InputActionEvent_3(const struct FKey& Key);
 	void InpActEvt_Enter_K2Node_InputKeyEvent_1(const struct FKey& Key);
 	void InpActEvt_Escape_K2Node_InputKeyEvent_3(const struct FKey& Key);
 	void InpActEvt_F12_K2Node_InputKeyEvent_0(const struct FKey& Key);
 	void InpActEvt_Gamepad_Special_Right_K2Node_InputKeyEvent_2(const struct FKey& Key);
-	void InpActEvt_Social_K2Node_InputActionEvent_0(const struct FKey& Key);
-	void InpActEvt_ToggleChat_K2Node_InputActionEvent_3(const struct FKey& Key);
-	void InpActEvt_ToggleHUD_K2Node_InputActionEvent_4(const struct FKey& Key);
+	void InpActEvt_Social_K2Node_InputActionEvent_2(const struct FKey& Key);
+	void InpActEvt_ToggleChat_K2Node_InputActionEvent_5(const struct FKey& Key);
+	void InpActEvt_ToggleHUD_K2Node_InputActionEvent_6(const struct FKey& Key);
+	void InpAxisEvt_AFK_Axis_K2Node_InputAxisEvent_0(float AxisValue);
 	void KickThisPlayer(Enum_KickReason KickReason);
 	void KillPlayer(class ADragonsPS_C* PlayerState_0);
 	void LoadAdminUI(const class FString& Key, bool AttemptsRemaining);
@@ -397,6 +403,7 @@ public:
 	void TraceForSafeSpawn(const struct FVector& SpawnLocation_0, const struct FVector& AlternateLocation, struct FVector* SafeLocation);
 	void TryAddBroodQuestCount();
 	void TryAddBroodUnlockProgress();
+	void TryLinkItemToChat(const struct FStruct_InventoryItemsReplicated& Item, Enum_ChatChannel Channel);
 	void TryUnlockBroodWatcher();
 	void UnbanPlayer(const class FString& SteamID_0);
 	void UnstuckPlayer(class ADragonsPS_C* PlayerState_0);

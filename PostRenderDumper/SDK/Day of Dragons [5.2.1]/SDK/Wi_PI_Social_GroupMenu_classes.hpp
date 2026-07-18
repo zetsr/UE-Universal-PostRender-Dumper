@@ -85,7 +85,7 @@ public:
 	void GetPlayerStateFromSteamID(const class FString& SteamID, bool* IsValid, class ADragonsPS_C** DragonsPS);
 	void PopulateGroupList();
 	void PopulatePlayerList();
-	void refresh();
+	void Refresh();
 	void SelectUser(const class FString& SteamID);
 
 public:

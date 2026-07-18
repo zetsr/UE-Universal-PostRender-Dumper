@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "SlateCore_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Enum_Temperature_structs.hpp"
+#include "UMG_structs.hpp"
 #include "Enum_TemperatureUI_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Enum_TimeOfDay_structs.hpp"
 #include "Enum_MapRegion_structs.hpp"
-#include "UMG_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -28,22 +28,23 @@ struct Wi_PI_Habitat_C_ExecuteUbergraph_Wi_PI_Habitat final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x0008(0x0038)(IsPlainOldData, NoDestructor)
-	float                                         K2Node_Event_InDeltaTime;                          // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AChar_Parent_Player_C*                  CallFunc_Get_Dragons_Player_Character_Pure_Dragons_Player_Character; // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class ADragonsPC_C*                           CallFunc_Get_Dragons_Player_Controller_Pure_DragonsPlayerController; // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UDragonsGI_C*                           CallFunc_Get_Dragons_Game_Instance_Pure_DragonsGameInstance; // 0x0058(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class ADragonsPS_C*                           CallFunc_Get_Dragons_Player_State__Controller__Pure_DragonsPS; // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ADragonsPS_C*                           CallFunc_Get_Dragons_Player_State__Controller__Pure_DragonsPS; // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_13[0x1];                                       // 0x0013(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x0014(0x0038)(IsPlainOldData, NoDestructor)
+	float                                         K2Node_Event_InDeltaTime;                          // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AChar_Parent_Player_C*                  CallFunc_Get_Dragons_Player_Character_Pure_Dragons_Player_Character; // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ADragonsPC_C*                           CallFunc_Get_Dragons_Player_Controller_Pure_DragonsPlayerController; // 0x0058(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UDragonsGI_C*                           CallFunc_Get_Dragons_Game_Instance_Pure_DragonsGameInstance; // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UGameObj_ClientSA_C*                    CallFunc_Get_GO_CSGO;                              // 0x0068(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Add_DoubleDouble_ReturnValue;             // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_FClamp_ReturnValue;                       // 0x0080(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CallFunc_FClamp_ReturnValue_1;                     // 0x0088(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FRotator                               CallFunc_K2_GetActorRotation_ReturnValue;          // 0x0098(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	float                                         CallFunc_BreakRotator_Roll;                        // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

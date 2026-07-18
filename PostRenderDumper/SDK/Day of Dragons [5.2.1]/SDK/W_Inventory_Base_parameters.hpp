@@ -11,8 +11,10 @@
 #include "Basic.hpp"
 
 #include "SlateCore_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Struct_InventoryItemsReplicated_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Enum_AnimMotionStates_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -30,60 +32,75 @@ public:
 DUMPER7_ASSERTS_W_Inventory_Base_C_ClearItemSelected;
 
 // Function W_Inventory_Base.W_Inventory_Base_C.ExecuteUbergraph_W_Inventory_Base
-// 0x0148 (0x0148 - 0x0000)
+// 0x0158 (0x0158 - 0x0000)
 struct W_Inventory_Base_C_ExecuteUbergraph_W_Inventory_Base final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_7[0x1];                                        // 0x0007(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Get_Equipped_Item_IDs_EquippedBuff;       // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Get_Equipped_Item_IDs_EquippedSkin;       // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Get_Equipped_Item_IDs_EquippedCosmetic;   // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable_1;                     // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable_1;               // 0x003A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable_2;                     // 0x003B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0040(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue;           // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetVelocity_ReturnValue;                  // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_VSize_ReturnValue;                        // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_1;         // 0x0078(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_DoubleDouble_ReturnValue;      // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_81[0x7];                                       // 0x0081(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CallFunc_GetVelocity_ReturnValue_1;                // 0x0088(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_VSize_ReturnValue_1;                      // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_DoubleDouble_ReturnValue_1;    // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable_1;               // 0x0007(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable_1;                     // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x000C(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue;           // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetVelocity_ReturnValue;                  // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_VSize_ReturnValue;                        // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_1;         // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_DoubleDouble_ReturnValue;      // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_GetVelocity_ReturnValue_1;                // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_VSize_ReturnValue_1;                      // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_DoubleDouble_ReturnValue_1;    // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0079(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_7A[0x6];                                       // 0x007A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Get_Equipped_Item_IDs_EquippedBuff;       // 0x0080(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Get_Equipped_Item_IDs_EquippedSkin;       // 0x0090(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Get_Equipped_Item_IDs_EquippedCosmetic;   // 0x00A0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_2;         // 0x00B0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_GetVelocity_ReturnValue_2;                // 0x00B8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_VSize_ReturnValue_2;                      // 0x00D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_DoubleDouble_ReturnValue_2;    // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_IsDesignTime;                         // 0x00E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_E2[0x6];                                       // 0x00E2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_3;         // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AChar_Parent_Dragonkind_C*              K2Node_DynamicCast_AsChar_Parent_Dragonkind;       // 0x00F0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x00F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_FA[0x6];                                       // 0x00FA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetStrings_ReturnValue;                   // 0x0100(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_StriStri_ReturnValue;            // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetStrings_ReturnValue_1;                 // 0x0118(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_1;          // 0x0129(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_2;          // 0x012A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_StriStri_ReturnValue_1;          // 0x012B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12C[0x4];                                      // 0x012C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetStrings_ReturnValue_2;                 // 0x0130(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_StriStri_ReturnValue_2;          // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable_2;               // 0x0141(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_VSize_ReturnValue_2;                      // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_DoubleDouble_ReturnValue_2;    // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_IsDesignTime;                         // 0x00D9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_DA[0x6];                                       // 0x00DA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_3;         // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AChar_Parent_Dragonkind_C*              K2Node_DynamicCast_AsChar_Parent_Dragonkind;       // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x00F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_F2[0x6];                                       // 0x00F2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetStrings_ReturnValue;                   // 0x00F8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_StriStri_ReturnValue;            // 0x0108(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetStrings_ReturnValue_1;                 // 0x0110(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_1;          // 0x0121(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_2;          // 0x0122(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_StriStri_ReturnValue_1;          // 0x0123(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetStrings_ReturnValue_2;                 // 0x0128(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_StriStri_ReturnValue_2;          // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable_2;               // 0x0139(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable_2;                     // 0x013A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x013B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue_1;                // 0x013C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EMovementMode                                 CallFunc_GetMovementMode_MovementMode;             // 0x013D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_ByteByte_ReturnValue;             // 0x013E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x013F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimInstance*                          CallFunc_Get_AnimBP_ReturnValue;                   // 0x0140(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue_2;                // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsAnyMontagePlaying_ReturnValue;          // 0x0149(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_AnimMotionStates                         CallFunc_GetMotionState_MotionState;               // 0x014A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue_3;                // 0x014B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x014C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue_4;                // 0x014D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x014E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x014F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0150(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue_2;                 // 0x0151(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue_3;                 // 0x0152(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_Inventory_Base_C_ExecuteUbergraph_W_Inventory_Base;
 
@@ -98,30 +115,37 @@ public:
 DUMPER7_ASSERTS_W_Inventory_Base_C_Get_BG_Background;
 
 // Function W_Inventory_Base.W_Inventory_Base_C.Get_Btn_Drop_bIsEnabled
-// 0x0070 (0x0070 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct W_Inventory_Base_C_Get_Btn_Drop_bIsEnabled final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_BoolKey_ReturnValue;                      // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetStrings_ReturnValue;                   // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_StriStri_ReturnValue;            // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Get_Equipped_Item_IDs_EquippedBuff;       // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Get_Equipped_Item_IDs_EquippedSkin;       // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Get_Equipped_Item_IDs_EquippedCosmetic;   // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SCL_Pure_GetSafeBoolWithKey_ReturnValue;  // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetStrings_ReturnValue;                   // 0x0058(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_BoolBool_ReturnValue;          // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_StrStr_ReturnValue;              // 0x0069(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_StrStr_ReturnValue_1;            // 0x006A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_StrStr_ReturnValue_2;            // 0x006B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_StriStri_ReturnValue;            // 0x006C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x006D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x006E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_StrStr_ReturnValue;              // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_StrStr_ReturnValue_1;            // 0x0051(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_StrStr_ReturnValue_2;            // 0x0052(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0053(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x0054(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_Inventory_Base_C_Get_Btn_Drop_bIsEnabled;
+
+// Function W_Inventory_Base.W_Inventory_Base_C.Get_Btn_Drop_ToolTipWidget
+// 0x0028 (0x0028 - 0x0000)
+struct W_Inventory_Base_C_Get_Btn_Drop_ToolTipWidget final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class FText                                   Temp_text_Variable;                                // 0x0008(0x0018)(ConstParm)
+	class UWi_BasicTooltip_C*                     CallFunc_Create_ReturnValue;                       // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_Inventory_Base_C_Get_Btn_Drop_ToolTipWidget;
 
 // Function W_Inventory_Base.W_Inventory_Base_C.Get_Btn_Equip_bIsEnabled
 // 0x0058 (0x0058 - 0x0000)
@@ -145,6 +169,17 @@ public:
 };
 DUMPER7_ASSERTS_W_Inventory_Base_C_Get_Btn_Equip_bIsEnabled;
 
+// Function W_Inventory_Base.W_Inventory_Base_C.Get_Btn_Equip_ToolTipWidget
+// 0x0028 (0x0028 - 0x0000)
+struct W_Inventory_Base_C_Get_Btn_Equip_ToolTipWidget final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class FText                                   Temp_text_Variable;                                // 0x0008(0x0018)(ConstParm)
+	class UWi_BasicTooltip_C*                     CallFunc_Create_ReturnValue;                       // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_Inventory_Base_C_Get_Btn_Equip_ToolTipWidget;
+
 // Function W_Inventory_Base.W_Inventory_Base_C.Get_Btn_Unequip_bIsEnabled
 // 0x0058 (0x0058 - 0x0000)
 struct W_Inventory_Base_C_Get_Btn_Unequip_bIsEnabled final
@@ -167,6 +202,17 @@ public:
 };
 DUMPER7_ASSERTS_W_Inventory_Base_C_Get_Btn_Unequip_bIsEnabled;
 
+// Function W_Inventory_Base.W_Inventory_Base_C.Get_Btn_Unequip_ToolTipWidget
+// 0x0028 (0x0028 - 0x0000)
+struct W_Inventory_Base_C_Get_Btn_Unequip_ToolTipWidget final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class FText                                   Temp_text_Variable;                                // 0x0008(0x0018)(ConstParm)
+	class UWi_BasicTooltip_C*                     CallFunc_Create_ReturnValue;                       // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_Inventory_Base_C_Get_Btn_Unequip_ToolTipWidget;
+
 // Function W_Inventory_Base.W_Inventory_Base_C.Get_Weight_Text
 // 0x0088 (0x0088 - 0x0000)
 struct W_Inventory_Base_C_Get_Weight_Text final
@@ -188,7 +234,7 @@ public:
 DUMPER7_ASSERTS_W_Inventory_Base_C_Get_Weight_Text;
 
 // Function W_Inventory_Base.W_Inventory_Base_C.PopulateInventory
-// 0x00C8 (0x00C8 - 0x0000)
+// 0x00C0 (0x00C0 - 0x0000)
 struct W_Inventory_Base_C_PopulateInventory final
 {
 public:
@@ -203,21 +249,19 @@ public:
 	TArray<struct FStruct_InventoryItemsReplicated> CallFunc_Get_Inventory_Items_InventoryItems;     // 0x0050(0x0010)(ReferenceParm)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UW_Inventory_Item_C*                    CallFunc_Create_ReturnValue_3;                     // 0x0068(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FStruct_InventoryItemsReplicated       CallFunc_Array_Get_Item;                           // 0x0070(0x0020)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_1;          // 0x0091(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_2;          // 0x0092(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_93[0x5];                                       // 0x0093(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x0098(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue_1;                   // 0x00A0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue_2;                   // 0x00A8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B5[0x3];                                       // 0x00B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue_3;                   // 0x00C0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0091(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_1;          // 0x0092(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_2;          // 0x0093(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UW_Inventory_Item_C*                    CallFunc_Create_ReturnValue_3;                     // 0x0098(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x00A0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue_1;                   // 0x00A8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue_2;                   // 0x00B0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue_3;                   // 0x00B8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_Inventory_Base_C_PopulateInventory;
 

@@ -17,8 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemConsumableEatable_BuffingSoup.PrimalItemConsumableEatable_BuffingSoup_C
 // 0x0000 (0x0B90 - 0x0B90)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) UPrimalItemConsumableEatable_BuffingSoup_C : public UPrimalItemConsumableEatable_C
+class UPrimalItemConsumableEatable_BuffingSoup_C : public UPrimalItemConsumableEatable_C
 {
 public:
 	static class UClass* StaticClass()
@@ -34,7 +33,6 @@ public:
 		return GetDefaultObjImpl<UPrimalItemConsumableEatable_BuffingSoup_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_UPrimalItemConsumableEatable_BuffingSoup_C;
 
 SDK_NAMESPACE_END

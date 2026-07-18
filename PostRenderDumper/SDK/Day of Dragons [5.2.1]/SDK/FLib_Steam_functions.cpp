@@ -316,6 +316,30 @@ void UFLib_Steam_C::Get_DLC_ID_BWD_Emote_Pack(class UObject* __WorldContext, int
 }
 
 
+// Function FLib_Steam.FLib_Steam_C.Get DLC ID CallMePancake Skin
+// (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// int32*                                  AppId                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UFLib_Steam_C::Get_DLC_ID_CallMePancake_Skin(class UObject* __WorldContext, int32* AppId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FLib_Steam_C", "Get DLC ID CallMePancake Skin");
+
+	Params::FLib_Steam_C_Get_DLC_ID_CallMePancake_Skin Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (AppId != nullptr)
+		*AppId = Parms.AppId;
+}
+
+
 // Function FLib_Steam.FLib_Steam_C.Get DLC ID Creator Skin
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -620,6 +644,30 @@ void UFLib_Steam_C::Get_DLC_ID_Lifetime_Subscriber_Rewards_200(class UObject* __
 		Func = StaticClass()->GetFunction("FLib_Steam_C", "Get DLC ID Lifetime Subscriber Rewards 200");
 
 	Params::FLib_Steam_C_Get_DLC_ID_Lifetime_Subscriber_Rewards_200 Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (AppId != nullptr)
+		*AppId = Parms.AppId;
+}
+
+
+// Function FLib_Steam.FLib_Steam_C.Get DLC ID Lusewing Skin
+// (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// int32*                                  AppId                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UFLib_Steam_C::Get_DLC_ID_Lusewing_Skin(class UObject* __WorldContext, int32* AppId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FLib_Steam_C", "Get DLC ID Lusewing Skin");
+
+	Params::FLib_Steam_C_Get_DLC_ID_Lusewing_Skin Parms{};
 
 	Parms.__WorldContext = __WorldContext;
 

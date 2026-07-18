@@ -23,11 +23,11 @@ class UBP_CFCore_ServerModsSubMenu_C final : public UCFCoreWidget_C
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CFCore_ServerModsSubMenu_C;      // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UButton*                                BUTTON_FAV;                                        // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UButton*                                Button_Report;                                     // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UButton*                                BUTTON_REPORT;                                     // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 Image_65;                                          // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 IMG_Hurt;                                          // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 IMG_Hurt_1;                                        // 0x0888(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 IMG_Line_1;                                        // 0x0890(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 IMG_LINE_1;                                        // 0x0890(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UVerticalBox*                           VerticalBox_101;                                   // 0x0898(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	TMulticastInlineDelegate<void()>              ReportEvent;                                       // 0x08A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMulticastInlineDelegate<void()>              FavoriteEvent;                                     // 0x08B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
@@ -36,14 +36,14 @@ public:
 	class FText                                   serverName;                                        // 0x08D8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void BndEvt__BP_ServerModsSubMenu_BUTTON_FAV_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
-	void BndEvt__BP_ServerModsSubMenu_BUTTON_REPORT_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature();
-	void CustomEvent_3(const class FString& temp_user_token);
-	void CustomEvent_4(const struct FCFCoreError& Error);
-	void ExecuteUbergraph_BP_CFCore_ServerModsSubMenu(int32 EntryPoint);
-	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
-	class FString ModListToCombinedString(const TArray<int64>& Array);
 	void ReportServer();
+	class FString ModListToCombinedString(const TArray<int64>& Array);
+	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void ExecuteUbergraph_BP_CFCore_ServerModsSubMenu(int32 EntryPoint);
+	void CustomEvent_4(const struct FCFCoreError& Error);
+	void CustomEvent_3(const class FString& temp_user_token);
+	void BndEvt__BP_ServerModsSubMenu_BUTTON_REPORT_K2Node_ComponentBoundEvent_1_OnButtonPressedEvent__DelegateSignature();
+	void BndEvt__BP_ServerModsSubMenu_BUTTON_FAV_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature();
 
 public:
 	static class UClass* StaticClass()

@@ -31,6 +31,7 @@ SDK_NAMESPACE_START
 // bool                                    IsBurning                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsWet                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsStunned                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsPoisoned                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 OutHealth                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 OutArmor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   IsDead                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -45,7 +46,7 @@ SDK_NAMESPACE_START
 // bool*                                   StillWet                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   ShouldStun                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBi_DamageProcessing_C::ProcessDamage_AI_Creatures(double RawDamage, double HealthCurrent, double ArmorCurrent, class AActor* DamageCauser, class UPDA_AIData_C* AiData, Enum_AiGrowth AiSize, EMovementMode MovementMode, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsStunned, double* OutHealth, double* OutArmor, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldYelp, bool* ShouldBleed, bool* ShouldDecay, bool* ShouldBurn, bool* CriticalHit, bool* StillWet, bool* ShouldStun)
+void IBi_DamageProcessing_C::ProcessDamage_AI_Creatures(double RawDamage, double HealthCurrent, double ArmorCurrent, class AActor* DamageCauser, class UPDA_AIData_C* AiData, Enum_AiGrowth AiSize, EMovementMode MovementMode, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsStunned, bool IsPoisoned, double* OutHealth, double* OutArmor, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldYelp, bool* ShouldBleed, bool* ShouldDecay, bool* ShouldBurn, bool* CriticalHit, bool* StillWet, bool* ShouldStun)
 {
 	static class UFunction* Func = nullptr;
 
@@ -66,6 +67,7 @@ void IBi_DamageProcessing_C::ProcessDamage_AI_Creatures(double RawDamage, double
 	Parms.IsBurning = IsBurning;
 	Parms.IsWet = IsWet;
 	Parms.IsStunned = IsStunned;
+	Parms.IsPoisoned = IsPoisoned;
 
 	AsUObject()->ProcessEvent(Func, &Parms);
 
@@ -128,6 +130,8 @@ void IBi_DamageProcessing_C::ProcessDamage_AI_Creatures(double RawDamage, double
 // bool                                    IsBurning                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsWet                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsStunned                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AChar_Parent_Player_C*            PlayerBeingDamaged                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsPoisoned                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 NewArmor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 NewHealth                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   IsDead                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -142,7 +146,7 @@ void IBi_DamageProcessing_C::ProcessDamage_AI_Creatures(double RawDamage, double
 // bool*                                   StillWet                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   ShouldStun                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBi_DamageProcessing_C::ProcessDamage_DragonCreatures(double RawDamage, double ArmorCurrent, double HealthCurrent, class AActor* DamageCauser, double GrowthScale, class UPDA_DragonData_C* CreatureData, const struct FStruct_StatModifiers& StatModifiers, bool IsAlpha, const struct FStruct_StatMutations& Mutations, EMovementMode MovementMode, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsStunned, double* NewArmor, double* NewHealth, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldYelp, bool* ShouldBleed, bool* ShouldDecay, bool* ShouldBurn, bool* CriticalHit, bool* StillWet, bool* ShouldStun)
+void IBi_DamageProcessing_C::ProcessDamage_DragonCreatures(double RawDamage, double ArmorCurrent, double HealthCurrent, class AActor* DamageCauser, double GrowthScale, class UPDA_DragonData_C* CreatureData, const struct FStruct_StatModifiers& StatModifiers, bool IsAlpha, const struct FStruct_StatMutations& Mutations, EMovementMode MovementMode, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsStunned, class AChar_Parent_Player_C* PlayerBeingDamaged, bool IsPoisoned, double* NewArmor, double* NewHealth, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldYelp, bool* ShouldBleed, bool* ShouldDecay, bool* ShouldBurn, bool* CriticalHit, bool* StillWet, bool* ShouldStun)
 {
 	static class UFunction* Func = nullptr;
 
@@ -166,6 +170,8 @@ void IBi_DamageProcessing_C::ProcessDamage_DragonCreatures(double RawDamage, dou
 	Parms.IsBurning = IsBurning;
 	Parms.IsWet = IsWet;
 	Parms.IsStunned = IsStunned;
+	Parms.PlayerBeingDamaged = PlayerBeingDamaged;
+	Parms.IsPoisoned = IsPoisoned;
 
 	AsUObject()->ProcessEvent(Func, &Parms);
 

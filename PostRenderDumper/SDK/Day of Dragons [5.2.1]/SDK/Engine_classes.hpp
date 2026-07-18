@@ -8161,7 +8161,7 @@ public:
 	void ClientMoveResponsePacked(const struct FCharacterMoveResponsePackedBits& PackedBits);
 	void ClientVeryShortAdjustPosition(float Timestamp, const struct FVector& NewLoc, class UPrimitiveComponent* NewBase, class FName NewBaseBoneName, bool bHasBase, bool bBaseRelativePosition, uint8 ServerMovementMode);
 	void Crouch(bool bClientSimulation);
-	void jump();
+	void Jump();
 	void K2_OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust);
 	void K2_OnMovementModeChanged(EMovementMode PrevMovementMode, EMovementMode NewMovementMode, uint8 PrevCustomMode, uint8 NewCustomMode);
 	void K2_OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust);

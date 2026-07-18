@@ -28,10 +28,10 @@ public:
 	class UTextBlock*                             TEXT_SearchModName;                                // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ApplyThemeSettingsToAll();
-	void Construct();
-	void ExecuteUbergraph_UI_CFCore_NotifNoResultsFound(int32 EntryPoint);
 	void UpdateWidget(const class FText& InText);
+	void ExecuteUbergraph_UI_CFCore_NotifNoResultsFound(int32 EntryPoint);
+	void Construct();
+	void ApplyThemeSettingsToAll();
 
 public:
 	static class UClass* StaticClass()

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "DragonsAIC_classes.hpp"
+#include "Engine_structs.hpp"
 #include "Enum_AI_PerceptionSenses_structs.hpp"
 
 

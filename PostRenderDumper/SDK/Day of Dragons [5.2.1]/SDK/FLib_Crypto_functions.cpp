@@ -184,6 +184,32 @@ void UFLib_Crypto_C::Decode_GroupChat(const class FString& MessageData, class UO
 }
 
 
+// Function FLib_Crypto.FLib_Crypto_C.Decode_ItemChat
+// (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// const class FString&                    EncodedString                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// struct FStruct_InventoryItemsReplicated*Item                                                   (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+
+void UFLib_Crypto_C::Decode_ItemChat(const class FString& EncodedString, class UObject* __WorldContext, struct FStruct_InventoryItemsReplicated* Item)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FLib_Crypto_C", "Decode_ItemChat");
+
+	Params::FLib_Crypto_C_Decode_ItemChat Parms{};
+
+	Parms.EncodedString = std::move(EncodedString);
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (Item != nullptr)
+		*Item = std::move(Parms.Item);
+}
+
+
 // Function FLib_Crypto.FLib_Crypto_C.Decode_Map
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -241,7 +267,7 @@ void UFLib_Crypto_C::Decode_ServerPvP(int32 ServerTypeCode, class UObject* __Wor
 // Parameters:
 // const class FString&                    SessionString                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool*                                   IsDOGs                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   IsDogs                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   IsRoleplay                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   UsesFriendlist                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   HasGroupDamage                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -266,7 +292,7 @@ void UFLib_Crypto_C::Decode_ServerPvP(int32 ServerTypeCode, class UObject* __Wor
 // bool*                                   DisableRespawns                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   DisableEggSaves                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UFLib_Crypto_C::Decode_Session(const class FString& SessionString, class UObject* __WorldContext, bool* IsDOGs, bool* IsRoleplay, bool* UsesFriendlist, bool* HasGroupDamage, bool* AdminTags, bool* PlayerTags, bool* ChatClanTags, bool* NormalizedStats, bool* SpeciesGroups, bool* NoGrowth, bool* HatchlingBounties, int32* ServerType, int32* MapCode, bool* NoGlobalChat, int32* Clans, int32* ClanMemberCap, int32* MaxLatency, bool* DisableNesting, int32* GrowthScale, bool* IsSurvival, bool* DisableTOD, bool* DisableWeather, bool* DisableRespawns, bool* DisableEggSaves)
+void UFLib_Crypto_C::Decode_Session(const class FString& SessionString, class UObject* __WorldContext, bool* IsDogs, bool* IsRoleplay, bool* UsesFriendlist, bool* HasGroupDamage, bool* AdminTags, bool* PlayerTags, bool* ChatClanTags, bool* NormalizedStats, bool* SpeciesGroups, bool* NoGrowth, bool* HatchlingBounties, int32* ServerType, int32* MapCode, bool* NoGlobalChat, int32* Clans, int32* ClanMemberCap, int32* MaxLatency, bool* DisableNesting, int32* GrowthScale, bool* IsSurvival, bool* DisableTOD, bool* DisableWeather, bool* DisableRespawns, bool* DisableEggSaves)
 {
 	static class UFunction* Func = nullptr;
 
@@ -280,8 +306,8 @@ void UFLib_Crypto_C::Decode_Session(const class FString& SessionString, class UO
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
-	if (IsDOGs != nullptr)
-		*IsDOGs = Parms.IsDOGs;
+	if (IsDogs != nullptr)
+		*IsDogs = Parms.IsDogs;
 
 	if (IsRoleplay != nullptr)
 		*IsRoleplay = Parms.IsRoleplay;
@@ -490,6 +516,32 @@ void UFLib_Crypto_C::Encode_GroupChat(const class FString& UserName, bool IsAdmi
 }
 
 
+// Function FLib_Crypto.FLib_Crypto_C.Encode_ItemChat
+// (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// const struct FStruct_InventoryItemsReplicated&Item                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class FString*                          EncodedString                                          (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+
+void UFLib_Crypto_C::Encode_ItemChat(const struct FStruct_InventoryItemsReplicated& Item, class UObject* __WorldContext, class FString* EncodedString)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FLib_Crypto_C", "Encode_ItemChat");
+
+	Params::FLib_Crypto_C_Encode_ItemChat Parms{};
+
+	Parms.Item = std::move(Item);
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (EncodedString != nullptr)
+		*EncodedString = std::move(Parms.EncodedString);
+}
+
+
 // Function FLib_Crypto.FLib_Crypto_C.Encode_Map
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -545,7 +597,7 @@ void UFLib_Crypto_C::Encode_ServerPvP(Enum_ServerType ServerType, class UObject*
 // Function FLib_Crypto.FLib_Crypto_C.Encode_Session
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// bool                                    IsDOGs                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDogs                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsRoleplay                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    UsesFriendlist                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    HasGroupDamage                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -572,7 +624,7 @@ void UFLib_Crypto_C::Encode_ServerPvP(Enum_ServerType ServerType, class UObject*
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class FString*                          SessionString                                          (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
-void UFLib_Crypto_C::Encode_Session(bool IsDOGs, bool IsRoleplay, bool UsesFriendlist, bool HasGroupDamage, bool AdminTags, bool PlayerTags, bool ChatClanTags, bool NormalizedStats, bool SameSpeciesGroups, bool NoGrowth, bool HatchlingBounties, int32 ServerType, int32 MapCode, bool NoGlobalChat, int32 Clans, int32 ClanMemberCap, int32 PlayerLatency, bool DisableNesting, int32 GrowthRateScale, bool IsSurvival, bool DisableTOD, bool DisableWeather, bool DisableRespawns, bool DisableEggSaves, class UObject* __WorldContext, class FString* SessionString)
+void UFLib_Crypto_C::Encode_Session(bool IsDogs, bool IsRoleplay, bool UsesFriendlist, bool HasGroupDamage, bool AdminTags, bool PlayerTags, bool ChatClanTags, bool NormalizedStats, bool SameSpeciesGroups, bool NoGrowth, bool HatchlingBounties, int32 ServerType, int32 MapCode, bool NoGlobalChat, int32 Clans, int32 ClanMemberCap, int32 PlayerLatency, bool DisableNesting, int32 GrowthRateScale, bool IsSurvival, bool DisableTOD, bool DisableWeather, bool DisableRespawns, bool DisableEggSaves, class UObject* __WorldContext, class FString* SessionString)
 {
 	static class UFunction* Func = nullptr;
 
@@ -581,7 +633,7 @@ void UFLib_Crypto_C::Encode_Session(bool IsDOGs, bool IsRoleplay, bool UsesFrien
 
 	Params::FLib_Crypto_C_Encode_Session Parms{};
 
-	Parms.IsDOGs = IsDOGs;
+	Parms.IsDogs = IsDogs;
 	Parms.IsRoleplay = IsRoleplay;
 	Parms.UsesFriendlist = UsesFriendlist;
 	Parms.HasGroupDamage = HasGroupDamage;

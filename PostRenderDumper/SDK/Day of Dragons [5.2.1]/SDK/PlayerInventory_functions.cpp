@@ -64,8 +64,9 @@ void UPlayerInventory_C::Check_Account_For_DLC_Items(TArray<class FName>* AllDLC
 // bool*                                   CanAdd                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   ShouldBind                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8*                                  Weight                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   IsDupedItem                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPlayerInventory_C::Check_If_Can_Add_Item(const struct FStruct_InventoryItemsReplicated& Item, bool* CanAdd, bool* ShouldBind, uint8* Weight)
+void UPlayerInventory_C::Check_If_Can_Add_Item(const struct FStruct_InventoryItemsReplicated& Item, bool* CanAdd, bool* ShouldBind, uint8* Weight, bool* IsDupedItem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,6 +87,9 @@ void UPlayerInventory_C::Check_If_Can_Add_Item(const struct FStruct_InventoryIte
 
 	if (Weight != nullptr)
 		*Weight = Parms.Weight;
+
+	if (IsDupedItem != nullptr)
+		*IsDupedItem = Parms.IsDupedItem;
 }
 
 
@@ -114,7 +118,7 @@ void UPlayerInventory_C::Check_If_Can_Drop_Item(const struct FStruct_InventoryIt
 
 
 // Function PlayerInventory.PlayerInventory_C.Check If Can Trade Item
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // const struct FStruct_InventoryItemsReplicated&Item                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash)
 // bool*                                   CanTrade                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -134,6 +138,30 @@ void UPlayerInventory_C::Check_If_Can_Trade_Item(const struct FStruct_InventoryI
 
 	if (CanTrade != nullptr)
 		*CanTrade = Parms.CanTrade;
+}
+
+
+// Function PlayerInventory.PlayerInventory_C.Check Inventory For Duping
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// const class FString&                    UniqueId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool*                                   DuplicateFound                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPlayerInventory_C::Check_Inventory_For_Duping(const class FString& UniqueId, bool* DuplicateFound)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerInventory_C", "Check Inventory For Duping");
+
+	Params::PlayerInventory_C_Check_Inventory_For_Duping Parms{};
+
+	Parms.UniqueId = std::move(UniqueId);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (DuplicateFound != nullptr)
+		*DuplicateFound = Parms.DuplicateFound;
 }
 
 
@@ -220,6 +248,32 @@ void UPlayerInventory_C::CheckClientPearlDLCs()
 		Func = Class->GetFunction("PlayerInventory_C", "CheckClientPearlDLCs");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function PlayerInventory.PlayerInventory_C.CheckRemoveDupedItems
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<struct FStruct_InventoryItemsReplicated>&InventoryItems_0                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FStruct_InventoryItemsReplicated>*ParsedInventoryItems                                   (Parm, OutParm)
+
+void UPlayerInventory_C::CheckRemoveDupedItems(TArray<struct FStruct_InventoryItemsReplicated>& InventoryItems_0, TArray<struct FStruct_InventoryItemsReplicated>* ParsedInventoryItems)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerInventory_C", "CheckRemoveDupedItems");
+
+	Params::PlayerInventory_C_CheckRemoveDupedItems Parms{};
+
+	Parms.InventoryItems_0 = std::move(InventoryItems_0);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	InventoryItems_0 = std::move(Parms.InventoryItems_0);
+
+	if (ParsedInventoryItems != nullptr)
+		*ParsedInventoryItems = std::move(Parms.ParsedInventoryItems);
 }
 
 
@@ -313,8 +367,9 @@ void UPlayerInventory_C::Drop_All_Inventory_Items()
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const struct FStruct_InventoryItemsReplicated&Struct_InventoryItems                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash)
+// bool*                                   WasDropped                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPlayerInventory_C::Drop_Inventory_Item(const struct FStruct_InventoryItemsReplicated& Struct_InventoryItems)
+void UPlayerInventory_C::Drop_Inventory_Item(const struct FStruct_InventoryItemsReplicated& Struct_InventoryItems, bool* WasDropped)
 {
 	static class UFunction* Func = nullptr;
 
@@ -326,6 +381,9 @@ void UPlayerInventory_C::Drop_Inventory_Item(const struct FStruct_InventoryItems
 	Parms.Struct_InventoryItems = std::move(Struct_InventoryItems);
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (WasDropped != nullptr)
+		*WasDropped = Parms.WasDropped;
 }
 
 
@@ -474,8 +532,9 @@ void UPlayerInventory_C::Get_Inventory_Items(TArray<struct FStruct_InventoryItem
 // const class FString&                    UniqueId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool*                                   ItemFound                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32*                                  ItemIndex                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName*                            InvItemID                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPlayerInventory_C::Get_Item_By_Unique_ID(TArray<struct FStruct_InventoryItemsReplicated>& ArrayOfInventoryItems, const class FString& UniqueId, bool* ItemFound, int32* ItemIndex)
+void UPlayerInventory_C::Get_Item_By_Unique_ID(TArray<struct FStruct_InventoryItemsReplicated>& ArrayOfInventoryItems, const class FString& UniqueId, bool* ItemFound, int32* ItemIndex, class FName* InvItemID)
 {
 	static class UFunction* Func = nullptr;
 
@@ -496,6 +555,9 @@ void UPlayerInventory_C::Get_Item_By_Unique_ID(TArray<struct FStruct_InventoryIt
 
 	if (ItemIndex != nullptr)
 		*ItemIndex = Parms.ItemIndex;
+
+	if (InvItemID != nullptr)
+		*InvItemID = Parms.InvItemID;
 }
 
 
@@ -819,13 +881,14 @@ void UPlayerInventory_C::Set_Max_Weight(class AChar_Parent_Dragonkind_C* Dragon)
 
 
 // Function PlayerInventory.PlayerInventory_C.Spawn Item Actor
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const struct FStruct_InventoryItemsReplicated&ItemData                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // Enum_ItemRarity                         Item_Rarity                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsGeneratorSpawned                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   WasDropped                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPlayerInventory_C::Spawn_Item_Actor(const struct FStruct_InventoryItemsReplicated& ItemData, Enum_ItemRarity Item_Rarity, bool IsGeneratorSpawned)
+void UPlayerInventory_C::Spawn_Item_Actor(const struct FStruct_InventoryItemsReplicated& ItemData, Enum_ItemRarity Item_Rarity, bool IsGeneratorSpawned, bool* WasDropped)
 {
 	static class UFunction* Func = nullptr;
 
@@ -839,6 +902,9 @@ void UPlayerInventory_C::Spawn_Item_Actor(const struct FStruct_InventoryItemsRep
 	Parms.IsGeneratorSpawned = IsGeneratorSpawned;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (WasDropped != nullptr)
+		*WasDropped = Parms.WasDropped;
 }
 
 
@@ -863,7 +929,7 @@ void UPlayerInventory_C::TradeItem(const class FString& ItemId)
 
 
 // Function PlayerInventory.PlayerInventory_C.Try Add Pearl To Inventory
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // TArray<class FName>&                    ItemIDs                                                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
@@ -889,8 +955,9 @@ void UPlayerInventory_C::Try_Add_Pearl_To_Inventory(TArray<class FName>& ItemIDs
 // Parameters:
 // const struct FStruct_InventoryItemsReplicated&Item                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool*                                   Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   IsDupedItem                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPlayerInventory_C::Try_Add_To_Inventory(const struct FStruct_InventoryItemsReplicated& Item, bool* Success)
+void UPlayerInventory_C::Try_Add_To_Inventory(const struct FStruct_InventoryItemsReplicated& Item, bool* Success, bool* IsDupedItem)
 {
 	static class UFunction* Func = nullptr;
 
@@ -905,6 +972,9 @@ void UPlayerInventory_C::Try_Add_To_Inventory(const struct FStruct_InventoryItem
 
 	if (Success != nullptr)
 		*Success = Parms.Success;
+
+	if (IsDupedItem != nullptr)
+		*IsDupedItem = Parms.IsDupedItem;
 }
 
 
@@ -925,6 +995,20 @@ void UPlayerInventory_C::UnequipItem(Enum_ItemGrantType Slot)
 	Parms.Slot = Slot;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function PlayerInventory.PlayerInventory_C.Update Loaded Weights
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UPlayerInventory_C::Update_Loaded_Weights()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerInventory_C", "Update Loaded Weights");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

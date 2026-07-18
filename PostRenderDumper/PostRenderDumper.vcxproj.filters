@@ -20,6 +20,9 @@
     <Filter Include="SDK">
       <UniqueIdentifier>{5d465e5f-021b-43a8-94d4-6cf8835e56d0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Zydis">
+      <UniqueIdentifier>{c9e7ff6c-5771-48eb-8cc8-c918e781474f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -42,6 +45,9 @@
     </ClCompile>
     <ClCompile Include="SDK\SDK_Impl.cpp">
       <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Zydis\Zydis.c">
+      <Filter>Zydis</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +77,12 @@
     </ClInclude>
     <ClInclude Include="SDK\SDK_Headers.hpp">
       <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="AOBScan.hpp">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Zydis\Zydis.h">
+      <Filter>Zydis</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

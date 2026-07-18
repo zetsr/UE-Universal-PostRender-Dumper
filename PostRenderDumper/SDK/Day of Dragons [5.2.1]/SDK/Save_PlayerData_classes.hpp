@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Struct_SavePlayerData_structs.hpp"
-#include "Enum_PlayerCharacter_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "Enum_PlayerCharacter_structs.hpp"
+#include "Struct_SavePlayerData_structs.hpp"
 #include "SCUE5_structs.hpp"
 #include "Enum_Unlockables_structs.hpp"
 
@@ -70,6 +70,7 @@ public:
 	void GetAllCharacters(TMap<Enum_PlayerCharacter, bool>* CharacterMap);
 	void GetAllUnlockablesStatus(TMap<Enum_Unlockables, bool>* UnlockableStatus);
 	void GetIsUnlocked(Enum_Unlockables Unlockable, bool* IsUnlocked);
+	void GetIsUnlocked_Pure(Enum_Unlockables Unlockable, bool* IsUnlocked);
 	void GetRequiredProgress(Enum_Unlockables Unlockable, uint8* NeededProgress);
 	void GetSafeString(struct FSafeString& ss, class FString* String);
 	void GetShouldBeUnlocked(Enum_Unlockables Unlockable, bool* ShouldUnlock);

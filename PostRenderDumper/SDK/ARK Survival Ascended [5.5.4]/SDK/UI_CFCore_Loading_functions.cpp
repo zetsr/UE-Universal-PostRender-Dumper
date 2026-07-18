@@ -16,85 +16,94 @@
 
 SDK_NAMESPACE_START
 
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.BndEvt__UI_CFCore_Loading_UI_Button_CFCore_Global_BackLoading_K2Node_ComponentBoundEvent_2_OnClick__DelegateSignature
-// (BlueprintEvent)
-
-void UUI_CFCore_Loading_C::BndEvt__UI_CFCore_Loading_UI_Button_CFCore_Global_BackLoading_K2Node_ComponentBoundEvent_2_OnClick__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Loading_C", "BndEvt__UI_CFCore_Loading_UI_Button_CFCore_Global_BackLoading_K2Node_ComponentBoundEvent_2_OnClick__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.Construct
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UUI_CFCore_Loading_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Loading_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.ExecuteUbergraph_UI_CFCore_Loading
-// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_CFCore_Loading_C::ExecuteUbergraph_UI_CFCore_Loading(int32 EntryPoint)
+void UUI_CFCore_Loading_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Loading_C", "ExecuteUbergraph_UI_CFCore_Loading");
+		Func = Class->GetFunction("UI_CFCore_Loading_C", "Tick");
 
-	Params::UI_CFCore_Loading_C_ExecuteUbergraph_UI_CFCore_Loading Parms{};
+	Params::UI_CFCore_Loading_C_Tick Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.InDeltaTime = InDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.FadeOutLoading
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.SetLoadingStage
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ENUM_CFCore_LoadingProgress             Loading_Stage                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UUI_CFCore_Loading_C::SetLoadingStage(ENUM_CFCore_LoadingProgress Loading_Stage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_CFCore_Loading_C", "SetLoadingStage");
+
+	Params::UI_CFCore_Loading_C_SetLoadingStage Parms{};
+
+	Parms.Loading_Stage = Loading_Stage;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.RestartLoading
 // (BlueprintCallable, BlueprintEvent)
 
-void UUI_CFCore_Loading_C::FadeOutLoading()
+void UUI_CFCore_Loading_C::RestartLoading()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Loading_C", "FadeOutLoading");
+		Func = Class->GetFunction("UI_CFCore_Loading_C", "RestartLoading");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.GetNextSafePhase
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// ENUM_CFCore_LoadingProgress             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.ResetLoading
+// (BlueprintCallable, BlueprintEvent)
 
-ENUM_CFCore_LoadingProgress UUI_CFCore_Loading_C::GetNextSafePhase()
+void UUI_CFCore_Loading_C::ResetLoading()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Loading_C", "GetNextSafePhase");
+		Func = Class->GetFunction("UI_CFCore_Loading_C", "ResetLoading");
 
-	Params::UI_CFCore_Loading_C_GetNextSafePhase Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.GetRootCFWidget
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UPanelWidget**                    RootPanelWidget                                        (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UUI_CFCore_Loading_C::GetRootCFWidget(class UPanelWidget** RootPanelWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_CFCore_Loading_C", "GetRootCFWidget");
+
+	Params::UI_CFCore_Loading_C_GetRootCFWidget Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	return Parms.ReturnValue;
+	if (RootPanelWidget != nullptr)
+		*RootPanelWidget = Parms.RootPanelWidget;
 }
 
 
@@ -121,94 +130,85 @@ double UUI_CFCore_Loading_C::GetPhaseValues(ENUM_CFCore_LoadingProgress Index_0)
 }
 
 
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.GetRootCFWidget
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.GetNextSafePhase
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UPanelWidget**                    RootPanelWidget                                        (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// ENUM_CFCore_LoadingProgress             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_CFCore_Loading_C::GetRootCFWidget(class UPanelWidget** RootPanelWidget)
+ENUM_CFCore_LoadingProgress UUI_CFCore_Loading_C::GetNextSafePhase()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Loading_C", "GetRootCFWidget");
+		Func = Class->GetFunction("UI_CFCore_Loading_C", "GetNextSafePhase");
 
-	Params::UI_CFCore_Loading_C_GetRootCFWidget Parms{};
+	Params::UI_CFCore_Loading_C_GetNextSafePhase Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (RootPanelWidget != nullptr)
-		*RootPanelWidget = Parms.RootPanelWidget;
+	return Parms.ReturnValue;
 }
 
 
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.ResetLoading
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.FadeOutLoading
 // (BlueprintCallable, BlueprintEvent)
 
-void UUI_CFCore_Loading_C::ResetLoading()
+void UUI_CFCore_Loading_C::FadeOutLoading()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Loading_C", "ResetLoading");
+		Func = Class->GetFunction("UI_CFCore_Loading_C", "FadeOutLoading");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.RestartLoading
-// (BlueprintCallable, BlueprintEvent)
-
-void UUI_CFCore_Loading_C::RestartLoading()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Loading_C", "RestartLoading");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.SetLoadingStage
-// (BlueprintCallable, BlueprintEvent)
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.ExecuteUbergraph_UI_CFCore_Loading
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// ENUM_CFCore_LoadingProgress             Loading_Stage                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_CFCore_Loading_C::SetLoadingStage(ENUM_CFCore_LoadingProgress Loading_Stage)
+void UUI_CFCore_Loading_C::ExecuteUbergraph_UI_CFCore_Loading(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Loading_C", "SetLoadingStage");
+		Func = Class->GetFunction("UI_CFCore_Loading_C", "ExecuteUbergraph_UI_CFCore_Loading");
 
-	Params::UI_CFCore_Loading_C_SetLoadingStage Parms{};
+	Params::UI_CFCore_Loading_C_ExecuteUbergraph_UI_CFCore_Loading Parms{};
 
-	Parms.Loading_Stage = Loading_Stage;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function UI_CFCore_Loading.UI_CFCore_Loading_C.Tick
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_CFCore_Loading_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
+void UUI_CFCore_Loading_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Loading_C", "Tick");
+		Func = Class->GetFunction("UI_CFCore_Loading_C", "Construct");
 
-	Params::UI_CFCore_Loading_C_Tick Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.InDeltaTime = InDeltaTime;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function UI_CFCore_Loading.UI_CFCore_Loading_C.BndEvt__UI_CFCore_Loading_UI_Button_CFCore_Global_BackLoading_K2Node_ComponentBoundEvent_2_OnClick__DelegateSignature
+// (BlueprintEvent)
+
+void UUI_CFCore_Loading_C::BndEvt__UI_CFCore_Loading_UI_Button_CFCore_Global_BackLoading_K2Node_ComponentBoundEvent_2_OnClick__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_CFCore_Loading_C", "BndEvt__UI_CFCore_Loading_UI_Button_CFCore_Global_BackLoading_K2Node_ComponentBoundEvent_2_OnClick__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

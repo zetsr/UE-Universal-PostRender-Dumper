@@ -28,10 +28,10 @@ public:
 	TMulticastInlineDelegate<void()>              OnClick;                                           // 0x0880(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
-	void ApplyThemeSettingsToAll();
-	void BndEvt__UI_PaginationLeftRight_Button_PrevPage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
-	void ExecuteUbergraph_UI_PaginationLeftRight(int32 EntryPoint);
 	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void ExecuteUbergraph_UI_PaginationLeftRight(int32 EntryPoint);
+	void BndEvt__UI_PaginationLeftRight_Button_PrevPage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
+	void ApplyThemeSettingsToAll();
 
 public:
 	static class UClass* StaticClass()

@@ -437,6 +437,34 @@ void UPhysicsFlight_C::Debug_PrintFlightData()
 }
 
 
+// Function PhysicsFlight.PhysicsFlight_C.DispatchLanded_Event
+// (BlueprintCallable, BlueprintEvent)
+
+void UPhysicsFlight_C::DispatchLanded_Event()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PhysicsFlight_C", "DispatchLanded_Event");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function PhysicsFlight.PhysicsFlight_C.DispatchLanded_Event_Server
+// (BlueprintCallable, BlueprintEvent)
+
+void UPhysicsFlight_C::DispatchLanded_Event_Server()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PhysicsFlight_C", "DispatchLanded_Event_Server");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function PhysicsFlight.PhysicsFlight_C.DoFly
 // (BlueprintCallable, BlueprintEvent)
 
@@ -853,6 +881,20 @@ void UPhysicsFlight_C::OnNotifyEnd_FA266B134AEE6EB86AE10E96A6A1DE05(class FName 
 }
 
 
+// Function PhysicsFlight.PhysicsFlight_C.OnRep_ApplyAirBrake
+// (BlueprintCallable, BlueprintEvent)
+
+void UPhysicsFlight_C::OnRep_ApplyAirBrake()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PhysicsFlight_C", "OnRep_ApplyAirBrake");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function PhysicsFlight.PhysicsFlight_C.OnRep_ApplyBoost
 // (BlueprintCallable, BlueprintEvent)
 
@@ -997,6 +1039,20 @@ void UPhysicsFlight_C::ReceiveTick(float DeltaSeconds)
 }
 
 
+// Function PhysicsFlight.PhysicsFlight_C.ResetFlightToggle
+// (BlueprintCallable, BlueprintEvent)
+
+void UPhysicsFlight_C::ResetFlightToggle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PhysicsFlight_C", "ResetFlightToggle");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function PhysicsFlight.PhysicsFlight_C.ResetLocalFlightGates
 // (BlueprintCallable, BlueprintEvent)
 
@@ -1030,8 +1086,9 @@ void UPhysicsFlight_C::ResetServerFlightGates()
 // Parameters:
 // bool                                    ShouldFly                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    WantsHover_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    WasManualToggle                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPhysicsFlight_C::Server_SimulateFlight(bool ShouldFly, bool WantsHover_0)
+void UPhysicsFlight_C::Server_SimulateFlight(bool ShouldFly, bool WantsHover_0, bool WasManualToggle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1042,6 +1099,7 @@ void UPhysicsFlight_C::Server_SimulateFlight(bool ShouldFly, bool WantsHover_0)
 
 	Parms.ShouldFly = ShouldFly;
 	Parms.WantsHover_0 = WantsHover_0;
+	Parms.WasManualToggle = WasManualToggle;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -98,6 +98,50 @@ void IBi_Interactable_C::StopFlight()
 }
 
 
+// Function Bi_Interactable.Bi_Interactable_C.TryApplyStatusEffect
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// Enum_StatusEffects                      EffectToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Enum_StatMutations                      StacksToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AChar_Parent_Player_C*            AttackingPlayer                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void IBi_Interactable_C::TryApplyStatusEffect(Enum_StatusEffects EffectToApply, Enum_StatMutations StacksToApply, class AChar_Parent_Player_C* AttackingPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("Bi_Interactable_C", "TryApplyStatusEffect");
+
+	Params::Bi_Interactable_C_TryApplyStatusEffect Parms{};
+
+	Parms.EffectToApply = EffectToApply;
+	Parms.StacksToApply = StacksToApply;
+	Parms.AttackingPlayer = AttackingPlayer;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function Bi_Interactable.Bi_Interactable_C.TryDestroyComponent
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UActorComponent*                  Component                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void IBi_Interactable_C::TryDestroyComponent(class UActorComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("Bi_Interactable_C", "TryDestroyComponent");
+
+	Params::Bi_Interactable_C_TryDestroyComponent Parms{};
+
+	Parms.Component = Component;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
 // Function Bi_Interactable.Bi_Interactable_C.TryDestroyCorpse
 // (Public, BlueprintCallable, BlueprintEvent)
 

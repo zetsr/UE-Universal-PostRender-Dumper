@@ -10,21 +10,21 @@
 
 #include "Basic.hpp"
 
-#include "Enum_AnimMotionStates_structs.hpp"
+#include "Enum_ServerType_structs.hpp"
+#include "Struct_StatModifiers_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Enum_StatMutations_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Dragons_classes.hpp"
+#include "Enum_AnimMotionStates_structs.hpp"
+#include "Enum_GrowthStage_structs.hpp"
 #include "Enum_Temperature_structs.hpp"
 #include "Enum_Species_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "Enum_GrowthStage_structs.hpp"
-#include "Dragons_classes.hpp"
 #include "Enum_AppliedDamage_structs.hpp"
-#include "Struct_StatModifiers_structs.hpp"
 #include "Enum_CreatureLevels_structs.hpp"
 #include "Enum_StatusEffects_structs.hpp"
 #include "Enum_GeneticGrades_structs.hpp"
 #include "Enum_Diet_structs.hpp"
-#include "Enum_StatMutations_structs.hpp"
-#include "Enum_ServerType_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -282,6 +282,7 @@ public:
 	void OnThirstUpdated();
 	void OnUnconsciousEvent();
 	void OnWetUpdated();
+	void PearlElderGrowthBonusMultiplier(double* Multiplier);
 	void ReceiveAnyDamage(float Damage, const class UDamageType* DamageType, class AController* InstigatedBy, class AActor* DamageCauser);
 	void ReceiveBeginPlay();
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
@@ -340,6 +341,8 @@ public:
 	void Timeline__FinishedFunc();
 	void Timeline__UpdateFunc();
 	void ToggleCCD(bool InUseCCD);
+	void TryApplyStatusEffect(Enum_StatusEffects EffectToApply, Enum_StatMutations StacksToApply, class AChar_Parent_Player_C* AttackingPlayer);
+	void TryDestroyComponent(class UActorComponent* Component);
 	void TryDestroyCorpse();
 	void TryDrop();
 	void TryLaunchCharacter(const struct FVector& LaunchVelocity, bool XY_Override, bool Z_Override);

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "SlateCore_structs.hpp"
-#include "Struct_StatMutations_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Struct_StatMutations_structs.hpp"
 
 
 SDK_NAMESPACE_START

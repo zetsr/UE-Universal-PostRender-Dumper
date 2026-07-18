@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "UDS_Modifier_Color_Property_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "UDS_Modifier_Float_Property_structs.hpp"
+#include "UDS_Modifier_Color_Property_structs.hpp"
 
 
 SDK_NAMESPACE_START

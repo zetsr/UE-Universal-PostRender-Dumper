@@ -17,8 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemConsumableSeed.PrimalItemConsumableSeed_C
 // 0x0000 (0x0B90 - 0x0B90)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) UPrimalItemConsumableSeed_C : public UPrimalItemConsumableEatable_C
+class UPrimalItemConsumableSeed_C : public UPrimalItemConsumableEatable_C
 {
 public:
 	void Interface_PrimalItemConsumableSeed_Get_Crop_Plot_Emitter_VFX_To_Be_Active(uint8 Current_Crop_Stage, bool Is_Growing, class UFXSystemAsset** Emitter_To_Be_Active, struct FVector* Location_Offset);
@@ -37,7 +36,6 @@ public:
 		return GetDefaultObjImpl<UPrimalItemConsumableSeed_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_UPrimalItemConsumableSeed_C;
 
 SDK_NAMESPACE_END

@@ -14,15 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function UI_PaginationLeftRight.UI_PaginationLeftRight_C.ExecuteUbergraph_UI_PaginationLeftRight
-// 0x0004 (0x0004 - 0x0000)
-struct UI_PaginationLeftRight_C_ExecuteUbergraph_UI_PaginationLeftRight final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_UI_PaginationLeftRight_C_ExecuteUbergraph_UI_PaginationLeftRight;
-
 // Function UI_PaginationLeftRight.UI_PaginationLeftRight_C.GetRootCFWidget
 // 0x0010 (0x0010 - 0x0000)
 struct UI_PaginationLeftRight_C_GetRootCFWidget final
@@ -32,6 +23,15 @@ public:
 	class UPanelWidget*                           CallFunc_GetRootCFWidget_RootPanelWidget;          // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_UI_PaginationLeftRight_C_GetRootCFWidget;
+
+// Function UI_PaginationLeftRight.UI_PaginationLeftRight_C.ExecuteUbergraph_UI_PaginationLeftRight
+// 0x0004 (0x0004 - 0x0000)
+struct UI_PaginationLeftRight_C_ExecuteUbergraph_UI_PaginationLeftRight final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_UI_PaginationLeftRight_C_ExecuteUbergraph_UI_PaginationLeftRight;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

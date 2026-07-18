@@ -19,7 +19,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Dino_AIController_BP.Dino_AIController_BP_C
 // 0x0038 (0x0A90 - 0x0A58)
-class ADino_AIController_BP_C : public APrimalDinoAIController
+class ADino_AIController_BP_C final : public APrimalDinoAIController
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A58(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

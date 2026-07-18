@@ -29,8 +29,8 @@ public:
 	TMulticastInlineDelegate<void()>              OnClick;                                           // 0x0888(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
-	void BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
 	void ExecuteUbergraph_UI_CFCore_Button_Player_PlayPause(int32 EntryPoint);
+	void BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
 
 public:
 	static class UClass* StaticClass()

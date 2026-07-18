@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "EnumQuest__QuestLineTracker_structs.hpp"
-#include "EnumQuest_WintersGift_structs.hpp"
-#include "EnumQuest_BroodWatcher_structs.hpp"
-#include "EnumQuest_MythOfTheMimikor_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "StructQuest_Progress_structs.hpp"
+#include "EnumQuest__QuestLineTracker_structs.hpp"
+#include "EnumQuest_MythOfTheMimikor_structs.hpp"
 #include "SCUE5_structs.hpp"
+#include "EnumQuest_BroodWatcher_structs.hpp"
+#include "EnumQuest_WintersGift_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -31,7 +31,7 @@ public:
 	EnumQuest__QuestLineTracker                   CurrentQuestLine;                                  // 0x00A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 OwningCharacterSpecies;                            // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	TArray<EnumQuest__QuestLineTracker>           AvailableQuestLines;                               // 0x00C0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<EnumQuest__QuestLineTracker>           AvailableQuestlines;                               // 0x00C0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<struct FStructQuest_Progress>          QuestProgress;                                     // 0x00D0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class FText                                   CurrentQuestDescription;                           // 0x00E0(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FSafeInt                               QuestCounter_BroodShrooms;                         // 0x00F8(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
@@ -51,7 +51,7 @@ public:
 	void ExecuteUbergraph_QuestTracker(int32 EntryPoint);
 	void Get_Current_Quest_Line(EnumQuest__QuestLineTracker* CurrentQuestLine_0);
 	void Get_Current_Quest_Name(class FString* CurrentQuest);
-	void GetAllAvailableQuestLines(TArray<EnumQuest__QuestLineTracker>* AvailableQuestLines_0);
+	void GetAllAvailableQuestLines(TArray<EnumQuest__QuestLineTracker>* AvailableQuestlines_0);
 	void GetAllQuestProgressData(TArray<struct FStructQuest_Progress>* QuestProgress_0);
 	void GetCurrentQuestlineProgressData(struct FStructQuest_Progress* QuestProgress_0);
 	void GetDescriptions_BroodWatcher(uint8 QuestIndex, class FText* Description);

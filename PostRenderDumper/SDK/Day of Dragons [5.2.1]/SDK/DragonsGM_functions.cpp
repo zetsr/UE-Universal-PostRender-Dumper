@@ -622,8 +622,9 @@ void ADragonsGM_C::FindOpenPlayerStart(Enum_MapRegion SpawnRegion, class APlayer
 // Parameters:
 // class FName                             SteamID                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   IsDev                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   SuperDev                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ADragonsGM_C::Game_CheckIfDeveloper(class FName SteamID, bool* IsDev)
+void ADragonsGM_C::Game_CheckIfDeveloper(class FName SteamID, bool* IsDev, bool* SuperDev)
 {
 	static class UFunction* Func = nullptr;
 
@@ -638,6 +639,9 @@ void ADragonsGM_C::Game_CheckIfDeveloper(class FName SteamID, bool* IsDev)
 
 	if (IsDev != nullptr)
 		*IsDev = Parms.IsDev;
+
+	if (SuperDev != nullptr)
+		*SuperDev = Parms.SuperDev;
 }
 
 

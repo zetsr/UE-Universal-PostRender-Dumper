@@ -14,7 +14,7 @@ namespace GameplayAbilities { struct FServerAbilityRPCBatch; }
 namespace SM_DragonEgg_Skeleton_AnimBP { struct FAnimBlueprintGeneratedConstantData; }
 
 
-namespace Anim_BlitzStriker
+namespace Anim_FlameStalker
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
@@ -22,20 +22,8 @@ namespace Anim_BlitzStriker
 
 namespace Anim_AcidSpitter
 {
-	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace Anim_ShadowScale
-{
 	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace Anim_BroodWatcher
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
 }
 
 namespace SMPA_Biolumin
@@ -44,10 +32,28 @@ namespace SMPA_Biolumin
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace Anim_FlameStalker
+namespace NPC_Biolumin_AnimBP
 {
 	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace Anim_ShadowScale
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace Anim_Biolumin
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace Anim_SingeCrest
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
 }
 
 namespace Anim_InfernoRavager
@@ -62,13 +68,13 @@ namespace SM_ThornbackCrawler_AnimBP
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace Anim_Biolumin
+namespace Anim_BlitzStriker
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace NPC_Biolumin_AnimBP
+namespace Anim_BroodWatcher
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;

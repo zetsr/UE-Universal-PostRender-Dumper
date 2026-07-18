@@ -18,7 +18,7 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass W_CharacterPanel_Dragon.W_CharacterPanel_Dragon_C
-// 0x0138 (0x03B8 - 0x0280)
+// 0x0140 (0x03C0 - 0x0280)
 class UW_CharacterPanel_Dragon_C final : public UUserWidget
 {
 public:
@@ -61,6 +61,7 @@ public:
 	class UWI_StaticEmissiveHueSlider_C*          WI_StaticEmissiveHueSlider;                        // 0x03A0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UWidgetSwitcher*                        WidgetSwitcher_Left;                               // 0x03A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UWidgetSwitcher*                        WidgetSwitcher_Right;                              // 0x03B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	bool                                          ShowGridMapOnOpen;                                 // 0x03B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void BndEvt__W_CharacterPanel_Dragon_Exit_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature();

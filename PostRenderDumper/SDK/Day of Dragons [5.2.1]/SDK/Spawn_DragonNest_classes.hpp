@@ -10,30 +10,31 @@
 
 #include "Basic.hpp"
 
-#include "Enum_EggWidgetStatus_structs.hpp"
-#include "Struct_Lineage_structs.hpp"
+#include "Struct_StatModifiers_structs.hpp"
+#include "Struct_PlayerEggInfo_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Struct_StatModifiers_structs.hpp"
-#include "Enum_StatMutations_structs.hpp"
+#include "Struct_Lineage_structs.hpp"
+#include "Enum_Temperature_structs.hpp"
+#include "Enum_EggWidgetStatus_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
-#include "Struct_PlayerEggInfo_structs.hpp"
 #include "Struct_StatRecessives_structs.hpp"
-#include "Enum_SkinRarity_structs.hpp"
+#include "Enum_StatMutations_structs.hpp"
 #include "Struct_SkinRecipes_structs.hpp"
-#include "Enum_AnimMotionStates_structs.hpp"
 #include "Struct_PiebaldRecipes_structs.hpp"
 #include "Enum_Species_structs.hpp"
-#include "Enum_Temperature_structs.hpp"
 #include "Enum_CreatureLevels_structs.hpp"
 #include "Enum_GeneticGrades_structs.hpp"
+#include "Enum_SkinRarity_structs.hpp"
+#include "Enum_StatusEffects_structs.hpp"
 #include "Enum_Elements_structs.hpp"
+#include "Enum_AnimMotionStates_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Spawn_DragonNest.Spawn_DragonNest_C
-// 0x0610 (0x08A0 - 0x0290)
+// 0x0620 (0x08B0 - 0x0290)
 class ASpawn_DragonNest_C : public AActor
 {
 public:
@@ -136,6 +137,9 @@ public:
 	struct FStruct_PiebaldRecipes                 PiebaldRecipes;                                    // 0x07F8(0x00A0)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	uint8                                         FlaggedEgg;                                        // 0x0898(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsEggPickupInProgress;                             // 0x0899(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_89A[0x6];                                      // 0x089A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        Pearl_SkinChance_Sire;                             // 0x08A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Pearl_SkinChance_Dame;                             // 0x08A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BndEvt__Spawn_DragonNest_TemperatureWeatherStatus_K2Node_ComponentBoundEvent_0_Temperature_Cold__DelegateSignature();
@@ -149,6 +153,7 @@ public:
 	void CheckHideUsedEggs(int32 EggIndex);
 	void CheckIfNestDone();
 	void CheckIsProtected();
+	void CheckParentsForPearls();
 	void CheckSetNestTemperature();
 	void CheckSpeciesPiebaldRecipe(uint8 DomSkin, uint8 RecSkin, bool* IsValidRecipe, uint8* PiebaldSkin, uint8* CatalystSkin);
 	void CheckSpeciesSkinRecipe(uint8 DomSkin, uint8 RecSkin, bool* IsValidRecipe, uint8* RecipeSkin, uint8* UnusedSkin);
@@ -176,6 +181,7 @@ public:
 	void GetNextAvailableEgg(bool UseIndex, int32 EggIndex, struct FStruct_PlayerEggInfo* EggInfo);
 	void GetNumEggsAvailable(int32* EggsAvailable);
 	void GetNumHatchedEggsRemote(uint8* HatchedEggs);
+	void GetPearlStats(class AChar_Parent_Dragonkind_C* Dragon, double* CraftingCrit, double* NestingProwess, double* NestingCrit);
 	void GetSireInfo(Enum_Species* Species, struct FStruct_StatModifiers* SireStats_0, struct FStruct_StatRecessives* SireRecessives_0, bool* SireDominance_0, class FString* SireName, uint8* SireSkinIndex_0, Enum_GrowthStage* SireGrowth_0, class FName* SireID, struct FGuid* SireCUID, uint8* SireSkinRecessive, struct FStruct_Lineage* SireLineage);
 	void GetSkinGeneStrength(uint8 SkinID, int32* Rarity);
 	void GetSpecies(Enum_Species* Species);
@@ -221,6 +227,8 @@ public:
 	void Timer2Event();
 	void Timer3Event();
 	void Timer4Event();
+	void TryApplyStatusEffect(Enum_StatusEffects EffectToApply, Enum_StatMutations StacksToApply, class AChar_Parent_Player_C* AttackingPlayer);
+	void TryDestroyComponent(class UActorComponent* Component);
 	void TryDestroyCorpse();
 	void TryDrop();
 	void TryFlagEggForBrood(uint8 Index_0);

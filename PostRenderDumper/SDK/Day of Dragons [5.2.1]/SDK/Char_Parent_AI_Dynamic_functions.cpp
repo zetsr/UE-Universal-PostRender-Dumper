@@ -233,6 +233,26 @@ void AChar_Parent_AI_Dynamic_C::Get_MaxProjectileRange(double* RangeCM)
 }
 
 
+// Function Char_Parent_AI_Dynamic.Char_Parent_AI_Dynamic_C.GetBossTag
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// const class FName                       ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+const class FName AChar_Parent_AI_Dynamic_C::GetBossTag()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_AI_Dynamic_C", "GetBossTag");
+
+	Params::Char_Parent_AI_Dynamic_C_GetBossTag Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Char_Parent_AI_Dynamic.Char_Parent_AI_Dynamic_C.GetStunDurations
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -537,6 +557,20 @@ void AChar_Parent_AI_Dynamic_C::TryLaunchCharacter(const struct FVector& LaunchV
 	Parms.Z_Override = Z_Override;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Parent_AI_Dynamic.Char_Parent_AI_Dynamic_C.TweakBossLoot
+// (BlueprintCallable, BlueprintEvent)
+
+void AChar_Parent_AI_Dynamic_C::TweakBossLoot()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_AI_Dynamic_C", "TweakBossLoot");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

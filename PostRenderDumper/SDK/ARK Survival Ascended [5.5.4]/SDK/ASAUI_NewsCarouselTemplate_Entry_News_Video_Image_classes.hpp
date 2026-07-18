@@ -55,20 +55,20 @@ public:
 	float                                         TargetVolumeScale;                                 // 0x0478(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool AllowAutoscrollNavFrom();
-	void BlueprintInit(const class FString& RawExtraData);
-	void EntryDoSecondaryClickAction(const class FName& SecondaryZoneClicked, bool bIsFromGamepad);
-	void EntryDoSecondaryHovered(const class FName& SecondaryZoneHovered);
-	void EntryDoSecondaryUnhovered(const class FName& SecondaryZoneUnhovered);
-	void EntryFocusEnd(bool bInstigatedByAutoRollover);
-	void EntryFocusStart(bool bInstigatedByAutoRollover);
-	void EntryFocusTick(float DeltaTime, bool bIsHighlighted);
-	void ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image(int32 EntryPoint);
-	void OnCarouselPaused();
-	void OnCarouselUnpaused();
-	void OnFail_72594C78445BE3B711D3C9A5F43E4038(const class FString& CacheVideoName);
-	void OnSuccess_72594C78445BE3B711D3C9A5F43E4038(const class FString& CacheVideoName);
 	void RebootVideo();
+	void OnSuccess_72594C78445BE3B711D3C9A5F43E4038(const class FString& CacheVideoName);
+	void OnFail_72594C78445BE3B711D3C9A5F43E4038(const class FString& CacheVideoName);
+	void OnCarouselUnpaused();
+	void OnCarouselPaused();
+	void ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image(int32 EntryPoint);
+	void EntryFocusTick(float DeltaTime, bool bIsHighlighted);
+	void EntryFocusStart(bool bInstigatedByAutoRollover);
+	void EntryFocusEnd(bool bInstigatedByAutoRollover);
+	void EntryDoSecondaryUnhovered(const class FName& SecondaryZoneUnhovered);
+	void EntryDoSecondaryHovered(const class FName& SecondaryZoneHovered);
+	void EntryDoSecondaryClickAction(const class FName& SecondaryZoneClicked, bool bIsFromGamepad);
+	void BlueprintInit(const class FString& RawExtraData);
+	bool AllowAutoscrollNavFrom();
 
 public:
 	static class UClass* StaticClass()

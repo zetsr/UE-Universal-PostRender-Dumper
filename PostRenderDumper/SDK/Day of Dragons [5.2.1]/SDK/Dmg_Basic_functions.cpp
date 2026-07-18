@@ -31,6 +31,7 @@ SDK_NAMESPACE_START
 // bool                                    IsBurning                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsWet                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsStunned                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsPoisoned                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 OutHealth                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 OutArmor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   IsDead                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -45,7 +46,7 @@ SDK_NAMESPACE_START
 // bool*                                   StillWet                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   ShouldStun                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UDmg_Basic_C::ProcessDamage_AI_Creatures(double RawDamage, double HealthCurrent, double ArmorCurrent, class AActor* DamageCauser, class UPDA_AIData_C* AiData, Enum_AiGrowth AiSize, EMovementMode MovementMode, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsStunned, double* OutHealth, double* OutArmor, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldYelp, bool* ShouldBleed, bool* ShouldDecay, bool* ShouldBurn, bool* CriticalHit, bool* StillWet, bool* ShouldStun)
+void UDmg_Basic_C::ProcessDamage_AI_Creatures(double RawDamage, double HealthCurrent, double ArmorCurrent, class AActor* DamageCauser, class UPDA_AIData_C* AiData, Enum_AiGrowth AiSize, EMovementMode MovementMode, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsStunned, bool IsPoisoned, double* OutHealth, double* OutArmor, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldYelp, bool* ShouldBleed, bool* ShouldDecay, bool* ShouldBurn, bool* CriticalHit, bool* StillWet, bool* ShouldStun)
 {
 	static class UFunction* Func = nullptr;
 
@@ -66,6 +67,7 @@ void UDmg_Basic_C::ProcessDamage_AI_Creatures(double RawDamage, double HealthCur
 	Parms.IsBurning = IsBurning;
 	Parms.IsWet = IsWet;
 	Parms.IsStunned = IsStunned;
+	Parms.IsPoisoned = IsPoisoned;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -128,6 +130,8 @@ void UDmg_Basic_C::ProcessDamage_AI_Creatures(double RawDamage, double HealthCur
 // bool                                    IsBurning                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsWet                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsStunned                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AChar_Parent_Player_C*            PlayerBeingDamaged                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsPoisoned                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 NewArmor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 NewHealth                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   IsDead                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -142,7 +146,7 @@ void UDmg_Basic_C::ProcessDamage_AI_Creatures(double RawDamage, double HealthCur
 // bool*                                   StillWet                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   ShouldStun                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UDmg_Basic_C::ProcessDamage_DragonCreatures(double RawDamage, double ArmorCurrent, double HealthCurrent, class AActor* DamageCauser, double GrowthScale, class UPDA_DragonData_C* CreatureData, const struct FStruct_StatModifiers& StatModifiers, bool IsAlpha, const struct FStruct_StatMutations& Mutations, EMovementMode MovementMode, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsStunned, double* NewArmor, double* NewHealth, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldYelp, bool* ShouldBleed, bool* ShouldDecay, bool* ShouldBurn, bool* CriticalHit, bool* StillWet, bool* ShouldStun)
+void UDmg_Basic_C::ProcessDamage_DragonCreatures(double RawDamage, double ArmorCurrent, double HealthCurrent, class AActor* DamageCauser, double GrowthScale, class UPDA_DragonData_C* CreatureData, const struct FStruct_StatModifiers& StatModifiers, bool IsAlpha, const struct FStruct_StatMutations& Mutations, EMovementMode MovementMode, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsStunned, class AChar_Parent_Player_C* PlayerBeingDamaged, bool IsPoisoned, double* NewArmor, double* NewHealth, bool* IsDead, bool* IsHeal, double* TotalArmorDmg, double* TotalHealthDmg, bool* ShouldYelp, bool* ShouldBleed, bool* ShouldDecay, bool* ShouldBurn, bool* CriticalHit, bool* StillWet, bool* ShouldStun)
 {
 	static class UFunction* Func = nullptr;
 
@@ -166,6 +170,8 @@ void UDmg_Basic_C::ProcessDamage_DragonCreatures(double RawDamage, double ArmorC
 	Parms.IsBurning = IsBurning;
 	Parms.IsWet = IsWet;
 	Parms.IsStunned = IsStunned;
+	Parms.PlayerBeingDamaged = PlayerBeingDamaged;
+	Parms.IsPoisoned = IsPoisoned;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -292,9 +298,14 @@ void UDmg_Basic_C::ProcessDamage_ElementalCreatures(double RawDamage, double Arm
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class UPDA_AIData_C*                    AiData                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsBleeding                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDecaying                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsBurning                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsWet                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsPoisoned                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 MitigationPercent                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UDmg_Basic_C::AddModfiersAI(class UPDA_AIData_C* AiData, double* MitigationPercent) const
+void UDmg_Basic_C::AddModfiersAI(class UPDA_AIData_C* AiData, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsPoisoned, double* MitigationPercent) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -304,6 +315,11 @@ void UDmg_Basic_C::AddModfiersAI(class UPDA_AIData_C* AiData, double* Mitigation
 	Params::Dmg_Basic_C_AddModfiersAI Parms{};
 
 	Parms.AiData = AiData;
+	Parms.IsBleeding = IsBleeding;
+	Parms.IsDecaying = IsDecaying;
+	Parms.IsBurning = IsBurning;
+	Parms.IsWet = IsWet;
+	Parms.IsPoisoned = IsPoisoned;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -317,10 +333,16 @@ void UDmg_Basic_C::AddModfiersAI(class UPDA_AIData_C* AiData, double* Mitigation
 // Parameters:
 // class UPDA_DragonData_C*                CreatureData                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // const struct FStruct_StatModifiers&     Modifiers                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AChar_Parent_Player_C*            DamagedPlayer                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsBleeding                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDecaying                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsBurning                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsWet                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsPoisoned                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 MitigationPercent                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // Enum_GeneticGrades*                     GeneticQuality                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UDmg_Basic_C::AddModfiersDragon(class UPDA_DragonData_C* CreatureData, const struct FStruct_StatModifiers& Modifiers, double* MitigationPercent, Enum_GeneticGrades* GeneticQuality) const
+void UDmg_Basic_C::AddModfiersDragon(class UPDA_DragonData_C* CreatureData, const struct FStruct_StatModifiers& Modifiers, class AChar_Parent_Player_C* DamagedPlayer, bool IsBleeding, bool IsDecaying, bool IsBurning, bool IsWet, bool IsPoisoned, double* MitigationPercent, Enum_GeneticGrades* GeneticQuality) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -331,6 +353,12 @@ void UDmg_Basic_C::AddModfiersDragon(class UPDA_DragonData_C* CreatureData, cons
 
 	Parms.CreatureData = CreatureData;
 	Parms.Modifiers = std::move(Modifiers);
+	Parms.DamagedPlayer = DamagedPlayer;
+	Parms.IsBleeding = IsBleeding;
+	Parms.IsDecaying = IsDecaying;
+	Parms.IsBurning = IsBurning;
+	Parms.IsWet = IsWet;
+	Parms.IsPoisoned = IsPoisoned;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -347,9 +375,11 @@ void UDmg_Basic_C::AddModfiersDragon(class UPDA_DragonData_C* CreatureData, cons
 // Parameters:
 // class UPDA_ElementalData_C*             ElementalData                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // const struct FStruct_StatModifiers&     Modifiers                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDecaying                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsWet                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 MitigationPercent                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UDmg_Basic_C::AddModfiersElemental(class UPDA_ElementalData_C* ElementalData, const struct FStruct_StatModifiers& Modifiers, double* MitigationPercent) const
+void UDmg_Basic_C::AddModfiersElemental(class UPDA_ElementalData_C* ElementalData, const struct FStruct_StatModifiers& Modifiers, bool IsDecaying, bool IsWet, double* MitigationPercent) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -360,11 +390,39 @@ void UDmg_Basic_C::AddModfiersElemental(class UPDA_ElementalData_C* ElementalDat
 
 	Parms.ElementalData = ElementalData;
 	Parms.Modifiers = std::move(Modifiers);
+	Parms.IsDecaying = IsDecaying;
+	Parms.IsWet = IsWet;
 
 	UObject::ProcessEvent(Func, &Parms);
 
 	if (MitigationPercent != nullptr)
 		*MitigationPercent = Parms.MitigationPercent;
+}
+
+
+// Function Dmg_Basic.Dmg_Basic_C.CalcMitigatedDamage
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// double                                  Damage                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  Mitigation                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 NewDamage                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UDmg_Basic_C::CalcMitigatedDamage(double Damage, double Mitigation, double* NewDamage) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Dmg_Basic_C", "CalcMitigatedDamage");
+
+	Params::Dmg_Basic_C_CalcMitigatedDamage Parms{};
+
+	Parms.Damage = Damage;
+	Parms.Mitigation = Mitigation;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewDamage != nullptr)
+		*NewDamage = Parms.NewDamage;
 }
 
 
@@ -623,11 +681,12 @@ void UDmg_Basic_C::CheckShouldStun(Enum_DmgTypes DamageType, double TotalDamage,
 // class UPDA_DragonData_C*                InData                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // const struct FStruct_StatModifiers&     Modifiers                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const struct FStruct_StatMutations&     Mutations                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  OrigArmor                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 OutArmor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 OutHealth                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool*                                   IsDead                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UDmg_Basic_C::ClampOuts(double InArmor, double InHealth, double Growth, class UPDA_DragonData_C* InData, const struct FStruct_StatModifiers& Modifiers, const struct FStruct_StatMutations& Mutations, double* OutArmor, double* OutHealth, bool* IsDead) const
+void UDmg_Basic_C::ClampOuts(double InArmor, double InHealth, double Growth, class UPDA_DragonData_C* InData, const struct FStruct_StatModifiers& Modifiers, const struct FStruct_StatMutations& Mutations, double OrigArmor, double* OutArmor, double* OutHealth, bool* IsDead) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -642,6 +701,7 @@ void UDmg_Basic_C::ClampOuts(double InArmor, double InHealth, double Growth, cla
 	Parms.InData = InData;
 	Parms.Modifiers = std::move(Modifiers);
 	Parms.Mutations = std::move(Mutations);
+	Parms.OrigArmor = OrigArmor;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -825,11 +885,13 @@ void UDmg_Basic_C::GetCritOffense(double BaseCritChance, double BaseCritDamage, 
 // class AActor*                           DamageCauser                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UPDA_AIData_C*                    AI_Data                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsBoss                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  RawDamage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 DamageScaleMultiplier                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 AttackerCritChance                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 AttackerCritDmg                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 ModifiedDmg                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UDmg_Basic_C::GetMultipliersAI(class AActor* DamageCauser, class UPDA_AIData_C* AI_Data, bool IsBoss, double* DamageScaleMultiplier, double* AttackerCritChance, double* AttackerCritDmg) const
+void UDmg_Basic_C::GetMultipliersAI(class AActor* DamageCauser, class UPDA_AIData_C* AI_Data, bool IsBoss, double RawDamage, double* DamageScaleMultiplier, double* AttackerCritChance, double* AttackerCritDmg, double* ModifiedDmg) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -841,6 +903,7 @@ void UDmg_Basic_C::GetMultipliersAI(class AActor* DamageCauser, class UPDA_AIDat
 	Parms.DamageCauser = DamageCauser;
 	Parms.AI_Data = AI_Data;
 	Parms.IsBoss = IsBoss;
+	Parms.RawDamage = RawDamage;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -852,6 +915,9 @@ void UDmg_Basic_C::GetMultipliersAI(class AActor* DamageCauser, class UPDA_AIDat
 
 	if (AttackerCritDmg != nullptr)
 		*AttackerCritDmg = Parms.AttackerCritDmg;
+
+	if (ModifiedDmg != nullptr)
+		*ModifiedDmg = Parms.ModifiedDmg;
 }
 
 
@@ -862,11 +928,13 @@ void UDmg_Basic_C::GetMultipliersAI(class AActor* DamageCauser, class UPDA_AIDat
 // class UPDA_DragonData_C*                CreatureData                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsAlpha                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  VictimGrowth                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  RawDamage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 DamageScaleMultiplier                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 AttackerCritChance                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 AttackerCritDamage                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 ModifiedDamage                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UDmg_Basic_C::GetMultipliersDragon(class AActor* DamageCauser, class UPDA_DragonData_C* CreatureData, bool IsAlpha, double VictimGrowth, double* DamageScaleMultiplier, double* AttackerCritChance, double* AttackerCritDamage) const
+void UDmg_Basic_C::GetMultipliersDragon(class AActor* DamageCauser, class UPDA_DragonData_C* CreatureData, bool IsAlpha, double VictimGrowth, double RawDamage, double* DamageScaleMultiplier, double* AttackerCritChance, double* AttackerCritDamage, double* ModifiedDamage) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -879,6 +947,7 @@ void UDmg_Basic_C::GetMultipliersDragon(class AActor* DamageCauser, class UPDA_D
 	Parms.CreatureData = CreatureData;
 	Parms.IsAlpha = IsAlpha;
 	Parms.VictimGrowth = VictimGrowth;
+	Parms.RawDamage = RawDamage;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -890,6 +959,9 @@ void UDmg_Basic_C::GetMultipliersDragon(class AActor* DamageCauser, class UPDA_D
 
 	if (AttackerCritDamage != nullptr)
 		*AttackerCritDamage = Parms.AttackerCritDamage;
+
+	if (ModifiedDamage != nullptr)
+		*ModifiedDamage = Parms.ModifiedDamage;
 }
 
 
@@ -898,11 +970,13 @@ void UDmg_Basic_C::GetMultipliersDragon(class AActor* DamageCauser, class UPDA_D
 // Parameters:
 // class AActor*                           DamageCauser                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UPDA_ElementalData_C*             ElementalData                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// double                                  RawDamage                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 DamageScaleMultiplier                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 AttackerCritChance                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double*                                 AttackerCritDmg                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 ModifiedDamage                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UDmg_Basic_C::GetMultipliersElemental(class AActor* DamageCauser, class UPDA_ElementalData_C* ElementalData, double* DamageScaleMultiplier, double* AttackerCritChance, double* AttackerCritDmg) const
+void UDmg_Basic_C::GetMultipliersElemental(class AActor* DamageCauser, class UPDA_ElementalData_C* ElementalData, double RawDamage, double* DamageScaleMultiplier, double* AttackerCritChance, double* AttackerCritDmg, double* ModifiedDamage) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -913,6 +987,7 @@ void UDmg_Basic_C::GetMultipliersElemental(class AActor* DamageCauser, class UPD
 
 	Parms.DamageCauser = DamageCauser;
 	Parms.ElementalData = ElementalData;
+	Parms.RawDamage = RawDamage;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -924,6 +999,9 @@ void UDmg_Basic_C::GetMultipliersElemental(class AActor* DamageCauser, class UPD
 
 	if (AttackerCritDmg != nullptr)
 		*AttackerCritDmg = Parms.AttackerCritDmg;
+
+	if (ModifiedDamage != nullptr)
+		*ModifiedDamage = Parms.ModifiedDamage;
 }
 
 
@@ -945,6 +1023,30 @@ void UDmg_Basic_C::GetSelfDamageType(Enum_DmgTypes* DamageType) const
 
 	if (DamageType != nullptr)
 		*DamageType = Parms.DamageType;
+}
+
+
+// Function Dmg_Basic.Dmg_Basic_C.MinZero
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// double                                  In                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 Out                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UDmg_Basic_C::MinZero(double In, double* Out) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Dmg_Basic_C", "MinZero");
+
+	Params::Dmg_Basic_C_MinZero Parms{};
+
+	Parms.In = In;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Out != nullptr)
+		*Out = Parms.Out;
 }
 
 

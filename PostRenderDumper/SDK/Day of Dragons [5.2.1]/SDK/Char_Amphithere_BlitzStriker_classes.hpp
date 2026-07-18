@@ -11,86 +11,86 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "Enum_EmotesDragon_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "UDS_Weather_Display_Names_structs.hpp"
-#include "Char_Parent_Amphithere_classes.hpp"
-#include "InputCore_structs.hpp"
-#include "Enum_GrowthStage_structs.hpp"
-#include "Enum_AnimMotionStates_structs.hpp"
 #include "Enum_StatMutations_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Enum_AnimMotionStates_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "Char_Parent_Amphithere_classes.hpp"
+#include "Enum_EmotesDragon_structs.hpp"
+#include "Enum_GrowthStage_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Char_Amphithere_BlitzStriker.Char_Amphithere_BlitzStriker_C
-// 0x02B0 (0x14B0 - 0x1200)
+// 0x02B0 (0x15F0 - 0x1340)
 class AChar_Amphithere_BlitzStriker_C final : public AChar_Parent_Amphithere_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Amphithere_BlitzStriker_C;     // 0x1200(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UFMODAudioComponent*                    ChargeUp;                                          // 0x1208(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody0;                                 // 0x1210(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody17;                                // 0x1218(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody16;                                // 0x1220(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody15;                                // 0x1228(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody14;                                // 0x1230(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody13;                                // 0x1238(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody12;                                // 0x1240(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody11;                                // 0x1248(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody10;                                // 0x1250(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody7;                                 // 0x1258(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody9;                                 // 0x1260(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody8;                                 // 0x1268(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody1;                                 // 0x1270(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody2;                                 // 0x1278(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody6;                                 // 0x1280(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   BeamCapsule;                                       // 0x1288(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody3;                                 // 0x1290(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody5;                                 // 0x1298(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                LightningGeoBody4;                                 // 0x12A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGeometryCacheComponent*                GC_LightningBile;                                  // 0x12A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UFMODAudioComponent*                    LightningBreath;                                   // 0x12B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBoxComponent*                          WeaponBite;                                        // 0x12B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UFMODAudioComponent*                    SlitherSFX;                                        // 0x12C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UPhysicsFlight_C*                       PhysicsFlight;                                     // 0x12C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         Timeline_1_Multiplier_CE1163564C0B4139F72743B64DA20AFA; // 0x12D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Timeline_1__Direction_CE1163564C0B4139F72743B64DA20AFA; // 0x12D4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12D5[0x3];                                     // 0x12D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Timeline_1;                                        // 0x12D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	float                                         ChargeEmmissive_Percent_AD0C01A14789B88D4202D2972AA9E5A1; // 0x12E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            ChargeEmmissive__Direction_AD0C01A14789B88D4202D2972AA9E5A1; // 0x12E4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12E5[0x3];                                     // 0x12E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     ChargeEmmissive;                                   // 0x12E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	float                                         Timeline_0_Fade_E02EE2874601E5CDA033FC88F656A095;  // 0x12F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Timeline_0__Direction_E02EE2874601E5CDA033FC88F656A095; // 0x12F4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12F5[0x3];                                     // 0x12F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Timeline_0;                                        // 0x12F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	double                                        MembraneMorphMultiplier;                           // 0x1300(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        MembraneTime;                                      // 0x1308(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        NV_FadeFloat;                                      // 0x1310(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class AActor*>                         BiteActors;                                        // 0x1318(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	bool                                          IsStorming;                                        // 0x1328(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EUDS_Weather_Display_Names                    ServerWeather;                                     // 0x1329(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_132A[0x6];                                     // 0x132A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   AttackKey;                                         // 0x1330(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	bool                                          IsBreathing;                                       // 0x1348(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1349[0x7];                                     // 0x1349(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                LookAtPoint;                                       // 0x1350(0x0018)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          UseLookAt;                                         // 0x1368(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1369[0x7];                                     // 0x1369(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class AActor*>                           BeamOverlapActors;                                 // 0x1370(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	double                                        BileDmgAlpha;                                      // 0x13C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        LightningScale;                                    // 0x13C8(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                TargetScale;                                       // 0x13D0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        GeoScale;                                          // 0x13E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          EMP_Charged;                                       // 0x13F0(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_13F1[0x7];                                     // 0x13F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<int32>                                   UsedInts;                                          // 0x13F8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int32                                         IndexCounter;                                      // 0x1448(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_144C[0x4];                                     // 0x144C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class ASpawn_StaticDischarge_C*>         LightningBeams;                                    // 0x1450(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	TArray<class AActor*>                         ZapActors;                                         // 0x14A0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Amphithere_BlitzStriker_C;     // 0x1338(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UFMODAudioComponent*                    ChargeUp;                                          // 0x1340(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody0;                                 // 0x1348(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody17;                                // 0x1350(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody16;                                // 0x1358(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody15;                                // 0x1360(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody14;                                // 0x1368(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody13;                                // 0x1370(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody12;                                // 0x1378(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody11;                                // 0x1380(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody10;                                // 0x1388(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody7;                                 // 0x1390(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody9;                                 // 0x1398(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody8;                                 // 0x13A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody1;                                 // 0x13A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody2;                                 // 0x13B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody6;                                 // 0x13B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   BeamCapsule;                                       // 0x13C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody3;                                 // 0x13C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody5;                                 // 0x13D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                LightningGeoBody4;                                 // 0x13D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGeometryCacheComponent*                GC_LightningBile;                                  // 0x13E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UFMODAudioComponent*                    LightningBreath;                                   // 0x13E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          WeaponBite;                                        // 0x13F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UFMODAudioComponent*                    SlitherSFX;                                        // 0x13F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPhysicsFlight_C*                       PhysicsFlight;                                     // 0x1400(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         Timeline_1_Multiplier_CE1163564C0B4139F72743B64DA20AFA; // 0x1408(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Timeline_1__Direction_CE1163564C0B4139F72743B64DA20AFA; // 0x140C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_140D[0x3];                                     // 0x140D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Timeline_1;                                        // 0x1410(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	float                                         ChargeEmmissive_Percent_AD0C01A14789B88D4202D2972AA9E5A1; // 0x1418(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            ChargeEmmissive__Direction_AD0C01A14789B88D4202D2972AA9E5A1; // 0x141C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_141D[0x3];                                     // 0x141D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     ChargeEmmissive;                                   // 0x1420(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	float                                         Timeline_0_Fade_E02EE2874601E5CDA033FC88F656A095;  // 0x1428(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Timeline_0__Direction_E02EE2874601E5CDA033FC88F656A095; // 0x142C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_142D[0x3];                                     // 0x142D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Timeline_0;                                        // 0x1430(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	double                                        MembraneMorphMultiplier;                           // 0x1438(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        MembraneTime;                                      // 0x1440(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        NV_FadeFloat;                                      // 0x1448(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class AActor*>                         BiteActors;                                        // 0x1450(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	bool                                          IsStorming;                                        // 0x1460(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EUDS_Weather_Display_Names                    ServerWeather;                                     // 0x1461(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1462[0x6];                                     // 0x1462(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKey                                   AttackKey;                                         // 0x1468(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          IsBreathing;                                       // 0x1480(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1481[0x7];                                     // 0x1481(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                LookAtPoint;                                       // 0x1488(0x0018)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          UseLookAt;                                         // 0x14A0(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14A1[0x7];                                     // 0x14A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class AActor*>                           BeamOverlapActors;                                 // 0x14A8(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	double                                        BileDmgAlpha;                                      // 0x14F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        LightningScale;                                    // 0x1500(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                TargetScale;                                       // 0x1508(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        GeoScale;                                          // 0x1520(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          EMP_Charged;                                       // 0x1528(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1529[0x7];                                     // 0x1529(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<int32>                                   UsedInts;                                          // 0x1530(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int32                                         IndexCounter;                                      // 0x1580(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1584[0x4];                                     // 0x1584(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class ASpawn_StaticDischarge_C*>         LightningBeams;                                    // 0x1588(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	TArray<class AActor*>                         ZapActors;                                         // 0x15D8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 
 public:
 	void ActivateBeamOverlaps();
@@ -121,7 +121,7 @@ public:
 	void GetCarryOffset(double* RotOffset);
 	void GetElementBileCost(uint8* BileCost);
 	void GetGeoBodyByIndex(int32 Index_0, class UGeometryCacheComponent** LightningGeoBody);
-	void GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino);
+	void GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino, uint8* Brindle);
 	void InpActEvt_Attack_K2Node_InputActionEvent_1(const struct FKey& Key);
 	void InpActEvt_Attack_K2Node_InputActionEvent_2(const struct FKey& Key);
 	void InpActEvt_Special_K2Node_InputActionEvent_0(const struct FKey& Key);
@@ -130,6 +130,7 @@ public:
 	void LocalTick(double DeltaSeconds);
 	void MembraneExpand();
 	void MembraneShrink();
+	void NotifyServerNotBreathing();
 	void NotifyWeatherChange(EUDS_Weather_Display_Names weather);
 	void OnBlendOut_3872EC4A43B4343191551883277E2238(class FName NotifyName);
 	void OnBlendOut_465ED4714906E51C65ED14940B697DD0(class FName NotifyName);

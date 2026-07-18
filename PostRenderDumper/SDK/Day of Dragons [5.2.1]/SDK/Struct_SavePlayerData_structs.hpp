@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "Struct_StatModifiers_structs.hpp"
-#include "Struct_Lineage_structs.hpp"
+#include "Enum_GrowthStage_structs.hpp"
 #include "Enum_PlayerCharacter_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Struct_StatMutations_structs.hpp"
-#include "Enum_GrowthStage_structs.hpp"
 #include "Struct_StatRecessives_structs.hpp"
+#include "Struct_StatMutations_structs.hpp"
+#include "Struct_StatModifiers_structs.hpp"
+#include "Struct_Lineage_structs.hpp"
 
 
 SDK_NAMESPACE_START

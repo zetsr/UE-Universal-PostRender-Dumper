@@ -14,16 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function UI_CFCore_Tag_PreviewPremium.UI_CFCore_Tag_PreviewPremium_C.GetRootCFWidget
-// 0x0010 (0x0010 - 0x0000)
-struct UI_CFCore_Tag_PreviewPremium_C_GetRootCFWidget final
-{
-public:
-	class UPanelWidget*                           RootPanelWidget;                                   // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_UI_CFCore_Tag_PreviewPremium_C_GetRootCFWidget;
-
 // Function UI_CFCore_Tag_PreviewPremium.UI_CFCore_Tag_PreviewPremium_C.UpdateText
 // 0x0018 (0x0018 - 0x0000)
 struct UI_CFCore_Tag_PreviewPremium_C_UpdateText final
@@ -33,6 +23,16 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_UI_CFCore_Tag_PreviewPremium_C_UpdateText;
+
+// Function UI_CFCore_Tag_PreviewPremium.UI_CFCore_Tag_PreviewPremium_C.GetRootCFWidget
+// 0x0010 (0x0010 - 0x0000)
+struct UI_CFCore_Tag_PreviewPremium_C_GetRootCFWidget final
+{
+public:
+	class UPanelWidget*                           RootPanelWidget;                                   // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_UI_CFCore_Tag_PreviewPremium_C_GetRootCFWidget;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

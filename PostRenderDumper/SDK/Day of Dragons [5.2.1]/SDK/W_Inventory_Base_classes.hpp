@@ -13,6 +13,7 @@
 #include "Engine_structs.hpp"
 #include "SCUE5_structs.hpp"
 #include "UMG_classes.hpp"
+#include "Enum_AnimMotionStates_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -117,8 +118,11 @@ public:
 	void ExecuteUbergraph_W_Inventory_Base(int32 EntryPoint);
 	struct FSlateBrush Get_BG_Background();
 	bool Get_Btn_Drop_bIsEnabled();
+	class UWidget* Get_Btn_Drop_ToolTipWidget();
 	bool Get_Btn_Equip_bIsEnabled();
+	class UWidget* Get_Btn_Equip_ToolTipWidget();
 	bool Get_Btn_Unequip_bIsEnabled();
+	class UWidget* Get_Btn_Unequip_ToolTipWidget();
 	class FText Get_Weight_Text();
 	void OnInventoryUpdated_Event();
 	void PopulateInventory();

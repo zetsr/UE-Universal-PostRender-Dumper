@@ -156,6 +156,26 @@ void AChar_Parent_Dragonkind_C::ApplyDecayStack(Enum_StatMutations StacksToApply
 }
 
 
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.ApplyDragonPearlBuff
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ShouldUnequip                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::ApplyDragonPearlBuff(bool ShouldUnequip)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "ApplyDragonPearlBuff");
+
+	Params::Char_Parent_Dragonkind_C_ApplyDragonPearlBuff Parms{};
+
+	Parms.ShouldUnequip = ShouldUnequip;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.ApplySkinPattern
 // (BlueprintCallable, BlueprintEvent)
 
@@ -219,6 +239,20 @@ void AChar_Parent_Dragonkind_C::ApplyTorpor(bool UsePercentage, double AddPercen
 	Parms.AddValue = AddValue;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.AudioSwimExitKeyOff
+// (BlueprintCallable, BlueprintEvent)
+
+void AChar_Parent_Dragonkind_C::AudioSwimExitKeyOff()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "AudioSwimExitKeyOff");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -1184,6 +1218,30 @@ void AChar_Parent_Dragonkind_C::DropActor()
 }
 
 
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.DropDragonPearl
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FStruct_InventoryItemsReplicated&PearlItem                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// Enum_ItemRarity                         ItemRarity                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsGeneratorSpawned                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::DropDragonPearl(const struct FStruct_InventoryItemsReplicated& PearlItem, Enum_ItemRarity ItemRarity, bool IsGeneratorSpawned)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "DropDragonPearl");
+
+	Params::Char_Parent_Dragonkind_C_DropDragonPearl Parms{};
+
+	Parms.PearlItem = std::move(PearlItem);
+	Parms.ItemRarity = ItemRarity;
+	Parms.IsGeneratorSpawned = IsGeneratorSpawned;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.EmoteCourtship
 // (BlueprintCallable, BlueprintEvent)
 
@@ -1593,6 +1651,146 @@ void AChar_Parent_Dragonkind_C::GetBoneTargetLocation(double DistanceM, bool* Us
 }
 
 
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.GetBonusCritDefensePercent
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 BonusCritEvade                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusCritReduction                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::GetBonusCritDefensePercent(double* BonusCritEvade, double* BonusCritReduction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "GetBonusCritDefensePercent");
+
+	Params::Char_Parent_Dragonkind_C_GetBonusCritDefensePercent Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (BonusCritEvade != nullptr)
+		*BonusCritEvade = Parms.BonusCritEvade;
+
+	if (BonusCritReduction != nullptr)
+		*BonusCritReduction = Parms.BonusCritReduction;
+}
+
+
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.GetBonusCritOffensePercent
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 BonusCritChance                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusCritDamage                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::GetBonusCritOffensePercent(double* BonusCritChance, double* BonusCritDamage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "GetBonusCritOffensePercent");
+
+	Params::Char_Parent_Dragonkind_C_GetBonusCritOffensePercent Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (BonusCritChance != nullptr)
+		*BonusCritChance = Parms.BonusCritChance;
+
+	if (BonusCritDamage != nullptr)
+		*BonusCritDamage = Parms.BonusCritDamage;
+}
+
+
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.GetBonusDamagePercent
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 BonusFire                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusFrost                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusPlasma                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusLightning                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusAcid                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusVenom                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::GetBonusDamagePercent(double* BonusFire, double* BonusFrost, double* BonusPlasma, double* BonusLightning, double* BonusAcid, double* BonusVenom)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "GetBonusDamagePercent");
+
+	Params::Char_Parent_Dragonkind_C_GetBonusDamagePercent Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (BonusFire != nullptr)
+		*BonusFire = Parms.BonusFire;
+
+	if (BonusFrost != nullptr)
+		*BonusFrost = Parms.BonusFrost;
+
+	if (BonusPlasma != nullptr)
+		*BonusPlasma = Parms.BonusPlasma;
+
+	if (BonusLightning != nullptr)
+		*BonusLightning = Parms.BonusLightning;
+
+	if (BonusAcid != nullptr)
+		*BonusAcid = Parms.BonusAcid;
+
+	if (BonusVenom != nullptr)
+		*BonusVenom = Parms.BonusVenom;
+}
+
+
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.GetBonusMitigationsPercent
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 BonusFireMitigation                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusFrostMitigation                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusPlasmaMitigation                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusLightningMitigation                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusAcidMitigation                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusVenomMitigation                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusPierceMitigation                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 BonusBluntMitigation                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::GetBonusMitigationsPercent(double* BonusFireMitigation, double* BonusFrostMitigation, double* BonusPlasmaMitigation, double* BonusLightningMitigation, double* BonusAcidMitigation, double* BonusVenomMitigation, double* BonusPierceMitigation, double* BonusBluntMitigation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "GetBonusMitigationsPercent");
+
+	Params::Char_Parent_Dragonkind_C_GetBonusMitigationsPercent Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (BonusFireMitigation != nullptr)
+		*BonusFireMitigation = Parms.BonusFireMitigation;
+
+	if (BonusFrostMitigation != nullptr)
+		*BonusFrostMitigation = Parms.BonusFrostMitigation;
+
+	if (BonusPlasmaMitigation != nullptr)
+		*BonusPlasmaMitigation = Parms.BonusPlasmaMitigation;
+
+	if (BonusLightningMitigation != nullptr)
+		*BonusLightningMitigation = Parms.BonusLightningMitigation;
+
+	if (BonusAcidMitigation != nullptr)
+		*BonusAcidMitigation = Parms.BonusAcidMitigation;
+
+	if (BonusVenomMitigation != nullptr)
+		*BonusVenomMitigation = Parms.BonusVenomMitigation;
+
+	if (BonusPierceMitigation != nullptr)
+		*BonusPierceMitigation = Parms.BonusPierceMitigation;
+
+	if (BonusBluntMitigation != nullptr)
+		*BonusBluntMitigation = Parms.BonusBluntMitigation;
+}
+
+
 // Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.GetBreathLookAtPoint
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1768,8 +1966,9 @@ void AChar_Parent_Dragonkind_C::GetProjectileTransform(class FName SocketStart, 
 // uint8*                                  Birthright                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8*                                  InfusedCrimson                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8*                                  Albino                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// uint8*                                  Brindle                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AChar_Parent_Dragonkind_C::GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino)
+void AChar_Parent_Dragonkind_C::GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino, uint8* Brindle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1788,6 +1987,9 @@ void AChar_Parent_Dragonkind_C::GetSpecialSkinIndexes(uint8* Birthright, uint8* 
 
 	if (Albino != nullptr)
 		*Albino = Parms.Albino;
+
+	if (Brindle != nullptr)
+		*Brindle = Parms.Brindle;
 }
 
 
@@ -2562,6 +2764,20 @@ void AChar_Parent_Dragonkind_C::MaleSenseNest()
 }
 
 
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.Multi_DropDragonPearl
+// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
+
+void AChar_Parent_Dragonkind_C::Multi_DropDragonPearl()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "Multi_DropDragonPearl");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.Multi_SpawnBloodPool
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 
@@ -2720,6 +2936,26 @@ void AChar_Parent_Dragonkind_C::OnBlendOut_8A8B854E4A7D922BC055A2806C98FDE6(clas
 }
 
 
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.OnBlendOut_A208E9CC4C598A332F98EA8664310F55
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             NotifyName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::OnBlendOut_A208E9CC4C598A332F98EA8664310F55(class FName NotifyName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "OnBlendOut_A208E9CC4C598A332F98EA8664310F55");
+
+	Params::Char_Parent_Dragonkind_C_OnBlendOut_A208E9CC4C598A332F98EA8664310F55 Parms{};
+
+	Parms.NotifyName = NotifyName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.OnBlendOut_D701171F4E44DA8722DCA78B527B4DE2
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -2870,6 +3106,26 @@ void AChar_Parent_Dragonkind_C::OnCompleted_8A8B854E4A7D922BC055A2806C98FDE6(cla
 }
 
 
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.OnCompleted_A208E9CC4C598A332F98EA8664310F55
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             NotifyName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::OnCompleted_A208E9CC4C598A332F98EA8664310F55(class FName NotifyName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "OnCompleted_A208E9CC4C598A332F98EA8664310F55");
+
+	Params::Char_Parent_Dragonkind_C_OnCompleted_A208E9CC4C598A332F98EA8664310F55 Parms{};
+
+	Parms.NotifyName = NotifyName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.OnCompleted_D701171F4E44DA8722DCA78B527B4DE2
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -2921,6 +3177,26 @@ void AChar_Parent_Dragonkind_C::OnDecayUpdated()
 		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "OnDecayUpdated");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.OnDragonPearlUpdated_Event
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Unequipped                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::OnDragonPearlUpdated_Event(bool Unequipped)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "OnDragonPearlUpdated_Event");
+
+	Params::Char_Parent_Dragonkind_C_OnDragonPearlUpdated_Event Parms{};
+
+	Parms.Unequipped = Unequipped;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -3039,6 +3315,26 @@ void AChar_Parent_Dragonkind_C::OnInterrupted_8A8B854E4A7D922BC055A2806C98FDE6(c
 		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "OnInterrupted_8A8B854E4A7D922BC055A2806C98FDE6");
 
 	Params::Char_Parent_Dragonkind_C_OnInterrupted_8A8B854E4A7D922BC055A2806C98FDE6 Parms{};
+
+	Parms.NotifyName = NotifyName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.OnInterrupted_A208E9CC4C598A332F98EA8664310F55
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             NotifyName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::OnInterrupted_A208E9CC4C598A332F98EA8664310F55(class FName NotifyName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "OnInterrupted_A208E9CC4C598A332F98EA8664310F55");
+
+	Params::Char_Parent_Dragonkind_C_OnInterrupted_A208E9CC4C598A332F98EA8664310F55 Parms{};
 
 	Parms.NotifyName = NotifyName;
 
@@ -3222,6 +3518,26 @@ void AChar_Parent_Dragonkind_C::OnNotifyBegin_8A8B854E4A7D922BC055A2806C98FDE6(c
 }
 
 
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.OnNotifyBegin_A208E9CC4C598A332F98EA8664310F55
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             NotifyName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::OnNotifyBegin_A208E9CC4C598A332F98EA8664310F55(class FName NotifyName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "OnNotifyBegin_A208E9CC4C598A332F98EA8664310F55");
+
+	Params::Char_Parent_Dragonkind_C_OnNotifyBegin_A208E9CC4C598A332F98EA8664310F55 Parms{};
+
+	Parms.NotifyName = NotifyName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.OnNotifyBegin_D701171F4E44DA8722DCA78B527B4DE2
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -3295,6 +3611,26 @@ void AChar_Parent_Dragonkind_C::OnNotifyEnd_8A8B854E4A7D922BC055A2806C98FDE6(cla
 		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "OnNotifyEnd_8A8B854E4A7D922BC055A2806C98FDE6");
 
 	Params::Char_Parent_Dragonkind_C_OnNotifyEnd_8A8B854E4A7D922BC055A2806C98FDE6 Parms{};
+
+	Parms.NotifyName = NotifyName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.OnNotifyEnd_A208E9CC4C598A332F98EA8664310F55
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             NotifyName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::OnNotifyEnd_A208E9CC4C598A332F98EA8664310F55(class FName NotifyName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "OnNotifyEnd_A208E9CC4C598A332F98EA8664310F55");
+
+	Params::Char_Parent_Dragonkind_C_OnNotifyEnd_A208E9CC4C598A332F98EA8664310F55 Parms{};
 
 	Parms.NotifyName = NotifyName;
 
@@ -3641,6 +3977,27 @@ void AChar_Parent_Dragonkind_C::PAI_SetBuoyancy(double Buoyancy)
 	Parms.Buoyancy = Buoyancy;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Parent_Dragonkind.Char_Parent_Dragonkind_C.PearlElderGrowthBonusMultiplier
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double*                                 Multiplier                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Parent_Dragonkind_C::PearlElderGrowthBonusMultiplier(double* Multiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Dragonkind_C", "PearlElderGrowthBonusMultiplier");
+
+	Params::Char_Parent_Dragonkind_C_PearlElderGrowthBonusMultiplier Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Multiplier != nullptr)
+		*Multiplier = Parms.Multiplier;
 }
 
 

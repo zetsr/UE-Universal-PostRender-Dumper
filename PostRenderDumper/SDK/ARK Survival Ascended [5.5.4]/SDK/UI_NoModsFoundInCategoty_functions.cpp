@@ -16,21 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function UI_NoModsFoundInCategoty.UI_NoModsFoundInCategoty_C.ExecuteUbergraph_UI_NoModsFoundInCategoty
-// (Final, UbergraphFunction, HasDefaults)
+// Function UI_NoModsFoundInCategoty.UI_NoModsFoundInCategoty_C.Tick
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_NoModsFoundInCategoty_C::ExecuteUbergraph_UI_NoModsFoundInCategoty(int32 EntryPoint)
+void UUI_NoModsFoundInCategoty_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_NoModsFoundInCategoty_C", "ExecuteUbergraph_UI_NoModsFoundInCategoty");
+		Func = Class->GetFunction("UI_NoModsFoundInCategoty_C", "Tick");
 
-	Params::UI_NoModsFoundInCategoty_C_ExecuteUbergraph_UI_NoModsFoundInCategoty Parms{};
+	Params::UI_NoModsFoundInCategoty_C_Tick Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.InDeltaTime = InDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,23 +59,21 @@ void UUI_NoModsFoundInCategoty_C::GetRootCFWidget(class UPanelWidget** RootPanel
 }
 
 
-// Function UI_NoModsFoundInCategoty.UI_NoModsFoundInCategoty_C.Tick
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function UI_NoModsFoundInCategoty.UI_NoModsFoundInCategoty_C.ExecuteUbergraph_UI_NoModsFoundInCategoty
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_NoModsFoundInCategoty_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
+void UUI_NoModsFoundInCategoty_C::ExecuteUbergraph_UI_NoModsFoundInCategoty(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_NoModsFoundInCategoty_C", "Tick");
+		Func = Class->GetFunction("UI_NoModsFoundInCategoty_C", "ExecuteUbergraph_UI_NoModsFoundInCategoty");
 
-	Params::UI_NoModsFoundInCategoty_C_Tick Parms{};
+	Params::UI_NoModsFoundInCategoty_C_ExecuteUbergraph_UI_NoModsFoundInCategoty Parms{};
 
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.InDeltaTime = InDeltaTime;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemResource_Silicon.PrimalItemResource_Silicon_C
 // 0x0000 (0x0B90 - 0x0B90)
-class UPrimalItemResource_Silicon_C : public UPrimalItemResourceGeneric_C
+class UPrimalItemResource_Silicon_C final : public UPrimalItemResourceGeneric_C
 {
 public:
 	static class UClass* StaticClass()

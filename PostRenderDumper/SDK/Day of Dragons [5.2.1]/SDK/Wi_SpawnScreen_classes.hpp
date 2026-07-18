@@ -43,6 +43,7 @@ public:
 	void BndEvt__Wi_SpawnScreen_Blitz_K2Node_ComponentBoundEvent_6_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__Wi_SpawnScreen_BW_K2Node_ComponentBoundEvent_7_OnButtonClickedEvent__DelegateSignature();
 	void BndEvt__Wi_SpawnScreen_Respawn_K2Node_ComponentBoundEvent_8_OnButtonClickedEvent__DelegateSignature();
+	void BndEvt__Wi_SpawnScreen_SC_K2Node_ComponentBoundEvent_9_OnButtonClickedEvent__DelegateSignature();
 	void Construct();
 	void Destruct();
 	void ExecuteUbergraph_Wi_SpawnScreen(int32 EntryPoint);

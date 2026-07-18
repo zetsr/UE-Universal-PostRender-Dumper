@@ -13,8 +13,8 @@
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "AnimGraphRuntime_structs.hpp"
-#include "SMPA_Biolumin_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
+#include "SMPA_Biolumin_structs.hpp"
 
 
 SDK_NAMESPACE_START

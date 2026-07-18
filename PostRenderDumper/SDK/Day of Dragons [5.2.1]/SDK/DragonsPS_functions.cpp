@@ -1215,6 +1215,20 @@ void ADragonsPS_C::ServerBeginPlay()
 }
 
 
+// Function DragonsPS.DragonsPS_C.ServerCheckActualDev
+// (BlueprintCallable, BlueprintEvent)
+
+void ADragonsPS_C::ServerCheckActualDev()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DragonsPS_C", "ServerCheckActualDev");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function DragonsPS.DragonsPS_C.ServerCheckPing
 // (BlueprintCallable, BlueprintEvent)
 

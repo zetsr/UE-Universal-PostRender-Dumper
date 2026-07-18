@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "Enum_PlayerCharacter_structs.hpp"
+#include "Enum_GeneticGrades_structs.hpp"
 #include "Enum_TempTolerance_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Enum_Species_structs.hpp"
-#include "Enum_GeneticGrades_structs.hpp"
 #include "Enum_TemperatureUI_structs.hpp"
+#include "Enum_Species_structs.hpp"
 #include "Enum_CreatureLevels_structs.hpp"
+#include "Enum_PlayerCharacter_structs.hpp"
 #include "Enum_CrystalColor_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
 #include "Enum_StatMutations_structs.hpp"

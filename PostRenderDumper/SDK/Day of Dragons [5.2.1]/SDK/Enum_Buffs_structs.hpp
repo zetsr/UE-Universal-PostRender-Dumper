@@ -14,7 +14,7 @@
 SDK_NAMESPACE_START
 
 // UserDefinedEnum Enum_Buffs.Enum_Buffs
-// NumValues: 0x0015
+// NumValues: 0x0020
 enum class Enum_Buffs : uint8
 {
 	NewEnumerator0                           = 0,
@@ -29,15 +29,26 @@ enum class Enum_Buffs : uint8
 	NewEnumerator16                          = 9,
 	NewEnumerator17                          = 10,
 	NewEnumerator18                          = 11,
-	NewEnumerator7                           = 12,
-	NewEnumerator8                           = 13,
-	NewEnumerator9                           = 14,
-	NewEnumerator10                          = 15,
-	NewEnumerator12                          = 16,
-	NewEnumerator11                          = 17,
-	NewEnumerator13                          = 18,
-	NewEnumerator19                          = 19,
-	Enum_MAX                                 = 20,
+	NewEnumerator19                          = 12,
+	NewEnumerator7                           = 13,
+	NewEnumerator8                           = 14,
+	NewEnumerator9                           = 15,
+	NewEnumerator10                          = 16,
+	NewEnumerator12                          = 17,
+	NewEnumerator11                          = 18,
+	NewEnumerator21                          = 19,
+	NewEnumerator13                          = 20,
+	NewEnumerator20                          = 21,
+	NewEnumerator22                          = 22,
+	NewEnumerator23                          = 23,
+	NewEnumerator24                          = 24,
+	NewEnumerator25                          = 25,
+	NewEnumerator26                          = 26,
+	NewEnumerator27                          = 27,
+	NewEnumerator28                          = 28,
+	NewEnumerator29                          = 29,
+	NewEnumerator30                          = 30,
+	Enum_MAX                                 = 31,
 };
 
 SDK_NAMESPACE_END

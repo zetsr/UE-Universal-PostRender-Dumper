@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "Anim_ShadowScale_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "DragonIKPlugin_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 #include "Enum_MontageBlendTypes_structs.hpp"
 #include "Enum_AnimMotionStates_structs.hpp"
-#include "Anim_ShadowScale_structs.hpp"
-#include "AnimGraphRuntime_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Enum_ServerType_structs.hpp"
@@ -299,6 +299,7 @@ public:
 	double                                        JuvenileAlpha;                                     // 0x68E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        AdultAlpha;                                        // 0x68F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ShouldBlockAimOffset;                              // 0x68F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsBraking;                                         // 0x68F9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AnimGraph(struct FPoseLink* AnimGraph_0);

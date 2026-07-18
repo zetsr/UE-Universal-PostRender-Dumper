@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "AdvancedSessions_structs.hpp"
 #include "UDS_Weather_Display_Names_structs.hpp"
 #include "Enum_SteamDLCs_structs.hpp"
+#include "AdvancedSessions_structs.hpp"
 #include "FMODStudio_structs.hpp"
 
 
@@ -81,7 +81,7 @@ public:
 DUMPER7_ASSERTS_GameObj_ClientSA_C_CheckForIllegalPlayerConfigOverrides;
 
 // Function GameObj_ClientSA.GameObj_ClientSA_C.ExecuteUbergraph_GameObj_ClientSA
-// 0x0120 (0x0120 - 0x0000)
+// 0x0158 (0x0158 - 0x0000)
 struct GameObj_ClientSA_C_ExecuteUbergraph_GameObj_ClientSA final
 {
 public:
@@ -96,7 +96,10 @@ public:
 	bool                                          CallFunc_Contains_ReturnValue_1;                   // 0x0041(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Contains_ReturnValue_2;                   // 0x0042(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Contains_ReturnValue_3;                   // 0x0043(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          CallFunc_Contains_ReturnValue_4;                   // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Contains_ReturnValue_5;                   // 0x0045(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Contains_ReturnValue_6;                   // 0x0046(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_47[0x1];                                       // 0x0047(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_BoolKey_ReturnValue;                      // 0x0048(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_BoolKey_ReturnValue_1;                    // 0x0058(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SCL_Callable_SetSafeBoolWithKey_ReturnValue; // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -118,11 +121,18 @@ public:
 	uint8                                         Pad_F1[0x7];                                       // 0x00F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UVaRestRequestJSON*                     K2Node_CustomEvent_Request;                        // 0x00F8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_GetResponseContentAsString_ReturnValue_1; // 0x0100(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	struct FFMODEventInstance                     CallFunc_PlayEvent2D_ReturnValue;                  // 0x0110(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EventInstanceIsValid_ReturnValue;         // 0x0118(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EventInstanceIsValid_ReturnValue_1;       // 0x0119(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_WithEditor_ReturnValue;                   // 0x011A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_CheckForIllegalPlayerConfigOverrides_DetectedIllegalOverrides; // 0x011B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_BoolKey_ReturnValue_4;                    // 0x0110(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_BoolKey_ReturnValue_5;                    // 0x0120(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_BoolKey_ReturnValue_6;                    // 0x0130(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SCL_Callable_SetSafeBoolWithKey_ReturnValue_4; // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SCL_Callable_SetSafeBoolWithKey_ReturnValue_5; // 0x0141(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SCL_Callable_SetSafeBoolWithKey_ReturnValue_6; // 0x0142(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_143[0x5];                                      // 0x0143(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FFMODEventInstance                     CallFunc_PlayEvent2D_ReturnValue;                  // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EventInstanceIsValid_ReturnValue;         // 0x0150(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EventInstanceIsValid_ReturnValue_1;       // 0x0151(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_WithEditor_ReturnValue;                   // 0x0152(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_CheckForIllegalPlayerConfigOverrides_DetectedIllegalOverrides; // 0x0153(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_GameObj_ClientSA_C_ExecuteUbergraph_GameObj_ClientSA;
 
@@ -163,6 +173,9 @@ public:
 	bool                                          CallFunc_SCL_Callable_GetSafeBoolWithKey_ReturnValue_1; // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SCL_Callable_GetSafeBoolWithKey_ReturnValue_2; // 0x001A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SCL_Callable_GetSafeBoolWithKey_ReturnValue_3; // 0x001B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SCL_Callable_GetSafeBoolWithKey_ReturnValue_4; // 0x001C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SCL_Callable_GetSafeBoolWithKey_ReturnValue_5; // 0x001D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SCL_Callable_GetSafeBoolWithKey_ReturnValue_6; // 0x001E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_GameObj_ClientSA_C_HasDAC;
 

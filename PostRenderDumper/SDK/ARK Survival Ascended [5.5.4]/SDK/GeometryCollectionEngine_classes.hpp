@@ -132,7 +132,7 @@ DUMPER7_ASSERTS_UGeometryCollectionISMPoolSubSystem;
 
 // Class GeometryCollectionEngine.PrimalDestructibleActor
 // 0x0010 (0x0498 - 0x0488)
-class APrimalDestructibleActor : public AActor
+class APrimalDestructibleActor final : public AActor
 {
 public:
 	class UGeometryCollectionComponent*           GeoCollectionComponent;                            // 0x0488(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)

@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "Enum_GrowthStage_structs.hpp"
-#include "Enum_Family_structs.hpp"
-#include "Enum_Elements_structs.hpp"
 #include "Enum_Diet_structs.hpp"
+#include "Enum_Family_structs.hpp"
 #include "Enum_CreatureLevels_structs.hpp"
-#include "Enum_Species_structs.hpp"
-#include "Enum_MapRegion_structs.hpp"
+#include "Enum_GrowthStage_structs.hpp"
 #include "Enum_Kinds_structs.hpp"
+#include "Enum_MapRegion_structs.hpp"
+#include "Enum_Species_structs.hpp"
+#include "Enum_Elements_structs.hpp"
 #include "Enum_TempTolerance_structs.hpp"
 #include "Engine_classes.hpp"
 #include "Enum_Mitigations_structs.hpp"
@@ -27,7 +27,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PDA_DragonData.PDA_DragonData_C
-// 0x0238 (0x0268 - 0x0030)
+// 0x0240 (0x0270 - 0x0030)
 class UPDA_DragonData_C final : public UPrimaryDataAsset
 {
 public:
@@ -152,6 +152,7 @@ public:
 	bool                                          CanRegurgitateFood;                                // 0x0258(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_259[0x7];                                      // 0x0259(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAnimMontage*                           PukeMontage;                                       // 0x0260(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UAnimMontage*                           EatUnderwaterMontage;                              // 0x0268(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void Get_DataForStatCard(Enum_Family* Family_0, Enum_Elements* Element_0, class FText* MaturityRate, class FText* Class_0, class FText* Mass, Enum_Diet* Diet_0, class FText* Elder, class FText* Flight, class FText* sprint, class FText* Fertile);

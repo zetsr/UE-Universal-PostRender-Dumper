@@ -36,4 +36,24 @@ bool UWi_Menu_Settings_Audio_C::GetbIsEnabled_0()
 }
 
 
+// Function Wi_Menu_Settings_Audio.Wi_Menu_Settings_Audio_C.GetIsSFX_Enabled
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UWi_Menu_Settings_Audio_C::GetIsSFX_Enabled()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Wi_Menu_Settings_Audio_C", "GetIsSFX_Enabled");
+
+	Params::Wi_Menu_Settings_Audio_C_GetIsSFX_Enabled Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 SDK_NAMESPACE_END

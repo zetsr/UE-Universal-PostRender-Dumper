@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "EnumQuest__QuestLineTracker_structs.hpp"
-#include "Struct_GeodeCompass_structs.hpp"
-#include "Enum_ChatChannel_structs.hpp"
+#include "Enum_ServerType_structs.hpp"
 #include "Struct_ByteDateTime_structs.hpp"
+#include "Struct_ChatQueue_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Enum_ServerType_structs.hpp"
-#include "Struct_ChatQueue_structs.hpp"
+#include "Struct_GeodeCompass_structs.hpp"
+#include "EnumQuest__QuestLineTracker_structs.hpp"
+#include "Enum_ChatChannel_structs.hpp"
 #include "Enum_TimeOfDay_structs.hpp"
 
 
@@ -58,7 +58,7 @@ public:
 	bool                                          IsRoleplay;                                        // 0x0390(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_391[0x7];                                      // 0x0391(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FStruct_GeodeCompass>           GeodeTracker;                                      // 0x0398(0x0010)(Edit, BlueprintVisible, Net, DisableEditOnInstance)
-	TArray<EnumQuest__QuestLineTracker>           AvailableQuestLines;                               // 0x03A8(0x0010)(Edit, BlueprintVisible, Net, DisableEditOnInstance)
+	TArray<EnumQuest__QuestLineTracker>           AvailableQuestlines;                               // 0x03A8(0x0010)(Edit, BlueprintVisible, Net, DisableEditOnInstance)
 
 public:
 	void AbortShutdownSequence();

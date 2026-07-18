@@ -28,10 +28,10 @@ public:
 	class UImage*                                 IMG_BackgroundFront;                               // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ApplyThemeSettingsToAll();
-	void ExecuteUbergraph_UI_CFCore_Background(int32 EntryPoint);
-	void FadeTowards(EUMGSequencePlayMode PlayMode, double PlaybackSpeed);
 	void PreConstruct(bool IsDesignTime);
+	void FadeTowards(EUMGSequencePlayMode PlayMode, double PlaybackSpeed);
+	void ExecuteUbergraph_UI_CFCore_Background(int32 EntryPoint);
+	void ApplyThemeSettingsToAll();
 
 public:
 	static class UClass* StaticClass()

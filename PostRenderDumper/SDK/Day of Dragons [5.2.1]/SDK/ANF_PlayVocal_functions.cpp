@@ -39,9 +39,10 @@ class FString UANF_PlayVocal_C::GetNotifyName() const
 // Function ANF_PlayVocal.ANF_PlayVocal_C.GetVocals_AcidSpitter
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
+// bool                                    IsSwimming                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UFMODEvent**                      SoundEvent                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UANF_PlayVocal_C::GetVocals_AcidSpitter(class UFMODEvent** SoundEvent) const
+void UANF_PlayVocal_C::GetVocals_AcidSpitter(bool IsSwimming, class UFMODEvent** SoundEvent) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -49,6 +50,8 @@ void UANF_PlayVocal_C::GetVocals_AcidSpitter(class UFMODEvent** SoundEvent) cons
 		Func = Class->GetFunction("ANF_PlayVocal_C", "GetVocals_AcidSpitter");
 
 	Params::ANF_PlayVocal_C_GetVocals_AcidSpitter Parms{};
+
+	Parms.IsSwimming = IsSwimming;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -215,9 +218,11 @@ void UANF_PlayVocal_C::GetVocals_ShadowScale(class UFMODEvent** SoundEvent) cons
 // Enum_Species                            Species                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8                                   Age_0                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    moving_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Swimming                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsUnderWater                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UFMODEvent**                      SoundEvent                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UANF_PlayVocal_C::GetVocalSoundEvent(Enum_Species Species, uint8 Age_0, bool moving_0, class UFMODEvent** SoundEvent) const
+void UANF_PlayVocal_C::GetVocalSoundEvent(Enum_Species Species, uint8 Age_0, bool moving_0, bool Swimming, bool IsUnderWater, class UFMODEvent** SoundEvent) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -229,6 +234,8 @@ void UANF_PlayVocal_C::GetVocalSoundEvent(Enum_Species Species, uint8 Age_0, boo
 	Parms.Species = Species;
 	Parms.Age_0 = Age_0;
 	Parms.moving_0 = moving_0;
+	Parms.Swimming = Swimming;
+	Parms.IsUnderWater = IsUnderWater;
 
 	UObject::ProcessEvent(Func, &Parms);
 

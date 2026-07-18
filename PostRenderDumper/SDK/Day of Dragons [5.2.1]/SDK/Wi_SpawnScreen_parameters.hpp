@@ -15,7 +15,7 @@ SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
 // Function Wi_SpawnScreen.Wi_SpawnScreen_C.ExecuteUbergraph_Wi_SpawnScreen
-// 0x00A8 (0x00A8 - 0x0000)
+// 0x00B8 (0x00B8 - 0x0000)
 struct Wi_SpawnScreen_C_ExecuteUbergraph_Wi_SpawnScreen final
 {
 public:
@@ -48,6 +48,9 @@ public:
 	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ADragonsPC_C*                           CallFunc_Get_Dragons_Player_Controller_Pure_DragonsPlayerController_9; // 0x0098(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_RandomBool_ReturnValue_6;                 // 0x00A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A1[0x7];                                       // 0x00A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ADragonsPC_C*                           CallFunc_Get_Dragons_Player_Controller_Pure_DragonsPlayerController_10; // 0x00A8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_RandomBool_ReturnValue_7;                 // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Wi_SpawnScreen_C_ExecuteUbergraph_Wi_SpawnScreen;
 

@@ -14,23 +14,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function Char_Wyvern_SingeCrest.Char_Wyvern_SingeCrest_C.ExecuteUbergraph_Char_Wyvern_SingeCrest
-// 0x0004 (0x0004 - 0x0000)
-struct Char_Wyvern_SingeCrest_C_ExecuteUbergraph_Char_Wyvern_SingeCrest final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Char_Wyvern_SingeCrest_C_ExecuteUbergraph_Char_Wyvern_SingeCrest;
-
 // Function Char_Wyvern_SingeCrest.Char_Wyvern_SingeCrest_C.GetSpecialSkinIndexes
-// 0x0003 (0x0003 - 0x0000)
+// 0x0004 (0x0004 - 0x0000)
 struct Char_Wyvern_SingeCrest_C_GetSpecialSkinIndexes final
 {
 public:
 	uint8                                         Birthright;                                        // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         InfusedCrimson;                                    // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Albino;                                            // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Brindle;                                           // 0x0003(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Char_Wyvern_SingeCrest_C_GetSpecialSkinIndexes;
 

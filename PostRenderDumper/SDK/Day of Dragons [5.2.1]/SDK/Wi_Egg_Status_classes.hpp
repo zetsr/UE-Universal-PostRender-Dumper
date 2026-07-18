@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Enum_EggWidgetStatus_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Enum_EggGender_structs.hpp"
+#include "Enum_EggWidgetStatus_structs.hpp"
+#include "Enum_Elements_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "Enum_Elements_structs.hpp"
-#include "Enum_EggGender_structs.hpp"
 
 
 SDK_NAMESPACE_START

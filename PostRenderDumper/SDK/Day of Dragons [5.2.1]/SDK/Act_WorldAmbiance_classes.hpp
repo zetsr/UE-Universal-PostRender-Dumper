@@ -13,9 +13,9 @@
 #include "Enum_MapRegion_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "Enum_TimeOfDay_structs.hpp"
 #include "UDS_Weather_Display_Names_structs.hpp"
 #include "Enum_TemperatureUI_structs.hpp"
-#include "Enum_TimeOfDay_structs.hpp"
 
 
 SDK_NAMESPACE_START

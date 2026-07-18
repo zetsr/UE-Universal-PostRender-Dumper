@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Enum_Diet_structs.hpp"
-#include "Enum_Elements_structs.hpp"
-#include "Enum_CreatureLevels_structs.hpp"
-#include "Enum_GrowthStage_structs.hpp"
-#include "Enum_Family_structs.hpp"
 #include "Enum_Mitigations_structs.hpp"
+#include "Enum_GrowthStage_structs.hpp"
+#include "Enum_CreatureLevels_structs.hpp"
+#include "Enum_Diet_structs.hpp"
+#include "Enum_Family_structs.hpp"
+#include "Enum_Elements_structs.hpp"
 #include "Enum_Vitals_structs.hpp"
 
 

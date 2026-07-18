@@ -11,15 +11,15 @@
 #include "Basic.hpp"
 
 #include "UMG_structs.hpp"
-#include "Enum_Unlockables_structs.hpp"
-#include "Struct_CharScreenInfo_structs.hpp"
 #include "Enum_SpawnButtonLabels_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Struct_SkinData_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Enum_Unlockables_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "Enum_PlayerCharacter_structs.hpp"
 #include "Enum_Gender_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "Enum_Kinds_structs.hpp"
+#include "Struct_CharScreenInfo_structs.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -117,10 +117,10 @@ public:
 	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x00D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x00D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Variable_2;                               // 0x00DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC;         // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC_1;       // 0x00E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_GetIconicSkinIndex_IconicSkinIndex;       // 0x00E2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_E3[0x1];                                       // 0x00E3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          CallFunc_ShippingBuild_ReturnValue;                // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC;         // 0x00E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC_1;       // 0x00E2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_GetIconicSkinIndex_IconicSkinIndex;       // 0x00E3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x00E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x00E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00EC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -250,33 +250,33 @@ public:
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_141[0x7];                                      // 0x0141(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0148(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FText                                   Temp_text_Variable;                                // 0x0158(0x0018)()
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0170(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0180(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0190(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x01A0(0x0018)()
-	Enum_PlayerCharacter                          CallFunc_SetSpeciesFromStruct_CharacterSelected_9; // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1B9[0x7];                                      // 0x01B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   CallFunc_MakeLiteralText_ReturnValue;              // 0x01C0(0x0018)()
-	bool                                          CallFunc_Set_SpawnTextLabel_IsRespawnable_9;       // 0x01D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1D9[0x7];                                      // 0x01D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   Temp_text_Variable_1;                              // 0x01E0(0x0018)()
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_2;        // 0x01F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_3;        // 0x01F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_4;        // 0x01FA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x01FB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_5;        // 0x01FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanOR_ReturnValue_1;                  // 0x01FD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanOR_ReturnValue_2;                  // 0x01FE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_PlayerCharacter                          CallFunc_SetSpeciesFromStruct_CharacterSelected_10; // 0x01FF(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Set_SpawnTextLabel_IsRespawnable_10;      // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_WithEditor_ReturnValue_1;                 // 0x0201(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC;         // 0x0202(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC_1;       // 0x0203(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC_2;       // 0x0204(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC_3;       // 0x0205(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC_4;       // 0x0206(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0207(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0158(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0168(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0178(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0188(0x0018)()
+	Enum_PlayerCharacter                          CallFunc_SetSpeciesFromStruct_CharacterSelected_9; // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1A1[0x7];                                      // 0x01A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_MakeLiteralText_ReturnValue;              // 0x01A8(0x0018)()
+	bool                                          CallFunc_Set_SpawnTextLabel_IsRespawnable_9;       // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C1[0x7];                                      // 0x01C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   Temp_text_Variable;                                // 0x01C8(0x0018)()
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_2;        // 0x01E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_3;        // 0x01E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_4;        // 0x01E2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x01E3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_5;        // 0x01E4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue_1;                  // 0x01E5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue_2;                  // 0x01E6(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_PlayerCharacter                          CallFunc_SetSpeciesFromStruct_CharacterSelected_10; // 0x01E7(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Set_SpawnTextLabel_IsRespawnable_10;      // 0x01E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_WithEditor_ReturnValue_1;                 // 0x01E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC;         // 0x01EA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC_1;       // 0x01EB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC_2;       // 0x01EC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC_3;       // 0x01ED(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Check_Steam_DLC_Ownership_HasDLC_4;       // 0x01EE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x01EF(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   Temp_text_Variable_1;                              // 0x01F0(0x0018)()
 	class FText                                   Temp_text_Variable_2;                              // 0x0208(0x0018)()
 	class FText                                   K2Node_Select_Default_4;                           // 0x0220(0x0018)()
 	bool                                          CallFunc_Set_SpawnTextLabel_IsRespawnable_11;      // 0x0238(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -641,6 +641,26 @@ public:
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Wi_CharacterSelect_C_IncrementSpeciesBtn;
+
+// Function Wi_CharacterSelect.Wi_CharacterSelect_C.MuteSFX
+// 0x0040 (0x0040 - 0x0000)
+struct Wi_CharacterSelect_C_MuteSFX final
+{
+public:
+	bool                                          Unmute;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDragonsGI_C*                           CallFunc_Get_Dragons_Game_Instance_Pure_DragonsGameInstance; // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue;              // 0x0014(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetFloatCVar_ReturnValue;                 // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_SelectFloat_ReturnValue;                  // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_FClamp_ReturnValue;                       // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_SelectFloat_A_ImplicitCast;               // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SetSoundMixClassOverride_Volume_ImplicitCast; // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BusSetVolume_Volume_ImplicitCast;         // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Wi_CharacterSelect_C_MuteSFX;
 
 // Function Wi_CharacterSelect.Wi_CharacterSelect_C.Set_SpawnTextLabel
 // 0x00F0 (0x00F0 - 0x0000)

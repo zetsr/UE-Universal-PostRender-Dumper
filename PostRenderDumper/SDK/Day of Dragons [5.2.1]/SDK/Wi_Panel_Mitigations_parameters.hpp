@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "Enum_Mitigations_structs.hpp"
-#include "Enum_GeneticGrades_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Enum_GeneticGrades_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -62,7 +62,7 @@ public:
 DUMPER7_ASSERTS_Wi_Panel_Mitigations_C_Get_BG_Background;
 
 // Function Wi_Panel_Mitigations.Wi_Panel_Mitigations_C.GetMitigationPercent
-// 0x0028 (0x0028 - 0x0000)
+// 0x0080 (0x0080 - 0x0000)
 struct Wi_Panel_Mitigations_C_GetMitigationPercent final
 {
 public:
@@ -70,10 +70,22 @@ public:
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Percent;                                           // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	Enum_Mitigations                              Temp_byte_Variable;                                // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	Enum_GeneticGrades                            K2Node_Select_Default;                             // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_Mitigations                              Temp_byte_Variable_1;                              // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_GetStatModifierMultiplier_Multiplier;     // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_GetMitigationModifiedPercentage_ModifiedPercent; // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetBonusMitigationsPercent_BonusFireMitigation; // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetBonusMitigationsPercent_BonusFrostMitigation; // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetBonusMitigationsPercent_BonusPlasmaMitigation; // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetBonusMitigationsPercent_BonusLightningMitigation; // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetBonusMitigationsPercent_BonusAcidMitigation; // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetBonusMitigationsPercent_BonusVenomMitigation; // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetBonusMitigationsPercent_BonusPierceMitigation; // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetBonusMitigationsPercent_BonusBluntMitigation; // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        K2Node_Select_Default;                             // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_GeneticGrades                            K2Node_Select_Default_1;                           // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_GetStatModifierMultiplier_Multiplier;     // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetMitigationModifiedPercentage_ModifiedPercent; // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Add_DoubleDouble_ReturnValue;             // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Wi_Panel_Mitigations_C_GetMitigationPercent;
 

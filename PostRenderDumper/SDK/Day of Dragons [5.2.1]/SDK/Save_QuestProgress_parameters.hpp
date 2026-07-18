@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EnumQuest__QuestLineTracker_structs.hpp"
 #include "StructQuest_Progress_structs.hpp"
+#include "EnumQuest__QuestLineTracker_structs.hpp"
 
 
 SDK_NAMESPACE_START

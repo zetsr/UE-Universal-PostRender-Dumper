@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "Enum_PlayerCharacter_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Enum_Unlockables_structs.hpp"
+#include "Struct_CharScreenInfo_structs.hpp"
+#include "Enum_PlayerCharacter_structs.hpp"
+#include "Enum_Kinds_structs.hpp"
+#include "Struct_StatRecessives_structs.hpp"
+#include "Enum_SpawnButtonLabels_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "Enum_SpawnButtonLabels_structs.hpp"
-#include "Struct_CharScreenInfo_structs.hpp"
-#include "Struct_StatRecessives_structs.hpp"
 #include "Enum_Gender_structs.hpp"
-#include "Enum_Kinds_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -207,6 +207,7 @@ public:
 	void IncrementSpeciesBtn();
 	void InitializeMenu();
 	void KickMe();
+	void MuteSFX(bool Unmute);
 	void ResetGender();
 	void ResetSkin();
 	void Set_SpawnTextLabel(bool CheckInputOnly, Enum_PlayerCharacter Input, bool* IsRespawnable);

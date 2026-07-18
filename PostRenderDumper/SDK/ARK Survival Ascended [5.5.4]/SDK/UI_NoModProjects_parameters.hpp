@@ -16,6 +16,25 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function UI_NoModProjects.UI_NoModProjects_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct UI_NoModProjects_C_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_UI_NoModProjects_C_PreConstruct;
+
+// Function UI_NoModProjects.UI_NoModProjects_C.GetRootCFWidget
+// 0x0010 (0x0010 - 0x0000)
+struct UI_NoModProjects_C_GetRootCFWidget final
+{
+public:
+	class UPanelWidget*                           RootPanelWidget;                                   // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_UI_NoModProjects_C_GetRootCFWidget;
+
 // Function UI_NoModProjects.UI_NoModProjects_C.ExecuteUbergraph_UI_NoModProjects
 // 0x0FD0 (0x0FD0 - 0x0000)
 struct UI_NoModProjects_C_ExecuteUbergraph_UI_NoModProjects final
@@ -30,25 +49,6 @@ public:
 	struct FEditableTextBoxStyle                  K2Node_MakeStruct_EditableTextBoxStyle;            // 0x0350(0x0C80)()
 };
 DUMPER7_ASSERTS_UI_NoModProjects_C_ExecuteUbergraph_UI_NoModProjects;
-
-// Function UI_NoModProjects.UI_NoModProjects_C.GetRootCFWidget
-// 0x0010 (0x0010 - 0x0000)
-struct UI_NoModProjects_C_GetRootCFWidget final
-{
-public:
-	class UPanelWidget*                           RootPanelWidget;                                   // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_UI_NoModProjects_C_GetRootCFWidget;
-
-// Function UI_NoModProjects.UI_NoModProjects_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct UI_NoModProjects_C_PreConstruct final
-{
-public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_UI_NoModProjects_C_PreConstruct;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

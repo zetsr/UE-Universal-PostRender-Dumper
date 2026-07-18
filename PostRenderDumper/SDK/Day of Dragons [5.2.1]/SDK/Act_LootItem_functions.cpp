@@ -16,17 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function Act_LootItem.Act_LootItem_C.CountdownLifespawn
-// (BlueprintCallable, BlueprintEvent)
+// Function Act_LootItem.Act_LootItem_C.CleanUpPearl
+// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AChar_Parent_Dragonkind_C*        Dragonkind                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void AAct_LootItem_C::CountdownLifespawn()
+void AAct_LootItem_C::CleanUpPearl(class AChar_Parent_Dragonkind_C* Dragonkind)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Act_LootItem_C", "CountdownLifespawn");
+		Func = Class->GetFunction("Act_LootItem_C", "CleanUpPearl");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::Act_LootItem_C_CleanUpPearl Parms{};
+
+	Parms.Dragonkind = Dragonkind;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -92,9 +98,10 @@ void AAct_LootItem_C::ExecuteUbergraph_Act_LootItem(int32 EntryPoint)
 // Enum_ItemRarity                         Rarity                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8                                   LesserByte                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8                                   GreaterByte                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsLegendary                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UTexture2D**                      DisplayImage                                           (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void AAct_LootItem_C::Get_Item_Image_Quality(class UTexture2D* DefaultImage, Enum_ItemGrantType Type, Enum_ItemRarity Rarity, uint8 LesserByte, uint8 GreaterByte, class UTexture2D** DisplayImage)
+void AAct_LootItem_C::Get_Item_Image_Quality(class UTexture2D* DefaultImage, Enum_ItemGrantType Type, Enum_ItemRarity Rarity, uint8 LesserByte, uint8 GreaterByte, bool IsLegendary, class UTexture2D** DisplayImage)
 {
 	static class UFunction* Func = nullptr;
 
@@ -108,6 +115,7 @@ void AAct_LootItem_C::Get_Item_Image_Quality(class UTexture2D* DefaultImage, Enu
 	Parms.Rarity = Rarity;
 	Parms.LesserByte = LesserByte;
 	Parms.GreaterByte = GreaterByte;
+	Parms.IsLegendary = IsLegendary;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -199,6 +207,20 @@ void AAct_LootItem_C::OnInteraction(class AActor* InteractingActor)
 }
 
 
+// Function Act_LootItem.Act_LootItem_C.OnRep_DisablePhysics
+// (BlueprintCallable, BlueprintEvent)
+
+void AAct_LootItem_C::OnRep_DisablePhysics()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Act_LootItem_C", "OnRep_DisablePhysics");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Act_LootItem.Act_LootItem_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
@@ -227,6 +249,40 @@ void AAct_LootItem_C::ReceiveDestroyed()
 }
 
 
+// Function Act_LootItem.Act_LootItem_C.ReceiveHit
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// class UPrimitiveComponent*              MyComp                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Other                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UPrimitiveComponent*              OtherComp                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// bool                                    bSelfMoved                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   HitLocation                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   HitNormal                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   NormalImpulse                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                Hit                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+
+void AAct_LootItem_C::ReceiveHit(class UPrimitiveComponent* MyComp, class AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, const struct FVector& HitLocation, const struct FVector& HitNormal, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Act_LootItem_C", "ReceiveHit");
+
+	Params::Act_LootItem_C_ReceiveHit Parms{};
+
+	Parms.MyComp = MyComp;
+	Parms.Other = Other;
+	Parms.OtherComp = OtherComp;
+	Parms.bSelfMoved = bSelfMoved;
+	Parms.HitLocation = std::move(HitLocation);
+	Parms.HitNormal = std::move(HitNormal);
+	Parms.NormalImpulse = std::move(NormalImpulse);
+	Parms.Hit = std::move(Hit);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Act_LootItem.Act_LootItem_C.ResetDefaultRotation
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -252,6 +308,50 @@ void AAct_LootItem_C::StopFlight()
 		Func = Class->GetFunction("Act_LootItem_C", "StopFlight");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Act_LootItem.Act_LootItem_C.TryApplyStatusEffect
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// Enum_StatusEffects                      EffectToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Enum_StatMutations                      StacksToApply                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AChar_Parent_Player_C*            AttackingPlayer                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void AAct_LootItem_C::TryApplyStatusEffect(Enum_StatusEffects EffectToApply, Enum_StatMutations StacksToApply, class AChar_Parent_Player_C* AttackingPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Act_LootItem_C", "TryApplyStatusEffect");
+
+	Params::Act_LootItem_C_TryApplyStatusEffect Parms{};
+
+	Parms.EffectToApply = EffectToApply;
+	Parms.StacksToApply = StacksToApply;
+	Parms.AttackingPlayer = AttackingPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Act_LootItem.Act_LootItem_C.TryDestroyComponent
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UActorComponent*                  Component                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void AAct_LootItem_C::TryDestroyComponent(class UActorComponent* Component)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Act_LootItem_C", "TryDestroyComponent");
+
+	Params::Act_LootItem_C_TryDestroyComponent Parms{};
+
+	Parms.Component = Component;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -324,6 +424,20 @@ void AAct_LootItem_C::TryPickup(class AChar_Parent_Player_C* Player)
 	Parms.Player = Player;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Act_LootItem.Act_LootItem_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void AAct_LootItem_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Act_LootItem_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

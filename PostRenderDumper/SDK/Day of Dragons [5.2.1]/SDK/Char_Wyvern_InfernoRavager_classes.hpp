@@ -11,70 +11,72 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "Struct_RecentTarget_structs.hpp"
-#include "Enum_EmotesDragon_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "InputCore_structs.hpp"
-#include "PhysicsCore_structs.hpp"
-#include "Char_Parent_Wyvern_classes.hpp"
-#include "Enum_AnimMotionStates_structs.hpp"
 #include "Enum_StatMutations_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Struct_RecentTarget_structs.hpp"
+#include "Enum_AnimMotionStates_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "Char_Parent_Wyvern_classes.hpp"
+#include "PhysicsCore_structs.hpp"
+#include "Enum_EmotesDragon_structs.hpp"
+#include "Enum_GrowthStage_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Char_Wyvern_InfernoRavager.Char_Wyvern_InfernoRavager_C
-// 0x0270 (0x1470 - 0x1200)
+// 0x0270 (0x15B0 - 0x1340)
 class AChar_Wyvern_InfernoRavager_C final : public AChar_Parent_Wyvern_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Wyvern_InfernoRavager_C;       // 0x1200(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USphereComponent*                       InfernoHeatOverlap;                                // 0x1208(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBoxComponent*                          WeaponBite;                                        // 0x1210(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      NS_FireBreath;                                     // 0x1218(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USphereComponent*                       InfernoOverlap;                                    // 0x1220(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UFMODAudioComponent*                    InfernoSFX;                                        // 0x1228(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      Inferno;                                           // 0x1230(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UFMODAudioComponent*                    FireBreathLoop;                                    // 0x1238(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   FlameCone;                                         // 0x1240(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UPhysicsFlight_C*                       PhysicsFlight;                                     // 0x1248(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         Timeline_1_Length_7B7AE6DA4ABFE473B37FD49E25878347; // 0x1250(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Timeline_1_Radius_7B7AE6DA4ABFE473B37FD49E25878347; // 0x1254(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Timeline_1__Direction_7B7AE6DA4ABFE473B37FD49E25878347; // 0x1258(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1259[0x7];                                     // 0x1259(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Timeline_1;                                        // 0x1260(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	float                                         Timeline_0_Fade_F451CAC1468122E6534452967D5634A1;  // 0x1268(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Timeline_0__Direction_F451CAC1468122E6534452967D5634A1; // 0x126C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_126D[0x3];                                     // 0x126D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Timeline_0;                                        // 0x1270(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	float                                         PoreFade_PoreGlow_887D5DCA44C1AB8BA6BF4985AE4FB96E; // 0x1278(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            PoreFade__Direction_887D5DCA44C1AB8BA6BF4985AE4FB96E; // 0x127C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_127D[0x3];                                     // 0x127D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     PoreFade;                                          // 0x1280(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	float                                         MembraneTimeline_Multiplier_F985DFFF4C825B25B28E4584748BB5A4; // 0x1288(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            MembraneTimeline__Direction_F985DFFF4C825B25B28E4584748BB5A4; // 0x128C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_128D[0x3];                                     // 0x128D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     MembraneTimeline;                                  // 0x1290(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	double                                        MembraneMorphMultiplier;                           // 0x1298(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        MembraneTime;                                      // 0x12A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TSet<class AActor*>                           FlameOverlapActors;                                // 0x12A8(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	bool                                          IsBreathing;                                       // 0x12F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12F9[0x7];                                     // 0x12F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   AttackKey;                                         // 0x1300(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	bool                                          FullBile;                                          // 0x1318(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1319[0x7];                                     // 0x1319(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                LookAtPoint;                                       // 0x1320(0x0018)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          UseLookAt;                                         // 0x1338(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsUsingInferno;                                    // 0x1339(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_133A[0x6];                                     // 0x133A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        NV_FadeFloat;                                      // 0x1340(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TSet<class AActor*>                           InfernoContactActors;                              // 0x1348(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	TArray<class AActor*>                         BiteActors;                                        // 0x1398(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	struct FStruct_RecentTarget                   RecentTarget;                                      // 0x13A8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          InfernoFired;                                      // 0x13C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_13C1[0x7];                                     // 0x13C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class ASpawn_DragonNest_C*>              As_Spawn_Dragon_Nest;                              // 0x13C8(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	TSet<class AChar_Parent_Player_C*>            PlayersHeatedUp;                                   // 0x1418(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Wyvern_InfernoRavager_C;       // 0x1338(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USphereComponent*                       InfernoHeatOverlap;                                // 0x1340(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          WeaponBite;                                        // 0x1348(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NS_FireBreath;                                     // 0x1350(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USphereComponent*                       InfernoOverlap;                                    // 0x1358(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UFMODAudioComponent*                    InfernoSFX;                                        // 0x1360(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      Inferno;                                           // 0x1368(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UFMODAudioComponent*                    FireBreathLoop;                                    // 0x1370(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   FlameCone;                                         // 0x1378(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPhysicsFlight_C*                       PhysicsFlight;                                     // 0x1380(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         Timeline_1_Length_7B7AE6DA4ABFE473B37FD49E25878347; // 0x1388(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Timeline_1_Radius_7B7AE6DA4ABFE473B37FD49E25878347; // 0x138C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Timeline_1__Direction_7B7AE6DA4ABFE473B37FD49E25878347; // 0x1390(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1391[0x7];                                     // 0x1391(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Timeline_1;                                        // 0x1398(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	float                                         Timeline_0_Fade_F451CAC1468122E6534452967D5634A1;  // 0x13A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Timeline_0__Direction_F451CAC1468122E6534452967D5634A1; // 0x13A4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_13A5[0x3];                                     // 0x13A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Timeline_0;                                        // 0x13A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	float                                         PoreFade_PoreGlow_887D5DCA44C1AB8BA6BF4985AE4FB96E; // 0x13B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            PoreFade__Direction_887D5DCA44C1AB8BA6BF4985AE4FB96E; // 0x13B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_13B5[0x3];                                     // 0x13B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     PoreFade;                                          // 0x13B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	float                                         MembraneTimeline_Multiplier_F985DFFF4C825B25B28E4584748BB5A4; // 0x13C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            MembraneTimeline__Direction_F985DFFF4C825B25B28E4584748BB5A4; // 0x13C4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_13C5[0x3];                                     // 0x13C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     MembraneTimeline;                                  // 0x13C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	double                                        MembraneMorphMultiplier;                           // 0x13D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        MembraneTime;                                      // 0x13D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TSet<class AActor*>                           FlameOverlapActors;                                // 0x13E0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	bool                                          IsBreathing;                                       // 0x1430(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1431[0x7];                                     // 0x1431(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKey                                   AttackKey;                                         // 0x1438(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          FullBile;                                          // 0x1450(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1451[0x7];                                     // 0x1451(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                LookAtPoint;                                       // 0x1458(0x0018)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          UseLookAt;                                         // 0x1470(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsUsingInferno;                                    // 0x1471(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1472[0x6];                                     // 0x1472(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        NV_FadeFloat;                                      // 0x1478(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TSet<class AActor*>                           InfernoContactActors;                              // 0x1480(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	TArray<class AActor*>                         BiteActors;                                        // 0x14D0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	struct FStruct_RecentTarget                   RecentTarget;                                      // 0x14E0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          InfernoFired;                                      // 0x14F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14F9[0x7];                                     // 0x14F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class ASpawn_DragonNest_C*>              As_Spawn_Dragon_Nest;                              // 0x1500(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	TSet<class AChar_Parent_Player_C*>            PlayersHeatedUp;                                   // 0x1550(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	bool                                          ServerIgnoreAttacks;                               // 0x15A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ActivateFlameCone();
@@ -109,14 +111,13 @@ public:
 	void GetCarryOffset(double* RotOffset);
 	void GetElementBileCost(uint8* BileCost);
 	void GetInfernoDamage(double* Damage);
-	void GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino);
+	void GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino, uint8* Brindle);
 	void IgniteAll();
 	void InfernoAbility(bool ShouldIgnite);
 	void InpActEvt_Attack_K2Node_InputActionEvent_1(const struct FKey& Key);
 	void InpActEvt_Attack_K2Node_InputActionEvent_2(const struct FKey& Key);
 	void InpActEvt_Special_K2Node_InputActionEvent_0(const struct FKey& Key);
 	void K2_OnMovementModeChanged(EMovementMode PrevMovementMode, EMovementMode NewMovementMode_0, uint8 PrevCustomMode, uint8 NewCustomMode);
-	void LocalPossessed();
 	void LocalTick(double DeltaSeconds);
 	void LocalUnpossessed();
 	void MembraneExpand();
@@ -126,6 +127,7 @@ public:
 	void NewChangeMotionState(Enum_AnimMotionStates MotionState_0);
 	void NotifyAllFireball(const struct FVector& TargetLocation, bool UseBone, class ACharacter* HitCharacter, class FName HitBone);
 	void NotifyServerFireball(const struct FVector& TargetLocation, bool HitBone, class ACharacter* HomingCharacter, class FName HomingBone);
+	void NotifyServerNotBreathing();
 	void OnBileExhaustion();
 	void OnBlendOut_1E4AF6A0476851B1E1CE2785EA277257(class FName NotifyName);
 	void OnBlendOut_3872EC4A43B43431915518831D19AEAC(class FName NotifyName);
@@ -185,6 +187,9 @@ public:
 	void PoreFade__FinishedFunc();
 	void PoreFade__UpdateFunc();
 	void QuenchFlame();
+	void QueueInfernoBurnTargets();
+	void RemoteBeginPlay();
+	void RemoteEndPlay();
 	void RemoveAllHeatOffsets();
 	void ReplicateLookAtPoint(const struct FVector& LookAtPoint_0);
 	void ReplicateUseLookAt(bool UseLookAt_0);

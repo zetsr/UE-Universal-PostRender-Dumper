@@ -16,6 +16,20 @@
 
 SDK_NAMESPACE_START
 
+// Function Char_Parent_Egg.Char_Parent_Egg_C.AFK_Check
+// (BlueprintCallable, BlueprintEvent)
+
+void AChar_Parent_Egg_C::AFK_Check()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Egg_C", "AFK_Check");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Char_Parent_Egg.Char_Parent_Egg_C.AnimateHatch
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 
@@ -250,6 +264,20 @@ void AChar_Parent_Egg_C::LocalPossessed()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("Char_Parent_Egg_C", "LocalPossessed");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Char_Parent_Egg.Char_Parent_Egg_C.LocalUnpossessed
+// (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
+
+void AChar_Parent_Egg_C::LocalUnpossessed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Parent_Egg_C", "LocalUnpossessed");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -16,9 +16,8 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Char_Parent_Drake.Char_Parent_Drake_C
-// 0x0000 (0x1200 - 0x1200)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) AChar_Parent_Drake_C : public AChar_Parent_Dragonkind_C
+// 0x0000 (0x1330 - 0x1330)
+class AChar_Parent_Drake_C : public AChar_Parent_Dragonkind_C
 {
 public:
 	static class UClass* StaticClass()
@@ -34,7 +33,6 @@ public:
 		return GetDefaultObjImpl<AChar_Parent_Drake_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_AChar_Parent_Drake_C;
 
 SDK_NAMESPACE_END

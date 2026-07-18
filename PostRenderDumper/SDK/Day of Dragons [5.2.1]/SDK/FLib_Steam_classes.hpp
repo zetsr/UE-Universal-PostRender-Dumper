@@ -33,6 +33,7 @@ public:
 	static void Get_DLC_ID_Blitz_Striker_Amphithere(class UObject* __WorldContext, int32* AppId);
 	static void Get_DLC_ID_Brindle_Skin(class UObject* __WorldContext, int32* AppId);
 	static void Get_DLC_ID_BWD_Emote_Pack(class UObject* __WorldContext, int32* AppId);
+	static void Get_DLC_ID_CallMePancake_Skin(class UObject* __WorldContext, int32* AppId);
 	static void Get_DLC_ID_Creator_Skin(class UObject* __WorldContext, int32* AppId);
 	static void Get_DLC_ID_Dark_Elemental_Skin(class UObject* __WorldContext, int32* AppId);
 	static void Get_DLC_ID_DHD_Emote_Pack(class UObject* __WorldContext, int32* AppId);
@@ -46,6 +47,7 @@ public:
 	static void Get_DLC_ID_IRW_Emote_Pack(class UObject* __WorldContext, int32* AppId);
 	static void Get_DLC_ID_Lifetime_Subscriber_Rewards_100(class UObject* __WorldContext, int32* AppId);
 	static void Get_DLC_ID_Lifetime_Subscriber_Rewards_200(class UObject* __WorldContext, int32* AppId);
+	static void Get_DLC_ID_Lusewing_Skin(class UObject* __WorldContext, int32* AppId);
 	static void Get_DLC_ID_Mimikor_Dragon(class UObject* __WorldContext, int32* AppId);
 	static void Get_DLC_ID_Original_Backer_Rewards(class UObject* __WorldContext, int32* AppId);
 	static void Get_DLC_ID_Red_Dragon_Skin(class UObject* __WorldContext, int32* AppId);

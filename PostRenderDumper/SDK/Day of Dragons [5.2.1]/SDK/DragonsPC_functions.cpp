@@ -967,15 +967,21 @@ void ADragonsPC_C::CreateDialogue(class UDialogue* InDialogue, class AActor* Que
 
 // Function DragonsPC.DragonsPC_C.CreateDragonkindInfoPanel
 // (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    DisplayMap                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ADragonsPC_C::CreateDragonkindInfoPanel()
+void ADragonsPC_C::CreateDragonkindInfoPanel(bool DisplayMap)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("DragonsPC_C", "CreateDragonkindInfoPanel");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::DragonsPC_C_CreateDragonkindInfoPanel Parms{};
+
+	Parms.DisplayMap = DisplayMap;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -2042,19 +2048,19 @@ void ADragonsPC_C::IncrementGroundFireEmitters()
 }
 
 
-// Function DragonsPC.DragonsPC_C.InpActEvt_ChannelNext_K2Node_InputActionEvent_2
+// Function DragonsPC.DragonsPC_C.InpActEvt_AFK_Action_K2Node_InputActionEvent_0
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void ADragonsPC_C::InpActEvt_ChannelNext_K2Node_InputActionEvent_2(const struct FKey& Key)
+void ADragonsPC_C::InpActEvt_AFK_Action_K2Node_InputActionEvent_0(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DragonsPC_C", "InpActEvt_ChannelNext_K2Node_InputActionEvent_2");
+		Func = Class->GetFunction("DragonsPC_C", "InpActEvt_AFK_Action_K2Node_InputActionEvent_0");
 
-	Params::DragonsPC_C_InpActEvt_ChannelNext_K2Node_InputActionEvent_2 Parms{};
+	Params::DragonsPC_C_InpActEvt_AFK_Action_K2Node_InputActionEvent_0 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -2062,19 +2068,59 @@ void ADragonsPC_C::InpActEvt_ChannelNext_K2Node_InputActionEvent_2(const struct 
 }
 
 
-// Function DragonsPC.DragonsPC_C.InpActEvt_ChannelPrev_K2Node_InputActionEvent_1
+// Function DragonsPC.DragonsPC_C.InpActEvt_AFK_Action_K2Node_InputActionEvent_1
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void ADragonsPC_C::InpActEvt_ChannelPrev_K2Node_InputActionEvent_1(const struct FKey& Key)
+void ADragonsPC_C::InpActEvt_AFK_Action_K2Node_InputActionEvent_1(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DragonsPC_C", "InpActEvt_ChannelPrev_K2Node_InputActionEvent_1");
+		Func = Class->GetFunction("DragonsPC_C", "InpActEvt_AFK_Action_K2Node_InputActionEvent_1");
 
-	Params::DragonsPC_C_InpActEvt_ChannelPrev_K2Node_InputActionEvent_1 Parms{};
+	Params::DragonsPC_C_InpActEvt_AFK_Action_K2Node_InputActionEvent_1 Parms{};
+
+	Parms.Key = std::move(Key);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function DragonsPC.DragonsPC_C.InpActEvt_ChannelNext_K2Node_InputActionEvent_4
+// (BlueprintEvent)
+// Parameters:
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+
+void ADragonsPC_C::InpActEvt_ChannelNext_K2Node_InputActionEvent_4(const struct FKey& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DragonsPC_C", "InpActEvt_ChannelNext_K2Node_InputActionEvent_4");
+
+	Params::DragonsPC_C_InpActEvt_ChannelNext_K2Node_InputActionEvent_4 Parms{};
+
+	Parms.Key = std::move(Key);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function DragonsPC.DragonsPC_C.InpActEvt_ChannelPrev_K2Node_InputActionEvent_3
+// (BlueprintEvent)
+// Parameters:
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+
+void ADragonsPC_C::InpActEvt_ChannelPrev_K2Node_InputActionEvent_3(const struct FKey& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DragonsPC_C", "InpActEvt_ChannelPrev_K2Node_InputActionEvent_3");
+
+	Params::DragonsPC_C_InpActEvt_ChannelPrev_K2Node_InputActionEvent_3 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -2162,19 +2208,19 @@ void ADragonsPC_C::InpActEvt_Gamepad_Special_Right_K2Node_InputKeyEvent_2(const 
 }
 
 
-// Function DragonsPC.DragonsPC_C.InpActEvt_Social_K2Node_InputActionEvent_0
+// Function DragonsPC.DragonsPC_C.InpActEvt_Social_K2Node_InputActionEvent_2
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void ADragonsPC_C::InpActEvt_Social_K2Node_InputActionEvent_0(const struct FKey& Key)
+void ADragonsPC_C::InpActEvt_Social_K2Node_InputActionEvent_2(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DragonsPC_C", "InpActEvt_Social_K2Node_InputActionEvent_0");
+		Func = Class->GetFunction("DragonsPC_C", "InpActEvt_Social_K2Node_InputActionEvent_2");
 
-	Params::DragonsPC_C_InpActEvt_Social_K2Node_InputActionEvent_0 Parms{};
+	Params::DragonsPC_C_InpActEvt_Social_K2Node_InputActionEvent_2 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -2182,19 +2228,19 @@ void ADragonsPC_C::InpActEvt_Social_K2Node_InputActionEvent_0(const struct FKey&
 }
 
 
-// Function DragonsPC.DragonsPC_C.InpActEvt_ToggleChat_K2Node_InputActionEvent_3
+// Function DragonsPC.DragonsPC_C.InpActEvt_ToggleChat_K2Node_InputActionEvent_5
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void ADragonsPC_C::InpActEvt_ToggleChat_K2Node_InputActionEvent_3(const struct FKey& Key)
+void ADragonsPC_C::InpActEvt_ToggleChat_K2Node_InputActionEvent_5(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DragonsPC_C", "InpActEvt_ToggleChat_K2Node_InputActionEvent_3");
+		Func = Class->GetFunction("DragonsPC_C", "InpActEvt_ToggleChat_K2Node_InputActionEvent_5");
 
-	Params::DragonsPC_C_InpActEvt_ToggleChat_K2Node_InputActionEvent_3 Parms{};
+	Params::DragonsPC_C_InpActEvt_ToggleChat_K2Node_InputActionEvent_5 Parms{};
 
 	Parms.Key = std::move(Key);
 
@@ -2202,21 +2248,41 @@ void ADragonsPC_C::InpActEvt_ToggleChat_K2Node_InputActionEvent_3(const struct F
 }
 
 
-// Function DragonsPC.DragonsPC_C.InpActEvt_ToggleHUD_K2Node_InputActionEvent_4
+// Function DragonsPC.DragonsPC_C.InpActEvt_ToggleHUD_K2Node_InputActionEvent_6
 // (BlueprintEvent)
 // Parameters:
 // const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void ADragonsPC_C::InpActEvt_ToggleHUD_K2Node_InputActionEvent_4(const struct FKey& Key)
+void ADragonsPC_C::InpActEvt_ToggleHUD_K2Node_InputActionEvent_6(const struct FKey& Key)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DragonsPC_C", "InpActEvt_ToggleHUD_K2Node_InputActionEvent_4");
+		Func = Class->GetFunction("DragonsPC_C", "InpActEvt_ToggleHUD_K2Node_InputActionEvent_6");
 
-	Params::DragonsPC_C_InpActEvt_ToggleHUD_K2Node_InputActionEvent_4 Parms{};
+	Params::DragonsPC_C_InpActEvt_ToggleHUD_K2Node_InputActionEvent_6 Parms{};
 
 	Parms.Key = std::move(Key);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function DragonsPC.DragonsPC_C.InpAxisEvt_AFK_Axis_K2Node_InputAxisEvent_0
+// (BlueprintEvent)
+// Parameters:
+// float                                   AxisValue                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ADragonsPC_C::InpAxisEvt_AFK_Axis_K2Node_InputAxisEvent_0(float AxisValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DragonsPC_C", "InpAxisEvt_AFK_Axis_K2Node_InputAxisEvent_0");
+
+	Params::DragonsPC_C_InpAxisEvt_AFK_Axis_K2Node_InputAxisEvent_0 Parms{};
+
+	Parms.AxisValue = AxisValue;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -4520,6 +4586,28 @@ void ADragonsPC_C::TryAddBroodUnlockProgress()
 		Func = Class->GetFunction("DragonsPC_C", "TryAddBroodUnlockProgress");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function DragonsPC.DragonsPC_C.TryLinkItemToChat
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FStruct_InventoryItemsReplicated&Item                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// Enum_ChatChannel                        Channel                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ADragonsPC_C::TryLinkItemToChat(const struct FStruct_InventoryItemsReplicated& Item, Enum_ChatChannel Channel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DragonsPC_C", "TryLinkItemToChat");
+
+	Params::DragonsPC_C_TryLinkItemToChat Parms{};
+
+	Parms.Item = std::move(Item);
+	Parms.Channel = Channel;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

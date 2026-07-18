@@ -31,7 +31,7 @@ public:
 
 public:
 	class FString GetNotifyName() const;
-	void GetVocals_AcidSpitter(class UFMODEvent** SoundEvent) const;
+	void GetVocals_AcidSpitter(bool IsSwimming, class UFMODEvent** SoundEvent) const;
 	void GetVocals_Biolumin(class UFMODEvent** SoundEvent) const;
 	void GetVocals_BlitzStriker(class UFMODEvent** SoundEvent) const;
 	void GetVocals_BroodWatcher(class UFMODEvent** SoundEvent) const;
@@ -39,7 +39,7 @@ public:
 	void GetVocals_InfernoRavager(class UFMODEvent** SoundEvent) const;
 	void GetVocals_Magma(class UFMODEvent** SoundEvent) const;
 	void GetVocals_ShadowScale(class UFMODEvent** SoundEvent) const;
-	void GetVocalSoundEvent(Enum_Species Species, uint8 Age_0, bool moving_0, class UFMODEvent** SoundEvent) const;
+	void GetVocalSoundEvent(Enum_Species Species, uint8 Age_0, bool moving_0, bool Swimming, bool IsUnderWater, class UFMODEvent** SoundEvent) const;
 	bool Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const;
 
 public:

@@ -33,10 +33,10 @@ public:
 	bool                                          FakeDisabled;                                      // 0x0C10(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
-	void Construct();
-	void ExecuteUbergraph_UI_CFCore_Button_ScreenshotNavigation(int32 EntryPoint);
 	void SimulateDisabled(bool Disabled);
+	void ExecuteUbergraph_UI_CFCore_Button_ScreenshotNavigation(int32 EntryPoint);
+	void Construct();
+	void BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
 
 public:
 	static class UClass* StaticClass()

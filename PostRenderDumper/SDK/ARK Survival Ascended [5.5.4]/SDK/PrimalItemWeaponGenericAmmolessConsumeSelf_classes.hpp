@@ -17,8 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemWeaponGenericAmmolessConsumeSelf.PrimalItemWeaponGenericAmmolessConsumeSelf_C
 // 0x0000 (0x0B90 - 0x0B90)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) UPrimalItemWeaponGenericAmmolessConsumeSelf_C : public UPrimalItemWeaponGenericNoStats_C
+class UPrimalItemWeaponGenericAmmolessConsumeSelf_C : public UPrimalItemWeaponGenericNoStats_C
 {
 public:
 	static class UClass* StaticClass()
@@ -34,7 +33,6 @@ public:
 		return GetDefaultObjImpl<UPrimalItemWeaponGenericAmmolessConsumeSelf_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_UPrimalItemWeaponGenericAmmolessConsumeSelf_C;
 
 SDK_NAMESPACE_END

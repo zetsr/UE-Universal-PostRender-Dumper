@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Enum_EmotesDragon_structs.hpp"
-#include "InputCore_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "Enum_StatMutations_structs.hpp"
-#include "Struct_SkinData_structs.hpp"
 #include "Enum_AnimMotionStates_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Struct_SkinData_structs.hpp"
+#include "Enum_StatMutations_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -506,13 +506,14 @@ public:
 DUMPER7_ASSERTS_Char_Dragon_Biolumin_C_GetElementBileCost;
 
 // Function Char_Dragon_Biolumin.Char_Dragon_Biolumin_C.GetSpecialSkinIndexes
-// 0x0003 (0x0003 - 0x0000)
+// 0x0004 (0x0004 - 0x0000)
 struct Char_Dragon_Biolumin_C_GetSpecialSkinIndexes final
 {
 public:
 	uint8                                         Birthright;                                        // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         InfusedCrimson;                                    // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Albino;                                            // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Brindle;                                           // 0x0003(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Char_Dragon_Biolumin_C_GetSpecialSkinIndexes;
 

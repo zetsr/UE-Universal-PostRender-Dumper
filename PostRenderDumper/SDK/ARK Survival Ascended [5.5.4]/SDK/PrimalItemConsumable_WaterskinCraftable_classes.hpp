@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemConsumable_WaterskinCraftable.PrimalItemConsumable_WaterskinCraftable_C
 // 0x0000 (0x0B90 - 0x0B90)
-class UPrimalItemConsumable_WaterskinCraftable_C : public UPrimalItemConsumableEatable_WaterContainer_C
+class UPrimalItemConsumable_WaterskinCraftable_C final : public UPrimalItemConsumableEatable_WaterContainer_C
 {
 public:
 	static class UClass* StaticClass()

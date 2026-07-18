@@ -40,11 +40,11 @@ public:
 	TMulticastInlineDelegate<void(int64 ModIDRequested)> OnModDeeplinkClicked;                       // 0x0808(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
-	void PreConstruct(bool IsDesignTime);
-	struct FLinearColor GetColorAndOpacity();
-	void ExecuteUbergraph_ASAUI_NewsCarousel(int32 EntryPoint);
-	void DoClickAction(const class FString& ActionKey, const class FString& ActionValue);
 	void Construct();
+	void DoClickAction(const class FString& ActionKey, const class FString& ActionValue);
+	void ExecuteUbergraph_ASAUI_NewsCarousel(int32 EntryPoint);
+	struct FLinearColor GetColorAndOpacity();
+	void PreConstruct(bool IsDesignTime);
 
 public:
 	static class UClass* StaticClass()

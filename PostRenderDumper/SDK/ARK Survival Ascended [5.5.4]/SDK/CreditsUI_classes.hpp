@@ -46,11 +46,11 @@ public:
 	class FString                                 CreditsMusic;                                      // 0x0888(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, TObjectPtr)
 
 public:
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void RemovedFromViewport();
-	void ExecuteUbergraph_CreditsUI(int32 EntryPoint);
-	void Construct();
 	void CloseButtonEvent();
+	void Construct();
+	void ExecuteUbergraph_CreditsUI(int32 EntryPoint);
+	void RemovedFromViewport();
+	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 
 public:
 	static class UClass* StaticClass()

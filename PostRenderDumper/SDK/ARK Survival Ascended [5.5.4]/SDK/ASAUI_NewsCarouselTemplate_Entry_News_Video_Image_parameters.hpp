@@ -17,86 +17,23 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.AllowAutoscrollNavFrom
-// 0x0008 (0x0008 - 0x0000)
-struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_AllowAutoscrollNavFrom final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsPlaying_ReturnValue;                    // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue_1;                // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue_2;                // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0007(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_AllowAutoscrollNavFrom;
-
-// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.BlueprintInit
+// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.OnSuccess_72594C78445BE3B711D3C9A5F43E4038
 // 0x0010 (0x0010 - 0x0000)
-struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_BlueprintInit final
+struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_OnSuccess_72594C78445BE3B711D3C9A5F43E4038 final
 {
 public:
-	class FString                                 RawExtraData;                                      // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CacheVideoName;                                    // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_BlueprintInit;
+DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_OnSuccess_72594C78445BE3B711D3C9A5F43E4038;
 
-// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.EntryDoSecondaryClickAction
-// 0x000C (0x000C - 0x0000)
-struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryDoSecondaryClickAction final
+// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.OnFail_72594C78445BE3B711D3C9A5F43E4038
+// 0x0010 (0x0010 - 0x0000)
+struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_OnFail_72594C78445BE3B711D3C9A5F43E4038 final
 {
 public:
-	class FName                                   SecondaryZoneClicked;                              // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bIsFromGamepad;                                    // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CacheVideoName;                                    // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryDoSecondaryClickAction;
-
-// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.EntryDoSecondaryHovered
-// 0x0008 (0x0008 - 0x0000)
-struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryDoSecondaryHovered final
-{
-public:
-	class FName                                   SecondaryZoneHovered;                              // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryDoSecondaryHovered;
-
-// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.EntryDoSecondaryUnhovered
-// 0x0008 (0x0008 - 0x0000)
-struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryDoSecondaryUnhovered final
-{
-public:
-	class FName                                   SecondaryZoneUnhovered;                            // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryDoSecondaryUnhovered;
-
-// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.EntryFocusEnd
-// 0x0001 (0x0001 - 0x0000)
-struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryFocusEnd final
-{
-public:
-	bool                                          bInstigatedByAutoRollover;                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryFocusEnd;
-
-// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.EntryFocusStart
-// 0x0001 (0x0001 - 0x0000)
-struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryFocusStart final
-{
-public:
-	bool                                          bInstigatedByAutoRollover;                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryFocusStart;
-
-// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.EntryFocusTick
-// 0x0008 (0x0008 - 0x0000)
-struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryFocusTick final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bIsHighlighted;                                    // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryFocusTick;
+DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_OnFail_72594C78445BE3B711D3C9A5F43E4038;
 
 // Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image
 // 0x0258 (0x0258 - 0x0000)
@@ -207,23 +144,86 @@ public:
 };
 DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image;
 
-// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.OnFail_72594C78445BE3B711D3C9A5F43E4038
-// 0x0010 (0x0010 - 0x0000)
-struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_OnFail_72594C78445BE3B711D3C9A5F43E4038 final
+// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.EntryFocusTick
+// 0x0008 (0x0008 - 0x0000)
+struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryFocusTick final
 {
 public:
-	class FString                                 CacheVideoName;                                    // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsHighlighted;                                    // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_OnFail_72594C78445BE3B711D3C9A5F43E4038;
+DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryFocusTick;
 
-// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.OnSuccess_72594C78445BE3B711D3C9A5F43E4038
-// 0x0010 (0x0010 - 0x0000)
-struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_OnSuccess_72594C78445BE3B711D3C9A5F43E4038 final
+// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.EntryFocusStart
+// 0x0001 (0x0001 - 0x0000)
+struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryFocusStart final
 {
 public:
-	class FString                                 CacheVideoName;                                    // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          bInstigatedByAutoRollover;                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_OnSuccess_72594C78445BE3B711D3C9A5F43E4038;
+DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryFocusStart;
+
+// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.EntryFocusEnd
+// 0x0001 (0x0001 - 0x0000)
+struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryFocusEnd final
+{
+public:
+	bool                                          bInstigatedByAutoRollover;                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryFocusEnd;
+
+// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.EntryDoSecondaryUnhovered
+// 0x0008 (0x0008 - 0x0000)
+struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryDoSecondaryUnhovered final
+{
+public:
+	class FName                                   SecondaryZoneUnhovered;                            // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryDoSecondaryUnhovered;
+
+// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.EntryDoSecondaryHovered
+// 0x0008 (0x0008 - 0x0000)
+struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryDoSecondaryHovered final
+{
+public:
+	class FName                                   SecondaryZoneHovered;                              // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryDoSecondaryHovered;
+
+// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.EntryDoSecondaryClickAction
+// 0x000C (0x000C - 0x0000)
+struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryDoSecondaryClickAction final
+{
+public:
+	class FName                                   SecondaryZoneClicked;                              // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsFromGamepad;                                    // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_EntryDoSecondaryClickAction;
+
+// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.BlueprintInit
+// 0x0010 (0x0010 - 0x0000)
+struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_BlueprintInit final
+{
+public:
+	class FString                                 RawExtraData;                                      // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_BlueprintInit;
+
+// Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.AllowAutoscrollNavFrom
+// 0x0008 (0x0008 - 0x0000)
+struct ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_AllowAutoscrollNavFrom final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsPlaying_ReturnValue;                    // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue_1;                // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue_2;                // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0007(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_AllowAutoscrollNavFrom;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

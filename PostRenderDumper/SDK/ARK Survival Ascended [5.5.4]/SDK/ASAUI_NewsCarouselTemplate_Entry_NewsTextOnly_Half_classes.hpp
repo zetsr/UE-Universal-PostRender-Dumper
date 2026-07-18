@@ -30,11 +30,11 @@ public:
 	class UClass*                                 SubEntryWidgetTemplate;                            // 0x03E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BlueprintInit(const class FString& RawExtraData);
-	void EntryFocusEnd(bool bInstigatedByAutoRollover);
-	void EntryFocusStart(bool bInstigatedByAutoRollover);
-	void EntryFocusTick(float DeltaTime, bool bIsHighlighted);
 	void ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_Half(int32 EntryPoint);
+	void EntryFocusTick(float DeltaTime, bool bIsHighlighted);
+	void EntryFocusStart(bool bInstigatedByAutoRollover);
+	void EntryFocusEnd(bool bInstigatedByAutoRollover);
+	void BlueprintInit(const class FString& RawExtraData);
 
 public:
 	static class UClass* StaticClass()

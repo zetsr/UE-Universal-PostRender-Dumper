@@ -1419,6 +1419,20 @@ void UDragonsGI_C::LogoutEAC()
 }
 
 
+// Function DragonsGI.DragonsGI_C.Maintain_CleanDuplicatedItemSaves
+// (BlueprintCallable, BlueprintEvent)
+
+void UDragonsGI_C::Maintain_CleanDuplicatedItemSaves()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DragonsGI_C", "Maintain_CleanDuplicatedItemSaves");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function DragonsGI.DragonsGI_C.OnEffectsQualityChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -2592,6 +2606,20 @@ void UDragonsGI_C::SaveSteamProfiles()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("DragonsGI_C", "SaveSteamProfiles");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function DragonsGI.DragonsGI_C.Server_RunMaintenance
+// (BlueprintCallable, BlueprintEvent)
+
+void UDragonsGI_C::Server_RunMaintenance()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DragonsGI_C", "Server_RunMaintenance");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

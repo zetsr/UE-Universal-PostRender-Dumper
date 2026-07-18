@@ -238,6 +238,20 @@ void AChar_Dragon_BroodWatcher_C::CalculateBroodCritChance(uint8 CritAttempts, u
 }
 
 
+// Function Char_Dragon_BroodWatcher.Char_Dragon_BroodWatcher_C.CheckHunger
+// (BlueprintCallable, BlueprintEvent)
+
+void AChar_Dragon_BroodWatcher_C::CheckHunger()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Dragon_BroodWatcher_C", "CheckHunger");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Char_Dragon_BroodWatcher.Char_Dragon_BroodWatcher_C.CheckValidEmotePerSpecies
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -707,8 +721,9 @@ void AChar_Dragon_BroodWatcher_C::GetPouchSaveDirectory(class FString* PouchSave
 // uint8*                                  Birthright                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8*                                  InfusedCrimson                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8*                                  Albino                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// uint8*                                  Brindle                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AChar_Dragon_BroodWatcher_C::GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino)
+void AChar_Dragon_BroodWatcher_C::GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino, uint8* Brindle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -727,6 +742,9 @@ void AChar_Dragon_BroodWatcher_C::GetSpecialSkinIndexes(uint8* Birthright, uint8
 
 	if (Albino != nullptr)
 		*Albino = Parms.Albino;
+
+	if (Brindle != nullptr)
+		*Brindle = Parms.Brindle;
 }
 
 
@@ -1417,6 +1435,26 @@ void AChar_Dragon_BroodWatcher_C::OnCompleted_DB2FD6C5454834C97C8757830A80F316(c
 	Params::Char_Dragon_BroodWatcher_C_OnCompleted_DB2FD6C5454834C97C8757830A80F316 Parms{};
 
 	Parms.NotifyName = NotifyName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Dragon_BroodWatcher.Char_Dragon_BroodWatcher_C.OnDragonPearlUpdated_Event
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Unequipped                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AChar_Dragon_BroodWatcher_C::OnDragonPearlUpdated_Event(bool Unequipped)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Dragon_BroodWatcher_C", "OnDragonPearlUpdated_Event");
+
+	Params::Char_Dragon_BroodWatcher_C_OnDragonPearlUpdated_Event Parms{};
+
+	Parms.Unequipped = Unequipped;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

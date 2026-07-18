@@ -27,8 +27,8 @@ public:
 	class UVerticalBox*                           VerBox_NoInstalledMods;                            // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ApplyThemeSettingsToAll();
 	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void ApplyThemeSettingsToAll();
 
 public:
 	static class UClass* StaticClass()

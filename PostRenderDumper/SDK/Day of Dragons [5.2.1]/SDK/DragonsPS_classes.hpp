@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "Enum_ChatChannel_structs.hpp"
-#include "Enum_MapRegion_structs.hpp"
-#include "Engine_structs.hpp"
-#include "Struct_InvitationSocial_structs.hpp"
-#include "Struct_ClanRegister_structs.hpp"
-#include "Enum_PlayerTitles_structs.hpp"
-#include "Struct_InvitationEgg_structs.hpp"
 #include "Dragons_classes.hpp"
+#include "Enum_MapRegion_structs.hpp"
+#include "Struct_InvitationEgg_structs.hpp"
+#include "Struct_InvitationSocial_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Enum_PlayerTitles_structs.hpp"
+#include "Struct_ClanRegister_structs.hpp"
+#include "Enum_ChatChannel_structs.hpp"
 #include "Enum_ServerType_structs.hpp"
 #include "Enum_KickReason_structs.hpp"
 
@@ -144,6 +144,7 @@ public:
 	void SendGroupChatData(const class FString& MessageData);
 	void SendGroupInvite(class ADragonsPS_C* DragonsPS);
 	void ServerBeginPlay();
+	void ServerCheckActualDev();
 	void ServerCheckPing();
 	void ServerKickPing(bool IsSevere);
 	void ServerSetDLCTitles(const class FString& Key, bool Firstborne, bool AncientBloodline);

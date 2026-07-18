@@ -12,16 +12,17 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Struct_FlightData_structs.hpp"
+#include "Enum_StatMutations_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Enum_GrowthStage_structs.hpp"
-#include "Enum_StatMutations_structs.hpp"
+#include "Struct_FlightData_structs.hpp"
+#include "Enum_Species_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PhysicsFlight.PhysicsFlight_C
-// 0x0168 (0x0208 - 0x00A0)
+// 0x0180 (0x0220 - 0x00A0)
 class UPhysicsFlight_C final : public UActorComponent
 {
 public:
@@ -32,7 +33,7 @@ public:
 	double                                        ForwardVelocity;                                   // 0x0118(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        CurrentPitchSpeed;                                 // 0x0120(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        ForwardMomentum;                                   // 0x0128(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ApplyAirBrake;                                     // 0x0130(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ApplyAirBrake;                                     // 0x0130(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
 	bool                                          ApplyBoost;                                        // 0x0131(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_132[0x6];                                      // 0x0132(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        BoostTarget;                                       // 0x0138(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -67,6 +68,10 @@ public:
 	bool                                          CanBeAutoLanded;                                   // 0x0201(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          QueuedBrakeIsPressed;                              // 0x0202(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          WantsHover;                                        // 0x0203(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        MaxFwdMomentum;                                    // 0x0208(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        SpeedCurveHold;                                    // 0x0210(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         FlightCountF;                                      // 0x0218(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AirBoostPressed(const struct FKey& Key);
@@ -96,6 +101,8 @@ public:
 	void CheckIfBoostPressed();
 	void CheckIfBrakePressed();
 	void Debug_PrintFlightData();
+	void DispatchLanded_Event();
+	void DispatchLanded_Event_Server();
 	void DoFly();
 	void ExecuteUbergraph_PhysicsFlight(int32 EntryPoint);
 	void Get_Acceleration(double* Acceleration);
@@ -117,6 +124,7 @@ public:
 	void OnInterrupted_FA266B134AEE6EB86AE10E96A6A1DE05(class FName NotifyName);
 	void OnNotifyBegin_FA266B134AEE6EB86AE10E96A6A1DE05(class FName NotifyName);
 	void OnNotifyEnd_FA266B134AEE6EB86AE10E96A6A1DE05(class FName NotifyName);
+	void OnRep_ApplyAirBrake();
 	void OnRep_ApplyBoost();
 	void OnRep_FlightData();
 	void OnRep_IsHovering();
@@ -126,9 +134,10 @@ public:
 	void ReceiveBeginPlay();
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ReceiveTick(float DeltaSeconds);
+	void ResetFlightToggle();
 	void ResetLocalFlightGates();
 	void ResetServerFlightGates();
-	void Server_SimulateFlight(bool ShouldFly, bool WantsHover_0);
+	void Server_SimulateFlight(bool ShouldFly, bool WantsHover_0, bool WasManualToggle);
 	void ServerApplyAirBrake(bool ApplyAirBrake_0);
 	void ServerJumpHover();
 	void ServerReplicateFlightData(const struct FStruct_FlightData& FlightDataStruct);

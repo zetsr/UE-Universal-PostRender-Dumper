@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "AnimGraphRuntime_structs.hpp"
+#include "Enum_YawDirection_structs.hpp"
 #include "DragonIKPlugin_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "SM_ThornbackCrawler_AnimBP_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Enum_YawDirection_structs.hpp"
 
 
 SDK_NAMESPACE_START

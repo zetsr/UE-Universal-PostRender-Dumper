@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Char_Egg_FlameStalker.Char_Egg_FlameStalker_C
-// 0x0000 (0x1220 - 0x1220)
+// 0x0000 (0x1360 - 0x1360)
 class AChar_Egg_FlameStalker_C final : public AChar_Parent_Egg_C
 {
 public:

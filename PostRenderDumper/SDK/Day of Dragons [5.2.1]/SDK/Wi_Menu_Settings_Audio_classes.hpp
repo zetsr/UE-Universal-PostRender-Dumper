@@ -16,15 +16,17 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass Wi_Menu_Settings_Audio.Wi_Menu_Settings_Audio_C
-// 0x0010 (0x02A0 - 0x0290)
+// 0x0018 (0x02A8 - 0x0290)
 class UWi_Menu_Settings_Audio_C final : public UWi_Parent_Menu_C
 {
 public:
-	class UWi_Menu_Slider_CVar_C*                 Wi_Menu_Slider_CVar_59;                            // 0x0290(0x0008)(ExportObject, ZeroConstructor, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWi_Menu_Slider_CVar_C*                 Wi_Menu_Slider_CVar_77;                            // 0x0298(0x0008)(ExportObject, ZeroConstructor, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWi_Menu_Slider_CVar_C*                 Wi_Menu_Slider_CVar;                               // 0x0290(0x0008)(ExportObject, ZeroConstructor, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWi_Menu_Slider_CVar_C*                 Wi_Menu_Slider_CVar_59;                            // 0x0298(0x0008)(ExportObject, ZeroConstructor, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWi_Menu_Slider_CVar_C*                 Wi_Menu_Slider_CVar_77;                            // 0x02A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	bool GetbIsEnabled_0();
+	bool GetIsSFX_Enabled();
 
 public:
 	static class UClass* StaticClass()

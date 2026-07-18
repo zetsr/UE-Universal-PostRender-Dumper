@@ -160,6 +160,26 @@ bool UW_Inventory_Base_C::Get_Btn_Drop_bIsEnabled()
 }
 
 
+// Function W_Inventory_Base.W_Inventory_Base_C.Get_Btn_Drop_ToolTipWidget
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+class UWidget* UW_Inventory_Base_C::Get_Btn_Drop_ToolTipWidget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Inventory_Base_C", "Get_Btn_Drop_ToolTipWidget");
+
+	Params::W_Inventory_Base_C_Get_Btn_Drop_ToolTipWidget Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function W_Inventory_Base.W_Inventory_Base_C.Get_Btn_Equip_bIsEnabled
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -180,6 +200,26 @@ bool UW_Inventory_Base_C::Get_Btn_Equip_bIsEnabled()
 }
 
 
+// Function W_Inventory_Base.W_Inventory_Base_C.Get_Btn_Equip_ToolTipWidget
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+class UWidget* UW_Inventory_Base_C::Get_Btn_Equip_ToolTipWidget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Inventory_Base_C", "Get_Btn_Equip_ToolTipWidget");
+
+	Params::W_Inventory_Base_C_Get_Btn_Equip_ToolTipWidget Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function W_Inventory_Base.W_Inventory_Base_C.Get_Btn_Unequip_bIsEnabled
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -193,6 +233,26 @@ bool UW_Inventory_Base_C::Get_Btn_Unequip_bIsEnabled()
 		Func = Class->GetFunction("W_Inventory_Base_C", "Get_Btn_Unequip_bIsEnabled");
 
 	Params::W_Inventory_Base_C_Get_Btn_Unequip_bIsEnabled Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function W_Inventory_Base.W_Inventory_Base_C.Get_Btn_Unequip_ToolTipWidget
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+class UWidget* UW_Inventory_Base_C::Get_Btn_Unequip_ToolTipWidget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Inventory_Base_C", "Get_Btn_Unequip_ToolTipWidget");
+
+	Params::W_Inventory_Base_C_Get_Btn_Unequip_ToolTipWidget Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

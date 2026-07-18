@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "Enum_ChatChannel_structs.hpp"
 #include "Enum_ChannelWidget_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "Enum_ChatChannel_structs.hpp"
-#include "Enum_AnimMotionStates_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "Enum_AnimMotionStates_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -46,6 +46,7 @@ public:
 	bool                                          IsUsedByAdminPanel;                                // 0x02DE(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void AddItemWidgetToChannel(Enum_ChannelWidget Channel, const class FText& Content, const class FString& ItemSyntax, const class FText& ChannelTag, class UScrollBox** TextScrollBox, class UWi_ChatPearlItemLink_C** ItemLink);
 	void AddTextWidgetToChannel(Enum_ChannelWidget Channel, const class FText& Content, bool IsLoadingChats, class UScrollBox** TextScrollBox, class UWi_ChatText_C** Text);
 	void AppendChannelName(const class FText& FormattedText, Enum_ChannelWidget Channel, class FText* AppendedText);
 	void BindChats(bool IsAdminPanel);
@@ -65,11 +66,12 @@ public:
 	void ExecuteUbergraph_Wi_ChatBox(int32 EntryPoint);
 	void FadeChatBox();
 	void FilterCussWords(const class FString& Message, class FString* FilteredMessage);
-	void FormatText(const class FString& User, bool IsAdmin, bool IsDev, const class FString& Message, Enum_ChatChannel AllCopyChannel, bool IsJrakhonic, class FText* FormattedText, class FText* AllCopyText);
+	void FormatText(const class FString& User, bool IsAdmin, bool IsDev, const class FString& Message, Enum_ChatChannel AllCopyChannel, bool IsJrakhonic, class FText* FormattedText, class FText* AllCopyText, class FString* ItemSyntax);
 	void FormatTextForPing(const class FString& User, bool IsAdmin, bool IsDev, const class FString& Message, class FText* FormattedText);
 	class FText Get_ChannelName_Text_0();
 	class FText Get_ChatField_HintText_0();
 	void GroupClanCheck(Enum_ChannelWidget Channel, bool* Success);
+	void MakeChannelTag(const class FString& Channel, class FText* Tag);
 	struct FEventReply OnPreviewKeyDown(const struct FGeometry& MyGeometry, const struct FKeyEvent& InKeyEvent);
 	void PressEnterToAdminChat_Event_0();
 	void PressEnterToChat_Event_0();

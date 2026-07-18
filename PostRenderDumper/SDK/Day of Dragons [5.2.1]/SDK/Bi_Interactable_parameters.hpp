@@ -10,7 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Enum_StatusEffects_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Enum_StatMutations_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -33,6 +35,27 @@ public:
 	class AActor*                                 InteractingActor;                                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Bi_Interactable_C_OnInteraction;
+
+// Function Bi_Interactable.Bi_Interactable_C.TryApplyStatusEffect
+// 0x0010 (0x0010 - 0x0000)
+struct Bi_Interactable_C_TryApplyStatusEffect final
+{
+public:
+	Enum_StatusEffects                            EffectToApply;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	Enum_StatMutations                            StacksToApply;                                     // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class AChar_Parent_Player_C*                  AttackingPlayer;                                   // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Bi_Interactable_C_TryApplyStatusEffect;
+
+// Function Bi_Interactable.Bi_Interactable_C.TryDestroyComponent
+// 0x0008 (0x0008 - 0x0000)
+struct Bi_Interactable_C_TryDestroyComponent final
+{
+public:
+	class UActorComponent*                        Component;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Bi_Interactable_C_TryDestroyComponent;
 
 // Function Bi_Interactable.Bi_Interactable_C.TryLaunchCharacter
 // 0x0020 (0x0020 - 0x0000)

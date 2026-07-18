@@ -83,7 +83,7 @@ DUMPER7_ASSERTS_UAnimNotifyState_TimedNiagaraEffectAdvanced;
 
 // Class NiagaraAnimNotifies.AnimNotify_PlayNiagaraEffect
 // 0x0090 (0x00D0 - 0x0040)
-class alignas(0x10) UAnimNotify_PlayNiagaraEffect : public UAnimNotify
+class alignas(0x10) UAnimNotify_PlayNiagaraEffect final : public UAnimNotify
 {
 public:
 	class UNiagaraSystem*                         Template;                                          // 0x0040(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)

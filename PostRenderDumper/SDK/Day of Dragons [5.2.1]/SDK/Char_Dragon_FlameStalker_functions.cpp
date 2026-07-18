@@ -488,8 +488,9 @@ void AChar_Dragon_FlameStalker_C::GetElementBileCost(uint8* BileCost)
 // uint8*                                  Birthright                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8*                                  InfusedCrimson                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // uint8*                                  Albino                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// uint8*                                  Brindle                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AChar_Dragon_FlameStalker_C::GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino)
+void AChar_Dragon_FlameStalker_C::GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino, uint8* Brindle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -508,6 +509,9 @@ void AChar_Dragon_FlameStalker_C::GetSpecialSkinIndexes(uint8* Birthright, uint8
 
 	if (Albino != nullptr)
 		*Albino = Parms.Albino;
+
+	if (Brindle != nullptr)
+		*Brindle = Parms.Brindle;
 }
 
 
@@ -642,6 +646,20 @@ void AChar_Dragon_FlameStalker_C::NotifyServerHeatVisionActive(bool IsUsingHeatV
 	Parms.IsUsingHeatVision_0 = IsUsingHeatVision_0;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Char_Dragon_FlameStalker.Char_Dragon_FlameStalker_C.NotifyServerNotBreathing
+// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
+
+void AChar_Dragon_FlameStalker_C::NotifyServerNotBreathing()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Char_Dragon_FlameStalker_C", "NotifyServerNotBreathing");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

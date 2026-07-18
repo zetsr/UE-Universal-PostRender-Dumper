@@ -10,53 +10,52 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
+#include "Enum_StatMutations_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Enum_AnimMotionStates_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "SCUE5_structs.hpp"
 #include "Enum_EmotesDragon_structs.hpp"
 #include "Char_Parent_Dragon_classes.hpp"
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "InputCore_structs.hpp"
-#include "Enum_StatMutations_structs.hpp"
-#include "SCUE5_structs.hpp"
-#include "Enum_AnimMotionStates_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Char_Dragon_Biolumin.Char_Dragon_Biolumin_C
-// 0x0110 (0x1310 - 0x1200)
+// 0x0110 (0x1440 - 0x1330)
 class AChar_Dragon_Biolumin_C final : public AChar_Parent_Dragon_C
 {
 public:
-	uint8                                         Pad_11F5[0x3];                                     // 0x11F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Dragon_Biolumin_C;             // 0x11F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UNiagaraComponent*                      BreathFX;                                          // 0x1200(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UFMODAudioComponent*                    HoverLoop;                                         // 0x1208(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UPhysicsFlight_C*                       PhysicsFlight;                                     // 0x1210(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         Timeline_0_Fade_B9AEF72347F0BC8DC05616B5612F37EF;  // 0x1218(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Timeline_0__Direction_B9AEF72347F0BC8DC05616B5612F37EF; // 0x121C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_121D[0x3];                                     // 0x121D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Timeline_0;                                        // 0x1220(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	float                                         GlowStart_TrackTime_BAA9EF26432C57340689A7BCB79A02DE; // 0x1228(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         GlowStart_GlowEmissivePower_BAA9EF26432C57340689A7BCB79A02DE; // 0x122C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            GlowStart__Direction_BAA9EF26432C57340689A7BCB79A02DE; // 0x1230(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1231[0x7];                                     // 0x1231(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     GlowStart;                                         // 0x1238(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	double                                        BioluminescenceTime;                               // 0x1240(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsGlowing;                                         // 0x1248(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1249[0x7];                                     // 0x1249(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   SpecialKey;                                        // 0x1250(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	bool                                          ShouldGlow;                                        // 0x1268(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1269[0x7];                                     // 0x1269(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        HoverVolume;                                       // 0x1270(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FKey                                   AttackKey;                                         // 0x1278(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	bool                                          FullBile;                                          // 0x1290(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1291[0x7];                                     // 0x1291(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AChar_Parent_All_C*>             BioHits;                                           // 0x1298(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	struct FSafeBool                              BileActive;                                        // 0x12A8(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	bool                                          UseLookAt;                                         // 0x12E0(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12E1[0x7];                                     // 0x12E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                LookAtPoint;                                       // 0x12E8(0x0018)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        NV_FadeFloat;                                      // 0x1300(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_Char_Dragon_Biolumin_C;             // 0x1330(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UNiagaraComponent*                      BreathFX;                                          // 0x1338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UFMODAudioComponent*                    HoverLoop;                                         // 0x1340(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPhysicsFlight_C*                       PhysicsFlight;                                     // 0x1348(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         Timeline_0_Fade_B9AEF72347F0BC8DC05616B5612F37EF;  // 0x1350(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Timeline_0__Direction_B9AEF72347F0BC8DC05616B5612F37EF; // 0x1354(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1355[0x3];                                     // 0x1355(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Timeline_0;                                        // 0x1358(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	float                                         GlowStart_TrackTime_BAA9EF26432C57340689A7BCB79A02DE; // 0x1360(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         GlowStart_GlowEmissivePower_BAA9EF26432C57340689A7BCB79A02DE; // 0x1364(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            GlowStart__Direction_BAA9EF26432C57340689A7BCB79A02DE; // 0x1368(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1369[0x7];                                     // 0x1369(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     GlowStart;                                         // 0x1370(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	double                                        BioluminescenceTime;                               // 0x1378(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsGlowing;                                         // 0x1380(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1381[0x7];                                     // 0x1381(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKey                                   SpecialKey;                                        // 0x1388(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          ShouldGlow;                                        // 0x13A0(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_13A1[0x7];                                     // 0x13A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        HoverVolume;                                       // 0x13A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FKey                                   AttackKey;                                         // 0x13B0(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          FullBile;                                          // 0x13C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_13C9[0x7];                                     // 0x13C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AChar_Parent_All_C*>             BioHits;                                           // 0x13D0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	struct FSafeBool                              BileActive;                                        // 0x13E0(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          UseLookAt;                                         // 0x1418(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1419[0x7];                                     // 0x1419(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                LookAtPoint;                                       // 0x1420(0x0018)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        NV_FadeFloat;                                      // 0x1438(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AllBreathBio();
@@ -73,7 +72,7 @@ public:
 	void ExecuteUbergraph_Char_Dragon_Biolumin(int32 EntryPoint);
 	void Get_IsHovering(bool* IsHovering);
 	void GetElementBileCost(uint8* BileCost);
-	void GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino);
+	void GetSpecialSkinIndexes(uint8* Birthright, uint8* InfusedCrimson, uint8* Albino, uint8* Brindle);
 	void GlowStart__FinishedFunc();
 	void GlowStart__UpdateFunc();
 	void InpActEvt_Attack_K2Node_InputActionEvent_1(const struct FKey& Key);

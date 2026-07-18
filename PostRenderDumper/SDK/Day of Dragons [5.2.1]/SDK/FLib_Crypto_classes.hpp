@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "Enum_ServerType_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -25,16 +25,18 @@ public:
 	static void Decode_FactionChat(const class FString& MessageData, class UObject* __WorldContext, class FString* UserName, bool* IsAdmin, bool* IsDev, class FString* Message, bool* IsElemental, class FString* FourID);
 	static void Decode_GeneralChat(const class FString& MessageData, class UObject* __WorldContext, class FString* UserName, bool* IsDev, bool* IsAdmin, class FString* Message, class FString* FourID);
 	static void Decode_GroupChat(const class FString& MessageData, class UObject* __WorldContext, class FString* UserName, bool* IsAdmin, bool* IsDev, class FString* Message);
+	static void Decode_ItemChat(const class FString& EncodedString, class UObject* __WorldContext, struct FStruct_InventoryItemsReplicated* Item);
 	static void Decode_Map(int32 MapCode, class UObject* __WorldContext, class FString* MapName);
 	static void Decode_ServerPvP(int32 ServerTypeCode, class UObject* __WorldContext, Enum_ServerType* ServerType);
-	static void Decode_Session(const class FString& SessionString, class UObject* __WorldContext, bool* IsDOGs, bool* IsRoleplay, bool* UsesFriendlist, bool* HasGroupDamage, bool* AdminTags, bool* PlayerTags, bool* ChatClanTags, bool* NormalizedStats, bool* SpeciesGroups, bool* NoGrowth, bool* HatchlingBounties, int32* ServerType, int32* MapCode, bool* NoGlobalChat, int32* Clans, int32* ClanMemberCap, int32* MaxLatency, bool* DisableNesting, int32* GrowthScale, bool* IsSurvival, bool* DisableTOD, bool* DisableWeather, bool* DisableRespawns, bool* DisableEggSaves);
+	static void Decode_Session(const class FString& SessionString, class UObject* __WorldContext, bool* IsDogs, bool* IsRoleplay, bool* UsesFriendlist, bool* HasGroupDamage, bool* AdminTags, bool* PlayerTags, bool* ChatClanTags, bool* NormalizedStats, bool* SpeciesGroups, bool* NoGrowth, bool* HatchlingBounties, int32* ServerType, int32* MapCode, bool* NoGlobalChat, int32* Clans, int32* ClanMemberCap, int32* MaxLatency, bool* DisableNesting, int32* GrowthScale, bool* IsSurvival, bool* DisableTOD, bool* DisableWeather, bool* DisableRespawns, bool* DisableEggSaves);
 	static void Encode_ClanChat(const class FString& UserName, bool IsAdmin, bool IsDev, const class FString& Message, bool IsClancast, class UObject* __WorldContext, class FString* MessageData);
 	static void Encode_FactionChat(const class FString& UserName, bool IsAdmin, bool IsDev, const class FString& Message, bool IsElemental, const class FString& FourID, class UObject* __WorldContext, class FString* MessageData);
 	static void Encode_GeneralChat(const class FString& UserName, bool IsAdmin, bool IsDev, const class FString& Message, const class FString& Last4ID, class UObject* __WorldContext, class FString* MessageData);
 	static void Encode_GroupChat(const class FString& UserName, bool IsAdmin, bool IsDev, const class FString& Message, class UObject* __WorldContext, class FString* MessageData);
+	static void Encode_ItemChat(const struct FStruct_InventoryItemsReplicated& Item, class UObject* __WorldContext, class FString* EncodedString);
 	static void Encode_Map(const class FString& ServerMap, class UObject* __WorldContext, int32* MapCode);
 	static void Encode_ServerPvP(Enum_ServerType ServerType, class UObject* __WorldContext, int32* ServerTypeCode);
-	static void Encode_Session(bool IsDOGs, bool IsRoleplay, bool UsesFriendlist, bool HasGroupDamage, bool AdminTags, bool PlayerTags, bool ChatClanTags, bool NormalizedStats, bool SameSpeciesGroups, bool NoGrowth, bool HatchlingBounties, int32 ServerType, int32 MapCode, bool NoGlobalChat, int32 Clans, int32 ClanMemberCap, int32 PlayerLatency, bool DisableNesting, int32 GrowthRateScale, bool IsSurvival, bool DisableTOD, bool DisableWeather, bool DisableRespawns, bool DisableEggSaves, class UObject* __WorldContext, class FString* SessionString);
+	static void Encode_Session(bool IsDogs, bool IsRoleplay, bool UsesFriendlist, bool HasGroupDamage, bool AdminTags, bool PlayerTags, bool ChatClanTags, bool NormalizedStats, bool SameSpeciesGroups, bool NoGrowth, bool HatchlingBounties, int32 ServerType, int32 MapCode, bool NoGlobalChat, int32 Clans, int32 ClanMemberCap, int32 PlayerLatency, bool DisableNesting, int32 GrowthRateScale, bool IsSurvival, bool DisableTOD, bool DisableWeather, bool DisableRespawns, bool DisableEggSaves, class UObject* __WorldContext, class FString* SessionString);
 	static bool GetBools(const struct FSafeBool& SB, class UObject* __WorldContext);
 	static bool GetBoolsPure(const struct FSafeBool& SB, class UObject* __WorldContext);
 	static uint8 GetBytes(const struct FSafeByte& SB, class UObject* __WorldContext);

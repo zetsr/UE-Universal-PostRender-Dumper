@@ -16,46 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function Dmg_Fire.Dmg_Fire_C.CalculateDamage
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// double                                  InMitigation                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  InMultiplier                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  InDamage                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  InArmor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  InHealth                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FStruct_StatMutations&     Mutations                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// Enum_GeneticGrades                      GeneticQuality                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double*                                 OutArmor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double*                                 OutHealth                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UDmg_Fire_C::CalculateDamage(double InMitigation, double InMultiplier, double InDamage, double InArmor, double InHealth, const struct FStruct_StatMutations& Mutations, Enum_GeneticGrades GeneticQuality, double* OutArmor, double* OutHealth) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Dmg_Fire_C", "CalculateDamage");
-
-	Params::Dmg_Fire_C_CalculateDamage Parms{};
-
-	Parms.InMitigation = InMitigation;
-	Parms.InMultiplier = InMultiplier;
-	Parms.InDamage = InDamage;
-	Parms.InArmor = InArmor;
-	Parms.InHealth = InHealth;
-	Parms.Mutations = std::move(Mutations);
-	Parms.GeneticQuality = GeneticQuality;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (OutArmor != nullptr)
-		*OutArmor = Parms.OutArmor;
-
-	if (OutHealth != nullptr)
-		*OutHealth = Parms.OutHealth;
-}
-
-
 // Function Dmg_Fire.Dmg_Fire_C.GetSelfDamageType
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:

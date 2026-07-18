@@ -16,31 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function UI_CFCore_NotifNoResultsFound.UI_CFCore_NotifNoResultsFound_C.ApplyThemeSettingsToAll
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function UI_CFCore_NotifNoResultsFound.UI_CFCore_NotifNoResultsFound_C.UpdateWidget
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FText&                      InText                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UUI_CFCore_NotifNoResultsFound_C::ApplyThemeSettingsToAll()
+void UUI_CFCore_NotifNoResultsFound_C::UpdateWidget(const class FText& InText)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_NotifNoResultsFound_C", "ApplyThemeSettingsToAll");
+		Func = Class->GetFunction("UI_CFCore_NotifNoResultsFound_C", "UpdateWidget");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::UI_CFCore_NotifNoResultsFound_C_UpdateWidget Parms{};
 
+	Parms.InText = std::move(InText);
 
-// Function UI_CFCore_NotifNoResultsFound.UI_CFCore_NotifNoResultsFound_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UUI_CFCore_NotifNoResultsFound_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_NotifNoResultsFound_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -64,23 +56,31 @@ void UUI_CFCore_NotifNoResultsFound_C::ExecuteUbergraph_UI_CFCore_NotifNoResults
 }
 
 
-// Function UI_CFCore_NotifNoResultsFound.UI_CFCore_NotifNoResultsFound_C.UpdateWidget
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class FText&                      InText                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// Function UI_CFCore_NotifNoResultsFound.UI_CFCore_NotifNoResultsFound_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UUI_CFCore_NotifNoResultsFound_C::UpdateWidget(const class FText& InText)
+void UUI_CFCore_NotifNoResultsFound_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_NotifNoResultsFound_C", "UpdateWidget");
+		Func = Class->GetFunction("UI_CFCore_NotifNoResultsFound_C", "Construct");
 
-	Params::UI_CFCore_NotifNoResultsFound_C_UpdateWidget Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.InText = std::move(InText);
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function UI_CFCore_NotifNoResultsFound.UI_CFCore_NotifNoResultsFound_C.ApplyThemeSettingsToAll
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UUI_CFCore_NotifNoResultsFound_C::ApplyThemeSettingsToAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_CFCore_NotifNoResultsFound_C", "ApplyThemeSettingsToAll");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

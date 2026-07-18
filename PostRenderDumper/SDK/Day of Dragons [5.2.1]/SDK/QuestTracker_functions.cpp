@@ -321,9 +321,9 @@ void UQuestTracker_C::Get_Current_Quest_Name(class FString* CurrentQuest)
 // Function QuestTracker.QuestTracker_C.GetAllAvailableQuestLines
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// TArray<EnumQuest__QuestLineTracker>*    AvailableQuestLines_0                                  (Parm, OutParm)
+// TArray<EnumQuest__QuestLineTracker>*    AvailableQuestlines_0                                  (Parm, OutParm)
 
-void UQuestTracker_C::GetAllAvailableQuestLines(TArray<EnumQuest__QuestLineTracker>* AvailableQuestLines_0)
+void UQuestTracker_C::GetAllAvailableQuestLines(TArray<EnumQuest__QuestLineTracker>* AvailableQuestlines_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -334,8 +334,8 @@ void UQuestTracker_C::GetAllAvailableQuestLines(TArray<EnumQuest__QuestLineTrack
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (AvailableQuestLines_0 != nullptr)
-		*AvailableQuestLines_0 = std::move(Parms.AvailableQuestLines_0);
+	if (AvailableQuestlines_0 != nullptr)
+		*AvailableQuestlines_0 = std::move(Parms.AvailableQuestlines_0);
 }
 
 
