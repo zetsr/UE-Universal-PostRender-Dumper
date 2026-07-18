@@ -430,3 +430,5 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+PostRenderDumper/SDK/CppSDK/
