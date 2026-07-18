@@ -39,6 +39,7 @@ A universal PostRender dumping method for UE4-UE5, theoretically compatible with
 - `Build Solution`
 
 > 除非预设参数无法找到 `PostRender`，否则无需修改 `SCAN_RANGE` 与 `STABLE_FRAME_THRESHOLD`
+> 
 > There is no need to modify `SCAN_RANGE` and `STABLE_FRAME_THRESHOLD` unless the default parameters fail to find `PostRender`.
 
 ### 注入 / Injection
