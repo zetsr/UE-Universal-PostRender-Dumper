@@ -3,11 +3,8 @@
 ### ☕ 赞助 / Buy me a coffee
 
 * 您可以通过赞助支持我们的开发，感谢大家的支持！
-* 
-  **USDT (TRC-20):** `THzBDDbBkDh3nXRkCEeG4p5r733tWeAdib`
 * If this project helps you, feel free to support my work!
-* 
-  **USDT (TRC-20):** `THzBDDbBkDh3nXRkCEeG4p5r733tWeAdib`
+* **USDT (TRC-20):** `THzBDDbBkDh3nXRkCEeG4p5r733tWeAdib`
 
 适用于UE4-UE5的通用PostRender转储方法，理论上适用于所有虚幻引擎游戏。
 
