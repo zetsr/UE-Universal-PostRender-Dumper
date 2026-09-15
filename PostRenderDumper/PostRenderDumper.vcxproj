@@ -168,6 +168,7 @@
     <ClInclude Include="MinHook\src\hde\table32.h" />
     <ClInclude Include="MinHook\src\hde\table64.h" />
     <ClInclude Include="MinHook\src\trampoline.h" />
+    <ClInclude Include="SDK\CppSDK\SDK.hpp" />
     <ClInclude Include="SDK\SDK_Headers.hpp" />
     <ClInclude Include="Zydis\Zydis.h" />
   </ItemGroup>

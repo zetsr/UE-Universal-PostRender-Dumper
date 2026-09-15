@@ -84,5 +84,8 @@
     <ClInclude Include="Zydis\Zydis.h">
       <Filter>Zydis</Filter>
     </ClInclude>
+    <ClInclude Include="SDK\CppSDK\SDK.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
