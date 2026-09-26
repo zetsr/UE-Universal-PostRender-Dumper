@@ -14,10 +14,15 @@ extern "C" {
 #include "Zydis/Zydis.h"
 }
 
-// CFG
+// 配置
+// 确保和目标客户端分辨率一致
 #define TARGET_WIDTH  1920           // 窗口分辨率 W     // Windows Screen Size W
 #define TARGET_HEIGHT 1080           // 窗口分辨率 H     // Windows Screen Size H
+
+// 一般不用改，可以验证一下SDK导出的UCanvas->SizeX的偏移
 #define SIZE_X_OFFSET 0x40           // UCanvas->SizeX   // 0x40 是大部分 UE 版本 的 UCanvas 结构体中 SizeX 的偏移，具体以 Dumper-7 生成的 SDK 为准
+
+// 一般不用改
 #define SCAN_RANGE    200            // 硬编码           // 扫描前 200 个函数（从 vtable[1] 开始）以寻找候选函数
 #define STABLE_FRAME_THRESHOLD 120   // 硬编码           // 稳定性阈值：连续 120 帧（约 2 秒）满足条件才认定为候选函数
 
@@ -55,6 +60,18 @@ HANDLE hProcess = NULL;
 uintptr_t ModuleBase = 0;
 uintptr_t ModuleSize = 0;
 bool IsFound = false; // 全局标志：找到目标后停止一切逻辑
+
+// 预设特征码：? 表示通配符
+std::vector<std::string> g_PredefinedSignatures = {
+    "8B C2 35 ? ? ? ? 44",
+    "48 8B 01 48 FF A0 ? ? ? ? CC CC CC CC CC CC"
+};
+
+// 是否启用了特征码优先挂钩模式
+bool g_PreferredMode = false;
+
+// 特征码命中的 vtable 索引标记
+bool g_IsPreferredIndex[SCAN_RANGE] = { false };
 
 // 安全读取模板
 template <typename T>
@@ -349,7 +366,9 @@ void __fastcall UniversalDumper(int index, void* rcx, void* rdx, void* r8) {
                         if (TrackedMatches[nextIndex].count >= STABLE_FRAME_THRESHOLD) {
 
                             // 满足条件：当前是候选，且下一个也是候选
-                            if (!IsFound) {
+                            // 优先模式下只允许特征码命中的当前 index 被确认，避免把匹配项的下一个非匹配函数误判为目标。
+                            bool allowConfirmInPreferredMode = (!g_PreferredMode) || g_IsPreferredIndex[index];
+                            if (allowConfirmInPreferredMode && !IsFound) {
                                 LOG_SPECIAL(">>> TARGET LOCATED <<< Current Index: {} | Next Index: {} confirmed.", index, nextIndex);
                                 LOG_SPECIAL(">>> FINAL POSTRENDER: Index {} | RDX: {:#x}", index, (uintptr_t)rdx);
 
@@ -489,6 +508,115 @@ REPEAT_10(H_FUNC, 1) REPEAT_10(H_FUNC, 2) REPEAT_10(H_FUNC, 3) REPEAT_10(H_FUNC,
 REPEAT_10(H_FUNC, 6) REPEAT_10(H_FUNC, 7) REPEAT_10(H_FUNC, 8) REPEAT_10(H_FUNC, 9)
 REPEAT_100(H_FUNC, 1) REPEAT_100(H_FUNC, 2) REPEAT_100(H_FUNC, 3) REPEAT_100(H_FUNC, 4)
 
+// 解析单条预设特征码字符串为逐字节模式
+static bool ParsePredefinedSignature(const std::string& sig, std::vector<SigByte>& out) {
+    out.clear();
+
+    std::istringstream iss(sig);
+    std::string token;
+
+    while (iss >> token) {
+        if (token == "?" || token == "??") {
+            out.push_back(SigByte{ 0, true });
+            continue;
+        }
+
+        if (token.size() != 2) {
+            return false;
+        }
+
+        auto hexVal = [](char c) -> int {
+            if (c >= '0' && c <= '9') return c - '0';
+            if (c >= 'A' && c <= 'F') return c - 'A' + 10;
+            if (c >= 'a' && c <= 'f') return c - 'a' + 10;
+            return -1;
+            };
+
+        int hi = hexVal(token[0]);
+        int lo = hexVal(token[1]);
+        if (hi < 0 || lo < 0) {
+            return false;
+        }
+
+        out.push_back(SigByte{ static_cast<uint8_t>((hi << 4) | lo), false });
+    }
+
+    return !out.empty();
+}
+
+// 判断指定地址开始的字节是否匹配预设特征码
+static bool MatchPredefinedPatternAtAddress(uintptr_t addr, const std::vector<SigByte>& pattern) {
+    if (!addr || pattern.empty()) {
+        return false;
+    }
+
+    std::vector<uint8_t> bytes(pattern.size(), 0);
+    SIZE_T read = 0;
+
+    if (!ReadProcessMemory(hProcess, (LPCVOID)addr, bytes.data(), bytes.size(), &read) || read != bytes.size()) {
+        return false;
+    }
+
+    for (size_t i = 0; i < pattern.size(); ++i) {
+        if (pattern[i].isWildcard) {
+            continue;
+        }
+        if (bytes[i] != pattern[i].value) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// 扫描 GameViewport vtable 中所有虚函数头部，返回命中预设特征码的索引列表
+static std::vector<int> ScanVTableForPredefinedSignatures(void** vtable) {
+    std::vector<int> matchedIndices;
+
+    if (!vtable) {
+        return matchedIndices;
+    }
+
+    std::vector<std::vector<SigByte>> patterns;
+    patterns.reserve(g_PredefinedSignatures.size());
+
+    for (const std::string& sig : g_PredefinedSignatures) {
+        std::vector<SigByte> pattern;
+        if (ParsePredefinedSignature(sig, pattern)) {
+            patterns.push_back(std::move(pattern));
+        }
+        else {
+            LOG_WARN("Invalid predefined signature skipped: {}", sig);
+        }
+    }
+
+    if (patterns.empty()) {
+        return matchedIndices;
+    }
+
+    for (int i = 1; i < SCAN_RANGE; ++i) {
+        void* fn = vtable[i];
+        if (!fn) {
+            continue;
+        }
+
+        uintptr_t addr = (uintptr_t)fn;
+        if (!IsValidModuleAddress(addr)) {
+            continue;
+        }
+
+        for (size_t pi = 0; pi < patterns.size(); ++pi) {
+            if (MatchPredefinedPatternAtAddress(addr, patterns[pi])) {
+                matchedIndices.push_back(i);
+                LOG_SPECIAL("Predefined signature #{} matched vtable[{}] at {:#x}", pi + 1, i, addr);
+                break;
+            }
+        }
+    }
+
+    return matchedIndices;
+}
+
 void SetupHooks(void** vtable) {
     if (MH_Initialize() != MH_OK) return;
     hProcess = GetCurrentProcess();
@@ -497,6 +625,11 @@ void SetupHooks(void** vtable) {
     GetModuleInformation(hProcess, GetModuleHandleA(NULL), &mi, sizeof(mi));
     ModuleBase = (uintptr_t)mi.lpBaseOfDll;
     ModuleSize = mi.SizeOfImage;
+
+    g_PreferredMode = false;
+    for (int i = 0; i < SCAN_RANGE; ++i) {
+        g_IsPreferredIndex[i] = false;
+    }
 
 #define P_H(i) (void*)H_##i
     std::vector<void*> hFns;
@@ -508,23 +641,75 @@ void SetupHooks(void** vtable) {
         REPEAT_10(P_PUSH, 6) REPEAT_10(P_PUSH, 7) REPEAT_10(P_PUSH, 8) REPEAT_10(P_PUSH, 9)
         REPEAT_100(P_PUSH, 1) REPEAT_100(P_PUSH, 2) REPEAT_100(P_PUSH, 3) REPEAT_100(P_PUSH, 4)
 
-        LOG_INFO("Starting to create hooks for {} vtable entries...", SCAN_RANGE - 1);
+        LOG_INFO("Scanning GameViewport vtable for predefined signatures before hooking...");
+    std::vector<int> matchedIndices = ScanVTableForPredefinedSignatures(vtable);
+
+    std::vector<int> indicesToHook;
+    bool preferredMode = !matchedIndices.empty();
+
+    if (preferredMode) {
+        g_PreferredMode = true;
+
+        for (int idx : matchedIndices) {
+            if (idx >= 0 && idx < SCAN_RANGE) {
+                g_IsPreferredIndex[idx] = true;
+            }
+        }
+
+        std::vector<bool> needHook(SCAN_RANGE, false);
+        for (int idx : matchedIndices) {
+            if (idx >= 1 && idx < SCAN_RANGE) {
+                needHook[idx] = true;
+            }
+
+            int nextIdx = idx + 1;
+            if (nextIdx >= 1 && nextIdx < SCAN_RANGE) {
+                needHook[nextIdx] = true;
+            }
+        }
+
+        for (int i = 1; i < SCAN_RANGE; ++i) {
+            if (needHook[i]) {
+                indicesToHook.push_back(i);
+            }
+        }
+
+        LOG_SUCCESS("Predefined signature matched {} vtable index(es). Preferred mode enabled.", matchedIndices.size());
+
+        std::string idxList;
+        for (int idx : indicesToHook) {
+            if (!idxList.empty()) idxList += ", ";
+            idxList += std::to_string(idx);
+        }
+        LOG_INFO("Preferred hook indices (matched + next): {}", idxList);
+    }
+    else {
+        LOG_WARN("No predefined signature matched. Falling back to full vtable hooking.");
+
+        for (int i = 1; i < SCAN_RANGE; ++i) {
+            indicesToHook.push_back(i);
+        }
+    }
+
+    LOG_INFO("Starting to create hooks for {} vtable entries...", indicesToHook.size());
 
     int successCount = 0;
     int failCount = 0;
     int skippedRemaining = 0;
+    size_t processedCount = 0;
 
-    for (int i = 1; i < SCAN_RANGE; i++) {
+    for (int i : indicesToHook) {
         // 极早期防御：如果在建 Hook 过程中（理论上极少见，因为 IsFound 通常要等
         // STABLE_FRAME_THRESHOLD 帧之后才会被置位）目标已经确定，则提前停止创建
         // 剩余 Hook。正常情况下真正的清理发生在 UniversalDumper 确认目标后，
         // 通过禁用已建立的其余 Hook 来实现（见下方 MH_DisableHook 逻辑）。
         if (IsFound) {
-            skippedRemaining = SCAN_RANGE - i;
+            skippedRemaining = (int)(indicesToHook.size() - processedCount);
             LOG_WARN("Target already found, stopping hook creation early at index {}. Remaining {} entries skipped.",
                 i, skippedRemaining);
             break;
         }
+        processedCount++;
 
         if (vtable[i]) {
             // 在创建 Hook 之前保存原始函数地址
@@ -553,7 +738,7 @@ void SetupHooks(void** vtable) {
     }
 
     LOG_INFO("Hook setup complete. Success: {} | Failed: {} | Skipped(early-stop): {} | Total: {}",
-        successCount, failCount, skippedRemaining, SCAN_RANGE - 1);
+        successCount, failCount, skippedRemaining, indicesToHook.size());
 }
 
 DWORD WINAPI MainThread(LPVOID lpParam) {
