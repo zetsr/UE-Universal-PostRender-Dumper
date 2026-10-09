@@ -30,6 +30,15 @@ extern "C" {
 #define SIG_MAX_SCAN_LEN   256       // 反汇编时最多累积的字节数上限
 #define SIG_MAX_INSNS      48        // 最多反汇编的指令条数上限
 
+// Tick 扫描相关配置
+#define TICK_SCAN_RANGE             500      // 扫描虚表 1 到 500
+#define TICK_SAMPLE_FRAMES          120      // 采样周期（帧数），与 PostRender 对齐
+#define TICK_FREQ_TOLERANCE         15       // 调用频次允许的绝对误差范围（CallCount 与采样帧数的差距）
+#define TICK_DT_TOLERANCE           0.015f   // DeltaTime 浮点比对允许的绝对误差
+
+// 打印所使用的 AActor::Tick 函数签名格式
+#define ACTOR_TICK_FUNCTION_SIGNATURE "void __fastcall AActor::Tick(AActor* _this, float DeltaSeconds)"
+
 // 彩色日志宏
 #define COLOR_RESET   "\033[0m"
 #define COLOR_BLUE    "\033[34m"
@@ -72,6 +81,35 @@ bool g_PreferredMode = false;
 
 // 特征码命中的 vtable 索引标记
 bool g_IsPreferredIndex[SCAN_RANGE] = { false };
+
+struct TickEntryInfo {
+    int callCount = 0;
+    float lastMatchedDt = 0.0f;
+    bool dtMatched = false;
+};
+
+struct TickScanContext {
+    const char* name = "AActor";
+    void* instance = nullptr;
+    void** vtable = nullptr;
+    bool isHooked = false;
+    bool isCompleted = false;
+    int confirmedIndex = -1; // 记录最终确认为 AActor::Tick 的虚表索引
+    int postRenderFrameBaseline = 0;
+    TickEntryInfo entries[TICK_SCAN_RANGE];
+    void* originals[TICK_SCAN_RANGE] = { nullptr };
+    void* origVtableEntries[TICK_SCAN_RANGE] = { nullptr };
+};
+
+// 单独记录 AActor 的挂钩上下文
+TickScanContext g_ActorTickContext;
+
+// 状态机全局标记
+bool g_TickScanInitiated = false;
+int g_PostRenderFrameCounter = 0;
+
+using ActorTickFn = void(__fastcall*)(SDK::AActor*, float);
+ActorTickFn g_OriginalActorTick = nullptr;
 
 // 安全读取模板
 template <typename T>
@@ -325,7 +363,271 @@ static SigGenDiagnostics GenerateUniqueSignature(uintptr_t funcAddr) {
     return diag; // 扫描到最大长度仍不唯一，判定失败（diag.success 保持 false）
 }
 
-// ------------------------------------------------------------------------------------
+void __fastcall UniversalActorTickDumper(int funcIdx, void* rcx, void* rdx, void* r8);
+
+#define REPEAT_10(m, n) m(n##0) m(n##1) m(n##2) m(n##3) m(n##4) m(n##5) m(n##6) m(n##7) m(n##8) m(n##9)
+#define REPEAT_100(m, n) REPEAT_10(m, n##0) REPEAT_10(m, n##1) REPEAT_10(m, n##2) REPEAT_10(m, n##3) REPEAT_10(m, n##4) \
+                         REPEAT_10(m, n##5) REPEAT_10(m, n##6) REPEAT_10(m, n##7) REPEAT_10(m, n##8) REPEAT_10(m, n##9)
+
+// 仅针对 AActor 展开 0-499 个入口（扫描阶段使用通用寄存器传递，避免破坏其他 171 个未知签名的虚函数）
+#define ACTOR_TICK_H(i) void __fastcall H_ActorTick_##i(void* rcx, void* rdx, void* r8) { UniversalActorTickDumper(i, rcx, rdx, r8); }
+
+ACTOR_TICK_H(0) ACTOR_TICK_H(1) ACTOR_TICK_H(2) ACTOR_TICK_H(3) ACTOR_TICK_H(4)
+ACTOR_TICK_H(5) ACTOR_TICK_H(6) ACTOR_TICK_H(7) ACTOR_TICK_H(8) ACTOR_TICK_H(9)
+REPEAT_10(ACTOR_TICK_H, 1) REPEAT_10(ACTOR_TICK_H, 2) REPEAT_10(ACTOR_TICK_H, 3) REPEAT_10(ACTOR_TICK_H, 4) REPEAT_10(ACTOR_TICK_H, 5)
+REPEAT_10(ACTOR_TICK_H, 6) REPEAT_10(ACTOR_TICK_H, 7) REPEAT_10(ACTOR_TICK_H, 8) REPEAT_10(ACTOR_TICK_H, 9)
+REPEAT_100(ACTOR_TICK_H, 1) REPEAT_100(ACTOR_TICK_H, 2) REPEAT_100(ACTOR_TICK_H, 3) REPEAT_100(ACTOR_TICK_H, 4)
+
+static std::vector<void*> GetActorTickDispatchTable() {
+    std::vector<void*> table;
+    table.reserve(TICK_SCAN_RANGE);
+
+#define P_ACTOR_H(i) (void*)H_ActorTick_##i
+    table.push_back(P_ACTOR_H(0)); table.push_back(P_ACTOR_H(1)); table.push_back(P_ACTOR_H(2)); table.push_back(P_ACTOR_H(3)); table.push_back(P_ACTOR_H(4));
+    table.push_back(P_ACTOR_H(5)); table.push_back(P_ACTOR_H(6)); table.push_back(P_ACTOR_H(7)); table.push_back(P_ACTOR_H(8)); table.push_back(P_ACTOR_H(9));
+
+#define P_PUSH_ACTOR(i) table.push_back(P_ACTOR_H(i));
+    REPEAT_10(P_PUSH_ACTOR, 1) REPEAT_10(P_PUSH_ACTOR, 2) REPEAT_10(P_PUSH_ACTOR, 3) REPEAT_10(P_PUSH_ACTOR, 4) REPEAT_10(P_PUSH_ACTOR, 5)
+        REPEAT_10(P_PUSH_ACTOR, 6) REPEAT_10(P_PUSH_ACTOR, 7) REPEAT_10(P_PUSH_ACTOR, 8) REPEAT_10(P_PUSH_ACTOR, 9)
+        REPEAT_100(P_PUSH_ACTOR, 1) REPEAT_100(P_PUSH_ACTOR, 2) REPEAT_100(P_PUSH_ACTOR, 3) REPEAT_100(P_PUSH_ACTOR, 4)
+
+#undef P_PUSH_ACTOR
+#undef P_ACTOR_H
+        return table;
+}
+
+static void HookActorTickVTable(void* instance) {
+    if (!instance || g_ActorTickContext.isHooked) return;
+    g_ActorTickContext.instance = instance;
+    g_ActorTickContext.vtable = *(void***)instance;
+
+    if (!g_ActorTickContext.vtable) {
+        LOG_ERROR("Failed to read vtable for AActor!");
+        return;
+    }
+
+    LOG_INFO("Starting to create hooks for AActor vtable entries (1 to {})...", TICK_SCAN_RANGE - 1);
+
+    std::vector<void*> handlers = GetActorTickDispatchTable();
+
+    int successCount = 0;
+    int failCount = 0;
+
+    for (int i = 1; i < TICK_SCAN_RANGE; i++) {
+        void* func = g_ActorTickContext.vtable[i];
+        if (func && IsValidModuleAddress((uintptr_t)func)) {
+            g_ActorTickContext.origVtableEntries[i] = func;
+
+            MH_STATUS createStatus = MH_CreateHook(func, handlers[i], &g_ActorTickContext.originals[i]);
+            if (createStatus == MH_OK) {
+                MH_STATUS enableStatus = MH_EnableHook(func);
+                bool success = (enableStatus == MH_OK);
+                if (success) successCount++; else failCount++;
+                if (success) {
+                    LOG_SUCCESS("AActor Hook Index: {:<4} | Address: {:#014x} | Status: SUCCESS", i, (uintptr_t)func);
+                }
+                else {
+                    LOG_ERROR("AActor Hook Index: {:<4} | Address: {:#014x} | Status: ENABLE_FAILED", i, (uintptr_t)func);
+                }
+            }
+            else {
+                failCount++;
+                LOG_ERROR("AActor Hook Index: {:<4} | Address: {:#014x} | Status: CREATE_FAILED", i, (uintptr_t)func);
+            }
+        }
+        else {
+            LOG_INFO("AActor Hook Index: {:<4} | Address: (null/invalid) | Status: SKIPPED", i);
+        }
+    }
+
+    g_ActorTickContext.isHooked = true;
+    LOG_INFO("AActor Hook setup complete. Success: {} | Failed: {} | Total: {}",
+        successCount, failCount, TICK_SCAN_RANGE - 1);
+}
+
+void __fastcall DedicatedActorTickHook(SDK::AActor* rcx, float deltaSeconds) {
+    // 仅针对目标采样 Actor 打印日志，避免场景中数百个 Actor 同时输出刷屏
+    if (rcx == g_ActorTickContext.instance) {
+        LOG_DEBUG("[AActor::Tick] Actor: {:#x} | DeltaTime: {:.6f}", (uintptr_t)rcx, deltaSeconds);
+    }
+
+    if (g_OriginalActorTick) {
+        g_OriginalActorTick(rcx, deltaSeconds);
+    }
+}
+
+static void EvaluateAndReportTickCandidates(TickScanContext& ctx) {
+    if (!ctx.isHooked || ctx.isCompleted) return;
+
+    LOG_SPECIAL("========== [{}] Tick Candidates Evaluation ==========", ctx.name);
+
+    int matchFound = 0;
+    for (int i = 1; i < TICK_SCAN_RANGE; i++) {
+        const TickEntryInfo& entry = ctx.entries[i];
+
+        // 判定条件：调用次数与采样基准帧数相近，且 DeltaTime 参数比对一致
+        int freqDiff = std::abs(entry.callCount - TICK_SAMPLE_FRAMES);
+        if (freqDiff <= TICK_FREQ_TOLERANCE && entry.dtMatched) {
+            matchFound++;
+            uintptr_t realFunc = (uintptr_t)ctx.origVtableEntries[i];
+
+            // 临时解挂读取纯净字节，生成 AOB
+            MH_DisableHook((void*)realFunc);
+            SigGenDiagnostics diag = GenerateUniqueSignature(realFunc);
+            MH_EnableHook((void*)realFunc);
+
+            LOG_SUCCESS("Candidate Index: {}", i);
+            LOG_INFO("  Function Signature : {}", ACTOR_TICK_FUNCTION_SIGNATURE);
+            LOG_INFO("  Call Count         : {} (Frame Baseline: {})", entry.callCount, TICK_SAMPLE_FRAMES);
+            LOG_INFO("  Matched Delta      : {:.6f}", entry.lastMatchedDt);
+            LOG_INFO("  Function Addr      : {:#x}", realFunc);
+
+            if (diag.success) {
+                LOG_SUCCESS("  Signature          : {}", diag.signature);
+            }
+            else {
+                LOG_WARN("  Signature          : FAILED TO GENERATE UNIQUE AOB");
+            }
+
+            // 锁定第一个匹配项作为最终挂钩目标
+            if (ctx.confirmedIndex == -1) {
+                ctx.confirmedIndex = i;
+            }
+        }
+    }
+
+    if (matchFound == 0) {
+        LOG_WARN("No candidate functions matched the Tick criteria for {}.", ctx.name);
+    }
+    LOG_SPECIAL("=========================================================");
+
+    // 扫描判定完成：彻底解挂并移除所有通用的临时 Hook，恢复游戏环境的原生调用
+    for (int i = 1; i < TICK_SCAN_RANGE; i++) {
+        if (ctx.origVtableEntries[i]) {
+            MH_DisableHook(ctx.origVtableEntries[i]);
+            MH_RemoveHook(ctx.origVtableEntries[i]);
+        }
+    }
+    ctx.isCompleted = true;
+
+    // 为已确认的唯一目标单独挂载专属的 float 签名 Hook
+    if (ctx.confirmedIndex != -1) {
+        void* targetFunc = ctx.origVtableEntries[ctx.confirmedIndex];
+        MH_STATUS cStatus = MH_CreateHook(targetFunc, (LPVOID)DedicatedActorTickHook, (LPVOID*)&g_OriginalActorTick);
+        if (cStatus == MH_OK) {
+            MH_STATUS eStatus = MH_EnableHook(targetFunc);
+            if (eStatus == MH_OK) {
+                LOG_SPECIAL("Dedicated AActor::Tick hook successfully activated on Index {}! Starting per-frame DeltaTime logging.", ctx.confirmedIndex);
+            }
+            else {
+                LOG_ERROR("Failed to enable dedicated AActor::Tick hook (Status: {})", (int)eStatus);
+            }
+        }
+        else {
+            LOG_ERROR("Failed to create dedicated AActor::Tick hook (Status: {})", (int)cStatus);
+        }
+    }
+}
+
+static void ProcessTickAutoScan() {
+    SDK::UWorld* world = SDK::UWorld::GetWorld();
+    if (!world) return;
+
+    // 第一阶段：初始化并挂钩 AActor
+    if (!g_TickScanInitiated) {
+        SDK::AActor* sampleActor = nullptr;
+
+        // 获取场景中的第一个有效 AActor
+        if (world->PersistentLevel && world->PersistentLevel->Actors.Num() > 0) {
+            for (int i = 0; i < world->PersistentLevel->Actors.Num(); i++) {
+                SDK::AActor* a = world->PersistentLevel->Actors[i];
+                if (a && a->VTable) {
+                    sampleActor = a;
+                    break;
+                }
+            }
+        }
+
+        if (sampleActor) {
+            LOG_SUCCESS("Sample AActor acquired: {:#x}", (uintptr_t)sampleActor);
+            HookActorTickVTable(sampleActor);
+        }
+        else {
+            LOG_WARN("Could not acquire a valid sample AActor yet, will retry next frame.");
+            return;
+        }
+
+        g_TickScanInitiated = true;
+        g_PostRenderFrameCounter = 0;
+        LOG_INFO("AActor Tick profiling started. Collecting samples for {} frames...", TICK_SAMPLE_FRAMES);
+        return;
+    }
+
+    // 第二阶段：帧计数与采样
+    g_PostRenderFrameCounter++;
+
+    // 达到采样阈值，开始综合评定并输出 AOB
+    if (g_PostRenderFrameCounter >= TICK_SAMPLE_FRAMES) {
+        EvaluateAndReportTickCandidates(g_ActorTickContext);
+    }
+}
+
+// 校验传入的指针/寄存器原始数据是否与目标 DeltaTime 在误差内一致
+// 注意：x64 下 float 通常通过 XMM1/XMM2 传递，但在通用整型寄存器或按引用传递/内联结构时，
+// 寄存器底层位模式即为 float 的 IEEE-754 表达，或其指向的内存保存着 float
+static bool IsFloatMatching(uintptr_t rawValue, float expectedDt) {
+    if (expectedDt <= 0.0f) return false;
+
+    // 1. 尝试直接把低 32 位当做 IEEE 754 浮点值（值传递/寄存器复制模式）
+    uint32_t val32 = static_cast<uint32_t>(rawValue & 0xFFFFFFFF);
+    float asDirectFloat = *reinterpret_cast<float*>(&val32);
+    if (std::abs(asDirectFloat - expectedDt) <= TICK_DT_TOLERANCE) {
+        return true;
+    }
+
+    // 2. 尝试作为指针解引用读取（引用传递模式，如 FVector/FDeltaTime 结构）
+    if (rawValue > 0x10000 && (rawValue % alignof(float) == 0)) {
+        float derefFloat = SafeRead<float>(rawValue);
+        if (std::abs(derefFloat - expectedDt) <= TICK_DT_TOLERANCE) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void __fastcall UniversalActorTickDumper(int funcIdx, void* rcx, void* rdx, void* r8) {
+    // 如果已完成扫描判定，直接放行原调用
+    if (g_ActorTickContext.isCompleted) {
+        auto orig = (void(__fastcall*)(void*, void*, void*))g_ActorTickContext.originals[funcIdx];
+        if (orig) orig(rcx, rdx, r8);
+        return;
+    }
+
+    // 仅针对目标 AActor 实例的虚函数调用进行统计
+    if (rcx == g_ActorTickContext.instance) {
+        TickEntryInfo& entry = g_ActorTickContext.entries[funcIdx];
+        entry.callCount++;
+
+        SDK::UWorld* world = SDK::UWorld::GetWorld();
+        if (world) {
+            float currentDt = SDK::UGameplayStatics::GetWorldDeltaSeconds(world);
+
+            // 检查第二个参数 (rdx) 或第三个参数 (r8)
+            if (IsFloatMatching((uintptr_t)rdx, currentDt)) {
+                entry.dtMatched = true;
+                entry.lastMatchedDt = currentDt;
+            }
+            else if (IsFloatMatching((uintptr_t)r8, currentDt)) {
+                entry.dtMatched = true;
+                entry.lastMatchedDt = currentDt;
+            }
+        }
+    }
+
+    auto orig = (void(__fastcall*)(void*, void*, void*))g_ActorTickContext.originals[funcIdx];
+    if (orig) orig(rcx, rdx, r8);
+}
 
 void __fastcall UniversalDumper(int index, void* rcx, void* rdx, void* r8) {
     // 如果已经确定了唯一函数，直接调用原函数并返回，不再进入扫描逻辑
@@ -482,11 +784,14 @@ void __fastcall UniversalDumper(int index, void* rcx, void* rdx, void* r8) {
                         }
                     }
 
-                    // 如果已经锁定是当前这个 index，执行绘制
+                    // 如果已经锁定是当前这个 index，执行绘制并驱动 Tick 扫描
                     if (TrackedMatches[index].isConfirmed) {
                         SDK::UCanvas* canvas = (SDK::UCanvas*)rdx;
                         SDK::FLinearColor green = { 0.f, 1.f, 0.f, 1.f };
                         canvas->K2_DrawBox({ 2, 2 }, { 50, 50 }, 1.0f, green);
+
+                        // 自动定位 AActor::Tick
+                        ProcessTickAutoScan();
                     }
                 }
             }
@@ -499,9 +804,6 @@ void __fastcall UniversalDumper(int index, void* rcx, void* rdx, void* r8) {
 
 // --- 宏定义逻辑 (生成 0-499 个入口) ---
 #define H_FUNC(i) void __fastcall H_##i(void* rcx, void* rdx, void* r8) { UniversalDumper(i, rcx, rdx, r8); }
-#define REPEAT_10(m, n) m(n##0) m(n##1) m(n##2) m(n##3) m(n##4) m(n##5) m(n##6) m(n##7) m(n##8) m(n##9)
-#define REPEAT_100(m, n) REPEAT_10(m, n##0) REPEAT_10(m, n##1) REPEAT_10(m, n##2) REPEAT_10(m, n##3) REPEAT_10(m, n##4) \
-                         REPEAT_10(m, n##5) REPEAT_10(m, n##6) REPEAT_10(m, n##7) REPEAT_10(m, n##8) REPEAT_10(m, n##9)
 
 H_FUNC(0) H_FUNC(1) H_FUNC(2) H_FUNC(3) H_FUNC(4) H_FUNC(5) H_FUNC(6) H_FUNC(7) H_FUNC(8) H_FUNC(9)
 REPEAT_10(H_FUNC, 1) REPEAT_10(H_FUNC, 2) REPEAT_10(H_FUNC, 3) REPEAT_10(H_FUNC, 4) REPEAT_10(H_FUNC, 5)
@@ -761,6 +1063,10 @@ DWORD WINAPI MainThread(LPVOID lpParam) {
     LOG_INFO("SIZE_X_OFFSET          : {:#x}", SIZE_X_OFFSET);
     LOG_INFO("SCAN_RANGE             : {}", SCAN_RANGE);
     LOG_INFO("STABLE_FRAME_THRESHOLD : {}", STABLE_FRAME_THRESHOLD);
+    LOG_INFO("TICK_SCAN_RANGE        : {}", TICK_SCAN_RANGE);
+    LOG_INFO("TICK_SAMPLE_FRAMES     : {}", TICK_SAMPLE_FRAMES);
+    LOG_INFO("TICK_FREQ_TOLERANCE    : {}", TICK_FREQ_TOLERANCE);
+    LOG_INFO("TICK_DT_TOLERANCE      : {:.4f}", TICK_DT_TOLERANCE);
     std::println("====================================");
 
     LOG_INFO("Waiting for SDK::UEngine::GetEngine() and GameViewport...");
