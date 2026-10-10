@@ -282,7 +282,7 @@ static SigGenDiagnostics GenerateUniqueSignature(uintptr_t funcAddr) {
         }
     }
 
-    // ========== 策略1: 逐字节尝试（从短到长） ==========
+    // 策略1: 逐字节尝试（从短到长）
     // 这样可以找到像 "8B C2 35 ?? ?? ?? ?? 44" 这样在指令中间停止的最短唯一特征码
     diag.instructionsTried = 0;
     for (size_t len = 1; len <= marks.size() && len <= SIG_MAX_SCAN_LEN; len++) {
@@ -303,7 +303,7 @@ static SigGenDiagnostics GenerateUniqueSignature(uintptr_t funcAddr) {
         }
     }
 
-    // ========== 策略2: 回退到指令边界尝试 ==========
+    // 策略2: 回退到指令边界尝试
     // 如果逐字节尝试失败（理论上不会，但作为后备），使用指令边界
     ZydisDecoder decoder;
     if (!ZYAN_SUCCESS(ZydisDecoderInit(&decoder, ZYDIS_MACHINE_MODE_LONG_64, ZYDIS_STACK_WIDTH_64))) {
@@ -469,7 +469,7 @@ static void ReportProcessEvent() {
         return;
     }
 
-    LOG_SPECIAL("========== ProcessEvent Result ==========");
+    LOG_SPECIAL("[ProcessEvent Result]");
     LOG_INFO("VTable Index      : {}", SDK::Offsets::ProcessEventIdx);
     LOG_INFO("Memory Address    : {:#x}", (uintptr_t)processEventAddr);
 
@@ -487,13 +487,13 @@ static void ReportProcessEvent() {
                 diag.longestLenTried, diag.matchCountAtLongest);
         }
     }
-    LOG_SPECIAL("=========================================");
+    LOG_SPECIAL("----");
 }
 
 static void EvaluateAndReportTickCandidates(TickScanContext& ctx) {
     if (!ctx.isHooked || ctx.isCompleted) return;
 
-    LOG_SPECIAL("========== [{}] Tick Candidates Evaluation ==========", ctx.name);
+    LOG_SPECIAL("[{}] Tick Candidates Evaluation", ctx.name);
 
     int matchFound = 0;
     for (int i = 1; i < TICK_SCAN_RANGE; i++) {
@@ -533,7 +533,7 @@ static void EvaluateAndReportTickCandidates(TickScanContext& ctx) {
     if (matchFound == 0) {
         LOG_WARN("No candidate functions matched the Tick criteria for {}.", ctx.name);
     }
-    LOG_SPECIAL("=========================================================");
+    LOG_SPECIAL("----");
 
     // 扫描判定完成：彻底解挂并移除所有通用的临时 Hook，恢复游戏环境的原生调用
     for (int i = 1; i < TICK_SCAN_RANGE; i++) {
@@ -780,7 +780,7 @@ void __fastcall UniversalDumper(int index, void* rcx, void* rdx, void* r8) {
                                     MH_EnableHook(targetFunc);
                                 }
 
-                                std::println("========== PostRender Result ==========");
+                                std::println("[PostRender Result]");
                                 if (diag.success) {
                                     LOG_SUCCESS("Signature        : {}", diag.signature);
                                 }
@@ -796,7 +796,7 @@ void __fastcall UniversalDumper(int index, void* rcx, void* rdx, void* r8) {
                                 }
                                 LOG_SUCCESS("Memory Address    : {:#x}", realFuncAddr);
                                 LOG_SUCCESS("VTable Index      : {}", index);
-                                std::println("========================================");
+                                std::println("----");
 
                                 // 目标已确认：禁用除 PostRender 本身以外的所有其余 Hook，
                                 // 避免后续每一帧都对其它（可能已销毁/被复用的）vtable 条目
@@ -1092,10 +1092,10 @@ DWORD WINAPI MainThread(LPVOID lpParam) {
         SetConsoleMode(hConsole, consoleMode);
     }
 
-    LOG_SPECIAL("--- Post Render Auto-Finder ---");
+    LOG_SPECIAL("[github.com/zetsr] / [www.unknowncheats.me/forum/members/4701133.html]");
 
     // 需求 1：打印分辨率、SIZE_X_OFFSET、SCAN_RANGE、STABLE_FRAME_THRESHOLD
-    std::println("========== Configuration ==========");
+    std::println("[Configuration]");
     LOG_INFO("Target Resolution      : {} x {}", TARGET_WIDTH, TARGET_HEIGHT);
     LOG_INFO("SIZE_X_OFFSET          : {:#x}", SIZE_X_OFFSET);
     LOG_INFO("SCAN_RANGE             : {}", SCAN_RANGE);
@@ -1104,7 +1104,7 @@ DWORD WINAPI MainThread(LPVOID lpParam) {
     LOG_INFO("TICK_SAMPLE_FRAMES     : {}", TICK_SAMPLE_FRAMES);
     LOG_INFO("TICK_FREQ_TOLERANCE    : {}", TICK_FREQ_TOLERANCE);
     LOG_INFO("TICK_DT_TOLERANCE      : {:.4f}", TICK_DT_TOLERANCE);
-    std::println("====================================");
+    std::println("----");
 
     LOG_INFO("Waiting for SDK::UEngine::GetEngine() and GameViewport...");
 
