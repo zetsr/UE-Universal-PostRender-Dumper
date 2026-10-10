@@ -4,6 +4,7 @@
 #include <sstream>
 #include <print>
 #include <format>
+#include <cstddef>
 #include <psapi.h>
 #include "MinHook/include/MinHook.h"
 #include "SDK/SDK_Headers.hpp"
@@ -19,8 +20,9 @@ extern "C" {
 #define TARGET_WIDTH  1920           // 窗口分辨率 W     // Windows Screen Size W
 #define TARGET_HEIGHT 1080           // 窗口分辨率 H     // Windows Screen Size H
 
-// 一般不用改，可以验证一下SDK导出的UCanvas->SizeX的偏移
-#define SIZE_X_OFFSET 0x40           // UCanvas->SizeX   // 0x40 是大部分 UE 版本 的 UCanvas 结构体中 SizeX 的偏移，具体以 Dumper-7 生成的 SDK 为准
+// 编译器直接从 SDK 提取 Dumper-7 生成的 UCanvas->SizeX 与 SizeY 真实偏移
+#define SIZE_X_OFFSET offsetof(SDK::UCanvas, SizeX)
+#define SIZE_Y_OFFSET offsetof(SDK::UCanvas, SizeY)
 
 // 一般不用改
 #define SCAN_RANGE    200            // 硬编码           // 扫描前 200 个函数（从 vtable[1] 开始）以寻找候选函数
@@ -787,7 +789,7 @@ void __fastcall UniversalDumper(int index, void* rcx, void* rdx, void* r8) {
     // 1. 基础过滤：UE 实例对齐检查
     if (addr > 0x100000000 && (addr % 16 == 0)) {
         int32_t readX = SafeRead<int32_t>(addr + SIZE_X_OFFSET);
-        int32_t readY = SafeRead<int32_t>(addr + SIZE_X_OFFSET + 4);
+        int32_t readY = SafeRead<int32_t>(addr + SIZE_Y_OFFSET);
 
         if (readX == g_ActiveTargetWidth && readY == g_ActiveTargetHeight) {
             uintptr_t vtable = SafeRead<uintptr_t>(addr);
@@ -1223,6 +1225,7 @@ DWORD WINAPI MainThread(LPVOID lpParam) {
     LOG_INFO("Fallback Hardcoded Res : {} x {}", TARGET_WIDTH, TARGET_HEIGHT);
     LOG_INFO("Fallback Timeout       : {} ms", DYNAMIC_RES_TIMEOUT_MS);
     LOG_INFO("SIZE_X_OFFSET          : {:#x}", SIZE_X_OFFSET);
+    LOG_INFO("SIZE_Y_OFFSET          : {:#x}", SIZE_Y_OFFSET);
     LOG_INFO("SCAN_RANGE             : {}", SCAN_RANGE);
     LOG_INFO("STABLE_FRAME_THRESHOLD : {}", STABLE_FRAME_THRESHOLD);
     LOG_INFO("TICK_SCAN_RANGE        : {}", TICK_SCAN_RANGE);
