@@ -26,6 +26,12 @@ extern "C" {
 #define SCAN_RANGE    200            // 硬编码           // 扫描前 200 个函数（从 vtable[1] 开始）以寻找候选函数
 #define STABLE_FRAME_THRESHOLD 120   // 硬编码           // 稳定性阈值：连续 120 帧（约 2 秒）满足条件才认定为候选函数
 
+// 动态分辨率稳态超时（毫秒）：5 秒未能通过动态分辨率找到目标则回滚
+#define DYNAMIC_RES_TIMEOUT_MS      5000
+
+// 退出并解除所有 Hook 的热键
+#define EXIT_HOTKEY                 VK_F1
+
 // 特征码生成相关配置
 #define SIG_MAX_SCAN_LEN   256       // 反汇编时最多累积的字节数上限
 #define SIG_MAX_INSNS      48        // 最多反汇编的指令条数上限
@@ -66,6 +72,14 @@ MatchInfo TrackedMatches[SCAN_RANGE];
 void* Originals[SCAN_RANGE] = { 0 };
 void* OriginalVTableEntries[SCAN_RANGE] = { nullptr };
 HANDLE hProcess = NULL;
+
+FILE* g_ConsoleFile = nullptr;
+int g_ActiveTargetWidth = TARGET_WIDTH;
+int g_ActiveTargetHeight = TARGET_HEIGHT;
+bool g_UsingDynamicResolution = false;
+bool g_HasRolledBack = false;
+ULONGLONG g_HookStartTime = 0;
+
 uintptr_t ModuleBase = 0;
 uintptr_t ModuleSize = 0;
 bool IsFound = false; // 全局标志：找到目标后停止一切逻辑
@@ -445,14 +459,90 @@ static void HookActorTickVTable(void* instance) {
         successCount, failCount, TICK_SCAN_RANGE - 1);
 }
 
+struct WindowSearchContext {
+    DWORD targetPid;
+    HWND bestHwnd;
+    int maxArea;
+    int width;
+    int height;
+};
+
+static BOOL CALLBACK EnumWindowsCallback(HWND hwnd, LPARAM lParam) {
+    WindowSearchContext* ctx = reinterpret_cast<WindowSearchContext*>(lParam);
+    DWORD pid = 0;
+    GetWindowThreadProcessId(hwnd, &pid);
+    if (pid == ctx->targetPid && IsWindowVisible(hwnd)) {
+        RECT rect = { 0 };
+        if (GetClientRect(hwnd, &rect)) {
+            int w = rect.right - rect.left;
+            int h = rect.bottom - rect.top;
+            int area = w * h;
+            if (area > ctx->maxArea) {
+                ctx->maxArea = area;
+                ctx->bestHwnd = hwnd;
+                ctx->width = w;
+                ctx->height = h;
+            }
+        }
+    }
+    return TRUE;
+}
+
+static bool GetProcessWindowResolution(int& outWidth, int& outHeight) {
+    WindowSearchContext ctx = { 0 };
+    ctx.targetPid = GetCurrentProcessId();
+    ctx.bestHwnd = NULL;
+    ctx.maxArea = 0;
+    ctx.width = 0;
+    ctx.height = 0;
+
+    EnumWindows(EnumWindowsCallback, reinterpret_cast<LPARAM>(&ctx));
+
+    if (ctx.bestHwnd != NULL && ctx.width > 0 && ctx.height > 0) {
+        outWidth = ctx.width;
+        outHeight = ctx.height;
+        return true;
+    }
+    return false;
+}
+
+static void UnloadAndCloseConsole() {
+    // 解除所有已建立的 Hook 并恢复现场
+    MH_DisableHook(MH_ALL_HOOKS);
+    MH_Uninitialize();
+
+    // 释放并关闭控制台句柄
+    if (g_ConsoleFile) {
+        fclose(g_ConsoleFile);
+        g_ConsoleFile = nullptr;
+    }
+    FreeConsole();
+}
+
 void __fastcall DedicatedActorTickHook(SDK::AActor* rcx, float deltaSeconds) {
+    static bool s_Exited = false;
+    if (s_Exited) return;
+
+    bool shouldExit = false;
+
     // 仅针对目标采样 Actor 打印日志，避免场景中数百个 Actor 同时输出刷屏
     if (rcx == g_ActorTickContext.instance) {
-        LOG_DEBUG("[AActor::Tick] Actor: {:#x} | DeltaTime: {:.6f}", (uintptr_t)rcx, deltaSeconds);
+        LOG_DEBUG("[AActor::Tick] Actor: {:#x} | DeltaTime: {:.6f} | [Press F1 to exit]", (uintptr_t)rcx, deltaSeconds);
+
+        if ((GetAsyncKeyState(EXIT_HOTKEY) & 0x8000) && !s_Exited) {
+            shouldExit = true;
+        }
     }
 
-    if (g_OriginalActorTick) {
-        g_OriginalActorTick(rcx, deltaSeconds);
+    auto orig = g_OriginalActorTick;
+    if (orig) {
+        orig(rcx, deltaSeconds);
+    }
+
+    if (shouldExit && !s_Exited) {
+        s_Exited = true;
+        LOG_SPECIAL("F1 pressed. Unhooking all functions and closing console...");
+        UnloadAndCloseConsole();
     }
 }
 
@@ -674,6 +764,24 @@ void __fastcall UniversalDumper(int index, void* rcx, void* rdx, void* r8) {
         return;
     }
 
+    // 稳态超时检查：如果动态获取的分辨率在指定时间内未能匹配确认，回滚到硬编码配置
+    if (g_UsingDynamicResolution && !g_HasRolledBack && !IsFound) {
+        if (GetTickCount64() - g_HookStartTime >= DYNAMIC_RES_TIMEOUT_MS) {
+            LOG_WARN("Steady state timeout ({}ms): UCanvas->Size does not match dynamic resolution ({}x{}). Rolling back to hardcoded TARGET ({}x{}).",
+                DYNAMIC_RES_TIMEOUT_MS, g_ActiveTargetWidth, g_ActiveTargetHeight, TARGET_WIDTH, TARGET_HEIGHT);
+            g_ActiveTargetWidth = TARGET_WIDTH;
+            g_ActiveTargetHeight = TARGET_HEIGHT;
+            g_UsingDynamicResolution = false;
+            g_HasRolledBack = true;
+
+            for (int i = 0; i < SCAN_RANGE; i++) {
+                TrackedMatches[i].count = 0;
+                TrackedMatches[i].lastRDX = 0;
+                TrackedMatches[i].lastVTable = 0;
+            }
+        }
+    }
+
     uintptr_t addr = (uintptr_t)rdx;
 
     // 1. 基础过滤：UE 实例对齐检查
@@ -681,7 +789,7 @@ void __fastcall UniversalDumper(int index, void* rcx, void* rdx, void* r8) {
         int32_t readX = SafeRead<int32_t>(addr + SIZE_X_OFFSET);
         int32_t readY = SafeRead<int32_t>(addr + SIZE_X_OFFSET + 4);
 
-        if (readX == TARGET_WIDTH && readY == TARGET_HEIGHT) {
+        if (readX == g_ActiveTargetWidth && readY == g_ActiveTargetHeight) {
             uintptr_t vtable = SafeRead<uintptr_t>(addr);
 
             if (IsValidModuleAddress(vtable)) {
@@ -1082,7 +1190,7 @@ void SetupHooks(void** vtable) {
 
 DWORD WINAPI MainThread(LPVOID lpParam) {
     AllocConsole();
-    FILE* f; freopen_s(&f, "CONOUT$", "w", stdout);
+    freopen_s(&g_ConsoleFile, "CONOUT$", "w", stdout);
 
     // 启用 ANSI 转义序列支持（彩色日志）
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -1094,9 +1202,26 @@ DWORD WINAPI MainThread(LPVOID lpParam) {
 
     LOG_SPECIAL("[github.com/zetsr] / [www.unknowncheats.me/forum/members/4701133.html]");
 
-    // 需求 1：打印分辨率、SIZE_X_OFFSET、SCAN_RANGE、STABLE_FRAME_THRESHOLD
+    // 优先尝试自动获取当前进程的窗口分辨率
+    int dynW = 0, dynH = 0;
+    if (GetProcessWindowResolution(dynW, dynH)) {
+        g_ActiveTargetWidth = dynW;
+        g_ActiveTargetHeight = dynH;
+        g_UsingDynamicResolution = true;
+        LOG_SUCCESS("Automatically detected window resolution: {} x {}", dynW, dynH);
+    }
+    else {
+        g_ActiveTargetWidth = TARGET_WIDTH;
+        g_ActiveTargetHeight = TARGET_HEIGHT;
+        g_UsingDynamicResolution = false;
+        LOG_WARN("Failed to detect window resolution automatically, falling back to hardcoded: {} x {}", TARGET_WIDTH, TARGET_HEIGHT);
+    }
+
+    // 打印当前使用的配置
     std::println("[Configuration]");
-    LOG_INFO("Target Resolution      : {} x {}", TARGET_WIDTH, TARGET_HEIGHT);
+    LOG_INFO("Active Target Res      : {} x {} (Dynamic: {})", g_ActiveTargetWidth, g_ActiveTargetHeight, g_UsingDynamicResolution);
+    LOG_INFO("Fallback Hardcoded Res : {} x {}", TARGET_WIDTH, TARGET_HEIGHT);
+    LOG_INFO("Fallback Timeout       : {} ms", DYNAMIC_RES_TIMEOUT_MS);
     LOG_INFO("SIZE_X_OFFSET          : {:#x}", SIZE_X_OFFSET);
     LOG_INFO("SCAN_RANGE             : {}", SCAN_RANGE);
     LOG_INFO("STABLE_FRAME_THRESHOLD : {}", STABLE_FRAME_THRESHOLD);
@@ -1127,6 +1252,8 @@ DWORD WINAPI MainThread(LPVOID lpParam) {
     LOG_SUCCESS("Engine and GameViewport acquired. engine={:#x}, GameViewport={:#x}",
         (uintptr_t)engine, (uintptr_t)engine->GameViewport);
 
+    // 记录 Hook 开始时间基准，用于稳态超时回滚判定
+    g_HookStartTime = GetTickCount64();
     SetupHooks(*(void***)engine->GameViewport);
     LOG_INFO("Hooks applied. Waiting for candidate pair (N and N+1)...");
     return 0;
