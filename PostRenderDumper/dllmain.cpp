@@ -456,6 +456,40 @@ void __fastcall DedicatedActorTickHook(SDK::AActor* rcx, float deltaSeconds) {
     }
 }
 
+static void ReportProcessEvent() {
+    SDK::UWorld* world = SDK::UWorld::GetWorld();
+    if (!world) {
+        LOG_ERROR("Failed to get UWorld for ProcessEvent!");
+        return;
+    }
+
+    void* processEventAddr = SDK::InSDKUtils::GetVirtualFunction<void*>(world, SDK::Offsets::ProcessEventIdx);
+    if (!processEventAddr) {
+        LOG_ERROR("Failed to get ProcessEvent address!");
+        return;
+    }
+
+    LOG_SPECIAL("========== ProcessEvent Result ==========");
+    LOG_INFO("VTable Index      : {}", SDK::Offsets::ProcessEventIdx);
+    LOG_INFO("Memory Address    : {:#x}", (uintptr_t)processEventAddr);
+
+    LOG_INFO("Generating unique signature for ProcessEvent...");
+    SigGenDiagnostics diag = GenerateUniqueSignature((uintptr_t)processEventAddr);
+    if (diag.success) {
+        LOG_SUCCESS("Signature         : {}", diag.signature);
+    }
+    else {
+        LOG_ERROR("Signature         : FAILED TO GENERATE UNIQUE AOB");
+        LOG_ERROR("Diagnostics       : disassembled {} bytes, tried {} instruction boundaries",
+            diag.bytesDisassembled, diag.instructionsTried);
+        if (diag.longestLenTried > 0) {
+            LOG_ERROR("                    longest pattern tried = {} bytes, still matched {} locations",
+                diag.longestLenTried, diag.matchCountAtLongest);
+        }
+    }
+    LOG_SPECIAL("=========================================");
+}
+
 static void EvaluateAndReportTickCandidates(TickScanContext& ctx) {
     if (!ctx.isHooked || ctx.isCompleted) return;
 
@@ -527,6 +561,9 @@ static void EvaluateAndReportTickCandidates(TickScanContext& ctx) {
             LOG_ERROR("Failed to create dedicated AActor::Tick hook (Status: {})", (int)cStatus);
         }
     }
+
+    // 所有检测与 Hook 流程均已完成，生成并报告 ProcessEvent 特征码与虚表索引
+    ReportProcessEvent();
 }
 
 static void ProcessTickAutoScan() {
