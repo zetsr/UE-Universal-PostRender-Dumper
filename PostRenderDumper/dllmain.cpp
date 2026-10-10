@@ -95,6 +95,14 @@ std::vector<std::string> g_PredefinedSignatures = {
 // 是否启用了特征码优先挂钩模式
 bool g_PreferredMode = false;
 
+// AActor::Tick 预设特征码：? 表示通配符
+std::vector<std::string> g_PredefinedActorTickSignatures = {
+    "40 53 48 83 EC"
+};
+
+// AActor::Tick 是否启用了特征码优先挂钩模式
+bool g_ActorTickPreferredMode = false;
+
 // 特征码命中的 vtable 索引标记
 bool g_IsPreferredIndex[SCAN_RANGE] = { false };
 
@@ -412,8 +420,59 @@ static std::vector<void*> GetActorTickDispatchTable() {
         return table;
 }
 
-static void HookActorTickVTable(void* instance) {
-    if (!instance || g_ActorTickContext.isHooked) return;
+static bool ParsePredefinedSignature(const std::string& sig, std::vector<SigByte>& out);
+static bool MatchPredefinedPatternAtAddress(uintptr_t addr, const std::vector<SigByte>& pattern);
+
+// 扫描 AActor vtable 中所有虚函数头部，返回命中预设特征码的索引列表
+static std::vector<int> ScanActorVTableForPredefinedSignatures(void** vtable) {
+    std::vector<int> matchedIndices;
+
+    if (!vtable) {
+        return matchedIndices;
+    }
+
+    std::vector<std::vector<SigByte>> patterns;
+    patterns.reserve(g_PredefinedActorTickSignatures.size());
+
+    for (const std::string& sig : g_PredefinedActorTickSignatures) {
+        std::vector<SigByte> pattern;
+        if (ParsePredefinedSignature(sig, pattern)) {
+            patterns.push_back(std::move(pattern));
+        }
+        else {
+            LOG_WARN("Invalid predefined AActor::Tick signature skipped: {}", sig);
+        }
+    }
+
+    if (patterns.empty()) {
+        return matchedIndices;
+    }
+
+    for (int i = 1; i < TICK_SCAN_RANGE; ++i) {
+        void* fn = vtable[i];
+        if (!fn) {
+            continue;
+        }
+
+        uintptr_t addr = (uintptr_t)fn;
+        if (!IsValidModuleAddress(addr)) {
+            continue;
+        }
+
+        for (size_t pi = 0; pi < patterns.size(); ++pi) {
+            if (MatchPredefinedPatternAtAddress(addr, patterns[pi])) {
+                matchedIndices.push_back(i);
+                LOG_SPECIAL("Predefined AActor::Tick signature #{} matched vtable[{}] at {:#x}", pi + 1, i, addr);
+                break;
+            }
+        }
+    }
+
+    return matchedIndices;
+}
+
+static void HookActorTickVTable(void* instance, bool forceFullHook = false) {
+    if (!instance || (g_ActorTickContext.isHooked && !forceFullHook)) return;
     g_ActorTickContext.instance = instance;
     g_ActorTickContext.vtable = *(void***)instance;
 
@@ -422,14 +481,47 @@ static void HookActorTickVTable(void* instance) {
         return;
     }
 
-    LOG_INFO("Starting to create hooks for AActor vtable entries (1 to {})...", TICK_SCAN_RANGE - 1);
+    std::vector<int> indicesToHook;
+    if (!forceFullHook) {
+        LOG_INFO("Scanning AActor vtable for predefined signatures before hooking...");
+        std::vector<int> matchedIndices = ScanActorVTableForPredefinedSignatures(g_ActorTickContext.vtable);
+
+        if (!matchedIndices.empty()) {
+            g_ActorTickPreferredMode = true;
+            indicesToHook = matchedIndices;
+            LOG_SUCCESS("Predefined signature matched {} AActor vtable index(es). Preferred mode enabled.", matchedIndices.size());
+
+            std::string idxList;
+            for (int idx : indicesToHook) {
+                if (!idxList.empty()) idxList += ", ";
+                idxList += std::to_string(idx);
+            }
+            LOG_INFO("Preferred AActor hook indices: {}", idxList);
+        }
+        else {
+            LOG_WARN("No predefined signature matched for AActor. Falling back to full vtable hooking.");
+            g_ActorTickPreferredMode = false;
+            for (int i = 1; i < TICK_SCAN_RANGE; ++i) {
+                indicesToHook.push_back(i);
+            }
+        }
+    }
+    else {
+        LOG_WARN("Falling back to full AActor vtable hooking.");
+        g_ActorTickPreferredMode = false;
+        for (int i = 1; i < TICK_SCAN_RANGE; ++i) {
+            indicesToHook.push_back(i);
+        }
+    }
+
+    LOG_INFO("Starting to create hooks for {} AActor vtable entries...", indicesToHook.size());
 
     std::vector<void*> handlers = GetActorTickDispatchTable();
 
     int successCount = 0;
     int failCount = 0;
 
-    for (int i = 1; i < TICK_SCAN_RANGE; i++) {
+    for (int i : indicesToHook) {
         void* func = g_ActorTickContext.vtable[i];
         if (func && IsValidModuleAddress((uintptr_t)func)) {
             g_ActorTickContext.origVtableEntries[i] = func;
@@ -458,7 +550,7 @@ static void HookActorTickVTable(void* instance) {
 
     g_ActorTickContext.isHooked = true;
     LOG_INFO("AActor Hook setup complete. Success: {} | Failed: {} | Total: {}",
-        successCount, failCount, TICK_SCAN_RANGE - 1);
+        successCount, failCount, indicesToHook.size());
 }
 
 struct WindowSearchContext {
@@ -529,7 +621,8 @@ void __fastcall DedicatedActorTickHook(SDK::AActor* rcx, float deltaSeconds) {
 
     // 仅针对目标采样 Actor 打印日志，避免场景中数百个 Actor 同时输出刷屏
     if (rcx == g_ActorTickContext.instance) {
-        LOG_DEBUG("[AActor::Tick] Actor: {:#x} | DeltaTime: {:.6f} | [Press F1 to exit]", (uintptr_t)rcx, deltaSeconds);
+        int tick_vtable_index = g_ActorTickContext.confirmedIndex;
+        LOG_DEBUG("[{}] [AActor::Tick] Actor: {:#x} | DeltaTime: {:.6f} | [Press F1 to exit]", tick_vtable_index, (uintptr_t)rcx, deltaSeconds);
 
         if ((GetAsyncKeyState(EXIT_HOTKEY) & 0x8000) && !s_Exited) {
             shouldExit = true;
@@ -624,6 +717,28 @@ static void EvaluateAndReportTickCandidates(TickScanContext& ctx) {
 
     if (matchFound == 0) {
         LOG_WARN("No candidate functions matched the Tick criteria for {}.", ctx.name);
+
+        // 如果处于特征码优先挂钩模式，且动态特征判断全部失败，退回 1-500 全量挂钩
+        if (g_ActorTickPreferredMode) {
+            LOG_WARN("Preferred mode candidate(s) failed dynamic Tick criteria. Falling back to full vtable hooking (1 to {})...", TICK_SCAN_RANGE - 1);
+
+            // 彻底解挂并移除所有已建立的优先 Hook
+            for (int i = 1; i < TICK_SCAN_RANGE; i++) {
+                if (ctx.origVtableEntries[i]) {
+                    MH_DisableHook(ctx.origVtableEntries[i]);
+                    MH_RemoveHook(ctx.origVtableEntries[i]);
+                    ctx.origVtableEntries[i] = nullptr;
+                    ctx.originals[i] = nullptr;
+                }
+                ctx.entries[i] = TickEntryInfo{};
+            }
+            ctx.isHooked = false;
+            g_PostRenderFrameCounter = 0;
+
+            // 退回全量挂钩
+            HookActorTickVTable(ctx.instance, /*forceFullHook=*/true);
+            return;
+        }
     }
     LOG_SPECIAL("----");
 
