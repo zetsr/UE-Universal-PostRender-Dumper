@@ -90,7 +90,7 @@ bool IsFound = false; // 全局标志：找到目标后停止一切逻辑
 std::vector<std::string> g_PredefinedSignatures = {
     "8B C2 35 ? ? ? ? 44",
     "48 8B 01 48 FF A0 ? ? ? ? CC CC CC CC CC CC",
-    "40 55 53 57 48 8D AC 24"
+    "40 55 53 57 48 8D"
 };
 
 // 是否启用了特征码优先挂钩模式
