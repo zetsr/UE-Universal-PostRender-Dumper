@@ -786,7 +786,7 @@ static void ProcessTickAutoScan() {
         if (world->PersistentLevel && world->PersistentLevel->Actors.Num() > 0) {
             for (int i = 0; i < world->PersistentLevel->Actors.Num(); i++) {
                 SDK::AActor* a = world->PersistentLevel->Actors[i];
-                if (a && a->VTable) {
+                if (a && reinterpret_cast<SDK::UObject*>(a)->VTable) {
                     sampleActor = a;
                     break;
                 }
