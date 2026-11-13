@@ -81,6 +81,9 @@ namespace Dumper
 
         static constexpr int32_t TickLogMaxCount = 5;
 
+        static constexpr bool bExportHeader = true;
+        static constexpr std::wstring_view ExportDirectory = L"C:\\UE-Universal-PostRender-Dumper\\";
+
         static constexpr int32_t IndicatorFontSize = 20;
         static constexpr float IndicatorStartX = 16.0f;
         static constexpr float IndicatorStartY = 16.0f;
@@ -269,6 +272,12 @@ struct FSignatureResult
     size_t CandidatesTested = 0;
     size_t LongestLength = 0;
     size_t LongestMatchCount = 0;
+};
+
+struct FExportCandidate
+{
+    int32_t Index = -1;
+    std::string Signature;
 };
 
 class FSignatureGenerator
@@ -483,6 +492,9 @@ public:
     void ProcessVirtualCall(int32_t Index, void* Rcx, void* Rdx, void* R8);
     void Shutdown();
     void SetProcessEventCompleted(int32_t Index);
+    void SetActorTickExports(std::vector<FExportCandidate> Exports);
+    void AddProcessEventExport(int32_t Index, std::string Signature);
+    void ExportHeader() const;
 
     FActorTickScanner& GetActorTickScanner() { return TickScanner; }
     const FActorTickScanner& GetActorTickScanner() const { return TickScanner; }
@@ -517,6 +529,10 @@ private:
     std::array<void*, Range> Originals{};
     std::array<void*, Range> OriginalTargets{};
     std::array<bool, Range> PreferredIndices{};
+
+    std::vector<FExportCandidate> PostRenderExports;
+    std::vector<FExportCandidate> ActorTickExports;
+    std::vector<FExportCandidate> ProcessEventExports;
 
     FActorTickScanner TickScanner;
 
@@ -573,6 +589,136 @@ const std::array<void*, static_cast<size_t>(FConfig::TickScanRange)>& GetActorTi
     return Thunks;
 }
 
+std::string WideToUtf8(std::wstring_view Text)
+{
+    if (Text.empty()) return {};
+
+    const int32_t Required = WideCharToMultiByte(
+        CP_UTF8,
+        0,
+        Text.data(),
+        static_cast<int32_t>(Text.size()),
+        nullptr,
+        0,
+        nullptr,
+        nullptr);
+    if (Required <= 0) return {};
+
+    std::string Result(static_cast<size_t>(Required), '\0');
+    const int32_t Written = WideCharToMultiByte(
+        CP_UTF8,
+        0,
+        Text.data(),
+        static_cast<int32_t>(Text.size()),
+        Result.data(),
+        Required,
+        nullptr,
+        nullptr);
+    if (Written <= 0) return {};
+
+    return Result;
+}
+
+std::wstring GetProcessName()
+{
+    std::vector<wchar_t> Buffer(MAX_PATH);
+    while (true)
+    {
+        const DWORD Length = GetModuleFileNameW(nullptr, Buffer.data(), static_cast<DWORD>(Buffer.size()));
+        if (Length == 0) return L"UnknownProcess";
+
+        if (Length < Buffer.size())
+        {
+            std::wstring_view FullPath(Buffer.data(), Length);
+            const size_t SlashPos = FullPath.find_last_of(L"\\/");
+            std::wstring_view FileName = (SlashPos == std::wstring_view::npos) ? FullPath : FullPath.substr(SlashPos + 1);
+            const size_t DotPos = FileName.find_last_of(L'.');
+            if (DotPos != std::wstring_view::npos) FileName = FileName.substr(0, DotPos);
+            if (FileName.empty()) return L"UnknownProcess";
+            return std::wstring(FileName);
+        }
+
+        if (Buffer.size() >= 32768) return L"UnknownProcess";
+        Buffer.resize(Buffer.size() * 2);
+    }
+}
+
+bool EnsureDirectoryExists(std::wstring_view Directory)
+{
+    if (Directory.empty()) return false;
+
+    std::wstring Path(Directory);
+    while (!Path.empty() && (Path.back() == L'\\' || Path.back() == L'/'))
+    {
+        Path.pop_back();
+    }
+    if (Path.empty()) return false;
+
+    for (size_t Index = 0; Index < Path.size(); ++Index)
+    {
+        if (Path[Index] != L'\\' && Path[Index] != L'/') continue;
+        if (Index == 0) continue;
+        if (Index == 2 && Path[1] == L':') continue;
+
+        const wchar_t Saved = Path[Index];
+        Path[Index] = L'\0';
+        if (CreateDirectoryW(Path.c_str(), nullptr) == FALSE)
+        {
+            if (GetLastError() != ERROR_ALREADY_EXISTS)
+            {
+                Path[Index] = Saved;
+                return false;
+            }
+        }
+        Path[Index] = Saved;
+    }
+
+    if (CreateDirectoryW(Path.c_str(), nullptr) == FALSE)
+    {
+        if (GetLastError() != ERROR_ALREADY_EXISTS) return false;
+        const DWORD Attributes = GetFileAttributesW(Path.c_str());
+        if (Attributes == INVALID_FILE_ATTRIBUTES || (Attributes & FILE_ATTRIBUTE_DIRECTORY) == 0) return false;
+    }
+
+    return true;
+}
+
+void AppendFunctionExports(
+    std::string& Output,
+    std::string_view Prefix,
+    const std::vector<FExportCandidate>& Candidates,
+    int32_t PreferredIndex,
+    bool& bHasWrittenSection)
+{
+    if (Candidates.empty()) return;
+
+    if (bHasWrittenSection) Output += "\r\n";
+    bHasWrittenSection = true;
+
+    size_t SelectedSlot = 0;
+    for (size_t Slot = 0; Slot < Candidates.size(); ++Slot)
+    {
+        if (Candidates[Slot].Index == PreferredIndex)
+        {
+            SelectedSlot = Slot;
+            break;
+        }
+    }
+
+    const FExportCandidate& Selected = Candidates[SelectedSlot];
+    Output += std::format("    inline constexpr int {}Index = {};\r\n", Prefix, Selected.Index);
+    Output += std::format("    inline constexpr const char* {}Signature = \"{}\";\r\n", Prefix, Selected.Signature);
+
+    for (size_t Slot = 0; Slot < Candidates.size(); ++Slot)
+    {
+        if (Slot == SelectedSlot) continue;
+
+        const FExportCandidate& Unselected = Candidates[Slot];
+        Output += std::format("    // inline constexpr int {}Index = {};\r\n", Prefix, Unselected.Index);
+        Output += std::format("    // inline constexpr const char* {}Signature = \"{}\";\r\n", Prefix, Unselected.Signature);
+    }
+}
+
 FDumper& FDumper::Get()
 {
     static FDumper Instance;
@@ -613,6 +759,91 @@ void FDumper::SetProcessEventCompleted(int32_t Index)
 {
     ProcessEventIndex = Index;
     bProcessEventCompleted = true;
+}
+
+void FDumper::SetActorTickExports(std::vector<FExportCandidate> Exports)
+{
+    ActorTickExports = std::move(Exports);
+}
+
+void FDumper::AddProcessEventExport(int32_t Index, std::string Signature)
+{
+    ProcessEventExports.push_back({ Index, std::move(Signature) });
+}
+
+void FDumper::ExportHeader() const
+{
+    if (!FConfig::bExportHeader) return;
+
+    if (!EnsureDirectoryExists(FConfig::ExportDirectory))
+    {
+        FLog::Error("Failed to create export directory (error {}).", GetLastError());
+        return;
+    }
+
+    SYSTEMTIME Time{};
+    GetLocalTime(&Time);
+
+    const std::wstring ProcessName = GetProcessName();
+    std::wstring FullPath(FConfig::ExportDirectory);
+    if (!FullPath.empty() && FullPath.back() != L'\\' && FullPath.back() != L'/')
+    {
+        FullPath.push_back(L'\\');
+    }
+
+    FullPath += std::format(
+        L"{}_{:04}_{:02}_{:02}_{:02}_{:02}_{:02}.hpp",
+        ProcessName,
+        static_cast<int32_t>(Time.wYear),
+        static_cast<int32_t>(Time.wMonth),
+        static_cast<int32_t>(Time.wDay),
+        static_cast<int32_t>(Time.wHour),
+        static_cast<int32_t>(Time.wMinute),
+        static_cast<int32_t>(Time.wSecond));
+
+    std::string Content;
+    Content += "\xEF\xBB\xBF";
+    Content += "#pragma once\r\n\r\n";
+    Content += "namespace Dumper\r\n{\r\n";
+
+    bool bHasWrittenSection = false;
+    AppendFunctionExports(Content, "PostRender", PostRenderExports, ConfirmedIndex, bHasWrittenSection);
+    AppendFunctionExports(Content, "ActorTick", ActorTickExports, TickScanner.GetConfirmedIndex(), bHasWrittenSection);
+    AppendFunctionExports(Content, "ProcessEvent", ProcessEventExports, ProcessEventIndex, bHasWrittenSection);
+
+    Content += "}\r\n";
+
+    const HANDLE File = CreateFileW(
+        FullPath.c_str(),
+        GENERIC_WRITE,
+        FILE_SHARE_READ,
+        nullptr,
+        CREATE_ALWAYS,
+        FILE_ATTRIBUTE_NORMAL,
+        nullptr);
+    if (File == INVALID_HANDLE_VALUE)
+    {
+        FLog::Error("Failed to create export header file (error {}).", GetLastError());
+        return;
+    }
+
+    DWORD BytesWritten = 0;
+    const BOOL bWritten = WriteFile(
+        File,
+        Content.data(),
+        static_cast<DWORD>(Content.size()),
+        &BytesWritten,
+        nullptr);
+    const DWORD WriteError = (bWritten == FALSE) ? GetLastError() : ERROR_SUCCESS;
+    CloseHandle(File);
+
+    if (bWritten == FALSE || BytesWritten != Content.size())
+    {
+        FLog::Error("Failed to write export header file (error {}).", WriteError);
+        return;
+    }
+
+    FLog::Success("Exported header to: {}", WideToUtf8(FullPath));
 }
 
 void FDumper::OpenConsole()
@@ -949,6 +1180,7 @@ void FDumper::ConfirmTarget(int32_t Index)
     if (Result.bSuccess)
     {
         FLog::Field(ELogLevel::Success, "Signature", "{}", Result.Signature);
+        PostRenderExports.push_back({ Index, Result.Signature });
     }
     else
     {
@@ -1439,6 +1671,7 @@ void FActorTickScanner::EvaluateCandidates()
     FLog::Section("AActor Tick Candidate Evaluation");
 
     int32_t MatchCount = 0;
+    std::vector<FExportCandidate> ExportCandidates;
 
     for (int32_t Index = 1; Index < FConfig::TickScanRange; ++Index)
     {
@@ -1472,6 +1705,7 @@ void FActorTickScanner::EvaluateCandidates()
         if (Signature.bSuccess)
         {
             FLog::Field(ELogLevel::Success, "AOB", "{}", Signature.Signature);
+            ExportCandidates.push_back({ Index, Signature.Signature });
         }
         else
         {
@@ -1492,6 +1726,8 @@ void FActorTickScanner::EvaluateCandidates()
             return;
         }
     }
+
+    FDumper::Get().SetActorTickExports(std::move(ExportCandidates));
 
     void* ConfirmedTarget = nullptr;
     if (ConfirmedIndex != -1)
@@ -1526,6 +1762,7 @@ void FActorTickScanner::EvaluateCandidates()
     }
 
     ReportProcessEvent();
+    FDumper::Get().ExportHeader();
 }
 
 void FActorTickScanner::RemoveTemporaryHooks()
@@ -1667,6 +1904,7 @@ void ReportProcessEvent()
     if (Result.bSuccess)
     {
         FLog::Field(ELogLevel::Success, "Signature", "{}", Result.Signature);
+        FDumper::Get().AddProcessEventExport(static_cast<int32_t>(SDK::Offsets::ProcessEventIdx), Result.Signature);
         return;
     }
 
