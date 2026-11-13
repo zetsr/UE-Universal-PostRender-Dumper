@@ -29,56 +29,71 @@ extern "C" {
 namespace Dumper
 {
 
-struct FConfig
-{
-    // 确保和目标客户端分辨率一致
-    static constexpr int32_t TargetWidth = 1920;   // 窗口分辨率 W     // Windows Screen Size W
-    static constexpr int32_t TargetHeight = 1080;  // 窗口分辨率 H     // Windows Screen Size H
+    struct FConfig
+    {
+        // 确保和目标客户端分辨率一致
+        static constexpr int32_t TargetWidth = 1920;   // 窗口分辨率 W     // Windows Screen Size W
+        static constexpr int32_t TargetHeight = 1080;  // 窗口分辨率 H     // Windows Screen Size H
 
-    // 编译器直接从 SDK 提取 Dumper-7 生成的 UCanvas->SizeX 与 SizeY 真实偏移
-    static constexpr size_t SizeXOffset = offsetof(SDK::UCanvas, SizeX);
-    static constexpr size_t SizeYOffset = offsetof(SDK::UCanvas, SizeY);
+        // 编译器直接从 SDK 提取 Dumper-7 生成的 UCanvas->SizeX 与 SizeY 真实偏移
+        static constexpr size_t SizeXOffset = offsetof(SDK::UCanvas, SizeX);
+        static constexpr size_t SizeYOffset = offsetof(SDK::UCanvas, SizeY);
 
-    // 扫描前 200 个函数（从 vtable[1] 开始）以寻找候选函数
-    static constexpr int32_t ScanRange = 200;
+        // 扫描前 200 个函数（从 vtable[1] 开始）以寻找候选函数
+        static constexpr int32_t ScanRange = 200;
 
-    // 稳定性阈值：连续 120 帧（约 2 秒）满足条件才认定为候选函数
-    static constexpr int32_t StableFrameThreshold = 120;
+        // 稳定性阈值：连续 120 帧（约 2 秒）满足条件才认定为候选函数
+        static constexpr int32_t StableFrameThreshold = 120;
 
-    // 动态分辨率稳态超时（毫秒）：5 秒未能通过动态分辨率找到目标则回滚
-    static constexpr uint32_t DynamicResolutionTimeoutMs = 5000;
+        // 动态分辨率稳态超时（毫秒）：5 秒未能通过动态分辨率找到目标则回滚
+        static constexpr uint32_t DynamicResolutionTimeoutMs = 5000;
 
-    // 预设特征码命中的候选全部为误报时，回退到全量虚函数挂钩的超时（毫秒）
-    static constexpr uint32_t PreferredFallbackTimeoutMs = 5000;
+        // 预设特征码命中的候选全部为误报时，回退到全量虚函数挂钩的超时（毫秒）
+        static constexpr uint32_t PreferredFallbackTimeoutMs = 5000;
 
-    // 退出并解除所有 Hook 的热键
-    static constexpr int32_t ExitHotkey = VK_F1;
+        // 退出并解除所有 Hook 的热键
+        static constexpr int32_t ExitHotkey = VK_F1;
 
-    // 特征码生成：反汇编时最多累积的字节数与指令条数上限
-    static constexpr size_t SignatureMaxScanLength = 256;
-    static constexpr int32_t SignatureMaxInstructions = 48;
+        // 特征码生成：反汇编时最多累积的字节数与指令条数上限
+        static constexpr size_t SignatureMaxScanLength = 256;
+        static constexpr int32_t SignatureMaxInstructions = 48;
 
-    // Tick 扫描：扫描虚表 1 到 500，采样 120 帧，并给出调用频次与 DeltaTime 的允许误差
-    static constexpr int32_t TickScanRange = 500;
-    static constexpr int32_t TickSampleFrames = 120;
-    static constexpr int32_t TickFrequencyTolerance = 15;
-    static constexpr float TickDeltaTimeTolerance = 0.015f;
+        // Tick 扫描：扫描虚表 1 到 500，采样 120 帧，并给出调用频次与 DeltaTime 的允许误差
+        static constexpr int32_t TickScanRange = 500;
+        static constexpr int32_t TickSampleFrames = 120;
+        static constexpr int32_t TickFrequencyTolerance = 15;
+        static constexpr float TickDeltaTimeTolerance = 0.015f;
 
-    // 打印所使用的 AActor::Tick 函数签名格式
-    static constexpr std::string_view ActorTickFunctionSignature = "void __fastcall AActor::Tick(AActor* _this, float DeltaSeconds)";
+        // 打印所使用的 AActor::Tick 函数签名格式
+        static constexpr std::string_view ActorTickFunctionSignature = "void __fastcall AActor::Tick(AActor* _this, float DeltaSeconds)";
 
-    // 预设特征码：? 表示通配符
-    static constexpr std::array<std::string_view, 3> PostRenderSignatures = { {
-        "8B C2 35 ? ? ? ? 44",
-        "48 8B 01 48 FF A0 ? ? ? ? CC CC CC CC CC CC",
-        "40 55 53 57 48 8D"
-    } };
+        // 预设特征码：? 表示通配符
+        static constexpr std::array<std::string_view, 3> PostRenderSignatures = { {
+            "8B C2 35 ? ? ? ? 44",
+            "48 8B 01 48 FF A0 ? ? ? ? CC CC CC CC CC CC",
+            "40 55 53 57 48 8D"
+        } };
 
-    // AActor::Tick 预设特征码：? 表示通配符
-    static constexpr std::array<std::string_view, 1> ActorTickSignatures = { {
-        "40 53 48 83 EC"
-    } };
-};
+        // AActor::Tick 预设特征码：? 表示通配符
+        static constexpr std::array<std::string_view, 1> ActorTickSignatures = { {
+            "40 53 48 83 EC"
+        } };
+
+        static constexpr int32_t TickLogMaxCount = 5;
+
+        static constexpr int32_t IndicatorFontSize = 20;
+        static constexpr float IndicatorStartX = 16.0f;
+        static constexpr float IndicatorStartY = 16.0f;
+        static constexpr float IndicatorLineSpacing = 2.0f;
+        static constexpr float IndicatorScaleX = 1.0f;
+        static constexpr float IndicatorScaleY = 1.0f;
+        static constexpr float IndicatorKerning = 0.0f;
+        static constexpr std::array<float, 4> IndicatorScanningColor = { 1.0f, 0.85f, 0.0f, 1.0f };
+        static constexpr std::array<float, 4> IndicatorSuccessColor = { 0.0f, 1.0f, 0.0f, 1.0f };
+        static constexpr std::array<float, 4> IndicatorOutlineColor = { 0.0f, 0.0f, 0.0f, 1.0f };
+        static constexpr std::array<float, 4> IndicatorShadowColor = { 0.0f, 0.0f, 0.0f, 0.0f };
+        static constexpr std::array<float, 2> IndicatorShadowOffset = { 0.0f, 0.0f };
+    };
 
 enum class ELogLevel : uint8_t
 {
@@ -357,11 +372,73 @@ bool TryGetProcessResolution(int32_t& Width, int32_t& Height)
     return true;
 }
 
+class Indicators
+{
+public:
+    static void Begin(SDK::UCanvas* Canvas, SDK::UFont* Font);
+    static void Add(std::wstring_view Text, const SDK::FLinearColor& Color);
+
+private:
+    static inline SDK::UCanvas* ActiveCanvas = nullptr;
+    static inline SDK::UFont* ActiveFont = nullptr;
+    static inline float CurrentX = 0.0f;
+    static inline float CurrentY = 0.0f;
+};
+
+void Indicators::Begin(SDK::UCanvas* Canvas, SDK::UFont* Font)
+{
+    ActiveCanvas = Canvas;
+    ActiveFont = Font;
+    CurrentX = FConfig::IndicatorStartX;
+    CurrentY = FConfig::IndicatorStartY;
+}
+
+void Indicators::Add(std::wstring_view Text, const SDK::FLinearColor& Color)
+{
+    if (ActiveCanvas == nullptr || ActiveFont == nullptr || Text.empty()) return;
+
+    const std::wstring Buffer(Text);
+    const SDK::FString RenderText(Buffer.c_str());
+    const SDK::FVector2D Scale{ FConfig::IndicatorScaleX, FConfig::IndicatorScaleY };
+    const SDK::FVector2D Position{ CurrentX, CurrentY };
+    const SDK::FLinearColor ShadowColor{
+        FConfig::IndicatorShadowColor[0],
+        FConfig::IndicatorShadowColor[1],
+        FConfig::IndicatorShadowColor[2],
+        FConfig::IndicatorShadowColor[3] };
+    const SDK::FVector2D ShadowOffset{ FConfig::IndicatorShadowOffset[0], FConfig::IndicatorShadowOffset[1] };
+    const SDK::FLinearColor OutlineColor{
+        FConfig::IndicatorOutlineColor[0],
+        FConfig::IndicatorOutlineColor[1],
+        FConfig::IndicatorOutlineColor[2],
+        FConfig::IndicatorOutlineColor[3] };
+
+    ActiveCanvas->K2_DrawText(
+        ActiveFont,
+        RenderText,
+        Position,
+        Scale,
+        Color,
+        FConfig::IndicatorKerning,
+        ShadowColor,
+        ShadowOffset,
+        false,
+        false,
+        true,
+        OutlineColor);
+
+    const SDK::FVector2D TextSize = ActiveCanvas->K2_TextSize(ActiveFont, RenderText, Scale);
+    CurrentY += static_cast<float>(TextSize.Y) + FConfig::IndicatorLineSpacing;
+}
+
 class FActorTickScanner
 {
 public:
     void Advance();
     void ProcessCall(int32_t Index, void* Rcx, void* Rdx, void* R8);
+
+    int32_t GetConfirmedIndex() const { return ConfirmedIndex; }
+    int32_t GetCurrentScanIndex() const { return CurrentScanIndex; }
 
 private:
     static constexpr size_t Range = static_cast<size_t>(FConfig::TickScanRange);
@@ -386,7 +463,9 @@ private:
 
     void* DedicatedTrampoline = nullptr;
     int32_t ConfirmedIndex = -1;
+    int32_t CurrentScanIndex = 0;
     int32_t FrameCounter = 0;
+    int32_t TickLogCount = 0;
     bool bHooked = false;
     bool bCompleted = false;
     bool bPreferredMode = false;
@@ -403,6 +482,7 @@ public:
     void Run();
     void ProcessVirtualCall(int32_t Index, void* Rcx, void* Rdx, void* R8);
     void Shutdown();
+    void SetProcessEventCompleted(int32_t Index);
 
     FActorTickScanner& GetActorTickScanner() { return TickScanner; }
     const FActorTickScanner& GetActorTickScanner() const { return TickScanner; }
@@ -443,10 +523,13 @@ private:
     int32_t ActiveTargetWidth = FConfig::TargetWidth;
     int32_t ActiveTargetHeight = FConfig::TargetHeight;
     int32_t ConfirmedIndex = -1;
+    int32_t CurrentScanIndex = 0;
+    int32_t ProcessEventIndex = static_cast<int32_t>(SDK::Offsets::ProcessEventIdx);
     bool bConsoleAllocated = false;
     bool bUsingDynamicResolution = false;
     bool bHasRolledBack = false;
     bool bIsFound = false;
+    bool bProcessEventCompleted = false;
     bool bPreferredMode = false;
     bool bShutdown = false;
     ULONGLONG HookStartTime = 0;
@@ -524,6 +607,12 @@ void FDumper::Run()
     HookViewport(static_cast<void**>(ViewportTable));
 
     FLog::Info("Hooks applied. Waiting for the PostRender candidate pair (N and N+1)...");
+}
+
+void FDumper::SetProcessEventCompleted(int32_t Index)
+{
+    ProcessEventIndex = Index;
+    bProcessEventCompleted = true;
 }
 
 void FDumper::OpenConsole()
@@ -679,6 +768,8 @@ void FDumper::HookViewportIndices(const std::vector<int32_t>& Indices)
             FLog::Warning("The target is already located; the remaining hook creation is skipped.");
             break;
         }
+
+        CurrentScanIndex = Index;
 
         const size_t Slot = static_cast<size_t>(Index);
         if (Originals[Slot] != nullptr) continue;
@@ -898,10 +989,65 @@ void FDumper::InvokeOriginal(int32_t Index, void* Rcx, void* Rdx, void* R8) cons
 
 void FDumper::DrawMarker(SDK::UCanvas* Canvas) const
 {
-    if (Canvas == nullptr) return;
+    if (Canvas == nullptr || bShutdown) return;
 
-    const SDK::FLinearColor Color{ 0.0f, 1.0f, 0.0f, 1.0f };
-    Canvas->K2_DrawBox({ 2.0f, 2.0f }, { 50.0f, 50.0f }, 1.0f, Color);
+    SDK::UEngine* CurrentEngine = SDK::UEngine::GetEngine();
+    if (CurrentEngine == nullptr || CurrentEngine->LargeFont == nullptr) return;
+
+    SDK::UFont* Font = CurrentEngine->LargeFont;
+    if (Font->LegacyFontSize != FConfig::IndicatorFontSize) Font->LegacyFontSize = FConfig::IndicatorFontSize;
+
+    Indicators::Begin(Canvas, Font);
+
+    const SDK::FLinearColor ScanningColor{
+        FConfig::IndicatorScanningColor[0],
+        FConfig::IndicatorScanningColor[1],
+        FConfig::IndicatorScanningColor[2],
+        FConfig::IndicatorScanningColor[3] };
+    const SDK::FLinearColor SuccessColor{
+        FConfig::IndicatorSuccessColor[0],
+        FConfig::IndicatorSuccessColor[1],
+        FConfig::IndicatorSuccessColor[2],
+        FConfig::IndicatorSuccessColor[3] };
+
+    if (bIsFound)
+    {
+        Indicators::Add(
+            std::format(L"[{}] UGameViewportClient::PostRender", ConfirmedIndex),
+            SuccessColor);
+    }
+    else
+    {
+        Indicators::Add(
+            std::format(L"[{}] Scanning UGameViewportClient::PostRender...", CurrentScanIndex),
+            ScanningColor);
+    }
+
+    if (TickScanner.GetConfirmedIndex() != -1)
+    {
+        Indicators::Add(
+            std::format(L"[{}] AActor::Tick", TickScanner.GetConfirmedIndex()),
+            SuccessColor);
+    }
+    else
+    {
+        Indicators::Add(
+            std::format(L"[{}] Scanning AActor::Tick...", TickScanner.GetCurrentScanIndex()),
+            ScanningColor);
+    }
+
+    if (bProcessEventCompleted)
+    {
+        Indicators::Add(
+            std::format(L"[{}] UObject::ProcessEvent", ProcessEventIndex),
+            SuccessColor);
+    }
+    else
+    {
+        Indicators::Add(
+            std::format(L"[{}] Scanning UObject::ProcessEvent...", ProcessEventIndex),
+            ScanningColor);
+    }
 }
 
 void FDumper::ProcessVirtualCall(int32_t Index, void* Rcx, void* Rdx, void* R8)
@@ -917,6 +1063,8 @@ void FDumper::ProcessVirtualCall(int32_t Index, void* Rcx, void* Rdx, void* R8)
 
     if (!bIsFound)
     {
+        CurrentScanIndex = Index;
+
         int32_t SizeX = 0;
         int32_t SizeY = 0;
         uintptr_t VTableAddress = 0;
@@ -1168,8 +1316,10 @@ bool FActorTickScanner::StartProfiling(SDK::AActor* Actor, bool bForceFull)
     std::fill(PreferredIndices.begin(), PreferredIndices.end(), false);
 
     ConfirmedIndex = -1;
+    CurrentScanIndex = 0;
     bPreferredMode = false;
     FrameCounter = 0;
+    TickLogCount = 0;
 
     std::vector<int32_t> IndicesToHook;
 
@@ -1216,6 +1366,8 @@ bool FActorTickScanner::StartProfiling(SDK::AActor* Actor, bool bForceFull)
 
     for (const int32_t Index : IndicesToHook)
     {
+        CurrentScanIndex = Index;
+
         const size_t Slot = static_cast<size_t>(Index);
         void* Function = VTable[Index];
         if (Function == nullptr || !GetModuleInfo().ContainsText(reinterpret_cast<uintptr_t>(Function))) continue;
@@ -1428,6 +1580,8 @@ void FActorTickScanner::ProcessCall(int32_t Index, void* Rcx, void* Rdx, void* R
 
     if (Rcx == SampleActor)
     {
+        CurrentScanIndex = Index;
+
         FTickEntryInfo& Entry = Entries[static_cast<size_t>(Index)];
         ++Entry.CallCount;
 
@@ -1461,8 +1615,17 @@ void __fastcall FActorTickScanner::DedicatedHook(SDK::AActor* Actor, float Delta
 
     if (Actor == Scanner.SampleActor)
     {
-        FLog::Debug("AActor::Tick  index={:<4}  actor={:#x}  delta={:.6f}",
-            Scanner.ConfirmedIndex, reinterpret_cast<uintptr_t>(Actor), DeltaSeconds);
+        if (Scanner.TickLogCount < FConfig::TickLogMaxCount)
+        {
+            FLog::Debug("AActor::Tick  index={:<4}  actor={:#x}  delta={:.6f}",
+                Scanner.ConfirmedIndex, reinterpret_cast<uintptr_t>(Actor), DeltaSeconds);
+            ++Scanner.TickLogCount;
+
+            if (Scanner.TickLogCount == FConfig::TickLogMaxCount)
+            {
+                FLog::Success("All tasks completed. Press F1 to exit.");
+            }
+        }
 
         if ((GetAsyncKeyState(FConfig::ExitHotkey) & 0x8000) != 0) bExitRequested = true;
     }
@@ -1493,6 +1656,8 @@ void ReportProcessEvent()
         FLog::Error("Failed to resolve the ProcessEvent address.");
         return;
     }
+
+    FDumper::Get().SetProcessEventCompleted(static_cast<int32_t>(SDK::Offsets::ProcessEventIdx));
 
     FLog::Section("ProcessEvent Result");
     FLog::Field(ELogLevel::Info, "VTable Index", "{}", SDK::Offsets::ProcessEventIdx);
